@@ -1,0 +1,1315 @@
+2022-10-11 17:05:49.064365 +0000 > starting log
+2022-10-11 17:05:49.064740 +0000 build-debian42: > starting build with log
+2022-10-11 17:05:49.064755 +0000 build-debian42: >> args:
+2022-10-11 17:05:49.064764 +0000 build-debian42: >>   ()
+2022-10-11 17:05:49.064772 +0000 build-debian42: >> component:
+2022-10-11 17:05:49.064781 +0000 build-debian42: >>   core-qrexec
+2022-10-11 17:05:49.064792 +0000 build-debian42: >>     commit-hash: 63dfb731222a91392e496f7673bee832eea45172
+2022-10-11 17:05:49.064810 +0000 build-debian42: >>     source-hash: b1b122cfff04ee6f2bfde38add65918904fd17446270fb00d151ea94166e27c443414c88c3d70ad379b63fd4b68d9b953cd58831235b94217ccfe4ae9cd195a3
+2022-10-11 17:05:49.064819 +0000 build-debian42: >> distributions:
+2022-10-11 17:05:49.064832 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2022-10-11 17:06:03.960129 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'rm -rf /builder/incoming/core-qrexec /builder/core-qrexec'
+2022-10-11 17:06:04.215920 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6452 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/core-qrexec
+2022-10-11 17:06:04.562796 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'mkdir -p /builder && mv /builder/incoming/core-qrexec /builder'
+2022-10-11 17:06:04.877703 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-10-11 17:06:05.084815 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6452 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-10-11 17:06:05.381594 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-10-11 17:06:05.599451 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-10-11 17:06:05.801747 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6452 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-10-11 17:06:06.046624 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-10-11 17:06:06.246704 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2022-10-11 17:06:06.449382 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6452 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2022-10-11 17:06:06.731435 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6452 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2022-10-11 17:06:06.927265 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp6452 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/core-qrexec debian bookworm deb12 && /builder/plugins/source_deb/scripts/get-source-info /builder/core-qrexec debian''.
+2022-10-11 17:06:07.139389 +0000 build-debian42: output: + test 4 -ne 4
+2022-10-11 17:06:07.139436 +0000 build-debian42: output: + SOURCE_DIR=/builder/core-qrexec
+2022-10-11 17:06:07.139541 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-10-11 17:06:07.139556 +0000 build-debian42: output: + DIST_NAME=bookworm
+2022-10-11 17:06:07.139563 +0000 build-debian42: output: + DIST_TAG=deb12
+2022-10-11 17:06:07.139707 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2022-10-11 17:06:07.140238 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-10-11 17:06:07.140320 +0000 build-debian42: output: + cd /builder/core-qrexec
+2022-10-11 17:06:07.140348 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2022-10-11 17:06:07.334090 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2022-10-11 17:06:07.505180 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2022-10-11 17:06:07.569226 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2022-10-11 17:06:07.569285 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2022-10-11 17:06:07.573030 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/core-qrexec/debian/changelog
+2022-10-11 17:06:07.584579 +0000 build-debian42: output: + test 2 -ne 2
+2022-10-11 17:06:07.584617 +0000 build-debian42: output: + SOURCE_DIR=/builder/core-qrexec
+2022-10-11 17:06:07.584624 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-10-11 17:06:07.584630 +0000 build-debian42: output: ++ basename debian
+2022-10-11 17:06:07.585791 +0000 build-debian42: output: + DIRECTORY_BN=debian
+2022-10-11 17:06:07.585913 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2022-10-11 17:06:07.586011 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2022-10-11 17:06:07.586041 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/get-source-info
+2022-10-11 17:06:07.586284 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-10-11 17:06:07.586403 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name /builder/core-qrexec/debian/changelog
+2022-10-11 17:06:07.635375 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name-full /builder/core-qrexec/debian/changelog
+2022-10-11 17:06:07.689401 +0000 build-debian42: output: + grep -Po '(?<=^3.0 \()\w+'
+2022-10-11 17:06:07.697230 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6452 qubesbuilder.FileCopyOut+__builder__core-qrexec__debian_package_release_name /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpn19voubn
+2022-10-11 17:06:26.155600 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'rm -rf /builder/incoming/core-qrexec /builder/core-qrexec'
+2022-10-11 17:06:26.411060 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/core-qrexec
+2022-10-11 17:06:26.650103 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'mkdir -p /builder && mv /builder/incoming/core-qrexec /builder'
+2022-10-11 17:06:26.929985 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'rm -rf /builder/incoming/core-qrexec /builder/distfiles/core-qrexec'
+2022-10-11 17:06:27.181925 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/distfiles/core-qrexec
+2022-10-11 17:06:27.474285 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'mkdir -p /builder/distfiles && mv /builder/incoming/core-qrexec /builder/distfiles'
+2022-10-11 17:06:27.745675 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-10-11 17:06:27.908424 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-10-11 17:06:28.113474 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-10-11 17:06:28.301326 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-10-11 17:06:28.507590 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-10-11 17:06:28.686927 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-10-11 17:06:28.904039 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2022-10-11 17:06:29.111492 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2022-10-11 17:06:29.301582 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp4223 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2022-10-11 17:06:29.497417 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp4223 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/core-qrexec qubes-core-qrexec_4.2.0.orig.tar.gz && mv /builder/core-qrexec/qubes-core-qrexec_4.2.0.orig.tar.gz /builder && /builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/core-qrexec debian bookworm deb12 && mkdir -p /builder/build && cd /builder/build && cp -a /builder/core-qrexec/debian . && dpkg-source -b . && /builder/plugins/source_deb/scripts/debian-get-packages-list /builder/qubes-core-qrexec_4.2.0-1+deb12u1.dsc 12 >/builder/debian_packages.list''.
+2022-10-11 17:06:29.674239 +0000 build-debian42: output: ++ tar --version
+2022-10-11 17:06:29.674295 +0000 build-debian42: output: ++ head -1
+2022-10-11 17:06:29.674308 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-10-11 17:06:29.683083 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-10-11 17:06:29.683118 +0000 build-debian42: output: ++ readlink -f /builder/core-qrexec
+2022-10-11 17:06:29.684107 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/core-qrexec
+2022-10-11 17:06:29.684223 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-10-11 17:06:29.684244 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-core-qrexec_4.2.0.orig.tar
+2022-10-11 17:06:29.684263 +0000 build-debian42: output: + '[' x '!=' x ']'
+2022-10-11 17:06:29.684308 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-qrexec_4.2.0.orig.tar
+2022-10-11 17:06:29.684324 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-qrexec_4.2.0.orig
+2022-10-11 17:06:29.684335 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-qrexec_4.2.0
+2022-10-11 17:06:29.684346 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-qrexec_4.2.0/
+2022-10-11 17:06:29.684357 +0000 build-debian42: output: + pushd /builder/core-qrexec
+2022-10-11 17:06:29.684367 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-10-11 17:06:29.684380 +0000 build-debian42: output: /builder/core-qrexec ~
+2022-10-11 17:06:29.702336 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1665503914
+2022-10-11 17:06:29.702717 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-10-11 17:06:29.703119 +0000 build-debian42: output: ++ head -n1
+2022-10-11 17:06:29.703803 +0000 build-debian42: output: ++ sort -V
+2022-10-11 17:06:29.708183 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-10-11 17:06:29.708261 +0000 build-debian42: output: + tar --sort=name --mtime=@1665503914 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-core-qrexec_4.2.0/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-core-qrexec_4.2.0.orig.tar -cf qubes-core-qrexec_4.2.0.orig.tar .
+2022-10-11 17:06:29.714350 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-10-11 17:06:29.714406 +0000 build-debian42: output: + gzip -fn qubes-core-qrexec_4.2.0.orig.tar
+2022-10-11 17:06:29.739502 +0000 build-debian42: output: + popd
+2022-10-11 17:06:29.739549 +0000 build-debian42: output: ~
+2022-10-11 17:06:29.742383 +0000 build-debian42: output: + test 4 -ne 4
+2022-10-11 17:06:29.742432 +0000 build-debian42: output: + SOURCE_DIR=/builder/core-qrexec
+2022-10-11 17:06:29.742542 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-10-11 17:06:29.742837 +0000 build-debian42: output: + DIST_NAME=bookworm
+2022-10-11 17:06:29.742962 +0000 build-debian42: output: + DIST_TAG=deb12
+2022-10-11 17:06:29.743693 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2022-10-11 17:06:29.745079 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-10-11 17:06:29.745177 +0000 build-debian42: output: + cd /builder/core-qrexec
+2022-10-11 17:06:29.745539 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2022-10-11 17:06:29.909034 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2022-10-11 17:06:30.106551 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2022-10-11 17:06:30.182775 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2022-10-11 17:06:30.182820 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2022-10-11 17:06:30.185865 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/core-qrexec/debian/changelog
+2022-10-11 17:06:30.336749 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2022-10-11 17:06:30.336823 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec using existing ./qubes-core-qrexec_4.2.0.orig.tar.gz
+2022-10-11 17:06:30.362663 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file setup.py, use --include-removal to override
+2022-10-11 17:06:30.362742 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .pylintrc, use --include-removal to override
+2022-10-11 17:06:30.362753 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file version, use --include-removal to override
+2022-10-11 17:06:30.362791 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file run-tests, use --include-removal to override
+2022-10-11 17:06:30.362877 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile, use --include-removal to override
+2022-10-11 17:06:30.363092 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .coveragerc, use --include-removal to override
+2022-10-11 17:06:30.363352 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .gitlab-ci.yml, use --include-removal to override
+2022-10-11 17:06:30.363400 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile.builder, use --include-removal to override
+2022-10-11 17:06:30.363427 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file README.md, use --include-removal to override
+2022-10-11 17:06:30.363454 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .qubesbuilder, use --include-removal to override
+2022-10-11 17:06:30.363719 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory doc
+2022-10-11 17:06:30.363741 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-policy-parser_compat.rst, use --include-removal to override
+2022-10-11 17:06:30.363769 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-policy-daemon.rst, use --include-removal to override
+2022-10-11 17:06:30.363779 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-exc.rst, use --include-removal to override
+2022-10-11 17:06:30.363788 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-policy-agent.md, use --include-removal to override
+2022-10-11 17:06:30.363797 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/Makefile, use --include-removal to override
+2022-10-11 17:06:30.364076 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-utils.rst, use --include-removal to override
+2022-10-11 17:06:30.364188 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/conf.py, use --include-removal to override
+2022-10-11 17:06:30.364357 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec-policy-parser.rst, use --include-removal to override
+2022-10-11 17:06:30.364373 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qrexec.rst, use --include-removal to override
+2022-10-11 17:06:30.364404 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/qubes-policy.rst, use --include-removal to override
+2022-10-11 17:06:30.364570 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/multifile-policy.markdown, use --include-removal to override
+2022-10-11 17:06:30.364585 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/index.rst, use --include-removal to override
+2022-10-11 17:06:30.364669 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory doc/manpages
+2022-10-11 17:06:30.364770 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/manpages/qrexec-policy-graph.rst, use --include-removal to override
+2022-10-11 17:06:30.364822 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file doc/manpages/index.rst, use --include-removal to override
+2022-10-11 17:06:30.364870 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubes-rpc-dom0
+2022-10-11 17:06:30.365209 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-rpc-dom0/policy.RegisterArgument, use --include-removal to override
+2022-10-11 17:06:30.365457 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-rpc-dom0/qubes.WaitForSession, use --include-removal to override
+2022-10-11 17:06:30.365546 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory vim
+2022-10-11 17:06:30.365573 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory vim/syntax
+2022-10-11 17:06:30.365647 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file vim/syntax/qubespolicy.vim, use --include-removal to override
+2022-10-11 17:06:30.365672 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory lib
+2022-10-11 17:06:30.365704 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file lib/qrexec-policy-agent-autostart, use --include-removal to override
+2022-10-11 17:06:30.365730 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file lib/qubes-rpc-multiplexer, use --include-removal to override
+2022-10-11 17:06:30.366075 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubes-rpc-config
+2022-10-11 17:06:30.366305 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-rpc-config/README, use --include-removal to override
+2022-10-11 17:06:30.366339 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory systemd
+2022-10-11 17:06:30.366363 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file systemd/qubes-qrexec-agent.service, use --include-removal to override
+2022-10-11 17:06:30.366464 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file systemd/qubes-qrexec-policy-daemon.service, use --include-removal to override
+2022-10-11 17:06:30.366569 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec
+2022-10-11 17:06:30.366745 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/utils.py, use --include-removal to override
+2022-10-11 17:06:30.366760 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/__init__.py, use --include-removal to override
+2022-10-11 17:06:30.366771 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/exc.py, use --include-removal to override
+2022-10-11 17:06:30.366953 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/client.py, use --include-removal to override
+2022-10-11 17:06:30.367001 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/server.py, use --include-removal to override
+2022-10-11 17:06:30.367277 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec/tests
+2022-10-11 17:06:30.367331 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/qrexec_policy_daemon.py, use --include-removal to override
+2022-10-11 17:06:30.367367 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/policy_parser.py, use --include-removal to override
+2022-10-11 17:06:30.367394 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/gtkhelpers.py, use --include-removal to override
+2022-10-11 17:06:30.367669 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/__init__.py, use --include-removal to override
+2022-10-11 17:06:30.367716 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/server.py, use --include-removal to override
+2022-10-11 17:06:30.367746 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/rpcconfirmation.py, use --include-removal to override
+2022-10-11 17:06:30.367779 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/cli.py, use --include-removal to override
+2022-10-11 17:06:30.367881 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/policy_admin.py, use --include-removal to override
+2022-10-11 17:06:30.367972 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/policy_cache.py, use --include-removal to override
+2022-10-11 17:06:30.367997 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec/tests/socket
+2022-10-11 17:06:30.368025 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/socket/agent.py, use --include-removal to override
+2022-10-11 17:06:30.368052 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/socket/__init__.py, use --include-removal to override
+2022-10-11 17:06:30.368310 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/socket/daemon.py, use --include-removal to override
+2022-10-11 17:06:30.368329 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/socket/qrexec.py, use --include-removal to override
+2022-10-11 17:06:30.368660 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tests/socket/util.py, use --include-removal to override
+2022-10-11 17:06:30.368703 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec/tools
+2022-10-11 17:06:30.368937 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qrexec_policy_daemon.py, use --include-removal to override
+2022-10-11 17:06:30.368974 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qrexec_policy_restore.py, use --include-removal to override
+2022-10-11 17:06:30.369011 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qubes_policy_admin.py, use --include-removal to override
+2022-10-11 17:06:30.369040 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qrexec_policy_agent.py, use --include-removal to override
+2022-10-11 17:06:30.369066 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/__init__.py, use --include-removal to override
+2022-10-11 17:06:30.369094 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qrexec_policy_graph.py, use --include-removal to override
+2022-10-11 17:06:30.369222 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qubes_policy.py, use --include-removal to override
+2022-10-11 17:06:30.369341 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/tools/qrexec_policy_exec.py, use --include-removal to override
+2022-10-11 17:06:30.369506 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec/glade
+2022-10-11 17:06:30.369523 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/glade/RPCConfirmationWindow.glade, use --include-removal to override
+2022-10-11 17:06:30.369610 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qrexec/policy
+2022-10-11 17:06:30.369700 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/parser.py, use --include-removal to override
+2022-10-11 17:06:30.369795 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/utils.py, use --include-removal to override
+2022-10-11 17:06:30.369810 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/admin_client.py, use --include-removal to override
+2022-10-11 17:06:30.369905 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/__init__.py, use --include-removal to override
+2022-10-11 17:06:30.370165 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/parser_compat.py, use --include-removal to override
+2022-10-11 17:06:30.370230 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qrexec/policy/admin.py, use --include-removal to override
+2022-10-11 17:06:30.370253 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory agent
+2022-10-11 17:06:30.370280 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-client-vm.c, use --include-removal to override
+2022-10-11 17:06:30.370425 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-agent-data.c, use --include-removal to override
+2022-10-11 17:06:30.370445 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec.pam, use --include-removal to override
+2022-10-11 17:06:30.370455 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-fork-server.c, use --include-removal to override
+2022-10-11 17:06:30.370782 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-client-vm.rst, use --include-removal to override
+2022-10-11 17:06:30.370827 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-agent.h, use --include-removal to override
+2022-10-11 17:06:30.370879 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/Makefile, use --include-removal to override
+2022-10-11 17:06:30.370930 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec.pam.debian, use --include-removal to override
+2022-10-11 17:06:30.371079 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec.pam.archlinux, use --include-removal to override
+2022-10-11 17:06:30.371118 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file agent/qrexec-agent.c, use --include-removal to override
+2022-10-11 17:06:30.371227 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory ci
+2022-10-11 17:06:30.371625 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ci/Dockerfile, use --include-removal to override
+2022-10-11 17:06:30.371643 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ci/requirements.txt, use --include-removal to override
+2022-10-11 17:06:30.371653 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ci/codecov-wrapper, use --include-removal to override
+2022-10-11 17:06:30.371755 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory policy.d
+2022-10-11 17:06:30.371792 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy.d/90-admin-policy-default.policy, use --include-removal to override
+2022-10-11 17:06:30.371884 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy.d/35-compat.policy, use --include-removal to override
+2022-10-11 17:06:30.371896 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy.d/README, use --include-removal to override
+2022-10-11 17:06:30.371908 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory policy.d/include
+2022-10-11 17:06:30.371915 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy.d/include/admin-policy-rwx, use --include-removal to override
+2022-10-11 17:06:30.372102 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy.d/include/admin-policy-ro, use --include-removal to override
+2022-10-11 17:06:30.372119 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory rpm_spec
+2022-10-11 17:06:30.372187 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rpm_spec/qubes-qrexec-dom0.spec.in, use --include-removal to override
+2022-10-11 17:06:30.372321 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rpm_spec/qubes-qrexec.spec.in, use --include-removal to override
+2022-10-11 17:06:30.372416 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rpm_spec/qubes-qrexec-vm.spec.in, use --include-removal to override
+2022-10-11 17:06:30.373127 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory libqrexec
+2022-10-11 17:06:30.373146 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/write-stdin.c, use --include-removal to override
+2022-10-11 17:06:30.373155 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/ioall.c, use --include-removal to override
+2022-10-11 17:06:30.373165 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/libqrexec-utils.h, use --include-removal to override
+2022-10-11 17:06:30.373174 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/unix-server.c, use --include-removal to override
+2022-10-11 17:06:30.373183 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/Makefile, use --include-removal to override
+2022-10-11 17:06:30.373192 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/process_io.c, use --include-removal to override
+2022-10-11 17:06:30.374219 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/ioall.h, use --include-removal to override
+2022-10-11 17:06:30.374247 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/txrx-vchan.c, use --include-removal to override
+2022-10-11 17:06:30.374257 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/qrexec.h, use --include-removal to override
+2022-10-11 17:06:30.374266 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/remote.c, use --include-removal to override
+2022-10-11 17:06:30.374275 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/buffer.c, use --include-removal to override
+2022-10-11 17:06:30.374284 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/exec.c, use --include-removal to override
+2022-10-11 17:06:30.374292 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/replace.c, use --include-removal to override
+2022-10-11 17:06:30.374301 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file libqrexec/log.c, use --include-removal to override
+2022-10-11 17:06:30.374309 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory policy-agent-extra
+2022-10-11 17:06:30.374319 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file policy-agent-extra/qrexec-policy-agent.desktop, use --include-removal to override
+2022-10-11 17:06:30.374418 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory archlinux
+2022-10-11 17:06:30.374433 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file archlinux/PKGBUILD, use --include-removal to override
+2022-10-11 17:06:30.374443 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file archlinux/PKGBUILD.install, use --include-removal to override
+2022-10-11 17:06:30.375567 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory daemon
+2022-10-11 17:06:30.375666 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file daemon/qrexec-daemon.c, use --include-removal to override
+2022-10-11 17:06:30.375697 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file daemon/Makefile, use --include-removal to override
+2022-10-11 17:06:30.375722 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file daemon/qrexec-client.c, use --include-removal to override
+2022-10-11 17:06:30.375747 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file daemon/README.rpc, use --include-removal to override
+2022-10-11 17:06:30.375767 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory fuzz
+2022-10-11 17:06:30.375791 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/fuzz.h, use --include-removal to override
+2022-10-11 17:06:30.375817 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/qubesrpc_parse_fuzzer.options, use --include-removal to override
+2022-10-11 17:06:30.375870 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/qrexec_remote_fuzzer.c, use --include-removal to override
+2022-10-11 17:06:30.375896 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/Makefile, use --include-removal to override
+2022-10-11 17:06:30.391784 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/gen-seed-corpus, use --include-removal to override
+2022-10-11 17:06:30.391934 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/mock-fuzz.h, use --include-removal to override
+2022-10-11 17:06:30.391987 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/qubesrpc_parse_fuzzer.c, use --include-removal to override
+2022-10-11 17:06:30.392036 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/libvchan.h, use --include-removal to override
+2022-10-11 17:06:30.392130 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file fuzz/fuzz.c, use --include-removal to override
+2022-10-11 17:06:30.400622 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec in qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz
+2022-10-11 17:06:30.419517 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec in qubes-core-qrexec_4.2.0-1+deb12u1.dsc
+2022-10-11 17:06:30.608668 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyOut+__builder__qubes-core-qrexec_4.2.0-1+deb12u1.dsc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep
+2022-10-11 17:06:30.798739 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyOut+__builder__qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep
+2022-10-11 17:06:30.986290 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyOut+__builder__debian_packages.list /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpn19voubn
+2022-10-11 17:06:31.159614 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4223 qubesbuilder.FileCopyOut+__builder__qubes-core-qrexec_4.2.0.orig.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep
+2022-10-11 17:06:49.736617 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/pbuilder /builder/pbuilder'
+2022-10-11 17:06:49.986240 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb/pbuilder
+2022-10-11 17:06:50.194518 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder && mv /builder/incoming/pbuilder /builder'
+2022-10-11 17:06:50.423661 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/vm-bookworm /builder/repository/vm-bookworm'
+2022-10-11 17:06:50.672524 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-bookworm
+2022-10-11 17:06:51.283054 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/repository && mv /builder/incoming/vm-bookworm /builder/repository'
+2022-10-11 17:06:51.532237 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/build_deb /builder/plugins/build_deb'
+2022-10-11 17:06:51.749588 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2022-10-11 17:06:51.959587 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build_deb /builder/plugins'
+2022-10-11 17:06:52.184867 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-10-11 17:06:52.350480 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-10-11 17:06:52.612756 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-10-11 17:06:52.797912 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/build /builder/plugins/build'
+2022-10-11 17:06:52.970428 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2022-10-11 17:06:53.180131 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build /builder/plugins'
+2022-10-11 17:06:53.373259 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/qubes-core-qrexec_4.2.0-1+deb12u1.dsc /builder/build/qubes-core-qrexec_4.2.0-1+deb12u1.dsc'
+2022-10-11 17:06:53.537571 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep/qubes-core-qrexec_4.2.0-1+deb12u1.dsc
+2022-10-11 17:06:53.737054 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-core-qrexec_4.2.0-1+deb12u1.dsc /builder/build'
+2022-10-11 17:06:53.912060 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz /builder/build/qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz'
+2022-10-11 17:06:54.060804 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep/qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz
+2022-10-11 17:06:54.270290 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz /builder/build'
+2022-10-11 17:06:54.442758 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/qubes-core-qrexec_4.2.0.orig.tar.gz /builder/build/qubes-core-qrexec_4.2.0.orig.tar.gz'
+2022-10-11 17:06:54.613932 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/prep/qubes-core-qrexec_4.2.0.orig.tar.gz
+2022-10-11 17:06:54.831139 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-core-qrexec_4.2.0.orig.tar.gz /builder/build'
+2022-10-11 17:06:55.009539 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'rm -rf /builder/incoming/base.tgz /builder/pbuilder/base.tgz'
+2022-10-11 17:06:55.202288 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/bookworm/pbuilder/base.tgz
+2022-10-11 17:06:56.665059 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8457 bash -c 'mkdir -p /builder/pbuilder && mv /builder/incoming/base.tgz /builder/pbuilder'
+2022-10-11 17:06:56.986361 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8457 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian bookworm && sudo -E pbuilder update --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" && sudo -E pbuilder build --override-config --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" /builder/build/qubes-core-qrexec_4.2.0-1+deb12u1.dsc''.
+2022-10-11 17:06:57.155516 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2022-10-11 17:06:57.155560 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2022-10-11 17:06:57.155623 +0000 build-debian42: output: + DISTRIBUTION=debian
+2022-10-11 17:06:57.155648 +0000 build-debian42: output: + SUITE=bookworm
+2022-10-11 17:06:57.155655 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2022-10-11 17:06:57.157736 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2022-10-11 17:06:57.159773 +0000 build-debian42: output: + cd /builder/repository
+2022-10-11 17:06:57.159810 +0000 build-debian42: output: + cat
+2022-10-11 17:06:57.160768 +0000 build-debian42: output: + mkdir -p dists/bookworm/main/binary-amd64
+2022-10-11 17:06:57.162748 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2022-10-11 17:06:57.636808 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 47 entries to output Packages file.
+2022-10-11 17:06:57.638553 +0000 build-debian42: output: + gzip -9c dists/bookworm/main/binary-amd64/Packages
+2022-10-11 17:06:57.641964 +0000 build-debian42: output: ++ LC_ALL=C
+2022-10-11 17:06:57.642019 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2022-10-11 17:06:57.642110 +0000 build-debian42: output: + DATE='Tue, 11 Oct 2022 17:06:57 UTC'
+2022-10-11 17:06:57.642131 +0000 build-debian42: output: + cat
+2022-10-11 17:06:57.643080 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2022-10-11 17:06:57.643115 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages
+2022-10-11 17:06:57.643131 +0000 build-debian42: output: + echo -n ' '
+2022-10-11 17:06:57.643151 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages
+2022-10-11 17:06:57.643166 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2022-10-11 17:06:57.645386 +0000 build-debian42: output: + echo -n c18e7c51a614518ba652e226783e6eef8926e3e7eb60c74e163d34c519059c30 ''
+2022-10-11 17:06:57.645583 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages
+2022-10-11 17:06:57.648031 +0000 build-debian42: output: + echo -n 36486 ''
+2022-10-11 17:06:57.648045 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2022-10-11 17:06:57.648052 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2022-10-11 17:06:57.648059 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages.gz
+2022-10-11 17:06:57.648065 +0000 build-debian42: output: + echo -n ' '
+2022-10-11 17:06:57.648070 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2022-10-11 17:06:57.648162 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages.gz
+2022-10-11 17:06:57.650535 +0000 build-debian42: output: + echo -n f75f03d65e937a1bafbd051dc5d9bb86fa23dba225a16bd61ffc5b20f361f31e ''
+2022-10-11 17:06:57.651006 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages.gz
+2022-10-11 17:06:57.652608 +0000 build-debian42: output: + echo -n 10506 ''
+2022-10-11 17:06:57.652648 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2022-10-11 17:06:57.652674 +0000 build-debian42: output: + mapfile -d '' changes_files
+2022-10-11 17:06:57.652703 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2022-10-11 17:06:57.655474 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-10-11 17:06:57.655643 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-vchan-xen_4.1.8/libvchan-xen_4.1.8-1+deb12u1_amd64.changes
+2022-10-11 17:06:57.800353 +0000 build-debian42: output: Exporting indices...
+2022-10-11 17:06:57.801703 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-10-11 17:06:57.801801 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-qubesdb_4.1.14/qubesdb_4.1.14-1+deb12u1_amd64.changes
+2022-10-11 17:06:57.869400 +0000 build-debian42: output: Exporting indices...
+2022-10-11 17:06:57.870212 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-10-11 17:06:57.870419 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-input-proxy_1.0.28/qubes-input-proxy_1.0.28-1+deb12u1_amd64.changes
+2022-10-11 17:06:57.935153 +0000 build-debian42: output: Exporting indices...
+2022-10-11 17:06:57.935415 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-10-11 17:06:57.935726 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/vmm-xen_4.14.5/xen_4.14.5-8+deb12u1_amd64.changes
+2022-10-11 17:06:58.638362 +0000 build-debian42: output: Exporting indices...
+2022-10-11 17:06:58.677184 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2022-10-11 17:06:58.731028 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2022-10-11 17:06:58.742521 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2022-10-11 17:06:58.745184 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2022-10-11 17:06:58.749372 +0000 build-debian42: output: I: Current time: Tue Oct 11 17:06:58 GMT 2022
+2022-10-11 17:06:58.750968 +0000 build-debian42: output: I: pbuilder-time-stamp: 1665508018
+2022-10-11 17:06:58.752312 +0000 build-debian42: output: I: Building the build Environment
+2022-10-11 17:06:58.753876 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2022-10-11 17:07:02.625640 +0000 build-debian42: output: I: copying local configuration
+2022-10-11 17:07:02.639724 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2365/etc/hostname to be correct
+2022-10-11 17:07:02.639768 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2365/etc/mailname to be correct
+2022-10-11 17:07:02.646820 +0000 build-debian42: output: W: --override-config is not set; not updating apt.conf Read the manpage for details.
+2022-10-11 17:07:02.646914 +0000 build-debian42: output: I: mounting /proc filesystem
+2022-10-11 17:07:02.653864 +0000 build-debian42: output: I: mounting /sys filesystem
+2022-10-11 17:07:02.657208 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2022-10-11 17:07:02.663754 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2022-10-11 17:07:02.671037 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2022-10-11 17:07:02.678090 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2022-10-11 17:07:02.681134 +0000 build-debian42: output: I: policy-rc.d already exists
+2022-10-11 17:07:02.687538 +0000 build-debian42: output: I: Refreshing the base.tgz
+2022-10-11 17:07:02.687646 +0000 build-debian42: output: I: upgrading packages
+2022-10-11 17:07:04.363032 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian bookworm InRelease [164 kB]
+2022-10-11 17:07:05.478168 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian bookworm/main amd64 Packages.diff/Index [63.6 kB]
+2022-10-11 17:07:06.182253 +0000 build-debian42: output: Get:3 https://deb.debian.org/debian bookworm/main amd64 Packages T-2022-10-11-1403.13-F-2022-10-06-0203.07.pdiff [276 kB]
+2022-10-11 17:07:07.714332 +0000 build-debian42: output: Get:3 https://deb.debian.org/debian bookworm/main amd64 Packages T-2022-10-11-1403.13-F-2022-10-06-0203.07.pdiff [276 kB]
+2022-10-11 17:07:08.483962 +0000 build-debian42: output: Fetched 503 kB in 6s (87.2 kB/s)
+2022-10-11 17:07:08.904423 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:07:08.943144 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:07:09.167753 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:07:09.167833 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:07:09.232516 +0000 build-debian42: output: Calculating upgrade...
+2022-10-11 17:07:09.322895 +0000 build-debian42: output: The following packages will be upgraded:
+2022-10-11 17:07:09.322939 +0000 build-debian42: output:   base-files libc-bin libc-dev-bin libc6 libc6-dev libgmp10 libgssapi-krb5-2
+2022-10-11 17:07:09.322954 +0000 build-debian42: output:   libk5crypto3 libkrb5-3 libkrb5support0 libsystemd0 libudev1 libunistring2
+2022-10-11 17:07:09.323113 +0000 build-debian42: output:   login passwd
+2022-10-11 17:07:11.096441 +0000 build-debian42: output: 15 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-10-11 17:07:11.096529 +0000 build-debian42: output: Need to get 10.0 MB of archives.
+2022-10-11 17:07:11.097053 +0000 build-debian42: output: After this operation, 182 kB of additional disk space will be used.
+2022-10-11 17:07:11.097134 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian bookworm/main amd64 base-files amd64 12.3 [70.3 kB]
+2022-10-11 17:07:11.830454 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian bookworm/main amd64 login amd64 1:4.12.3+dfsg1-1 [656 kB]
+2022-10-11 17:07:21.181294 +0000 build-debian42: output: Get:3 https://deb.debian.org/debian bookworm/main amd64 libc6-dev amd64 2.35-2 [2101 kB]
+2022-10-11 17:07:39.789942 +0000 build-debian42: output: Get:4 https://deb.debian.org/debian bookworm/main amd64 libc-dev-bin amd64 2.35-2 [249 kB]
+2022-10-11 17:07:41.805322 +0000 build-debian42: output: Get:5 https://deb.debian.org/debian bookworm/main amd64 libc6 amd64 2.35-2 [2944 kB]
+2022-10-11 17:08:06.431538 +0000 build-debian42: output: Get:6 https://deb.debian.org/debian bookworm/main amd64 libc-bin amd64 2.35-2 [822 kB]
+2022-10-11 17:08:13.654187 +0000 build-debian42: output: Get:7 https://deb.debian.org/debian bookworm/main amd64 passwd amd64 1:4.12.3+dfsg1-1 [1024 kB]
+2022-10-11 17:11:37.249968 +0000 build-debian42: output: Get:8 https://deb.debian.org/debian bookworm/main amd64 libgmp10 amd64 2:6.2.1+dfsg1-1.1 [563 kB]
+2022-10-11 17:14:15.184544 +0000 build-debian42: output: Get:9 https://deb.debian.org/debian bookworm/main amd64 libsystemd0 amd64 251.5-1 [414 kB]
+2022-10-11 17:15:39.521106 +0000 build-debian42: output: Get:10 https://deb.debian.org/debian bookworm/main amd64 libudev1 amd64 251.5-1 [187 kB]
+2022-10-11 17:16:12.521129 +0000 build-debian42: output: Get:11 https://deb.debian.org/debian bookworm/main amd64 libunistring2 amd64 1.0-2 [437 kB]
+2022-10-11 17:17:13.571771 +0000 build-debian42: output: Get:12 https://deb.debian.org/debian bookworm/main amd64 libgssapi-krb5-2 amd64 1.20-1+b1 [133 kB]
+2022-10-11 17:17:22.302143 +0000 build-debian42: output: Get:13 https://deb.debian.org/debian bookworm/main amd64 libkrb5-3 amd64 1.20-1+b1 [331 kB]
+2022-10-11 17:17:46.644054 +0000 build-debian42: output: Get:14 https://deb.debian.org/debian bookworm/main amd64 libkrb5support0 amd64 1.20-1+b1 [32.2 kB]
+2022-10-11 17:17:47.004083 +0000 build-debian42: output: Get:15 https://deb.debian.org/debian bookworm/main amd64 libk5crypto3 amd64 1.20-1+b1 [78.6 kB]
+2022-10-11 17:17:50.932194 +0000 build-debian42: output: debconf: delaying package configuration, since apt-utils is not installed
+2022-10-11 17:17:50.957968 +0000 build-debian42: output: Fetched 10.0 MB in 10min 42s (15.7 kB/s)
+2022-10-11 17:17:50.995603 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13223 files and directories currently installed.).
+2022-10-11 17:17:50.996093 +0000 build-debian42: output: Preparing to unpack .../base-files_12.3_amd64.deb ....
+2022-10-11 17:17:51.026017 +0000 build-debian42: output: Unpacking base-files (12.3) over (12.2) ....
+2022-10-11 17:17:51.147408 +0000 build-debian42: output: Setting up base-files (12.3) ....
+2022-10-11 17:17:51.341804 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13223 files and directories currently installed.).
+2022-10-11 17:17:51.342328 +0000 build-debian42: output: Preparing to unpack .../login_1%3a4.12.3+dfsg1-1_amd64.deb ....
+2022-10-11 17:17:51.379115 +0000 build-debian42: output: Unpacking login (1:4.12.3+dfsg1-1) over (1:4.11.1+dfsg1-2) ....
+2022-10-11 17:17:51.581265 +0000 build-debian42: output: Setting up login (1:4.12.3+dfsg1-1) ....
+2022-10-11 17:17:51.709571 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13235 files and directories currently installed.).
+2022-10-11 17:17:51.709671 +0000 build-debian42: output: Preparing to unpack .../libc6-dev_2.35-2_amd64.deb ....
+2022-10-11 17:17:51.737926 +0000 build-debian42: output: Unpacking libc6-dev:amd64 (2.35-2) over (2.35-1) ....
+2022-10-11 17:17:52.164550 +0000 build-debian42: output: Preparing to unpack .../libc-dev-bin_2.35-2_amd64.deb ....
+2022-10-11 17:17:52.208159 +0000 build-debian42: output: Unpacking libc-dev-bin (2.35-2) over (2.35-1) ....
+2022-10-11 17:17:52.362504 +0000 build-debian42: output: Preparing to unpack .../libc6_2.35-2_amd64.deb ....
+2022-10-11 17:17:52.489271 +0000 build-debian42: output: Unpacking libc6:amd64 (2.35-2) over (2.35-1) ....
+2022-10-11 17:17:52.976192 +0000 build-debian42: output: Setting up libc6:amd64 (2.35-2) ....
+2022-10-11 17:17:53.213239 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13235 files and directories currently installed.).
+2022-10-11 17:17:53.213320 +0000 build-debian42: output: Preparing to unpack .../libc-bin_2.35-2_amd64.deb ....
+2022-10-11 17:17:53.240684 +0000 build-debian42: output: Unpacking libc-bin (2.35-2) over (2.35-1) ....
+2022-10-11 17:17:53.437658 +0000 build-debian42: output: Setting up libc-bin (2.35-2) ....
+2022-10-11 17:17:53.618312 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13235 files and directories currently installed.).
+2022-10-11 17:17:53.618991 +0000 build-debian42: output: Preparing to unpack .../passwd_1%3a4.12.3+dfsg1-1_amd64.deb ....
+2022-10-11 17:17:53.664795 +0000 build-debian42: output: Unpacking passwd (1:4.12.3+dfsg1-1) over (1:4.11.1+dfsg1-2) ....
+2022-10-11 17:17:53.969797 +0000 build-debian42: output: Setting up passwd (1:4.12.3+dfsg1-1) ....
+2022-10-11 17:17:54.127968 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13262 files and directories currently installed.).
+2022-10-11 17:17:54.128131 +0000 build-debian42: output: Preparing to unpack .../libgmp10_2%3a6.2.1+dfsg1-1.1_amd64.deb ....
+2022-10-11 17:17:54.167598 +0000 build-debian42: output: Unpacking libgmp10:amd64 (2:6.2.1+dfsg1-1.1) over (2:6.2.1+dfsg1-1) ....
+2022-10-11 17:17:54.279972 +0000 build-debian42: output: Setting up libgmp10:amd64 (2:6.2.1+dfsg1-1.1) ....
+2022-10-11 17:17:54.377417 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13262 files and directories currently installed.).
+2022-10-11 17:17:54.378020 +0000 build-debian42: output: Preparing to unpack .../libsystemd0_251.5-1_amd64.deb ....
+2022-10-11 17:17:54.409266 +0000 build-debian42: output: Unpacking libsystemd0:amd64 (251.5-1) over (251.4-3) ....
+2022-10-11 17:17:54.550727 +0000 build-debian42: output: Setting up libsystemd0:amd64 (251.5-1) ....
+2022-10-11 17:17:54.641714 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13263 files and directories currently installed.).
+2022-10-11 17:17:54.641801 +0000 build-debian42: output: Preparing to unpack .../libudev1_251.5-1_amd64.deb ....
+2022-10-11 17:17:54.666771 +0000 build-debian42: output: Unpacking libudev1:amd64 (251.5-1) over (251.4-3) ....
+2022-10-11 17:17:54.774614 +0000 build-debian42: output: Setting up libudev1:amd64 (251.5-1) ....
+2022-10-11 17:17:54.875680 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13264 files and directories currently installed.).
+2022-10-11 17:17:54.875775 +0000 build-debian42: output: Preparing to unpack .../libunistring2_1.0-2_amd64.deb ....
+2022-10-11 17:17:54.904684 +0000 build-debian42: output: Unpacking libunistring2:amd64 (1.0-2) over (1.0-1) ....
+2022-10-11 17:17:55.042655 +0000 build-debian42: output: Setting up libunistring2:amd64 (1.0-2) ....
+2022-10-11 17:17:55.141176 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13264 files and directories currently installed.).
+2022-10-11 17:17:55.141480 +0000 build-debian42: output: Preparing to unpack .../libgssapi-krb5-2_1.20-1+b1_amd64.deb ....
+2022-10-11 17:17:55.167706 +0000 build-debian42: output: Unpacking libgssapi-krb5-2:amd64 (1.20-1+b1) over (1.20-1) ....
+2022-10-11 17:17:55.289065 +0000 build-debian42: output: Preparing to unpack .../libkrb5-3_1.20-1+b1_amd64.deb ....
+2022-10-11 17:17:55.320318 +0000 build-debian42: output: Unpacking libkrb5-3:amd64 (1.20-1+b1) over (1.20-1) ....
+2022-10-11 17:17:55.458074 +0000 build-debian42: output: Preparing to unpack .../libkrb5support0_1.20-1+b1_amd64.deb ....
+2022-10-11 17:17:55.480607 +0000 build-debian42: output: Unpacking libkrb5support0:amd64 (1.20-1+b1) over (1.20-1) ....
+2022-10-11 17:17:55.587118 +0000 build-debian42: output: Preparing to unpack .../libk5crypto3_1.20-1+b1_amd64.deb ....
+2022-10-11 17:17:55.612072 +0000 build-debian42: output: Unpacking libk5crypto3:amd64 (1.20-1+b1) over (1.20-1) ....
+2022-10-11 17:17:55.713581 +0000 build-debian42: output: Setting up libkrb5support0:amd64 (1.20-1+b1) ....
+2022-10-11 17:17:55.738228 +0000 build-debian42: output: Setting up libk5crypto3:amd64 (1.20-1+b1) ....
+2022-10-11 17:17:55.766549 +0000 build-debian42: output: Setting up libkrb5-3:amd64 (1.20-1+b1) ....
+2022-10-11 17:17:55.804697 +0000 build-debian42: output: Setting up libc-dev-bin (2.35-2) ....
+2022-10-11 17:17:55.832966 +0000 build-debian42: output: Setting up libgssapi-krb5-2:amd64 (1.20-1+b1) ....
+2022-10-11 17:17:55.866680 +0000 build-debian42: output: Setting up libc6-dev:amd64 (2.35-2) ....
+2022-10-11 17:17:55.910238 +0000 build-debian42: output: Processing triggers for libc-bin (2.35-2) ....
+2022-10-11 17:17:56.076679 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:17:56.170702 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:17:56.170780 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:17:56.271098 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-10-11 17:17:56.284646 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:17:56.399186 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:17:56.399264 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:17:56.492011 +0000 build-debian42: output: build-essential is already the newest version (12.9).
+2022-10-11 17:17:56.492055 +0000 build-debian42: output: dpkg-dev is already the newest version (1.21.9).
+2022-10-11 17:17:56.492085 +0000 build-debian42: output: aptitude is already the newest version (0.8.13-5).
+2022-10-11 17:17:56.492265 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-10-11 17:17:56.493000 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2365/tmp/hooks/E30origin starting
+2022-10-11 17:17:56.499929 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2365/tmp/hooks/E30origin finished
+2022-10-11 17:17:56.499996 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2022-10-11 17:17:56.510472 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2022-10-11 17:17:56.513451 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2022-10-11 17:17:56.516061 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2022-10-11 17:17:56.518312 +0000 build-debian42: output: I: unmounting proc filesystem
+2022-10-11 17:17:56.520735 +0000 build-debian42: output: I: unmounting sys filesystem
+2022-10-11 17:17:56.542785 +0000 build-debian42: output: I: creating base tarball [/builder/pbuilder/base.tgz]
+2022-10-11 17:18:17.886469 +0000 build-debian42: output: I: cleaning the build env
+2022-10-11 17:18:17.886556 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/2365 and its subdirectories
+2022-10-11 17:18:18.372256 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2022-10-11 17:18:18.418780 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2022-10-11 17:18:18.430255 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2022-10-11 17:18:18.432570 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2022-10-11 17:18:18.481935 +0000 build-debian42: output: I: pbuilder: network access will be disabled during build
+2022-10-11 17:18:18.483563 +0000 build-debian42: output: I: Current time: Tue Oct 11 17:18:17 GMT 2022
+2022-10-11 17:18:18.485403 +0000 build-debian42: output: I: pbuilder-time-stamp: 1665508697
+2022-10-11 17:18:18.486490 +0000 build-debian42: output: I: Building the build Environment
+2022-10-11 17:18:18.488339 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2022-10-11 17:18:22.640500 +0000 build-debian42: output: I: copying local configuration
+2022-10-11 17:18:22.643754 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2886/etc/hostname to be correct
+2022-10-11 17:18:22.643818 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2886/etc/mailname to be correct
+2022-10-11 17:18:22.648835 +0000 build-debian42: output: I: Installing apt-lines
+2022-10-11 17:18:22.776095 +0000 build-debian42: output: I: mounting /proc filesystem
+2022-10-11 17:18:22.782713 +0000 build-debian42: output: I: mounting /sys filesystem
+2022-10-11 17:18:22.786551 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2022-10-11 17:18:22.794864 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2022-10-11 17:18:22.798965 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2022-10-11 17:18:22.803413 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2022-10-11 17:18:22.807881 +0000 build-debian42: output: I: policy-rc.d already exists
+2022-10-11 17:18:22.812278 +0000 build-debian42: output: I: created buildresult dir: /builder/pbuilder/results
+2022-10-11 17:18:22.835685 +0000 build-debian42: output: I: Copying source file
+2022-10-11 17:18:22.853288 +0000 build-debian42: output: I: copying [/builder/build/qubes-core-qrexec_4.2.0-1+deb12u1.dsc]
+2022-10-11 17:18:22.856531 +0000 build-debian42: output: I: copying [/builder/build/qubes-core-qrexec_4.2.0.orig.tar.gz]
+2022-10-11 17:18:22.859827 +0000 build-debian42: output: I: copying [/builder/build/qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz]
+2022-10-11 17:18:22.874994 +0000 build-debian42: output: I: Extracting source
+2022-10-11 17:18:22.970015 +0000 build-debian42: output: dpkg-source: warning: extracting unsigned source package (qubes-core-qrexec_4.2.0-1+deb12u1.dsc)
+2022-10-11 17:18:22.971411 +0000 build-debian42: output: dpkg-source: info: extracting qubes-core-qrexec in qubes-core-qrexec-4.2.0
+2022-10-11 17:18:22.971474 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-core-qrexec_4.2.0.orig.tar.gz
+2022-10-11 17:18:22.988650 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz
+2022-10-11 17:18:23.010419 +0000 build-debian42: output: I: using fakeroot in build.
+2022-10-11 17:18:23.010468 +0000 build-debian42: output: I: Installing the build-deps
+2022-10-11 17:18:23.010509 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2886/tmp/hooks/D30update starting
+2022-10-11 17:18:23.037125 +0000 build-debian42: output: Get:1 file:/tmp/qubes-deb bookworm InRelease
+2022-10-11 17:18:23.037192 +0000 build-debian42: output: Ign:1 file:/tmp/qubes-deb bookworm InRelease
+2022-10-11 17:18:23.037213 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb bookworm Release [1623 B]
+2022-10-11 17:18:23.045071 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb bookworm Release [1623 B]
+2022-10-11 17:18:23.045926 +0000 build-debian42: output: Get:3 file:/tmp/qubes-deb bookworm Release.gpg
+2022-10-11 17:18:23.046209 +0000 build-debian42: output: Ign:3 file:/tmp/qubes-deb bookworm Release.gpg
+2022-10-11 17:18:23.046250 +0000 build-debian42: output: Get:4 file:/tmp/qubes-deb bookworm/main amd64 Packages [10.5 kB]
+2022-10-11 17:18:25.913189 +0000 build-debian42: output: Hit:5 https://deb.debian.org/debian bookworm InRelease
+2022-10-11 17:18:26.407691 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:18:26.425569 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2886/tmp/hooks/D30update finished
+2022-10-11 17:18:26.480613 +0000 build-debian42: output:  -> Attempting to satisfy build-dependencies
+2022-10-11 17:18:26.587222 +0000 build-debian42: output:  -> Creating pbuilder-satisfydepends-dummy package
+2022-10-11 17:18:26.591209 +0000 build-debian42: output: Package: pbuilder-satisfydepends-dummy
+2022-10-11 17:18:26.591244 +0000 build-debian42: output: Version: 0.invalid.0
+2022-10-11 17:18:26.591399 +0000 build-debian42: output: Architecture: amd64
+2022-10-11 17:18:26.591592 +0000 build-debian42: output: Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+2022-10-11 17:18:26.591751 +0000 build-debian42: output: Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+2022-10-11 17:18:26.591899 +0000 build-debian42: output:  This package was created automatically by pbuilder to satisfy the
+2022-10-11 17:18:26.592056 +0000 build-debian42: output:  build-dependencies of the package being currently built.
+2022-10-11 17:18:26.592544 +0000 build-debian42: output: Depends: debhelper, libpam0g-dev, libvchan-xen-dev, pkg-config, dh-python, lsb-release, python3-setuptools, python3-gbulb, pandoc
+2022-10-11 17:18:26.592774 +0000 build-debian42: output: dpkg-deb: building package 'pbuilder-satisfydepends-dummy' in '/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
+2022-10-11 17:18:26.628576 +0000 build-debian42: output: Selecting previously unselected package pbuilder-satisfydepends-dummy.
+2022-10-11 17:18:26.638243 +0000 build-debian42: output: (Reading database ... 13268 files and directories currently installed.)
+2022-10-11 17:18:26.638832 +0000 build-debian42: output: Preparing to unpack .../pbuilder-satisfydepends-dummy.deb ...
+2022-10-11 17:18:26.649997 +0000 build-debian42: output: Unpacking pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2022-10-11 17:18:26.697044 +0000 build-debian42: output: dpkg: pbuilder-satisfydepends-dummy: dependency problems, but configuring anyway as you requested:
+2022-10-11 17:18:26.697161 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on debhelper; however:
+2022-10-11 17:18:26.697364 +0000 build-debian42: output:   Package debhelper is not installed.
+2022-10-11 17:18:26.697529 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on libpam0g-dev; however:
+2022-10-11 17:18:26.697694 +0000 build-debian42: output:   Package libpam0g-dev is not installed.
+2022-10-11 17:18:26.698045 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on libvchan-xen-dev; however:
+2022-10-11 17:18:26.698100 +0000 build-debian42: output:   Package libvchan-xen-dev is not installed.
+2022-10-11 17:18:26.698193 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on pkg-config; however:
+2022-10-11 17:18:26.698397 +0000 build-debian42: output:   Package pkg-config is not installed.
+2022-10-11 17:18:26.698563 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on dh-python; however:
+2022-10-11 17:18:26.698791 +0000 build-debian42: output:   Package dh-python is not installed.
+2022-10-11 17:18:26.698971 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on lsb-release; however:
+2022-10-11 17:18:26.699198 +0000 build-debian42: output:   Package lsb-release is not installed.
+2022-10-11 17:18:26.699484 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on python3-setuptools; however:
+2022-10-11 17:18:26.699630 +0000 build-debian42: output:   Package python3-setuptools is not installed.
+2022-10-11 17:18:26.699798 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on python3-gbulb; however:
+2022-10-11 17:18:26.699957 +0000 build-debian42: output:   Package python3-gbulb is not installed.
+2022-10-11 17:18:26.700128 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on pandoc; however:
+2022-10-11 17:18:26.700312 +0000 build-debian42: output:   Package pandoc is not installed.
+2022-10-11 17:18:26.700470 +0000 build-debian42: output: 
+2022-10-11 17:18:26.700633 +0000 build-debian42: output: Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2022-10-11 17:18:26.947692 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:18:27.082760 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:18:27.082829 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:18:27.116148 +0000 build-debian42: output: Initializing package states...
+2022-10-11 17:18:27.279582 +0000 build-debian42: output: Writing extended state information...
+2022-10-11 17:18:27.376709 +0000 build-debian42: output: Building tag database...
+2022-10-11 17:18:28.064463 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2022-10-11 17:18:28.064508 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2022-10-11 17:18:28.064523 +0000 build-debian42: output: The following NEW packages will be installed:
+2022-10-11 17:18:28.064646 +0000 build-debian42: output:   autoconf{a} automake{a} autopoint{a} autotools-dev{a} bsdextrautils{a} debhelper{a} dh-autoreconf{a} dh-python{a} dh-strip-nondeterminism{a} distro-info-data{a} dwz{a} file{a} gettext{a} gettext-base{a} gir1.2-glib-2.0{a} groff-base{a} intltool-debian{a} libarchive-zip-perl{a} libdebhelper-perl{a} libelf1{a} libexpat1{a} libfile-stripnondeterminism-perl{a} libgirepository-1.0-1{a} libglib2.0-0{a} libicu71{a} liblua5.3-0{a} libmagic-mgc{a} libmagic1{a} libmpdec3{a} libpam0g-dev{a} libpipeline1{a} libpython3-stdlib{a} libpython3.10-minimal{a} libpython3.10-stdlib{a} libreadline8{a} libsub-override-perl{a} libtool{a} libuchardet0{a} libvchan-xen{a} libvchan-xen-dev{a} libxencall1{a} libxendevicemodel1{a} libxenevtchn1{a} libxenforeignmemory1{a} libxengnttab1{a} libxenhypfs1{a} libxenmisc4.16{a} libxenstore3.0{a} libxenstore4{a} libxentoolcore1{a} libxentoollog1{a} libxml2{a} libyajl2{a} libyaml-0-2{a} lsb-release{a} m4{a} man-db{a} media-types{a} pandoc{a} pandoc-data{a} pkg-config{a} po-debconf{a} python3{a} python3-distutils{a} python3-gbulb{a} python3-gi{a} python3-lib2to3{a} python3-minimal{a} python3-pkg-resources{a} python3-setuptools{a} python3.10{a} python3.10-minimal{a} readline-common{a} sensible-utils{a} sgml-base{a}
+2022-10-11 17:18:28.064694 +0000 build-debian42: output: The following packages are RECOMMENDED but will NOT be installed:
+2022-10-11 17:18:28.064725 +0000 build-debian42: output:   curl libarchive-cpio-perl libglib2.0-data libltdl-dev libmail-sendmail-perl lynx shared-mime-info wget xdg-user-dirs
+2022-10-11 17:18:28.064736 +0000 build-debian42: output: 0 packages upgraded, 75 newly installed, 0 to remove and 0 not upgraded.
+2022-10-11 17:18:28.064764 +0000 build-debian42: output: Need to get 50.5 MB/50.6 MB of archives. After unpacking 280 MB will be used.
+2022-10-11 17:18:28.064774 +0000 build-debian42: output: Writing extended state information...
+2022-10-11 17:18:28.096244 +0000 build-debian42: output: Get: 1 file:/tmp/qubes-deb bookworm/main amd64 libxenstore3.0 amd64 4.14.5-8+deb12u1 [40.1 kB]
+2022-10-11 17:18:28.096320 +0000 build-debian42: output: Get: 2 file:/tmp/qubes-deb bookworm/main amd64 libvchan-xen amd64 4.1.8-1+deb12u1 [8976 B]
+2022-10-11 17:18:28.096414 +0000 build-debian42: output: Get: 3 file:/tmp/qubes-deb bookworm/main amd64 libvchan-xen-dev amd64 4.1.8-1+deb12u1 [5812 B]
+2022-10-11 17:18:32.658898 +0000 build-debian42: output: Get: 4 https://deb.debian.org/debian bookworm/main amd64 libpython3.10-minimal amd64 3.10.7-1 [828 kB]
+2022-10-11 17:18:45.150342 +0000 build-debian42: output: Get: 5 https://deb.debian.org/debian bookworm/main amd64 libexpat1 amd64 2.4.9-1 [105 kB]
+2022-10-11 17:18:46.736018 +0000 build-debian42: output: Get: 6 https://deb.debian.org/debian bookworm/main amd64 python3.10-minimal amd64 3.10.7-1 [1994 kB]
+2022-10-11 17:19:32.600291 +0000 build-debian42: output: Get: 7 https://deb.debian.org/debian bookworm/main amd64 python3-minimal amd64 3.10.6-1 [38.7 kB]
+2022-10-11 17:19:32.807432 +0000 build-debian42: output: Get: 8 https://deb.debian.org/debian bookworm/main amd64 media-types all 8.0.0 [33.4 kB]
+2022-10-11 17:19:32.836890 +0000 build-debian42: output: Get: 9 https://deb.debian.org/debian bookworm/main amd64 libmpdec3 amd64 2.5.1-2 [87.8 kB]
+2022-10-11 17:19:32.999055 +0000 build-debian42: output: Get: 10 https://deb.debian.org/debian bookworm/main amd64 readline-common all 8.2-1 [76.0 kB]
+2022-10-11 17:19:33.624998 +0000 build-debian42: output: Get: 11 https://deb.debian.org/debian bookworm/main amd64 libreadline8 amd64 8.2-1 [173 kB]
+2022-10-11 17:19:35.656099 +0000 build-debian42: output: Get: 12 https://deb.debian.org/debian bookworm/main amd64 libpython3.10-stdlib amd64 3.10.7-1 [1685 kB]
+2022-10-11 17:20:26.708623 +0000 build-debian42: output: Get: 13 https://deb.debian.org/debian bookworm/main amd64 python3.10 amd64 3.10.7-1 [547 kB]
+2022-10-11 17:20:34.114892 +0000 build-debian42: output: Get: 14 https://deb.debian.org/debian bookworm/main amd64 libpython3-stdlib amd64 3.10.6-1 [21.7 kB]
+2022-10-11 17:20:34.135164 +0000 build-debian42: output: Get: 15 https://deb.debian.org/debian bookworm/main amd64 python3 amd64 3.10.6-1 [38.2 kB]
+2022-10-11 17:20:34.208187 +0000 build-debian42: output: Get: 16 https://deb.debian.org/debian bookworm/main amd64 sgml-base all 1.31 [15.4 kB]
+2022-10-11 17:20:34.216244 +0000 build-debian42: output: Get: 17 https://deb.debian.org/debian bookworm/main amd64 sensible-utils all 0.0.17 [21.5 kB]
+2022-10-11 17:20:34.219602 +0000 build-debian42: output: Get: 18 https://deb.debian.org/debian bookworm/main amd64 libmagic-mgc amd64 1:5.41-4 [295 kB]
+2022-10-11 17:20:34.921430 +0000 build-debian42: output: Get: 19 https://deb.debian.org/debian bookworm/main amd64 libmagic1 amd64 1:5.41-4 [129 kB]
+2022-10-11 17:20:35.025425 +0000 build-debian42: output: Get: 20 https://deb.debian.org/debian bookworm/main amd64 file amd64 1:5.41-4 [67.0 kB]
+2022-10-11 17:20:35.230942 +0000 build-debian42: output: Get: 21 https://deb.debian.org/debian bookworm/main amd64 gettext-base amd64 0.21-9 [175 kB]
+2022-10-11 17:20:35.482622 +0000 build-debian42: output: Get: 22 https://deb.debian.org/debian bookworm/main amd64 libuchardet0 amd64 0.0.7-1 [67.8 kB]
+2022-10-11 17:20:36.110295 +0000 build-debian42: output: Get: 23 https://deb.debian.org/debian bookworm/main amd64 groff-base amd64 1.22.4-8 [936 kB]
+2022-10-11 17:20:38.179203 +0000 build-debian42: output: Get: 24 https://deb.debian.org/debian bookworm/main amd64 bsdextrautils amd64 2.38.1-1 [145 kB]
+2022-10-11 17:20:38.541145 +0000 build-debian42: output: Get: 25 https://deb.debian.org/debian bookworm/main amd64 libpipeline1 amd64 1.5.6-3 [39.4 kB]
+2022-10-11 17:20:38.560647 +0000 build-debian42: output: Get: 26 https://deb.debian.org/debian bookworm/main amd64 man-db amd64 2.10.2-3 [1413 kB]
+2022-10-11 17:20:41.895310 +0000 build-debian42: output: Get: 27 https://deb.debian.org/debian bookworm/main amd64 m4 amd64 1.4.19-1 [291 kB]
+2022-10-11 17:20:43.452155 +0000 build-debian42: output: Get: 28 https://deb.debian.org/debian bookworm/main amd64 autoconf all 2.71-2 [343 kB]
+2022-10-11 17:20:45.011428 +0000 build-debian42: output: Get: 29 https://deb.debian.org/debian bookworm/main amd64 autotools-dev all 20220109.1 [51.6 kB]
+2022-10-11 17:20:45.054091 +0000 build-debian42: output: Get: 30 https://deb.debian.org/debian bookworm/main amd64 automake all 1:1.16.5-1.3 [823 kB]
+2022-10-11 17:20:48.746422 +0000 build-debian42: output: Get: 31 https://deb.debian.org/debian bookworm/main amd64 autopoint all 0.21-9 [510 kB]
+2022-10-11 17:20:50.038698 +0000 build-debian42: output: Get: 32 https://deb.debian.org/debian bookworm/main amd64 libdebhelper-perl all 13.10 [79.8 kB]
+2022-10-11 17:20:50.059577 +0000 build-debian42: output: Get: 33 https://deb.debian.org/debian bookworm/main amd64 libtool all 2.4.7-4 [526 kB]
+2022-10-11 17:20:52.659185 +0000 build-debian42: output: Get: 34 https://deb.debian.org/debian bookworm/main amd64 dh-autoreconf all 20 [17.1 kB]
+2022-10-11 17:20:52.815236 +0000 build-debian42: output: Get: 35 https://deb.debian.org/debian bookworm/main amd64 libarchive-zip-perl all 1.68-1 [104 kB]
+2022-10-11 17:20:53.221292 +0000 build-debian42: output: Get: 36 https://deb.debian.org/debian bookworm/main amd64 libsub-override-perl all 0.09-3 [10.4 kB]
+2022-10-11 17:20:53.224158 +0000 build-debian42: output: Get: 37 https://deb.debian.org/debian bookworm/main amd64 libfile-stripnondeterminism-perl all 1.13.0-1 [26.6 kB]
+2022-10-11 17:20:53.228525 +0000 build-debian42: output: Get: 38 https://deb.debian.org/debian bookworm/main amd64 dh-strip-nondeterminism all 1.13.0-1 [15.8 kB]
+2022-10-11 17:20:53.231140 +0000 build-debian42: output: Get: 39 https://deb.debian.org/debian bookworm/main amd64 libelf1 amd64 0.187-4 [179 kB]
+2022-10-11 17:20:53.512906 +0000 build-debian42: output: Get: 40 https://deb.debian.org/debian bookworm/main amd64 dwz amd64 0.14+20220924-2 [109 kB]
+2022-10-11 17:20:53.689435 +0000 build-debian42: output: Get: 41 https://deb.debian.org/debian bookworm/main amd64 libicu71 amd64 71.1-3 [9218 kB]
+2022-10-11 17:21:16.203623 +0000 build-debian42: output: Get: 42 https://deb.debian.org/debian bookworm/main amd64 libxml2 amd64 2.9.14+dfsg-1+b1 [708 kB]
+2022-10-11 17:21:17.662203 +0000 build-debian42: output: Get: 43 https://deb.debian.org/debian bookworm/main amd64 gettext amd64 0.21-9 [1315 kB]
+2022-10-11 17:21:20.050633 +0000 build-debian42: output: Get: 44 https://deb.debian.org/debian bookworm/main amd64 intltool-debian all 0.35.0+20060710.5 [26.8 kB]
+2022-10-11 17:21:20.101600 +0000 build-debian42: output: Get: 45 https://deb.debian.org/debian bookworm/main amd64 po-debconf all 1.0.21+nmu1 [248 kB]
+2022-10-11 17:21:20.850996 +0000 build-debian42: output: Get: 46 https://deb.debian.org/debian bookworm/main amd64 debhelper all 13.10 [940 kB]
+2022-10-11 17:21:22.824004 +0000 build-debian42: output: Get: 47 https://deb.debian.org/debian bookworm/main amd64 python3-lib2to3 all 3.10.7-1 [79.9 kB]
+2022-10-11 17:21:23.031948 +0000 build-debian42: output: Get: 48 https://deb.debian.org/debian bookworm/main amd64 python3-distutils all 3.10.7-1 [141 kB]
+2022-10-11 17:21:23.162064 +0000 build-debian42: output: Get: 49 https://deb.debian.org/debian bookworm/main amd64 dh-python all 5.20221008 [115 kB]
+2022-10-11 17:21:23.651106 +0000 build-debian42: output: Get: 50 https://deb.debian.org/debian bookworm/main amd64 distro-info-data all 0.54 [7804 B]
+2022-10-11 17:21:23.675648 +0000 build-debian42: output: Get: 51 https://deb.debian.org/debian bookworm/main amd64 libglib2.0-0 amd64 2.74.0-2 [1463 kB]
+2022-10-11 17:21:26.598023 +0000 build-debian42: output: Get: 52 https://deb.debian.org/debian bookworm/main amd64 libgirepository-1.0-1 amd64 1.74.0-2 [112 kB]
+2022-10-11 17:21:26.834489 +0000 build-debian42: output: Get: 53 https://deb.debian.org/debian bookworm/main amd64 gir1.2-glib-2.0 amd64 1.74.0-2 [170 kB]
+2022-10-11 17:21:27.101274 +0000 build-debian42: output: Get: 54 https://deb.debian.org/debian bookworm/main amd64 liblua5.3-0 amd64 5.3.6-1+b1 [123 kB]
+2022-10-11 17:21:27.291902 +0000 build-debian42: output: Get: 55 https://deb.debian.org/debian bookworm/main amd64 libpam0g-dev amd64 1.5.2-2 [187 kB]
+2022-10-11 17:21:27.643825 +0000 build-debian42: output: Get: 56 https://deb.debian.org/debian bookworm/main amd64 libxentoolcore1 amd64 4.16.2-2 [39.2 kB]
+2022-10-11 17:21:27.646275 +0000 build-debian42: output: Get: 57 https://deb.debian.org/debian bookworm/main amd64 libxentoollog1 amd64 4.16.2-2 [41.0 kB]
+2022-10-11 17:21:27.907475 +0000 build-debian42: output: Get: 58 https://deb.debian.org/debian bookworm/main amd64 libxencall1 amd64 4.16.2-2 [41.5 kB]
+2022-10-11 17:21:27.951416 +0000 build-debian42: output: Get: 59 https://deb.debian.org/debian bookworm/main amd64 libxendevicemodel1 amd64 4.16.2-2 [42.2 kB]
+2022-10-11 17:21:27.960299 +0000 build-debian42: output: Get: 60 https://deb.debian.org/debian bookworm/main amd64 libxenevtchn1 amd64 4.16.2-2 [39.9 kB]
+2022-10-11 17:21:28.016740 +0000 build-debian42: output: Get: 61 https://deb.debian.org/debian bookworm/main amd64 libxenforeignmemory1 amd64 4.16.2-2 [41.7 kB]
+2022-10-11 17:21:28.054019 +0000 build-debian42: output: Get: 62 https://deb.debian.org/debian bookworm/main amd64 libxengnttab1 amd64 4.16.2-2 [42.1 kB]
+2022-10-11 17:21:28.131990 +0000 build-debian42: output: Get: 63 https://deb.debian.org/debian bookworm/main amd64 libxenhypfs1 amd64 4.16.2-2 [41.7 kB]
+2022-10-11 17:21:28.291576 +0000 build-debian42: output: Get: 64 https://deb.debian.org/debian bookworm/main amd64 libxenstore4 amd64 4.16.2-2 [48.3 kB]
+2022-10-11 17:21:28.339011 +0000 build-debian42: output: Get: 65 https://deb.debian.org/debian bookworm/main amd64 libyajl2 amd64 2.1.0-3 [23.8 kB]
+2022-10-11 17:21:28.344083 +0000 build-debian42: output: Get: 66 https://deb.debian.org/debian bookworm/main amd64 libxenmisc4.16 amd64 4.16.2-2 [521 kB]
+2022-10-11 17:21:29.610556 +0000 build-debian42: output: Get: 67 https://deb.debian.org/debian bookworm/main amd64 libyaml-0-2 amd64 0.2.5-1 [53.6 kB]
+2022-10-11 17:21:29.787947 +0000 build-debian42: output: Get: 68 https://deb.debian.org/debian bookworm/main amd64 lsb-release all 11.4 [28.6 kB]
+2022-10-11 17:21:29.959038 +0000 build-debian42: output: Get: 69 https://deb.debian.org/debian bookworm/main amd64 pandoc-data all 2.17.1.1-1 [448 kB]
+2022-10-11 17:21:30.790564 +0000 build-debian42: output: Get: 70 https://deb.debian.org/debian bookworm/main amd64 pandoc amd64 2.17.1.1-1+b1 [21.3 MB]
+2022-10-11 17:22:49.684199 +0000 build-debian42: output: Get: 71 https://deb.debian.org/debian bookworm/main amd64 pkg-config amd64 0.29.2-1 [65.1 kB]
+2022-10-11 17:22:50.374918 +0000 build-debian42: output: Get: 72 https://deb.debian.org/debian bookworm/main amd64 python3-gi amd64 3.42.2-2 [235 kB]
+2022-10-11 17:22:51.898554 +0000 build-debian42: output: Get: 73 https://deb.debian.org/debian bookworm/main amd64 python3-gbulb all 0.6.1-0.1 [15.2 kB]
+2022-10-11 17:22:51.978015 +0000 build-debian42: output: Get: 74 https://deb.debian.org/debian bookworm/main amd64 python3-pkg-resources all 59.6.0-1.2 [196 kB]
+2022-10-11 17:22:53.881565 +0000 build-debian42: output: Get: 75 https://deb.debian.org/debian bookworm/main amd64 python3-setuptools all 59.6.0-1.2 [401 kB]
+2022-10-11 17:22:57.686051 +0000 build-debian42: output: Fetched 50.5 MB in 4min 30s (187 kB/s)
+2022-10-11 17:22:57.813014 +0000 build-debian42: output: debconf: delaying package configuration, since apt-utils is not installed
+2022-10-11 17:22:57.876756 +0000 build-debian42: output: Selecting previously unselected package libpython3.10-minimal:amd64..
+2022-10-11 17:22:57.881098 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13268 files and directories currently installed.).
+2022-10-11 17:22:57.881233 +0000 build-debian42: output: Preparing to unpack .../libpython3.10-minimal_3.10.7-1_amd64.deb ....
+2022-10-11 17:22:57.889429 +0000 build-debian42: output: Unpacking libpython3.10-minimal:amd64 (3.10.7-1) ....
+2022-10-11 17:22:58.118826 +0000 build-debian42: output: Selecting previously unselected package libexpat1:amd64..
+2022-10-11 17:22:58.120573 +0000 build-debian42: output: Preparing to unpack .../libexpat1_2.4.9-1_amd64.deb ....
+2022-10-11 17:22:58.136632 +0000 build-debian42: output: Unpacking libexpat1:amd64 (2.4.9-1) ....
+2022-10-11 17:22:58.229507 +0000 build-debian42: output: Selecting previously unselected package python3.10-minimal..
+2022-10-11 17:22:58.231545 +0000 build-debian42: output: Preparing to unpack .../python3.10-minimal_3.10.7-1_amd64.deb ....
+2022-10-11 17:22:58.246169 +0000 build-debian42: output: Unpacking python3.10-minimal (3.10.7-1) ....
+2022-10-11 17:22:58.490029 +0000 build-debian42: output: Setting up libpython3.10-minimal:amd64 (3.10.7-1) ....
+2022-10-11 17:22:58.529948 +0000 build-debian42: output: Setting up libexpat1:amd64 (2.4.9-1) ....
+2022-10-11 17:22:58.560546 +0000 build-debian42: output: Setting up python3.10-minimal (3.10.7-1) ....
+2022-10-11 17:22:59.228948 +0000 build-debian42: output: Selecting previously unselected package python3-minimal..
+2022-10-11 17:22:59.235574 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13571 files and directories currently installed.).
+2022-10-11 17:22:59.236330 +0000 build-debian42: output: Preparing to unpack .../0-python3-minimal_3.10.6-1_amd64.deb ....
+2022-10-11 17:22:59.245990 +0000 build-debian42: output: Unpacking python3-minimal (3.10.6-1) ....
+2022-10-11 17:22:59.334169 +0000 build-debian42: output: Selecting previously unselected package media-types..
+2022-10-11 17:22:59.335059 +0000 build-debian42: output: Preparing to unpack .../1-media-types_8.0.0_all.deb ....
+2022-10-11 17:22:59.343544 +0000 build-debian42: output: Unpacking media-types (8.0.0) ....
+2022-10-11 17:22:59.414196 +0000 build-debian42: output: Selecting previously unselected package libmpdec3:amd64..
+2022-10-11 17:22:59.416014 +0000 build-debian42: output: Preparing to unpack .../2-libmpdec3_2.5.1-2_amd64.deb ....
+2022-10-11 17:22:59.424544 +0000 build-debian42: output: Unpacking libmpdec3:amd64 (2.5.1-2) ....
+2022-10-11 17:22:59.494585 +0000 build-debian42: output: Selecting previously unselected package readline-common..
+2022-10-11 17:22:59.496392 +0000 build-debian42: output: Preparing to unpack .../3-readline-common_8.2-1_all.deb ....
+2022-10-11 17:22:59.506270 +0000 build-debian42: output: Unpacking readline-common (8.2-1) ....
+2022-10-11 17:22:59.595561 +0000 build-debian42: output: Selecting previously unselected package libreadline8:amd64..
+2022-10-11 17:22:59.597557 +0000 build-debian42: output: Preparing to unpack .../4-libreadline8_8.2-1_amd64.deb ....
+2022-10-11 17:22:59.609975 +0000 build-debian42: output: Unpacking libreadline8:amd64 (8.2-1) ....
+2022-10-11 17:22:59.703180 +0000 build-debian42: output: Selecting previously unselected package libpython3.10-stdlib:amd64..
+2022-10-11 17:22:59.704961 +0000 build-debian42: output: Preparing to unpack .../5-libpython3.10-stdlib_3.10.7-1_amd64.deb ....
+2022-10-11 17:22:59.709836 +0000 build-debian42: output: Unpacking libpython3.10-stdlib:amd64 (3.10.7-1) ....
+2022-10-11 17:23:00.034763 +0000 build-debian42: output: Selecting previously unselected package python3.10..
+2022-10-11 17:23:00.036567 +0000 build-debian42: output: Preparing to unpack .../6-python3.10_3.10.7-1_amd64.deb ....
+2022-10-11 17:23:00.046592 +0000 build-debian42: output: Unpacking python3.10 (3.10.7-1) ....
+2022-10-11 17:23:00.140991 +0000 build-debian42: output: Selecting previously unselected package libpython3-stdlib:amd64..
+2022-10-11 17:23:00.143034 +0000 build-debian42: output: Preparing to unpack .../7-libpython3-stdlib_3.10.6-1_amd64.deb ....
+2022-10-11 17:23:00.152681 +0000 build-debian42: output: Unpacking libpython3-stdlib:amd64 (3.10.6-1) ....
+2022-10-11 17:23:00.237026 +0000 build-debian42: output: Setting up python3-minimal (3.10.6-1) ....
+2022-10-11 17:23:00.422165 +0000 build-debian42: output: Selecting previously unselected package python3..
+2022-10-11 17:23:00.427781 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 13997 files and directories currently installed.).
+2022-10-11 17:23:00.428446 +0000 build-debian42: output: Preparing to unpack .../00-python3_3.10.6-1_amd64.deb ....
+2022-10-11 17:23:00.444237 +0000 build-debian42: output: Unpacking python3 (3.10.6-1) ....
+2022-10-11 17:23:00.537635 +0000 build-debian42: output: Selecting previously unselected package sgml-base..
+2022-10-11 17:23:00.539452 +0000 build-debian42: output: Preparing to unpack .../01-sgml-base_1.31_all.deb ....
+2022-10-11 17:23:00.552440 +0000 build-debian42: output: Unpacking sgml-base (1.31) ....
+2022-10-11 17:23:00.639599 +0000 build-debian42: output: Selecting previously unselected package sensible-utils..
+2022-10-11 17:23:00.641016 +0000 build-debian42: output: Preparing to unpack .../02-sensible-utils_0.0.17_all.deb ....
+2022-10-11 17:23:00.646296 +0000 build-debian42: output: Unpacking sensible-utils (0.0.17) ....
+2022-10-11 17:23:00.718158 +0000 build-debian42: output: Selecting previously unselected package libmagic-mgc..
+2022-10-11 17:23:00.718829 +0000 build-debian42: output: Preparing to unpack .../03-libmagic-mgc_1%3a5.41-4_amd64.deb ....
+2022-10-11 17:23:00.726717 +0000 build-debian42: output: Unpacking libmagic-mgc (1:5.41-4) ....
+2022-10-11 17:23:00.867556 +0000 build-debian42: output: Selecting previously unselected package libmagic1:amd64..
+2022-10-11 17:23:00.868365 +0000 build-debian42: output: Preparing to unpack .../04-libmagic1_1%3a5.41-4_amd64.deb ....
+2022-10-11 17:23:00.877134 +0000 build-debian42: output: Unpacking libmagic1:amd64 (1:5.41-4) ....
+2022-10-11 17:23:00.956756 +0000 build-debian42: output: Selecting previously unselected package file..
+2022-10-11 17:23:00.957534 +0000 build-debian42: output: Preparing to unpack .../05-file_1%3a5.41-4_amd64.deb ....
+2022-10-11 17:23:00.965234 +0000 build-debian42: output: Unpacking file (1:5.41-4) ....
+2022-10-11 17:23:01.033999 +0000 build-debian42: output: Selecting previously unselected package gettext-base..
+2022-10-11 17:23:01.034750 +0000 build-debian42: output: Preparing to unpack .../06-gettext-base_0.21-9_amd64.deb ....
+2022-10-11 17:23:01.045026 +0000 build-debian42: output: Unpacking gettext-base (0.21-9) ....
+2022-10-11 17:23:01.167955 +0000 build-debian42: output: Selecting previously unselected package libuchardet0:amd64..
+2022-10-11 17:23:01.169120 +0000 build-debian42: output: Preparing to unpack .../07-libuchardet0_0.0.7-1_amd64.deb ....
+2022-10-11 17:23:01.180324 +0000 build-debian42: output: Unpacking libuchardet0:amd64 (0.0.7-1) ....
+2022-10-11 17:23:01.266123 +0000 build-debian42: output: Selecting previously unselected package groff-base..
+2022-10-11 17:23:01.266884 +0000 build-debian42: output: Preparing to unpack .../08-groff-base_1.22.4-8_amd64.deb ....
+2022-10-11 17:23:01.276003 +0000 build-debian42: output: Unpacking groff-base (1.22.4-8) ....
+2022-10-11 17:23:01.482234 +0000 build-debian42: output: Selecting previously unselected package bsdextrautils..
+2022-10-11 17:23:01.483157 +0000 build-debian42: output: Preparing to unpack .../09-bsdextrautils_2.38.1-1_amd64.deb ....
+2022-10-11 17:23:01.493918 +0000 build-debian42: output: Unpacking bsdextrautils (2.38.1-1) ....
+2022-10-11 17:23:01.585149 +0000 build-debian42: output: Selecting previously unselected package libpipeline1:amd64..
+2022-10-11 17:23:01.585957 +0000 build-debian42: output: Preparing to unpack .../10-libpipeline1_1.5.6-3_amd64.deb ....
+2022-10-11 17:23:01.594954 +0000 build-debian42: output: Unpacking libpipeline1:amd64 (1.5.6-3) ....
+2022-10-11 17:23:01.691121 +0000 build-debian42: output: Selecting previously unselected package man-db..
+2022-10-11 17:23:01.693467 +0000 build-debian42: output: Preparing to unpack .../11-man-db_2.10.2-3_amd64.deb ....
+2022-10-11 17:23:01.704266 +0000 build-debian42: output: Unpacking man-db (2.10.2-3) ....
+2022-10-11 17:23:01.979138 +0000 build-debian42: output: Selecting previously unselected package m4..
+2022-10-11 17:23:01.981195 +0000 build-debian42: output: Preparing to unpack .../12-m4_1.4.19-1_amd64.deb ....
+2022-10-11 17:23:01.989367 +0000 build-debian42: output: Unpacking m4 (1.4.19-1) ....
+2022-10-11 17:23:02.098576 +0000 build-debian42: output: Selecting previously unselected package autoconf..
+2022-10-11 17:23:02.100549 +0000 build-debian42: output: Preparing to unpack .../13-autoconf_2.71-2_all.deb ....
+2022-10-11 17:23:02.108689 +0000 build-debian42: output: Unpacking autoconf (2.71-2) ....
+2022-10-11 17:23:02.227335 +0000 build-debian42: output: Selecting previously unselected package autotools-dev..
+2022-10-11 17:23:02.228004 +0000 build-debian42: output: Preparing to unpack .../14-autotools-dev_20220109.1_all.deb ....
+2022-10-11 17:23:02.240273 +0000 build-debian42: output: Unpacking autotools-dev (20220109.1) ....
+2022-10-11 17:23:02.334912 +0000 build-debian42: output: Selecting previously unselected package automake..
+2022-10-11 17:23:02.336943 +0000 build-debian42: output: Preparing to unpack .../15-automake_1%3a1.16.5-1.3_all.deb ....
+2022-10-11 17:23:02.348720 +0000 build-debian42: output: Unpacking automake (1:1.16.5-1.3) ....
+2022-10-11 17:23:02.491954 +0000 build-debian42: output: Selecting previously unselected package autopoint..
+2022-10-11 17:23:02.493219 +0000 build-debian42: output: Preparing to unpack .../16-autopoint_0.21-9_all.deb ....
+2022-10-11 17:23:02.500792 +0000 build-debian42: output: Unpacking autopoint (0.21-9) ....
+2022-10-11 17:23:02.579636 +0000 build-debian42: output: Selecting previously unselected package libdebhelper-perl..
+2022-10-11 17:23:02.581722 +0000 build-debian42: output: Preparing to unpack .../17-libdebhelper-perl_13.10_all.deb ....
+2022-10-11 17:23:02.591044 +0000 build-debian42: output: Unpacking libdebhelper-perl (13.10) ....
+2022-10-11 17:23:02.686632 +0000 build-debian42: output: Selecting previously unselected package libtool..
+2022-10-11 17:23:02.688578 +0000 build-debian42: output: Preparing to unpack .../18-libtool_2.4.7-4_all.deb ....
+2022-10-11 17:23:02.697580 +0000 build-debian42: output: Unpacking libtool (2.4.7-4) ....
+2022-10-11 17:23:02.786519 +0000 build-debian42: output: Selecting previously unselected package dh-autoreconf..
+2022-10-11 17:23:02.787292 +0000 build-debian42: output: Preparing to unpack .../19-dh-autoreconf_20_all.deb ....
+2022-10-11 17:23:02.796956 +0000 build-debian42: output: Unpacking dh-autoreconf (20) ....
+2022-10-11 17:23:02.869626 +0000 build-debian42: output: Selecting previously unselected package libarchive-zip-perl..
+2022-10-11 17:23:02.871976 +0000 build-debian42: output: Preparing to unpack .../20-libarchive-zip-perl_1.68-1_all.deb ....
+2022-10-11 17:23:02.880606 +0000 build-debian42: output: Unpacking libarchive-zip-perl (1.68-1) ....
+2022-10-11 17:23:02.979478 +0000 build-debian42: output: Selecting previously unselected package libsub-override-perl..
+2022-10-11 17:23:02.981624 +0000 build-debian42: output: Preparing to unpack .../21-libsub-override-perl_0.09-3_all.deb ....
+2022-10-11 17:23:02.990934 +0000 build-debian42: output: Unpacking libsub-override-perl (0.09-3) ....
+2022-10-11 17:23:03.052128 +0000 build-debian42: output: Selecting previously unselected package libfile-stripnondeterminism-perl..
+2022-10-11 17:23:03.052995 +0000 build-debian42: output: Preparing to unpack .../22-libfile-stripnondeterminism-perl_1.13.0-1_all.deb ....
+2022-10-11 17:23:03.060726 +0000 build-debian42: output: Unpacking libfile-stripnondeterminism-perl (1.13.0-1) ....
+2022-10-11 17:23:03.128889 +0000 build-debian42: output: Selecting previously unselected package dh-strip-nondeterminism..
+2022-10-11 17:23:03.131142 +0000 build-debian42: output: Preparing to unpack .../23-dh-strip-nondeterminism_1.13.0-1_all.deb ....
+2022-10-11 17:23:03.140069 +0000 build-debian42: output: Unpacking dh-strip-nondeterminism (1.13.0-1) ....
+2022-10-11 17:23:03.222578 +0000 build-debian42: output: Selecting previously unselected package libelf1:amd64..
+2022-10-11 17:23:03.223800 +0000 build-debian42: output: Preparing to unpack .../24-libelf1_0.187-4_amd64.deb ....
+2022-10-11 17:23:03.235802 +0000 build-debian42: output: Unpacking libelf1:amd64 (0.187-4) ....
+2022-10-11 17:23:03.335794 +0000 build-debian42: output: Selecting previously unselected package dwz..
+2022-10-11 17:23:03.338065 +0000 build-debian42: output: Preparing to unpack .../25-dwz_0.14+20220924-2_amd64.deb ....
+2022-10-11 17:23:03.347145 +0000 build-debian42: output: Unpacking dwz (0.14+20220924-2) ....
+2022-10-11 17:23:03.440686 +0000 build-debian42: output: Selecting previously unselected package libicu71:amd64..
+2022-10-11 17:23:03.442939 +0000 build-debian42: output: Preparing to unpack .../26-libicu71_71.1-3_amd64.deb ....
+2022-10-11 17:23:03.452666 +0000 build-debian42: output: Unpacking libicu71:amd64 (71.1-3) ....
+2022-10-11 17:23:04.307672 +0000 build-debian42: output: Selecting previously unselected package libxml2:amd64..
+2022-10-11 17:23:04.308440 +0000 build-debian42: output: Preparing to unpack .../27-libxml2_2.9.14+dfsg-1+b1_amd64.deb ....
+2022-10-11 17:23:04.317459 +0000 build-debian42: output: Unpacking libxml2:amd64 (2.9.14+dfsg-1+b1) ....
+2022-10-11 17:23:04.445052 +0000 build-debian42: output: Selecting previously unselected package gettext..
+2022-10-11 17:23:04.447790 +0000 build-debian42: output: Preparing to unpack .../28-gettext_0.21-9_amd64.deb ....
+2022-10-11 17:23:04.455890 +0000 build-debian42: output: Unpacking gettext (0.21-9) ....
+2022-10-11 17:23:04.678027 +0000 build-debian42: output: Selecting previously unselected package intltool-debian..
+2022-10-11 17:23:04.678896 +0000 build-debian42: output: Preparing to unpack .../29-intltool-debian_0.35.0+20060710.5_all.deb ....
+2022-10-11 17:23:04.690411 +0000 build-debian42: output: Unpacking intltool-debian (0.35.0+20060710.5) ....
+2022-10-11 17:23:04.752705 +0000 build-debian42: output: Selecting previously unselected package po-debconf..
+2022-10-11 17:23:04.753511 +0000 build-debian42: output: Preparing to unpack .../30-po-debconf_1.0.21+nmu1_all.deb ....
+2022-10-11 17:23:04.761583 +0000 build-debian42: output: Unpacking po-debconf (1.0.21+nmu1) ....
+2022-10-11 17:23:04.868398 +0000 build-debian42: output: Selecting previously unselected package debhelper..
+2022-10-11 17:23:04.870708 +0000 build-debian42: output: Preparing to unpack .../31-debhelper_13.10_all.deb ....
+2022-10-11 17:23:04.879005 +0000 build-debian42: output: Unpacking debhelper (13.10) ....
+2022-10-11 17:23:05.176026 +0000 build-debian42: output: Selecting previously unselected package python3-lib2to3..
+2022-10-11 17:23:05.178779 +0000 build-debian42: output: Preparing to unpack .../32-python3-lib2to3_3.10.7-1_all.deb ....
+2022-10-11 17:23:05.187998 +0000 build-debian42: output: Unpacking python3-lib2to3 (3.10.7-1) ....
+2022-10-11 17:23:05.315800 +0000 build-debian42: output: Selecting previously unselected package python3-distutils..
+2022-10-11 17:23:05.316909 +0000 build-debian42: output: Preparing to unpack .../33-python3-distutils_3.10.7-1_all.deb ....
+2022-10-11 17:23:05.327923 +0000 build-debian42: output: Unpacking python3-distutils (3.10.7-1) ....
+2022-10-11 17:23:05.445516 +0000 build-debian42: output: Selecting previously unselected package dh-python..
+2022-10-11 17:23:05.446560 +0000 build-debian42: output: Preparing to unpack .../34-dh-python_5.20221008_all.deb ....
+2022-10-11 17:23:05.456974 +0000 build-debian42: output: Unpacking dh-python (5.20221008) ....
+2022-10-11 17:23:05.540926 +0000 build-debian42: output: Selecting previously unselected package distro-info-data..
+2022-10-11 17:23:05.543084 +0000 build-debian42: output: Preparing to unpack .../35-distro-info-data_0.54_all.deb ....
+2022-10-11 17:23:05.551724 +0000 build-debian42: output: Unpacking distro-info-data (0.54) ....
+2022-10-11 17:23:05.649954 +0000 build-debian42: output: Selecting previously unselected package libglib2.0-0:amd64..
+2022-10-11 17:23:05.652158 +0000 build-debian42: output: Preparing to unpack .../36-libglib2.0-0_2.74.0-2_amd64.deb ....
+2022-10-11 17:23:05.661156 +0000 build-debian42: output: Unpacking libglib2.0-0:amd64 (2.74.0-2) ....
+2022-10-11 17:23:05.844722 +0000 build-debian42: output: Selecting previously unselected package libgirepository-1.0-1:amd64..
+2022-10-11 17:23:05.845460 +0000 build-debian42: output: Preparing to unpack .../37-libgirepository-1.0-1_1.74.0-2_amd64.deb ....
+2022-10-11 17:23:05.853686 +0000 build-debian42: output: Unpacking libgirepository-1.0-1:amd64 (1.74.0-2) ....
+2022-10-11 17:23:05.926995 +0000 build-debian42: output: Selecting previously unselected package gir1.2-glib-2.0:amd64..
+2022-10-11 17:23:05.927772 +0000 build-debian42: output: Preparing to unpack .../38-gir1.2-glib-2.0_1.74.0-2_amd64.deb ....
+2022-10-11 17:23:05.938872 +0000 build-debian42: output: Unpacking gir1.2-glib-2.0:amd64 (1.74.0-2) ....
+2022-10-11 17:23:06.026528 +0000 build-debian42: output: Selecting previously unselected package liblua5.3-0:amd64..
+2022-10-11 17:23:06.028674 +0000 build-debian42: output: Preparing to unpack .../39-liblua5.3-0_5.3.6-1+b1_amd64.deb ....
+2022-10-11 17:23:06.039293 +0000 build-debian42: output: Unpacking liblua5.3-0:amd64 (5.3.6-1+b1) ....
+2022-10-11 17:23:06.115512 +0000 build-debian42: output: Selecting previously unselected package libpam0g-dev:amd64..
+2022-10-11 17:23:06.117694 +0000 build-debian42: output: Preparing to unpack .../40-libpam0g-dev_1.5.2-2_amd64.deb ....
+2022-10-11 17:23:06.126301 +0000 build-debian42: output: Unpacking libpam0g-dev:amd64 (1.5.2-2) ....
+2022-10-11 17:23:06.243745 +0000 build-debian42: output: Selecting previously unselected package libxentoolcore1:amd64..
+2022-10-11 17:23:06.246010 +0000 build-debian42: output: Preparing to unpack .../41-libxentoolcore1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.257245 +0000 build-debian42: output: Unpacking libxentoolcore1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.341408 +0000 build-debian42: output: Selecting previously unselected package libxentoollog1:amd64..
+2022-10-11 17:23:06.343917 +0000 build-debian42: output: Preparing to unpack .../42-libxentoollog1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.355518 +0000 build-debian42: output: Unpacking libxentoollog1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.453051 +0000 build-debian42: output: Selecting previously unselected package libxencall1:amd64..
+2022-10-11 17:23:06.455597 +0000 build-debian42: output: Preparing to unpack .../43-libxencall1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.465259 +0000 build-debian42: output: Unpacking libxencall1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.542795 +0000 build-debian42: output: Selecting previously unselected package libxendevicemodel1:amd64..
+2022-10-11 17:23:06.543483 +0000 build-debian42: output: Preparing to unpack .../44-libxendevicemodel1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.551634 +0000 build-debian42: output: Unpacking libxendevicemodel1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.626815 +0000 build-debian42: output: Selecting previously unselected package libxenevtchn1:amd64..
+2022-10-11 17:23:06.629097 +0000 build-debian42: output: Preparing to unpack .../45-libxenevtchn1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.637607 +0000 build-debian42: output: Unpacking libxenevtchn1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.709023 +0000 build-debian42: output: Selecting previously unselected package libxenforeignmemory1:amd64..
+2022-10-11 17:23:06.710387 +0000 build-debian42: output: Preparing to unpack .../46-libxenforeignmemory1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.721437 +0000 build-debian42: output: Unpacking libxenforeignmemory1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.800282 +0000 build-debian42: output: Selecting previously unselected package libxengnttab1:amd64..
+2022-10-11 17:23:06.802464 +0000 build-debian42: output: Preparing to unpack .../47-libxengnttab1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.813914 +0000 build-debian42: output: Unpacking libxengnttab1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.902644 +0000 build-debian42: output: Selecting previously unselected package libxenhypfs1:amd64..
+2022-10-11 17:23:06.903440 +0000 build-debian42: output: Preparing to unpack .../48-libxenhypfs1_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:06.911108 +0000 build-debian42: output: Unpacking libxenhypfs1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:06.994118 +0000 build-debian42: output: Selecting previously unselected package libxenstore4:amd64..
+2022-10-11 17:23:06.996643 +0000 build-debian42: output: Preparing to unpack .../49-libxenstore4_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:07.006235 +0000 build-debian42: output: Unpacking libxenstore4:amd64 (4.16.2-2) ....
+2022-10-11 17:23:07.088669 +0000 build-debian42: output: Selecting previously unselected package libyajl2:amd64..
+2022-10-11 17:23:07.091100 +0000 build-debian42: output: Preparing to unpack .../50-libyajl2_2.1.0-3_amd64.deb ....
+2022-10-11 17:23:07.100211 +0000 build-debian42: output: Unpacking libyajl2:amd64 (2.1.0-3) ....
+2022-10-11 17:23:07.179781 +0000 build-debian42: output: Selecting previously unselected package libxenmisc4.16:amd64..
+2022-10-11 17:23:07.180747 +0000 build-debian42: output: Preparing to unpack .../51-libxenmisc4.16_4.16.2-2_amd64.deb ....
+2022-10-11 17:23:07.189180 +0000 build-debian42: output: Unpacking libxenmisc4.16:amd64 (4.16.2-2) ....
+2022-10-11 17:23:07.327814 +0000 build-debian42: output: Selecting previously unselected package libxenstore3.0:amd64..
+2022-10-11 17:23:07.328809 +0000 build-debian42: output: Preparing to unpack .../52-libxenstore3.0_4.14.5-8+deb12u1_amd64.deb ....
+2022-10-11 17:23:07.340952 +0000 build-debian42: output: Unpacking libxenstore3.0:amd64 (4.14.5-8+deb12u1) ....
+2022-10-11 17:23:07.431593 +0000 build-debian42: output: Selecting previously unselected package libyaml-0-2:amd64..
+2022-10-11 17:23:07.432918 +0000 build-debian42: output: Preparing to unpack .../53-libyaml-0-2_0.2.5-1_amd64.deb ....
+2022-10-11 17:23:07.448779 +0000 build-debian42: output: Unpacking libyaml-0-2:amd64 (0.2.5-1) ....
+2022-10-11 17:23:07.540174 +0000 build-debian42: output: Selecting previously unselected package lsb-release..
+2022-10-11 17:23:07.541297 +0000 build-debian42: output: Preparing to unpack .../54-lsb-release_11.4_all.deb ....
+2022-10-11 17:23:07.550171 +0000 build-debian42: output: Unpacking lsb-release (11.4) ....
+2022-10-11 17:23:07.617708 +0000 build-debian42: output: Selecting previously unselected package pandoc-data..
+2022-10-11 17:23:07.618509 +0000 build-debian42: output: Preparing to unpack .../55-pandoc-data_2.17.1.1-1_all.deb ....
+2022-10-11 17:23:07.629290 +0000 build-debian42: output: Unpacking pandoc-data (2.17.1.1-1) ....
+2022-10-11 17:23:07.767488 +0000 build-debian42: output: Selecting previously unselected package pandoc..
+2022-10-11 17:23:07.768374 +0000 build-debian42: output: Preparing to unpack .../56-pandoc_2.17.1.1-1+b1_amd64.deb ....
+2022-10-11 17:23:07.786079 +0000 build-debian42: output: Unpacking pandoc (2.17.1.1-1+b1) ....
+2022-10-11 17:23:10.053909 +0000 build-debian42: output: Selecting previously unselected package pkg-config..
+2022-10-11 17:23:10.054848 +0000 build-debian42: output: Preparing to unpack .../57-pkg-config_0.29.2-1_amd64.deb ....
+2022-10-11 17:23:10.062952 +0000 build-debian42: output: Unpacking pkg-config (0.29.2-1) ....
+2022-10-11 17:23:10.134058 +0000 build-debian42: output: Selecting previously unselected package python3-gi..
+2022-10-11 17:23:10.136289 +0000 build-debian42: output: Preparing to unpack .../58-python3-gi_3.42.2-2_amd64.deb ....
+2022-10-11 17:23:10.144358 +0000 build-debian42: output: Unpacking python3-gi (3.42.2-2) ....
+2022-10-11 17:23:10.237443 +0000 build-debian42: output: Selecting previously unselected package python3-gbulb..
+2022-10-11 17:23:10.238593 +0000 build-debian42: output: Preparing to unpack .../59-python3-gbulb_0.6.1-0.1_all.deb ....
+2022-10-11 17:23:10.246213 +0000 build-debian42: output: Unpacking python3-gbulb (0.6.1-0.1) ....
+2022-10-11 17:23:10.313535 +0000 build-debian42: output: Selecting previously unselected package python3-pkg-resources..
+2022-10-11 17:23:10.314722 +0000 build-debian42: output: Preparing to unpack .../60-python3-pkg-resources_59.6.0-1.2_all.deb ....
+2022-10-11 17:23:10.323032 +0000 build-debian42: output: Unpacking python3-pkg-resources (59.6.0-1.2) ....
+2022-10-11 17:23:10.422497 +0000 build-debian42: output: Selecting previously unselected package python3-setuptools..
+2022-10-11 17:23:10.423528 +0000 build-debian42: output: Preparing to unpack .../61-python3-setuptools_59.6.0-1.2_all.deb ....
+2022-10-11 17:23:10.432022 +0000 build-debian42: output: Unpacking python3-setuptools (59.6.0-1.2) ....
+2022-10-11 17:23:10.551063 +0000 build-debian42: output: Selecting previously unselected package libvchan-xen..
+2022-10-11 17:23:10.552616 +0000 build-debian42: output: Preparing to unpack .../62-libvchan-xen_4.1.8-1+deb12u1_amd64.deb ....
+2022-10-11 17:23:10.993420 +0000 build-debian42: output: Unpacking libvchan-xen (4.1.8-1+deb12u1) ....
+2022-10-11 17:23:12.195807 +0000 build-debian42: output: Selecting previously unselected package libvchan-xen-dev..
+2022-10-11 17:23:12.196638 +0000 build-debian42: output: Preparing to unpack .../63-libvchan-xen-dev_4.1.8-1+deb12u1_amd64.deb ....
+2022-10-11 17:23:12.206546 +0000 build-debian42: output: Unpacking libvchan-xen-dev (4.1.8-1+deb12u1) ....
+2022-10-11 17:23:12.300647 +0000 build-debian42: output: Setting up media-types (8.0.0) ....
+2022-10-11 17:23:12.340339 +0000 build-debian42: output: Setting up libpipeline1:amd64 (1.5.6-3) ....
+2022-10-11 17:23:12.361860 +0000 build-debian42: output: Setting up libicu71:amd64 (71.1-3) ....
+2022-10-11 17:23:12.395163 +0000 build-debian42: output: Setting up libxentoollog1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:12.419705 +0000 build-debian42: output: Setting up libxentoolcore1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:12.449326 +0000 build-debian42: output: Setting up bsdextrautils (2.38.1-1) ....
+2022-10-11 17:23:12.475311 +0000 build-debian42: output: Setting up libxencall1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:12.502410 +0000 build-debian42: output: Setting up libpam0g-dev:amd64 (1.5.2-2) ....
+2022-10-11 17:23:12.528108 +0000 build-debian42: output: Setting up libmagic-mgc (1:5.41-4) ....
+2022-10-11 17:23:12.553258 +0000 build-debian42: output: Setting up libarchive-zip-perl (1.68-1) ....
+2022-10-11 17:23:12.585006 +0000 build-debian42: output: Setting up libyaml-0-2:amd64 (0.2.5-1) ....
+2022-10-11 17:23:12.611803 +0000 build-debian42: output: Setting up libglib2.0-0:amd64 (2.74.0-2) ....
+2022-10-11 17:23:12.635306 +0000 build-debian42: output: No schema files found: doing nothing..
+2022-10-11 17:23:12.648692 +0000 build-debian42: output: Setting up distro-info-data (0.54) ....
+2022-10-11 17:23:12.674243 +0000 build-debian42: output: Setting up libdebhelper-perl (13.10) ....
+2022-10-11 17:23:12.699675 +0000 build-debian42: output: Setting up libyajl2:amd64 (2.1.0-3) ....
+2022-10-11 17:23:12.732592 +0000 build-debian42: output: Setting up libmagic1:amd64 (1:5.41-4) ....
+2022-10-11 17:23:12.779988 +0000 build-debian42: output: Setting up gettext-base (0.21-9) ....
+2022-10-11 17:23:12.806877 +0000 build-debian42: output: Setting up m4 (1.4.19-1) ....
+2022-10-11 17:23:12.834947 +0000 build-debian42: output: Setting up file (1:5.41-4) ....
+2022-10-11 17:23:12.868397 +0000 build-debian42: output: Setting up libxenforeignmemory1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:12.894186 +0000 build-debian42: output: Setting up autotools-dev (20220109.1) ....
+2022-10-11 17:23:12.916671 +0000 build-debian42: output: Setting up libxenstore3.0:amd64 (4.14.5-8+deb12u1) ....
+2022-10-11 17:23:12.943384 +0000 build-debian42: output: Setting up autopoint (0.21-9) ....
+2022-10-11 17:23:12.968341 +0000 build-debian42: output: Setting up pkg-config (0.29.2-1) ....
+2022-10-11 17:23:13.040135 +0000 build-debian42: output: Setting up libxenstore4:amd64 (4.16.2-2) ....
+2022-10-11 17:23:13.066004 +0000 build-debian42: output: Setting up autoconf (2.71-2) ....
+2022-10-11 17:23:13.100042 +0000 build-debian42: output: Setting up libxengnttab1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:13.136525 +0000 build-debian42: output: Setting up sensible-utils (0.0.17) ....
+2022-10-11 17:23:13.172938 +0000 build-debian42: output: Setting up libuchardet0:amd64 (0.0.7-1) ....
+2022-10-11 17:23:13.201293 +0000 build-debian42: output: Setting up liblua5.3-0:amd64 (5.3.6-1+b1) ....
+2022-10-11 17:23:13.227576 +0000 build-debian42: output: Setting up libmpdec3:amd64 (2.5.1-2) ....
+2022-10-11 17:23:13.256472 +0000 build-debian42: output: Setting up libxenevtchn1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:13.283341 +0000 build-debian42: output: Setting up libsub-override-perl (0.09-3) ....
+2022-10-11 17:23:13.307521 +0000 build-debian42: output: Setting up libgirepository-1.0-1:amd64 (1.74.0-2) ....
+2022-10-11 17:23:13.336466 +0000 build-debian42: output: Setting up sgml-base (1.31) ....
+2022-10-11 17:23:13.380289 +0000 build-debian42: output: Setting up pandoc-data (2.17.1.1-1) ....
+2022-10-11 17:23:13.408362 +0000 build-debian42: output: Setting up libelf1:amd64 (0.187-4) ....
+2022-10-11 17:23:13.437737 +0000 build-debian42: output: Setting up readline-common (8.2-1) ....
+2022-10-11 17:23:13.475084 +0000 build-debian42: output: Setting up libxendevicemodel1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:13.505278 +0000 build-debian42: output: Setting up libxml2:amd64 (2.9.14+dfsg-1+b1) ....
+2022-10-11 17:23:13.532070 +0000 build-debian42: output: Setting up automake (1:1.16.5-1.3) ....
+2022-10-11 17:23:13.552732 +0000 build-debian42: output: update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode.
+2022-10-11 17:23:13.569479 +0000 build-debian42: output: Setting up libfile-stripnondeterminism-perl (1.13.0-1) ....
+2022-10-11 17:23:13.597018 +0000 build-debian42: output: Setting up gettext (0.21-9) ....
+2022-10-11 17:23:13.628173 +0000 build-debian42: output: Setting up libxenhypfs1:amd64 (4.16.2-2) ....
+2022-10-11 17:23:13.659466 +0000 build-debian42: output: Setting up libtool (2.4.7-4) ....
+2022-10-11 17:23:13.691237 +0000 build-debian42: output: Setting up libreadline8:amd64 (8.2-1) ....
+2022-10-11 17:23:13.723549 +0000 build-debian42: output: Setting up intltool-debian (0.35.0+20060710.5) ....
+2022-10-11 17:23:13.757088 +0000 build-debian42: output: Setting up libpython3.10-stdlib:amd64 (3.10.7-1) ....
+2022-10-11 17:23:13.782645 +0000 build-debian42: output: Setting up dh-autoreconf (20) ....
+2022-10-11 17:23:13.835666 +0000 build-debian42: output: Setting up pandoc (2.17.1.1-1+b1) ....
+2022-10-11 17:23:13.865643 +0000 build-debian42: output: Setting up gir1.2-glib-2.0:amd64 (1.74.0-2) ....
+2022-10-11 17:23:13.888378 +0000 build-debian42: output: Setting up dh-strip-nondeterminism (1.13.0-1) ....
+2022-10-11 17:23:13.917446 +0000 build-debian42: output: Setting up dwz (0.14+20220924-2) ....
+2022-10-11 17:23:13.946472 +0000 build-debian42: output: Setting up groff-base (1.22.4-8) ....
+2022-10-11 17:23:13.984781 +0000 build-debian42: output: Setting up libxenmisc4.16:amd64 (4.16.2-2) ....
+2022-10-11 17:23:14.012584 +0000 build-debian42: output: Setting up libpython3-stdlib:amd64 (3.10.6-1) ....
+2022-10-11 17:23:14.058825 +0000 build-debian42: output: Setting up python3.10 (3.10.7-1) ....
+2022-10-11 17:23:14.602026 +0000 build-debian42: output: Setting up po-debconf (1.0.21+nmu1) ....
+2022-10-11 17:23:14.624504 +0000 build-debian42: output: Setting up python3 (3.10.6-1) ....
+2022-10-11 17:23:14.865555 +0000 build-debian42: output: Setting up man-db (2.10.2-3) ....
+2022-10-11 17:23:14.970105 +0000 build-debian42: output: Not building database; man-db/auto-update is not 'true'..
+2022-10-11 17:23:15.101024 +0000 build-debian42: output: Setting up python3-gi (3.42.2-2) ....
+2022-10-11 17:23:15.252707 +0000 build-debian42: output: Setting up python3-gbulb (0.6.1-0.1) ....
+2022-10-11 17:23:15.362823 +0000 build-debian42: output: Setting up libvchan-xen (4.1.8-1+deb12u1) ....
+2022-10-11 17:23:15.376277 +0000 build-debian42: output: Setting up lsb-release (11.4) ....
+2022-10-11 17:23:15.483679 +0000 build-debian42: output: Setting up python3-lib2to3 (3.10.7-1) ....
+2022-10-11 17:23:15.568304 +0000 build-debian42: output: Setting up python3-pkg-resources (59.6.0-1.2) ....
+2022-10-11 17:23:15.706706 +0000 build-debian42: output: Setting up python3-distutils (3.10.7-1) ....
+2022-10-11 17:23:15.813908 +0000 build-debian42: output: Setting up dh-python (5.20221008) ....
+2022-10-11 17:23:15.929076 +0000 build-debian42: output: Setting up python3-setuptools (59.6.0-1.2) ....
+2022-10-11 17:23:16.194785 +0000 build-debian42: output: Setting up debhelper (13.10) ....
+2022-10-11 17:23:16.208242 +0000 build-debian42: output: Setting up libvchan-xen-dev (4.1.8-1+deb12u1) ....
+2022-10-11 17:23:16.227015 +0000 build-debian42: output: Processing triggers for libc-bin (2.35-2) ....
+2022-10-11 17:23:16.398658 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:23:16.502896 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:23:16.502948 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:23:16.586215 +0000 build-debian42: output: Reading extended state information...
+2022-10-11 17:23:16.596472 +0000 build-debian42: output: Initializing package states...
+2022-10-11 17:23:16.719612 +0000 build-debian42: output: Writing extended state information...
+2022-10-11 17:23:16.829480 +0000 build-debian42: output: Building tag database...
+2022-10-11 17:23:16.851411 +0000 build-debian42: output:  -> Finished parsing the build-deps
+2022-10-11 17:23:16.861345 +0000 build-debian42: output: Reading package lists...
+2022-10-11 17:23:16.950276 +0000 build-debian42: output: Building dependency tree...
+2022-10-11 17:23:16.950404 +0000 build-debian42: output: Reading state information...
+2022-10-11 17:23:17.041527 +0000 build-debian42: output: The following additional packages will be installed:
+2022-10-11 17:23:17.041714 +0000 build-debian42: output:   libfakeroot
+2022-10-11 17:23:17.057187 +0000 build-debian42: output: The following NEW packages will be installed:
+2022-10-11 17:23:17.057884 +0000 build-debian42: output:   fakeroot libfakeroot
+2022-10-11 17:23:19.121166 +0000 build-debian42: output: 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+2022-10-11 17:23:19.121213 +0000 build-debian42: output: Need to get 136 kB of archives.
+2022-10-11 17:23:19.121227 +0000 build-debian42: output: After this operation, 401 kB of additional disk space will be used.
+2022-10-11 17:23:19.121567 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian bookworm/main amd64 libfakeroot amd64 1.29-1 [48.5 kB]
+2022-10-11 17:23:20.813322 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian bookworm/main amd64 fakeroot amd64 1.29-1 [87.3 kB]
+2022-10-11 17:23:22.479909 +0000 build-debian42: output: debconf: delaying package configuration, since apt-utils is not installed
+2022-10-11 17:23:22.491503 +0000 build-debian42: output: Fetched 136 kB in 5s (25.5 kB/s)
+2022-10-11 17:23:22.514009 +0000 build-debian42: output: Selecting previously unselected package libfakeroot:amd64..
+2022-10-11 17:23:22.519473 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 17020 files and directories currently installed.).
+2022-10-11 17:23:22.519625 +0000 build-debian42: output: Preparing to unpack .../libfakeroot_1.29-1_amd64.deb ....
+2022-10-11 17:23:22.530794 +0000 build-debian42: output: Unpacking libfakeroot:amd64 (1.29-1) ....
+2022-10-11 17:23:22.580771 +0000 build-debian42: output: Selecting previously unselected package fakeroot..
+2022-10-11 17:23:22.582799 +0000 build-debian42: output: Preparing to unpack .../fakeroot_1.29-1_amd64.deb ....
+2022-10-11 17:23:22.588009 +0000 build-debian42: output: Unpacking fakeroot (1.29-1) ....
+2022-10-11 17:23:22.665273 +0000 build-debian42: output: Setting up libfakeroot:amd64 (1.29-1) ....
+2022-10-11 17:23:22.686615 +0000 build-debian42: output: Setting up fakeroot (1.29-1) ....
+2022-10-11 17:23:22.706459 +0000 build-debian42: output: update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode.
+2022-10-11 17:23:22.733873 +0000 build-debian42: output: Processing triggers for man-db (2.10.2-3) ....
+2022-10-11 17:23:22.739899 +0000 build-debian42: output: Not building database; man-db/auto-update is not 'true'..
+2022-10-11 17:23:22.745605 +0000 build-debian42: output: Processing triggers for libc-bin (2.35-2) ....
+2022-10-11 17:23:22.875207 +0000 build-debian42: output: I: Building the package
+2022-10-11 17:23:22.879001 +0000 build-debian42: output: I: Running cd /build/qubes-core-qrexec-4.2.0/ && env PATH="/usr/sbin:/usr/bin:/sbin:/bin" HOME="/nonexistent" dpkg-buildpackage -us -uc -sa
+2022-10-11 17:23:22.935476 +0000 build-debian42: output: dpkg-buildpackage: info: source package qubes-core-qrexec
+2022-10-11 17:23:22.935548 +0000 build-debian42: output: dpkg-buildpackage: info: source version 4.2.0-1+deb12u1
+2022-10-11 17:23:22.935570 +0000 build-debian42: output: dpkg-buildpackage: info: source distribution bookworm
+2022-10-11 17:23:22.935591 +0000 build-debian42: output: dpkg-buildpackage: info: source changed by Builder <user@localhost>
+2022-10-11 17:23:22.947278 +0000 build-debian42: output: dpkg-buildpackage: info: host architecture amd64
+2022-10-11 17:23:22.947402 +0000 build-debian42: output:  dpkg-source --before-build .
+2022-10-11 17:23:23.046441 +0000 build-debian42: output:  fakeroot debian/rules clean
+2022-10-11 17:23:23.052132 +0000 build-debian42: output: dh clean --with systemd,python3
+2022-10-11 17:23:23.120640 +0000 build-debian42: output:    dh_auto_clean
+2022-10-11 17:23:23.210253 +0000 build-debian42: output: .make -j2 clean
+2022-10-11 17:23:23.211238 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:23.211393 +0000 build-debian42: output: make -C libqrexec clean
+2022-10-11 17:23:23.212401 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:23.215853 +0000 build-debian42: output: rm -f *.o *~ *.a *.so *.so.* *.o.dep
+2022-10-11 17:23:23.217278 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:23.217313 +0000 build-debian42: output: make -C daemon clean
+2022-10-11 17:23:23.217924 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0/daemon'
+2022-10-11 17:23:23.219714 +0000 build-debian42: output: rm -f *.o *~ qrexec-daemon qrexec-client *.o.dep
+2022-10-11 17:23:23.221909 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0/daemon'
+2022-10-11 17:23:23.221945 +0000 build-debian42: output: make -C agent clean
+2022-10-11 17:23:23.222557 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:23.284803 +0000 build-debian42: output: rm -f -- *.o *~ qrexec-agent qrexec-client-vm *.o.dep
+2022-10-11 17:23:23.286100 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:23.286205 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:23.287652 +0000 build-debian42: output:    dh_clean
+2022-10-11 17:23:23.321689 +0000 build-debian42: output:  dpkg-source -b .
+2022-10-11 17:23:23.386053 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2022-10-11 17:23:23.386117 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec using existing ./qubes-core-qrexec_4.2.0.orig.tar.gz
+2022-10-11 17:23:23.411174 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec in qubes-core-qrexec_4.2.0-1+deb12u1.debian.tar.xz
+2022-10-11 17:23:23.430192 +0000 build-debian42: output: dpkg-source: info: building qubes-core-qrexec in qubes-core-qrexec_4.2.0-1+deb12u1.dsc
+2022-10-11 17:23:23.433671 +0000 build-debian42: output:  debian/rules build
+2022-10-11 17:23:23.434505 +0000 build-debian42: output: dh build --with systemd,python3
+2022-10-11 17:23:23.539308 +0000 build-debian42: output:    dh_update_autotools_config
+2022-10-11 17:23:23.571477 +0000 build-debian42: output:    dh_autoreconf
+2022-10-11 17:23:23.606928 +0000 build-debian42: output:    dh_auto_configure
+2022-10-11 17:23:23.636834 +0000 build-debian42: output:    debian/rules override_dh_auto_build
+2022-10-11 17:23:23.637918 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:23.638023 +0000 build-debian42: output: make all-base
+2022-10-11 17:23:23.906648 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:23.906738 +0000 build-debian42: output: make all -C libqrexec
+2022-10-11 17:23:23.907024 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:23.910588 +0000 build-debian42: output: gcc unix-server.c -c -o unix-server.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF unix-server.o.dep
+2022-10-11 17:23:23.950947 +0000 build-debian42: output: gcc ioall.c -c -o ioall.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF ioall.o.dep
+2022-10-11 17:23:24.001307 +0000 build-debian42: output: gcc buffer.c -c -o buffer.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF buffer.o.dep
+2022-10-11 17:23:24.045364 +0000 build-debian42: output: gcc exec.c -c -o exec.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF exec.o.dep
+2022-10-11 17:23:24.182068 +0000 build-debian42: output: gcc txrx-vchan.c -c -o txrx-vchan.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF txrx-vchan.o.dep
+2022-10-11 17:23:24.226457 +0000 build-debian42: output: gcc write-stdin.c -c -o write-stdin.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF write-stdin.o.dep
+2022-10-11 17:23:24.271055 +0000 build-debian42: output: gcc replace.c -c -o replace.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF replace.o.dep
+2022-10-11 17:23:24.300248 +0000 build-debian42: output: gcc remote.c -c -o remote.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF remote.o.dep
+2022-10-11 17:23:24.361874 +0000 build-debian42: output: gcc process_io.c -c -o process_io.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF process_io.o.dep
+2022-10-11 17:23:24.452227 +0000 build-debian42: output: gcc log.c -c -o log.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF log.o.dep
+2022-10-11 17:23:24.503269 +0000 build-debian42: output: gcc -Wl,-z,relro -pie -Wl,-z,relro,-z,now -shared -Wl,-soname,libqrexec-utils.so.3 -o libqrexec-utils.so.3 unix-server.o ioall.o buffer.o exec.o txrx-vchan.o write-stdin.o replace.o remote.o process_io.o log.o -lvchan-xen
+2022-10-11 17:23:24.521880 +0000 build-debian42: output: ln -sf libqrexec-utils.so.3 libqrexec-utils.so
+2022-10-11 17:23:24.522404 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:24.522431 +0000 build-debian42: output: python3 setup.py build
+2022-10-11 17:23:24.599889 +0000 build-debian42: output: running build
+2022-10-11 17:23:24.599932 +0000 build-debian42: output: running build_py
+2022-10-11 17:23:24.601134 +0000 build-debian42: output: creating build
+2022-10-11 17:23:24.601486 +0000 build-debian42: output: creating build/lib
+2022-10-11 17:23:24.601732 +0000 build-debian42: output: creating build/lib/qrexec
+2022-10-11 17:23:24.602249 +0000 build-debian42: output: copying qrexec/utils.py -> build/lib/qrexec
+2022-10-11 17:23:24.602393 +0000 build-debian42: output: copying qrexec/__init__.py -> build/lib/qrexec
+2022-10-11 17:23:24.602477 +0000 build-debian42: output: copying qrexec/exc.py -> build/lib/qrexec
+2022-10-11 17:23:24.602630 +0000 build-debian42: output: copying qrexec/client.py -> build/lib/qrexec
+2022-10-11 17:23:24.602699 +0000 build-debian42: output: copying qrexec/server.py -> build/lib/qrexec
+2022-10-11 17:23:24.602765 +0000 build-debian42: output: creating build/lib/qrexec/tests
+2022-10-11 17:23:24.602916 +0000 build-debian42: output: copying qrexec/tests/qrexec_policy_daemon.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.602955 +0000 build-debian42: output: copying qrexec/tests/policy_parser.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.602975 +0000 build-debian42: output: copying qrexec/tests/gtkhelpers.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603184 +0000 build-debian42: output: copying qrexec/tests/__init__.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603311 +0000 build-debian42: output: copying qrexec/tests/server.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603384 +0000 build-debian42: output: copying qrexec/tests/rpcconfirmation.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603459 +0000 build-debian42: output: copying qrexec/tests/cli.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603480 +0000 build-debian42: output: copying qrexec/tests/policy_admin.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603512 +0000 build-debian42: output: copying qrexec/tests/policy_cache.py -> build/lib/qrexec/tests
+2022-10-11 17:23:24.603528 +0000 build-debian42: output: creating build/lib/qrexec/tools
+2022-10-11 17:23:24.603602 +0000 build-debian42: output: copying qrexec/tools/qrexec_policy_daemon.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603626 +0000 build-debian42: output: copying qrexec/tools/qrexec_policy_restore.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603648 +0000 build-debian42: output: copying qrexec/tools/qubes_policy_admin.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603668 +0000 build-debian42: output: copying qrexec/tools/qrexec_policy_agent.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603736 +0000 build-debian42: output: copying qrexec/tools/__init__.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603767 +0000 build-debian42: output: copying qrexec/tools/qrexec_policy_graph.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603929 +0000 build-debian42: output: copying qrexec/tools/qubes_policy.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603959 +0000 build-debian42: output: copying qrexec/tools/qrexec_policy_exec.py -> build/lib/qrexec/tools
+2022-10-11 17:23:24.603976 +0000 build-debian42: output: creating build/lib/qrexec/policy
+2022-10-11 17:23:24.604005 +0000 build-debian42: output: copying qrexec/policy/parser.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604120 +0000 build-debian42: output: copying qrexec/policy/utils.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604149 +0000 build-debian42: output: copying qrexec/policy/admin_client.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604321 +0000 build-debian42: output: copying qrexec/policy/__init__.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604400 +0000 build-debian42: output: copying qrexec/policy/parser_compat.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604452 +0000 build-debian42: output: copying qrexec/policy/admin.py -> build/lib/qrexec/policy
+2022-10-11 17:23:24.604651 +0000 build-debian42: output: creating build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.604683 +0000 build-debian42: output: copying qrexec/tests/socket/agent.py -> build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.604821 +0000 build-debian42: output: copying qrexec/tests/socket/__init__.py -> build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.604967 +0000 build-debian42: output: copying qrexec/tests/socket/daemon.py -> build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.605201 +0000 build-debian42: output: copying qrexec/tests/socket/qrexec.py -> build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.605240 +0000 build-debian42: output: copying qrexec/tests/socket/util.py -> build/lib/qrexec/tests/socket
+2022-10-11 17:23:24.605423 +0000 build-debian42: output: creating build/lib/qrexec/glade
+2022-10-11 17:23:24.605522 +0000 build-debian42: output: copying qrexec/glade/RPCConfirmationWindow.glade -> build/lib/qrexec/glade
+2022-10-11 17:23:24.617463 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:24.617503 +0000 build-debian42: output: make all-vm
+2022-10-11 17:23:24.618151 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:24.618272 +0000 build-debian42: output: make all -C agent
+2022-10-11 17:23:24.618683 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:24.665618 +0000 build-debian42: output: cc qrexec-agent.c -c -o qrexec-agent.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_PAM -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF qrexec-agent.o.dep
+2022-10-11 17:23:24.898982 +0000 build-debian42: output: cc qrexec-agent-data.c -c -o qrexec-agent-data.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_PAM -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF qrexec-agent-data.o.dep
+2022-10-11 17:23:24.973976 +0000 build-debian42: output: cc -Wl,-z,relro -pie -Wl,-z,relro,-z,now -L../libqrexec -pie -g -o qrexec-agent qrexec-agent.o qrexec-agent-data.o -lqrexec-utils -lvchan-xen -lpam
+2022-10-11 17:23:24.994799 +0000 build-debian42: output: cc qrexec-client-vm.c -c -o qrexec-client-vm.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_PAM -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF qrexec-client-vm.o.dep
+2022-10-11 17:23:25.078191 +0000 build-debian42: output: cc -Wl,-z,relro -pie -Wl,-z,relro,-z,now -L../libqrexec -pie -g -o qrexec-client-vm qrexec-client-vm.o qrexec-agent-data.o -lqrexec-utils -lvchan-xen -lpam
+2022-10-11 17:23:25.092954 +0000 build-debian42: output: cc qrexec-fork-server.c -c -o qrexec-fork-server.o -I. -I../libqrexec -g -O2 -Wall -Wextra -Werror -I/usr/include/vchan-xen -fstack-protector -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fPIC -std=gnu11 -D_POSIX_C_SOURCE=200809L -D_GNU_SOURCE -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -DHAVE_PAM -g -O2 -ffile-prefix-map=/build/qubes-core-qrexec-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -MD -MP -MF qrexec-fork-server.o.dep
+2022-10-11 17:23:25.173827 +0000 build-debian42: output: cc -Wl,-z,relro -pie -Wl,-z,relro,-z,now -L../libqrexec -pie -g -o qrexec-fork-server qrexec-fork-server.o qrexec-agent-data.o -lqrexec-utils -lvchan-xen -lpam
+2022-10-11 17:23:25.188187 +0000 build-debian42: output: pandoc qrexec-client-vm.rst > qrexec-client-vm.1
+2022-10-11 17:23:25.224636 +0000 build-debian42: output: gzip -f qrexec-client-vm.1
+2022-10-11 17:23:25.226096 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:25.226265 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:25.226429 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:25.228697 +0000 build-debian42: output:    dh_auto_test
+2022-10-11 17:23:25.268435 +0000 build-debian42: output:    create-stamp debian/debhelper-build-stamp
+2022-10-11 17:23:25.270412 +0000 build-debian42: output:  fakeroot debian/rules binary
+2022-10-11 17:23:25.283447 +0000 build-debian42: output: dh binary --with systemd,python3
+2022-10-11 17:23:25.352722 +0000 build-debian42: output:    dh_testroot
+2022-10-11 17:23:25.378251 +0000 build-debian42: output:    dh_prep
+2022-10-11 17:23:25.401245 +0000 build-debian42: output:    debian/rules override_dh_auto_install
+2022-10-11 17:23:25.404577 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:25.404632 +0000 build-debian42: output: make install-base
+2022-10-11 17:23:25.653116 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:25.653184 +0000 build-debian42: output: make all -C libqrexec
+2022-10-11 17:23:25.654755 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:25.663181 +0000 build-debian42: output: make[3]: Nothing to be done for 'all'.
+2022-10-11 17:23:25.663352 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:25.663504 +0000 build-debian42: output: python3 setup.py build
+2022-10-11 17:23:25.750131 +0000 build-debian42: output: running build
+2022-10-11 17:23:25.750205 +0000 build-debian42: output: running build_py
+2022-10-11 17:23:25.765466 +0000 build-debian42: output: make install -C libqrexec
+2022-10-11 17:23:25.765876 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:25.771048 +0000 build-debian42: output: install -d -m 0755 /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib
+2022-10-11 17:23:25.772047 +0000 build-debian42: output: install libqrexec-utils.so.3 /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib
+2022-10-11 17:23:25.774391 +0000 build-debian42: output: ln -sf libqrexec-utils.so.3 /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/libqrexec-utils.so
+2022-10-11 17:23:25.775756 +0000 build-debian42: output: install -d -m 0755 /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/include
+2022-10-11 17:23:25.777804 +0000 build-debian42: output: install -m 0644 libqrexec-utils.h /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/include
+2022-10-11 17:23:25.780082 +0000 build-debian42: output: install -m 0644 qrexec.h /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/include
+2022-10-11 17:23:25.782471 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/libqrexec'
+2022-10-11 17:23:25.782528 +0000 build-debian42: output: python3 setup.py install -O1 --install-layout=deb --skip-build --root /build/qubes-core-qrexec-4.2.0/debian/tmp
+2022-10-11 17:23:25.864737 +0000 build-debian42: output: running install
+2022-10-11 17:23:25.864971 +0000 build-debian42: output: /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+2022-10-11 17:23:25.864994 +0000 build-debian42: output:   warnings.warn(
+2022-10-11 17:23:25.865562 +0000 build-debian42: output: running install_lib
+2022-10-11 17:23:25.866395 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3
+2022-10-11 17:23:25.866427 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages
+2022-10-11 17:23:25.866695 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.867063 +0000 build-debian42: output: copying build/lib/qrexec/utils.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.867230 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.867281 +0000 build-debian42: output: copying build/lib/qrexec/tests/qrexec_policy_daemon.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.867471 +0000 build-debian42: output: copying build/lib/qrexec/tests/policy_parser.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.867603 +0000 build-debian42: output: copying build/lib/qrexec/tests/gtkhelpers.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.867944 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.867991 +0000 build-debian42: output: copying build/lib/qrexec/tests/socket/agent.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.868732 +0000 build-debian42: output: copying build/lib/qrexec/tests/socket/__init__.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.868779 +0000 build-debian42: output: copying build/lib/qrexec/tests/socket/daemon.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.868893 +0000 build-debian42: output: copying build/lib/qrexec/tests/socket/qrexec.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.869193 +0000 build-debian42: output: copying build/lib/qrexec/tests/socket/util.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket
+2022-10-11 17:23:25.869245 +0000 build-debian42: output: copying build/lib/qrexec/tests/__init__.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.869459 +0000 build-debian42: output: copying build/lib/qrexec/tests/server.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.869504 +0000 build-debian42: output: copying build/lib/qrexec/tests/rpcconfirmation.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.869653 +0000 build-debian42: output: copying build/lib/qrexec/tests/cli.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.869704 +0000 build-debian42: output: copying build/lib/qrexec/tests/policy_admin.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.870525 +0000 build-debian42: output: copying build/lib/qrexec/tests/policy_cache.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests
+2022-10-11 17:23:25.870826 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871243 +0000 build-debian42: output: copying build/lib/qrexec/tools/qrexec_policy_daemon.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871427 +0000 build-debian42: output: copying build/lib/qrexec/tools/qrexec_policy_restore.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871441 +0000 build-debian42: output: copying build/lib/qrexec/tools/qubes_policy_admin.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871475 +0000 build-debian42: output: copying build/lib/qrexec/tools/qrexec_policy_agent.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871486 +0000 build-debian42: output: copying build/lib/qrexec/tools/__init__.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871517 +0000 build-debian42: output: copying build/lib/qrexec/tools/qrexec_policy_graph.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871527 +0000 build-debian42: output: copying build/lib/qrexec/tools/qubes_policy.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871538 +0000 build-debian42: output: copying build/lib/qrexec/tools/qrexec_policy_exec.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools
+2022-10-11 17:23:25.871549 +0000 build-debian42: output: copying build/lib/qrexec/__init__.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.871589 +0000 build-debian42: output: copying build/lib/qrexec/exc.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.871760 +0000 build-debian42: output: copying build/lib/qrexec/client.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.871783 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/glade
+2022-10-11 17:23:25.871797 +0000 build-debian42: output: copying build/lib/qrexec/glade/RPCConfirmationWindow.glade -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/glade
+2022-10-11 17:23:25.871807 +0000 build-debian42: output: copying build/lib/qrexec/server.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec
+2022-10-11 17:23:25.871981 +0000 build-debian42: output: creating /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872113 +0000 build-debian42: output: copying build/lib/qrexec/policy/parser.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872396 +0000 build-debian42: output: copying build/lib/qrexec/policy/utils.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872502 +0000 build-debian42: output: copying build/lib/qrexec/policy/admin_client.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872542 +0000 build-debian42: output: copying build/lib/qrexec/policy/__init__.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872622 +0000 build-debian42: output: copying build/lib/qrexec/policy/parser_compat.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.872736 +0000 build-debian42: output: copying build/lib/qrexec/policy/admin.py -> /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy
+2022-10-11 17:23:25.873166 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/utils.py to utils.cpython-310.pyc
+2022-10-11 17:23:25.874018 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/qrexec_policy_daemon.py to qrexec_policy_daemon.cpython-310.pyc
+2022-10-11 17:23:25.875754 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/policy_parser.py to policy_parser.cpython-310.pyc
+2022-10-11 17:23:25.882511 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/gtkhelpers.py to gtkhelpers.cpython-310.pyc
+2022-10-11 17:23:25.884257 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket/agent.py to agent.cpython-310.pyc
+2022-10-11 17:23:25.887047 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket/__init__.py to __init__.cpython-310.pyc
+2022-10-11 17:23:25.887170 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket/daemon.py to daemon.cpython-310.pyc
+2022-10-11 17:23:25.890088 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket/qrexec.py to qrexec.cpython-310.pyc
+2022-10-11 17:23:25.890785 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/socket/util.py to util.cpython-310.pyc
+2022-10-11 17:23:25.891084 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/__init__.py to __init__.cpython-310.pyc
+2022-10-11 17:23:25.891257 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/server.py to server.cpython-310.pyc
+2022-10-11 17:23:25.891888 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/rpcconfirmation.py to rpcconfirmation.cpython-310.pyc
+2022-10-11 17:23:25.893553 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/cli.py to cli.cpython-310.pyc
+2022-10-11 17:23:25.894933 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/policy_admin.py to policy_admin.cpython-310.pyc
+2022-10-11 17:23:25.896577 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tests/policy_cache.py to policy_cache.cpython-310.pyc
+2022-10-11 17:23:25.897553 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qrexec_policy_daemon.py to qrexec_policy_daemon.cpython-310.pyc
+2022-10-11 17:23:25.899721 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qrexec_policy_restore.py to qrexec_policy_restore.cpython-310.pyc
+2022-10-11 17:23:25.900579 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qubes_policy_admin.py to qubes_policy_admin.cpython-310.pyc
+2022-10-11 17:23:25.901012 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qrexec_policy_agent.py to qrexec_policy_agent.cpython-310.pyc
+2022-10-11 17:23:25.903149 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/__init__.py to __init__.cpython-310.pyc
+2022-10-11 17:23:25.903285 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qrexec_policy_graph.py to qrexec_policy_graph.cpython-310.pyc
+2022-10-11 17:23:25.904320 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qubes_policy.py to qubes_policy.cpython-310.pyc
+2022-10-11 17:23:25.905095 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/tools/qrexec_policy_exec.py to qrexec_policy_exec.cpython-310.pyc
+2022-10-11 17:23:25.906199 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/__init__.py to __init__.cpython-310.pyc
+2022-10-11 17:23:25.906467 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/exc.py to exc.cpython-310.pyc
+2022-10-11 17:23:25.906738 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/client.py to client.cpython-310.pyc
+2022-10-11 17:23:25.907189 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/server.py to server.cpython-310.pyc
+2022-10-11 17:23:25.907791 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/parser.py to parser.cpython-310.pyc
+2022-10-11 17:23:25.913214 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/utils.py to utils.cpython-310.pyc
+2022-10-11 17:23:25.913601 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/admin_client.py to admin_client.cpython-310.pyc
+2022-10-11 17:23:25.914025 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/__init__.py to __init__.cpython-310.pyc
+2022-10-11 17:23:25.914153 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/parser_compat.py to parser_compat.cpython-310.pyc
+2022-10-11 17:23:25.914912 +0000 build-debian42: output: byte-compiling /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec/policy/admin.py to admin.cpython-310.pyc
+2022-10-11 17:23:25.916200 +0000 build-debian42: output: writing byte-compilation script '/tmp/tmpk3pnijr4.py'
+2022-10-11 17:23:25.916244 +0000 build-debian42: output: /usr/bin/python3 -Wignore:The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives:DeprecationWarning /tmp/tmpk3pnijr4.py
+2022-10-11 17:23:26.011525 +0000 build-debian42: output: removing /tmp/tmpk3pnijr4.py
+2022-10-11 17:23:26.011567 +0000 build-debian42: output: running install_egg_info
+2022-10-11 17:23:26.018168 +0000 build-debian42: output: running egg_info
+2022-10-11 17:23:26.018237 +0000 build-debian42: output: creating qrexec.egg-info
+2022-10-11 17:23:26.018336 +0000 build-debian42: output: writing qrexec.egg-info/PKG-INFO
+2022-10-11 17:23:26.018426 +0000 build-debian42: output: writing dependency_links to qrexec.egg-info/dependency_links.txt
+2022-10-11 17:23:26.018516 +0000 build-debian42: output: writing top-level names to qrexec.egg-info/top_level.txt
+2022-10-11 17:23:26.018607 +0000 build-debian42: output: writing manifest file 'qrexec.egg-info/SOURCES.txt'
+2022-10-11 17:23:26.020152 +0000 build-debian42: output: reading manifest file 'qrexec.egg-info/SOURCES.txt'
+2022-10-11 17:23:26.020913 +0000 build-debian42: output: writing manifest file 'qrexec.egg-info/SOURCES.txt'
+2022-10-11 17:23:26.021249 +0000 build-debian42: output: Copying qrexec.egg-info to /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/python3/dist-packages/qrexec-4.2.0.egg-info
+2022-10-11 17:23:26.021513 +0000 build-debian42: output: Skipping SOURCES.txt
+2022-10-11 17:23:26.022778 +0000 build-debian42: output: running install_scripts
+2022-10-11 17:23:26.069907 +0000 build-debian42: output: ln -s qrexec-policy-exec /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/bin/qrexec-policy
+2022-10-11 17:23:26.070330 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes -m 755
+2022-10-11 17:23:26.071366 +0000 build-debian42: output: install -t /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes -m 755 lib/*
+2022-10-11 17:23:26.073713 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/qubes-rpc -m 755
+2022-10-11 17:23:26.074635 +0000 build-debian42: output: ln -s /var/run/qubes/policy-agent.sock /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/qubes-rpc/policy.Ask
+2022-10-11 17:23:26.075099 +0000 build-debian42: output: ln -s /var/run/qubes/policy-agent.sock /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/qubes-rpc/policy.Notify
+2022-10-11 17:23:26.075546 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/xdg/autostart -m 755
+2022-10-11 17:23:26.076507 +0000 build-debian42: output: install -m 644 policy-agent-extra/qrexec-policy-agent.desktop \
+2022-10-11 17:23:26.076532 +0000 build-debian42: output: ./build/qubes-core-qrexec-4.2.0/debian/tmp/etc/xdg/autostart/qrexec-policy-agent.desktop
+2022-10-11 17:23:26.077368 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.077424 +0000 build-debian42: output: make install-vm
+2022-10-11 17:23:26.078437 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.078466 +0000 build-debian42: output: make all -C agent
+2022-10-11 17:23:26.079081 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:26.154543 +0000 build-debian42: output: make[3]: Nothing to be done for 'all'.
+2022-10-11 17:23:26.154617 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:26.154755 +0000 build-debian42: output: make install -C agent
+2022-10-11 17:23:26.155162 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:26.219041 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/qubes-rpc /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes \
+2022-10-11 17:23:26.219120 +0000 build-debian42: output: ./build/qubes-core-qrexec-4.2.0/debian/tmp/usr/bin /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/share/man/man1
+2022-10-11 17:23:26.219785 +0000 build-debian42: output: install qrexec-agent /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes
+2022-10-11 17:23:26.220893 +0000 build-debian42: output: install qrexec-client-vm /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/bin
+2022-10-11 17:23:26.223169 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/share/man/man1
+2022-10-11 17:23:26.224944 +0000 build-debian42: output: install qrexec-client-vm.1.gz /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/share/man/man1
+2022-10-11 17:23:26.225753 +0000 build-debian42: output: ln -s ../../bin/qrexec-client-vm /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes/qrexec-client-vm
+2022-10-11 17:23:26.226548 +0000 build-debian42: output: ln -s ../../bin/qrexec-client-vm /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/lib/qubes/qrexec_client_vm
+2022-10-11 17:23:26.227093 +0000 build-debian42: output: install qrexec-fork-server /build/qubes-core-qrexec-4.2.0/debian/tmp/usr/bin
+2022-10-11 17:23:26.227970 +0000 build-debian42: output: install -D -m 0644 qrexec.pam.debian /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/pam.d/qrexec
+2022-10-11 17:23:26.228954 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-core-qrexec-4.2.0/agent'
+2022-10-11 17:23:26.229168 +0000 build-debian42: output: install -d /build/qubes-core-qrexec-4.2.0/debian/tmp//lib/systemd/system -m 755
+2022-10-11 17:23:26.229989 +0000 build-debian42: output: install -t /build/qubes-core-qrexec-4.2.0/debian/tmp//lib/systemd/system -m 644 systemd/qubes-qrexec-agent.service
+2022-10-11 17:23:26.230755 +0000 build-debian42: output: install -m 0644 -D qubes-rpc-config/README /build/qubes-core-qrexec-4.2.0/debian/tmp/etc/qubes/rpc-config/README
+2022-10-11 17:23:26.231644 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.231820 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.232258 +0000 build-debian42: output:    debian/rules override_dh_install
+2022-10-11 17:23:26.233786 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.233807 +0000 build-debian42: output: dh_install --fail-missing
+2022-10-11 17:23:26.581788 +0000 build-debian42: output: dh_install: warning: Please use dh_missing --list-missing/--fail-missing instead
+2022-10-11 17:23:26.581913 +0000 build-debian42: output: dh_install: warning: This feature will be removed in compat 12.
+2022-10-11 17:23:26.703278 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.703380 +0000 build-debian42: output:    dh_installdocs
+2022-10-11 17:23:26.731743 +0000 build-debian42: output:    dh_installchangelogs
+2022-10-11 17:23:26.793246 +0000 build-debian42: output:    dh_installman
+2022-10-11 17:23:26.836907 +0000 build-debian42: output:    dh_systemd_enable
+2022-10-11 17:23:26.866213 +0000 build-debian42: output:    dh_python3
+2022-10-11 17:23:26.971317 +0000 build-debian42: output:    debian/rules override_dh_systemd_start
+2022-10-11 17:23:26.975223 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:26.975492 +0000 build-debian42: output: dh_systemd_start --no-restart-on-upgrade
+2022-10-11 17:23:27.371315 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-core-qrexec-4.2.0'
+2022-10-11 17:23:27.375203 +0000 build-debian42: output:    dh_perl
+2022-10-11 17:23:27.431500 +0000 build-debian42: output:    dh_link
+2022-10-11 17:23:27.469629 +0000 build-debian42: output:    dh_strip_nondeterminism
+2022-10-11 17:23:27.914685 +0000 build-debian42: output:    dh_compress
+2022-10-11 17:23:27.962406 +0000 build-debian42: output:    dh_fixperms
+2022-10-11 17:23:28.042396 +0000 build-debian42: output:    dh_missing
+2022-10-11 17:23:28.060833 +0000 build-debian42: output:    dh_strip
+2022-10-11 17:23:28.160509 +0000 build-debian42: output:    dh_makeshlibs
+2022-10-11 17:23:28.222472 +0000 build-debian42: output:    dh_shlibdeps
+2022-10-11 17:23:28.694204 +0000 build-debian42: output:    dh_installdeb
+2022-10-11 17:23:28.726110 +0000 build-debian42: output:    dh_gencontrol
+2022-10-11 17:23:29.021424 +0000 build-debian42: output:    dh_md5sums
+2022-10-11 17:23:29.066365 +0000 build-debian42: output:    dh_builddeb
+2022-10-11 17:23:29.085983 +0000 build-debian42: output: dpkg-deb: building package 'qubes-core-qrexec' in '../qubes-core-qrexec_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.086033 +0000 build-debian42: output: dpkg-deb: building package 'libqrexec-utils2-dbgsym' in '../libqrexec-utils2-dbgsym_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.129215 +0000 build-debian42: output: dpkg-deb: building package 'libqrexec-utils-dev' in '../libqrexec-utils-dev_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.142766 +0000 build-debian42: output: dpkg-deb: building package 'qubes-core-qrexec-dbgsym' in '../qubes-core-qrexec-dbgsym_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.174151 +0000 build-debian42: output: dpkg-deb: building package 'python3-qrexec' in '../python3-qrexec_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.203835 +0000 build-debian42: output: dpkg-deb: building package 'libqrexec-utils2' in '../libqrexec-utils2_4.2.0-1+deb12u1_amd64.deb'.
+2022-10-11 17:23:29.485326 +0000 build-debian42: output:  dpkg-genbuildinfo -O../qubes-core-qrexec_4.2.0-1+deb12u1_amd64.buildinfo
+2022-10-11 17:23:29.673553 +0000 build-debian42: output:  dpkg-genchanges -sa -O../qubes-core-qrexec_4.2.0-1+deb12u1_amd64.changes
+2022-10-11 17:23:29.731724 +0000 build-debian42: output: dpkg-genchanges: info: including full source code in upload
+2022-10-11 17:23:29.734055 +0000 build-debian42: output:  dpkg-source --after-build .
+2022-10-11 17:23:29.801886 +0000 build-debian42: output: dpkg-buildpackage: info: full upload (original source is included)
+2022-10-11 17:23:29.805148 +0000 build-debian42: output: I: copying local configuration
+2022-10-11 17:23:29.829757 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2022-10-11 17:23:29.838963 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2022-10-11 17:23:29.842298 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2022-10-11 17:23:29.845997 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2022-10-11 17:23:29.850618 +0000 build-debian42: output: I: unmounting proc filesystem
+2022-10-11 17:23:29.854180 +0000 build-debian42: output: I: unmounting sys filesystem
+2022-10-11 17:23:29.858621 +0000 build-debian42: output: I: cleaning the build env
+2022-10-11 17:23:29.858660 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/2886 and its subdirectories
+2022-10-11 17:23:30.576995 +0000 build-debian42: output: I: Current time: Tue Oct 11 17:23:30 GMT 2022
+2022-10-11 17:23:30.577914 +0000 build-debian42: output: I: pbuilder-time-stamp: 1665509010
+2022-10-11 17:23:30.583312 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__qubes-core-qrexec_4.2.0-1+deb12u1_amd64.changes /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:30.733897 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__qubes-core-qrexec_4.2.0-1+deb12u1_amd64.buildinfo /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:30.910027 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__libqrexec-utils-dev_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:31.187228 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__libqrexec-utils-dev-dbgsym_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:31.429275 +0000 build-debian42: File not found inside container: /builder/pbuilder/results/libqrexec-utils-dev-dbgsym_4.2.0-1+deb12u1_amd64.deb.
+2022-10-11 17:23:31.429332 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__libqrexec-utils2_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:31.614124 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__libqrexec-utils2-dbgsym_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:31.772542 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__python3-qrexec_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:31.906787 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__python3-qrexec-dbgsym_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:32.053898 +0000 build-debian42: File not found inside container: /builder/pbuilder/results/python3-qrexec-dbgsym_4.2.0-1+deb12u1_amd64.deb.
+2022-10-11 17:23:32.053952 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__qubes-core-qrexec_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:33.882077 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8457 qubesbuilder.FileCopyOut+__builder__pbuilder__results__qubes-core-qrexec-dbgsym_4.2.0-1+deb12u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/core-qrexec/4.2.0-1/vm-bookworm/build
+2022-10-11 17:23:39.003573 +0000 build-debian42: core-qrexec:vm-debian-12.amd64:debian: Provisioning local repository '/home/user/builder-r4.2-debian/repository/vm-bookworm'.
+2022-10-11 17:23:39.006685 +0000 build-debian42: > done
+2022-10-11 17:23:39.006731 +0000 > closing log
