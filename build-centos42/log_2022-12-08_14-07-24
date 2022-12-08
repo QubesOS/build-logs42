@@ -1,0 +1,326 @@
+2022-12-08 14:07:24.167333 +0000 > starting log
+2022-12-08 14:07:24.167522 +0000 build-centos42: > starting build with log
+2022-12-08 14:07:24.167530 +0000 build-centos42: >> args:
+2022-12-08 14:07:24.167536 +0000 build-centos42: >>   ()
+2022-12-08 14:07:24.167541 +0000 build-centos42: >> component:
+2022-12-08 14:07:24.167546 +0000 build-centos42: >>   seabios
+2022-12-08 14:07:24.167553 +0000 build-centos42: >>     commit-hash: 451926c1276dcf859d4cdd44bc48843715d800d6
+2022-12-08 14:07:25.154953 +0000 build-centos42: >>     source-hash: 8e0ce516239b38204ce951cbdb4e7d5b90aa325bfe1c355317e14f559953ea76320c5f7f8410456bf915a35433d9cdf3abbd6011bbfce4670343d6cf349f4968
+2022-12-08 14:07:25.154995 +0000 build-centos42: >> distributions:
+2022-12-08 14:07:25.155004 +0000 build-centos42: >>   [<QubesDistribution vm-centos-stream-8.x86_64>]
+2022-12-08 14:07:25.160206 +0000 build-centos42: seabios: source already fetched. Updating.
+2022-12-08 14:07:47.904267 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1056 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-08 14:08:09.874708 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1056 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-08 14:08:33.697254 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1056 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-08 14:08:34.307743 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1056 bash -c 'rm -rf /builder/incoming/seabios /builder/seabios'
+2022-12-08 14:08:34.717450 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1056 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/seabios
+2022-12-08 14:08:35.150574 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1056 bash -c 'mkdir -p /builder && mv /builder/incoming/seabios /builder'
+2022-12-08 14:08:35.682599 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp1056 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component seabios --git-branch main --git-url https://github.com/QubesOS/qubes-seabios.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2022-12-08 14:08:36.151297 +0000 build-centos42: output: + unset CLEAN
+2022-12-08 14:08:36.151352 +0000 build-centos42: output: + CLEAN=0
+2022-12-08 14:08:36.151376 +0000 build-centos42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2022-12-08 14:08:36.152296 +0000 build-centos42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component seabios --git-branch main --git-url https://github.com/QubesOS/qubes-seabios.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2022-12-08 14:08:36.155219 +0000 build-centos42: output: + OPTS=' --component '\''seabios'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-seabios.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-08 14:08:36.155261 +0000 build-centos42: output: + eval set -- ' --component '\''seabios'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-seabios.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-08 14:08:36.155284 +0000 build-centos42: output: ++ set -- --component seabios --git-branch main --git-url https://github.com/QubesOS/qubes-seabios.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2022-12-08 14:08:36.155303 +0000 build-centos42: output: + [[ 12 -gt 0 ]]
+2022-12-08 14:08:36.155309 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155315 +0000 build-centos42: output: + COMPONENT=seabios
+2022-12-08 14:08:36.155320 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155326 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155331 +0000 build-centos42: output: + [[ 10 -gt 0 ]]
+2022-12-08 14:08:36.155336 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155342 +0000 build-centos42: output: + BRANCH=main
+2022-12-08 14:08:36.155459 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155471 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155477 +0000 build-centos42: output: + [[ 8 -gt 0 ]]
+2022-12-08 14:08:36.155483 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155491 +0000 build-centos42: output: + GIT_URL=https://github.com/QubesOS/qubes-seabios.git
+2022-12-08 14:08:36.155496 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155501 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155506 +0000 build-centos42: output: + [[ 6 -gt 0 ]]
+2022-12-08 14:08:36.155511 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155518 +0000 build-centos42: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-12-08 14:08:36.155523 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155527 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155533 +0000 build-centos42: output: + [[ 4 -gt 0 ]]
+2022-12-08 14:08:36.155538 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155648 +0000 build-centos42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-12-08 14:08:36.155670 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155676 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155682 +0000 build-centos42: output: + [[ 2 -gt 0 ]]
+2022-12-08 14:08:36.155687 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155693 +0000 build-centos42: output: + FETCH_VERSIONS_ONLY=1
+2022-12-08 14:08:36.155698 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.155855 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2022-12-08 14:08:36.155888 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:08:36.155896 +0000 build-centos42: output: + shift
+2022-12-08 14:08:36.156024 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2022-12-08 14:08:36.156044 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-08 14:08:36.156051 +0000 build-centos42: output: -]*$ ]]
+2022-12-08 14:08:36.156352 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-08 14:08:36.156366 +0000 build-centos42: output: -]*$ ]]
+2022-12-08 14:08:36.156372 +0000 build-centos42: output: + [[ -n seabios ]]
+2022-12-08 14:08:36.156378 +0000 build-centos42: output: + '[' -z '' ']'
+2022-12-08 14:08:36.156383 +0000 build-centos42: output: + REPO=seabios
+2022-12-08 14:08:36.156389 +0000 build-centos42: output: + '[' -z /builder/keyring ']'
+2022-12-08 14:08:36.156395 +0000 build-centos42: output: + '[' -z '' ']'
+2022-12-08 14:08:36.156400 +0000 build-centos42: output: + GIT_SUFFIX=.git
+2022-12-08 14:08:36.156405 +0000 build-centos42: output: + '[' -z main ']'
+2022-12-08 14:08:36.156411 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:08:36.156418 +0000 build-centos42: output: + '[' -z https://github.com/QubesOS/qubes-seabios.git ']'
+2022-12-08 14:08:36.156424 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:08:36.156430 +0000 build-centos42: output: + case ${IGNORE_MISSING=0} in
+2022-12-08 14:08:36.156435 +0000 build-centos42: output: + :
+2022-12-08 14:08:36.156441 +0000 build-centos42: output: + case ${GIT_CLONE_FAST=0} in
+2022-12-08 14:08:36.156446 +0000 build-centos42: output: + :
+2022-12-08 14:08:36.156634 +0000 build-centos42: output: + GIT_OPTIONS=()
+2022-12-08 14:08:36.156660 +0000 build-centos42: output: + [[ 0 = \1 ]]
+2022-12-08 14:08:36.156667 +0000 build-centos42: output: + GIT_MERGE_OPTS=("--ff-only")
+2022-12-08 14:08:36.156674 +0000 build-centos42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-12-08 14:08:36.156680 +0000 build-centos42: output: + [[ seabios =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-12-08 14:08:36.156686 +0000 build-centos42: output: + trap exit_clean 0 1 2 3 6 15
+2022-12-08 14:08:36.156692 +0000 build-centos42: output: + fresh_clone=false
+2022-12-08 14:08:36.156708 +0000 build-centos42: output: + [[ '' = \1 ]]
+2022-12-08 14:08:36.156713 +0000 build-centos42: output: + [[ -d seabios ]]
+2022-12-08 14:08:36.156719 +0000 build-centos42: output: + cd seabios
+2022-12-08 14:08:36.156725 +0000 build-centos42: output: ++ git rev-parse --is-shallow-repository
+2022-12-08 14:08:36.177241 +0000 build-centos42: output: + is_shallow=false
+2022-12-08 14:08:36.177285 +0000 build-centos42: output: + [[ 0 -ne 1 ]]
+2022-12-08 14:08:36.177292 +0000 build-centos42: output: + [[ false = \t\r\u\e ]]
+2022-12-08 14:08:36.177298 +0000 build-centos42: output: + print_headers
+2022-12-08 14:08:36.177303 +0000 build-centos42: output: + '[' -z '' ']'
+2022-12-08 14:08:36.177311 +0000 build-centos42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-seabios.git main'
+2022-12-08 14:08:36.177318 +0000 build-centos42: output: + echo '-> Updating sources for seabios...'
+2022-12-08 14:08:36.177354 +0000 build-centos42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-seabios.git main...'
+2022-12-08 14:08:36.177365 +0000 build-centos42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-seabios.git main
+2022-12-08 14:08:36.177372 +0000 build-centos42: output: -> Updating sources for seabios...
+2022-12-08 14:08:36.177380 +0000 build-centos42: output: --> Fetching from https://github.com/QubesOS/qubes-seabios.git main...
+2022-12-08 14:08:37.550591 +0000 build-centos42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2022-12-08 14:08:37.551570 +0000 build-centos42: output: + rev=fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.551596 +0000 build-centos42: output: + '[' 1 == 1 ']'
+2022-12-08 14:08:37.552833 +0000 build-centos42: output: + grep -q '^v'
+2022-12-08 14:08:37.552860 +0000 build-centos42: output: + git tag --points-at fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.554222 +0000 build-centos42: output: + VERIFY_REF=fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.554273 +0000 build-centos42: output: + fresh_clone=false
+2022-12-08 14:08:37.554289 +0000 build-centos42: output: + cd -
+2022-12-08 14:08:37.556167 +0000 build-centos42: output: + export CHECK=signed-tag
+2022-12-08 14:08:37.556213 +0000 build-centos42: output: + CHECK=signed-tag
+2022-12-08 14:08:37.556231 +0000 build-centos42: output: + verify=true
+2022-12-08 14:08:37.556245 +0000 build-centos42: output: + '[' '' == 1 ']'
+2022-12-08 14:08:37.556257 +0000 build-centos42: output: + '[' '' == 1 ']'
+2022-12-08 14:08:37.556278 +0000 build-centos42: output: ++ git -C seabios rev-parse -q --verify fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.556520 +0000 build-centos42: output: + VERIFY_REF=fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.556543 +0000 build-centos42: output: + '[' true = false ']'
+2022-12-08 14:08:37.556649 +0000 build-centos42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-12-08 14:08:37.556661 +0000 build-centos42: output: + echo '--> Verifying tags...'
+2022-12-08 14:08:37.556668 +0000 build-centos42: output: ++ readlink -m /builder/keyring
+2022-12-08 14:08:37.556674 +0000 build-centos42: output: --> Verifying tags...
+2022-12-08 14:08:37.557212 +0000 build-centos42: output: + GNUPGHOME=/builder/keyring
+2022-12-08 14:08:37.557231 +0000 build-centos42: output: + export GNUPGHOME
+2022-12-08 14:08:37.557238 +0000 build-centos42: output: + '[' '!' -d /builder/keyring ']'
+2022-12-08 14:08:37.557244 +0000 build-centos42: output: + mkdir -p /builder/keyring
+2022-12-08 14:08:37.558205 +0000 build-centos42: output: + chmod 700 /builder/keyring
+2022-12-08 14:08:37.559181 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-12-08 14:08:37.567932 +0000 build-centos42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-12-08 14:08:37.570871 +0000 build-centos42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-12-08 14:08:37.570900 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-12-08 14:08:37.581286 +0000 build-centos42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-12-08 14:08:37.582161 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-12-08 14:08:37.582187 +0000 build-centos42: output: gpg: Total number processed: 3
+2022-12-08 14:08:37.582195 +0000 build-centos42: output: gpg:               imported: 3
+2022-12-08 14:08:37.582201 +0000 build-centos42: output: gpg: no ultimately trusted keys found
+2022-12-08 14:08:37.583414 +0000 build-centos42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-12-08 14:08:37.583657 +0000 build-centos42: output: + gpg --import-ownertrust
+2022-12-08 14:08:37.585022 +0000 build-centos42: output: gpg: inserting ownertrust of 6
+2022-12-08 14:08:37.585449 +0000 build-centos42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-12-08 14:08:37.585468 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-12-08 14:08:37.587339 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-12-08 14:08:37.588004 +0000 build-centos42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-12-08 14:08:37.588629 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-12-08 14:08:37.588648 +0000 build-centos42: output: gpg: Total number processed: 3
+2022-12-08 14:08:37.588655 +0000 build-centos42: output: gpg:              unchanged: 3
+2022-12-08 14:08:37.589226 +0000 build-centos42: output: + touch /builder/keyring/pubring.gpg
+2022-12-08 14:08:37.591062 +0000 build-centos42: output: + gpgconf --kill gpg-agent
+2022-12-08 14:08:37.595138 +0000 build-centos42: output: + pushd seabios
+2022-12-08 14:08:37.595163 +0000 build-centos42: output: + expected_hash=fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.595878 +0000 build-centos42: output: + hash_len=40
+2022-12-08 14:08:37.595899 +0000 build-centos42: output: + '[' 40 -ne 40 ']'
+2022-12-08 14:08:37.596018 +0000 build-centos42: output: + [[ fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb =~ ^[a-f0-9]+$ ]]
+2022-12-08 14:08:37.596040 +0000 build-centos42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-12-08 14:08:37.596056 +0000 build-centos42: output: ++ git tag --points-at=fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-12-08 14:08:37.596062 +0000 build-centos42: output: ++ head -c 500
+2022-12-08 14:08:37.598101 +0000 build-centos42: output: + tags=f3307d60c3ec672ec87fc79ad63c5531d1cac080:fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb:
+2022-12-08 14:08:37.598130 +0000 build-centos42: output: + for tag in $tags
+2022-12-08 14:08:37.598158 +0000 build-centos42: output: + (( 82 != hash_len * 2 + 2 ))
+2022-12-08 14:08:37.598172 +0000 build-centos42: output: + [[ :fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb: == \:\f\d\7\0\e\a\a\3\f\0\f\d\c\b\2\a\8\7\1\0\7\6\e\8\e\f\6\9\a\f\2\9\f\0\d\d\3\c\b\b\: ]]
+2022-12-08 14:08:37.598537 +0000 build-centos42: output: + tag=f3307d60c3ec672ec87fc79ad63c5531d1cac080
+2022-12-08 14:08:37.598577 +0000 build-centos42: output: + verify_git_obj tag f3307d60c3ec672ec87fc79ad63c5531d1cac080
+2022-12-08 14:08:37.598585 +0000 build-centos42: output: + local content newsig_number
+2022-12-08 14:08:37.598595 +0000 build-centos42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- f3307d60c3ec672ec87fc79ad63c5531d1cac080
+2022-12-08 14:08:37.603168 +0000 build-centos42: output: + content='[GNUPG:] NEWSIG
+2022-12-08 14:08:37.603200 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.603209 +0000 build-centos42: output: [GNUPG:] SIG_ID vaU+t5Pub4ZzgaS0i2pyEkGeGuk 2022-12-08 1670508384
+2022-12-08 14:08:37.603221 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.603229 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603236 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603244 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603254 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-08 14:08:37.603266 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-08 1670508384 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-08 14:08:37.603273 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-08 14:08:37.603710 +0000 build-centos42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-12-08 14:08:37.603729 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.603737 +0000 build-centos42: output: [GNUPG:] SIG_ID vaU+t5Pub4ZzgaS0i2pyEkGeGuk 2022-12-08 1670508384
+2022-12-08 14:08:37.603763 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.603790 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603917 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603931 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.603942 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-08 14:08:37.603954 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-08 1670508384 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-08 14:08:37.603960 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-08 14:08:37.603966 +0000 build-centos42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-12-08 14:08:37.604737 +0000 build-centos42: output: + newsig_number=1
+2022-12-08 14:08:37.604755 +0000 build-centos42: output: + '[' 1 = 1 ']'
+2022-12-08 14:08:37.605079 +0000 build-centos42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2022-12-08 14:08:37.606158 +0000 build-centos42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-12-08 14:08:37.606179 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.606188 +0000 build-centos42: output: [GNUPG:] SIG_ID vaU+t5Pub4ZzgaS0i2pyEkGeGuk 2022-12-08 1670508384
+2022-12-08 14:08:37.606196 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-08 14:08:37.606204 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.606211 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.606235 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-08 14:08:37.606245 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-08 14:08:37.606257 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-08 1670508384 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-08 14:08:37.606263 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-08 14:08:37.606540 +0000 build-centos42: output: + echo '---> Good tag f3307d60c3ec672ec87fc79ad63c5531d1cac080'
+2022-12-08 14:08:37.606558 +0000 build-centos42: output: + '[' -z x ']'
+2022-12-08 14:08:37.606564 +0000 build-centos42: output: + popd
+2022-12-08 14:08:37.606572 +0000 build-centos42: output: ---> Good tag f3307d60c3ec672ec87fc79ad63c5531d1cac080
+2022-12-08 14:08:37.607277 +0000 build-centos42: output: + '[' '' == 1 ']'
+2022-12-08 14:08:37.607294 +0000 build-centos42: output: + pushd seabios
+2022-12-08 14:08:37.607577 +0000 build-centos42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-12-08 14:08:37.608204 +0000 build-centos42: output: + CURRENT_BRANCH=master
+2022-12-08 14:08:37.608566 +0000 build-centos42: output: + '[' master '!=' main ']'
+2022-12-08 14:08:37.608588 +0000 build-centos42: output: + '[' -z '' ']'
+2022-12-08 14:08:37.608616 +0000 build-centos42: output: + red='.[1;31m'
+2022-12-08 14:08:37.608625 +0000 build-centos42: output: + green='.[1;32m'
+2022-12-08 14:08:37.608631 +0000 build-centos42: output: + normal='.[0;0m'
+2022-12-08 14:08:37.608718 +0000 build-centos42: output: ++ git name-rev --name-only main
+2022-12-08 14:08:37.610987 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:08:37.611016 +0000 build-centos42: output: + echo -e '--> Switching branch from master branch to new .[1;31mmain.[0;0m'
+2022-12-08 14:08:37.611049 +0000 build-centos42: output: + git checkout fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb -b main
+2022-12-08 14:08:37.611060 +0000 build-centos42: output: --> Switching branch from master branch to new .[1;31mmain.[0;0m
+2022-12-08 14:08:37.613864 +0000 build-centos42: output: Switched to a new branch 'main'
+2022-12-08 14:08:37.614228 +0000 build-centos42: output: + '[' -e .gitmodules ']'
+2022-12-08 14:08:37.614244 +0000 build-centos42: output: + false
+2022-12-08 14:08:37.614318 +0000 build-centos42: output: + echo '--> Merging...'
+2022-12-08 14:08:37.614333 +0000 build-centos42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q fd70eaa3f0fdcb2a871076e8ef69af29f0dd3cbb
+2022-12-08 14:08:37.614340 +0000 build-centos42: output: --> Merging...
+2022-12-08 14:08:37.615461 +0000 build-centos42: output: + tracking_branch=refs/remotes//main
+2022-12-08 14:08:37.615480 +0000 build-centos42: output: + '[' -f .git/refs/remotes//main ']'
+2022-12-08 14:08:37.615489 +0000 build-centos42: output: + popd
+2022-12-08 14:08:37.615730 +0000 build-centos42: output: + exit_clean
+2022-12-08 14:08:37.615743 +0000 build-centos42: output: + local exit_code=0
+2022-12-08 14:08:37.615783 +0000 build-centos42: output: + '[' 0 -gt 0 ']'
+2022-12-08 14:08:37.615791 +0000 build-centos42: output: + exit 0
+2022-12-08 14:08:37.621877 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1056 qubesbuilder.FileCopyOut+__builder__seabios /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/sources
+2022-12-08 14:09:04.675316 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5572 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-08 14:09:06.421186 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5572 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-08 14:09:09.785577 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5572 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-08 14:09:10.041580 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5572 bash -c 'rm -rf /builder/incoming/seabios /builder/seabios'
+2022-12-08 14:09:10.378449 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5572 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/seabios
+2022-12-08 14:09:10.555680 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5572 bash -c 'mkdir -p /builder && mv /builder/incoming/seabios /builder'
+2022-12-08 14:09:10.699828 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp5572 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/seabios --file-name seabios-1.14.0.tar.gz --file-url https://www.seabios.org/downloads/seabios-1.14.0.tar.gz''.
+2022-12-08 14:09:11.454970 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-08 14:09:11.455200 +0000 build-centos42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/seabios --file-name seabios-1.14.0.tar.gz --file-url https://www.seabios.org/downloads/seabios-1.14.0.tar.gz
+2022-12-08 14:09:11.457231 +0000 build-centos42: output: + OPTS=' --output-dir '\''/builder/seabios'\'' --file-name '\''seabios-1.14.0.tar.gz'\'' --file-url '\''https://www.seabios.org/downloads/seabios-1.14.0.tar.gz'\'' --'
+2022-12-08 14:09:11.457379 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/builder/seabios'\'' --file-name '\''seabios-1.14.0.tar.gz'\'' --file-url '\''https://www.seabios.org/downloads/seabios-1.14.0.tar.gz'\'' --'
+2022-12-08 14:09:11.457399 +0000 build-centos42: output: ++ set -- --output-dir /builder/seabios --file-name seabios-1.14.0.tar.gz --file-url https://www.seabios.org/downloads/seabios-1.14.0.tar.gz --
+2022-12-08 14:09:11.457405 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2022-12-08 14:09:11.457497 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:09:11.457509 +0000 build-centos42: output: + OUTPUT_DIR=/builder/seabios
+2022-12-08 14:09:11.457686 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.457996 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.458039 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2022-12-08 14:09:11.458056 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:09:11.458074 +0000 build-centos42: output: + FILE_NAME=seabios-1.14.0.tar.gz
+2022-12-08 14:09:11.458089 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.458978 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.459113 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2022-12-08 14:09:11.459254 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:09:11.459286 +0000 build-centos42: output: + FILE_URL=https://www.seabios.org/downloads/seabios-1.14.0.tar.gz
+2022-12-08 14:09:11.459301 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.459315 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.459339 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2022-12-08 14:09:11.459354 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:09:11.459368 +0000 build-centos42: output: + shift
+2022-12-08 14:09:11.459383 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2022-12-08 14:09:11.459404 +0000 build-centos42: output: + '[' -z https://www.seabios.org/downloads/seabios-1.14.0.tar.gz ']'
+2022-12-08 14:09:11.459575 +0000 build-centos42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-08 14:09:11.459600 +0000 build-centos42: output: + '[' -z seabios-1.14.0.tar.gz ']'
+2022-12-08 14:09:11.459619 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_seabios-1.14.0.tar.gz
+2022-12-08 14:09:11.459641 +0000 build-centos42: output: + '[' -n /builder/seabios ']'
+2022-12-08 14:09:11.459679 +0000 build-centos42: output: + mkdir -p /builder/seabios
+2022-12-08 14:09:11.460180 +0000 build-centos42: output: + cd /builder/seabios
+2022-12-08 14:09:11.460242 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_seabios-1.14.0.tar.gz -- https://www.seabios.org/downloads/seabios-1.14.0.tar.gz
+2022-12-08 14:09:14.716535 +0000 build-centos42: output: + '[' '' == 1 ']'
+2022-12-08 14:09:14.716578 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:09:14.721103 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5572 qubesbuilder.FileCopyOut+__builder__seabios__untrusted_seabios-1.14.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9
+2022-12-08 14:10:03.571233 +0000 build-centos42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512'.
+2022-12-08 14:10:03.580992 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-08 14:10:03.581062 +0000 build-centos42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512
+2022-12-08 14:10:03.581085 +0000 build-centos42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512'\'' --'
+2022-12-08 14:10:03.581106 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512'\'' --'
+2022-12-08 14:10:03.581124 +0000 build-centos42: output: ++ set -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512 --
+2022-12-08 14:10:03.581131 +0000 build-centos42: output: + PUBKEY_FILE=()
+2022-12-08 14:10:03.581137 +0000 build-centos42: output: + [[ 9 -gt 0 ]]
+2022-12-08 14:10:03.581142 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:10:03.581150 +0000 build-centos42: output: + OUTPUT_DIR=/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9
+2022-12-08 14:10:03.581155 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581160 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581166 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2022-12-08 14:10:03.581171 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:10:03.581180 +0000 build-centos42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz
+2022-12-08 14:10:03.581185 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581190 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581195 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2022-12-08 14:10:03.581201 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:10:03.581225 +0000 build-centos42: output: + CHECKSUM_CMD=sha512sum
+2022-12-08 14:10:03.581233 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581238 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581243 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2022-12-08 14:10:03.581249 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:10:03.581257 +0000 build-centos42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512
+2022-12-08 14:10:03.581262 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581267 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581272 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2022-12-08 14:10:03.581278 +0000 build-centos42: output: + case "$1" in
+2022-12-08 14:10:03.581283 +0000 build-centos42: output: + shift
+2022-12-08 14:10:03.581288 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2022-12-08 14:10:03.581297 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz ']'
+2022-12-08 14:10:03.581304 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9 ']'
+2022-12-08 14:10:03.581312 +0000 build-centos42: output: + mkdir -p /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9
+2022-12-08 14:10:03.581320 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz
+2022-12-08 14:10:03.582887 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_seabios-1.14.0.tar.gz
+2022-12-08 14:10:03.582921 +0000 build-centos42: output: + FILE_NAME=seabios-1.14.0.tar.gz
+2022-12-08 14:10:03.582932 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512 ']'
+2022-12-08 14:10:03.582942 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512 ']'
+2022-12-08 14:10:03.582951 +0000 build-centos42: output: + '[' -e /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512 ']'
+2022-12-08 14:10:03.582956 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:10:03.582962 +0000 build-centos42: output: + '[' -z '' ']'
+2022-12-08 14:10:03.582967 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:10:03.582972 +0000 build-centos42: output: + '[' -n '' ']'
+2022-12-08 14:10:03.582981 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512 ']'
+2022-12-08 14:10:03.582987 +0000 build-centos42: output: + '[' -z sha512sum ']'
+2022-12-08 14:10:03.582993 +0000 build-centos42: output: + sha512sum --status -c /dev/fd/63
+2022-12-08 14:10:03.584444 +0000 build-centos42: output: +++ cat /home/user/builder-r4.2-centos/sources/seabios/seabios-1.14.0.tar.gz.sha512
+2022-12-08 14:10:03.584480 +0000 build-centos42: output: ++ printf '%s  -\n' 215c42f59425f8abd062be7b11fc0e39c977cee5001a2381551b0f851ac337d0dd53c065267e6dee0e710ffd700fa635f9007b89da8dfce0f47122c984ee8146
+2022-12-08 14:10:03.606252 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/untrusted_seabios-1.14.0.tar.gz /home/user/builder-r4.2-centos/tmp/tmpb_gfz0c9/seabios-1.14.0.tar.gz
+2022-12-08 14:10:25.325127 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp232 bash -c 'rm -rf /builder/incoming/seabios /builder/seabios'
+2022-12-08 14:10:26.413822 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp232 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/seabios
+2022-12-08 14:10:27.708530 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp232 bash -c 'mkdir -p /builder && mv /builder/incoming/seabios /builder'
+2022-12-08 14:10:27.917740 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp232 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/seabios/hash /builder/seabios/vtags && cd /builder && git -C /builder/seabios rev-parse '\''HEAD^{}'\'' >> /builder/seabios/hash && git -C /builder/seabios tag --points-at HEAD --list '\''v*'\'' >> /builder/seabios/vtags''.
+2022-12-08 14:10:28.173211 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp232 qubesbuilder.FileCopyOut+__builder__seabios__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpoyoy6n2x
+2022-12-08 14:10:28.499602 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp232 qubesbuilder.FileCopyOut+__builder__seabios__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpoyoy6n2x
+2022-12-08 14:10:40.580107 +0000 build-centos42: > done
+2022-12-08 14:10:40.580153 +0000 > closing log
