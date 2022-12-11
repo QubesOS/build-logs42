@@ -1,0 +1,116 @@
+2022-12-11 15:08:31.155841 +0000 > starting log
+2022-12-11 15:08:31.156074 +0000 build-debian42: > starting build with log
+2022-12-11 15:08:31.156083 +0000 build-debian42: >> args:
+2022-12-11 15:08:31.156107 +0000 build-debian42: >>   ()
+2022-12-11 15:08:31.156114 +0000 build-debian42: >> component:
+2022-12-11 15:08:31.156120 +0000 build-debian42: >>   linux-kernel-latest
+2022-12-11 15:08:31.156127 +0000 build-debian42: >>     commit-hash: e2517d6c1d46ac99932789f7db478bf60fcf3aea
+2022-12-11 15:08:31.156137 +0000 build-debian42: >>     source-hash: 58995fa9dc77e264ee9327a73ed278b38e20c02a158e27ea9788f16af1f71a3521632df2dd36d2e910991db1d1d98581d48d6b02ccd1176ac44ad878e1afb733
+2022-12-11 15:08:31.156143 +0000 build-debian42: >> distributions:
+2022-12-11 15:08:31.156150 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2022-12-11 15:08:31.156157 +0000 build-debian42: linux-kernel-latest: source already fetched. Updating.
+2022-12-11 15:08:51.622420 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9781 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-11 15:09:14.151146 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9781 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-11 15:09:15.487552 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9781 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-11 15:09:15.730169 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9781 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2022-12-11 15:09:16.111188 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9781 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2022-12-11 15:09:17.508209 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9781 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2022-12-11 15:09:17.755077 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp9781 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2022-12-11 15:09:17.988995 +0000 build-debian42: output: + unset CLEAN
+2022-12-11 15:09:17.989040 +0000 build-debian42: output: + CLEAN=0
+2022-12-11 15:09:17.989087 +0000 build-debian42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2022-12-11 15:09:17.989142 +0000 build-debian42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2022-12-11 15:09:17.991666 +0000 build-debian42: output: + OPTS=' --component '\''linux-kernel-latest'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-11 15:09:17.991715 +0000 build-debian42: output: + eval set -- ' --component '\''linux-kernel-latest'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-11 15:09:17.991753 +0000 build-debian42: output: ++ set -- --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2022-12-11 15:09:17.991760 +0000 build-debian42: output: + [[ 12 -gt 0 ]]
+2022-12-11 15:09:17.991766 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.991886 +0000 build-debian42: output: + COMPONENT=linux-kernel-latest
+2022-12-11 15:09:17.991898 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.991904 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.991910 +0000 build-debian42: output: + [[ 10 -gt 0 ]]
+2022-12-11 15:09:17.991916 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.991921 +0000 build-debian42: output: + BRANCH=main
+2022-12-11 15:09:17.992076 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992096 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992108 +0000 build-debian42: output: + [[ 8 -gt 0 ]]
+2022-12-11 15:09:17.992114 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.992123 +0000 build-debian42: output: + GIT_URL=https://github.com/QubesOS/qubes-linux-kernel
+2022-12-11 15:09:17.992147 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992152 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992170 +0000 build-debian42: output: + [[ 6 -gt 0 ]]
+2022-12-11 15:09:17.992210 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.992218 +0000 build-debian42: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-12-11 15:09:17.992228 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992233 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992239 +0000 build-debian42: output: + [[ 4 -gt 0 ]]
+2022-12-11 15:09:17.992246 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.992252 +0000 build-debian42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-12-11 15:09:17.992257 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992279 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992428 +0000 build-debian42: output: + [[ 2 -gt 0 ]]
+2022-12-11 15:09:17.992444 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.992455 +0000 build-debian42: output: + FETCH_VERSIONS_ONLY=1
+2022-12-11 15:09:17.992461 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992466 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-11 15:09:17.992471 +0000 build-debian42: output: + case "$1" in
+2022-12-11 15:09:17.992476 +0000 build-debian42: output: + shift
+2022-12-11 15:09:17.992501 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-11 15:09:17.992509 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-11 15:09:17.992585 +0000 build-debian42: output: -]*$ ]]
+2022-12-11 15:09:17.992600 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-11 15:09:17.992605 +0000 build-debian42: output: -]*$ ]]
+2022-12-11 15:09:17.992721 +0000 build-debian42: output: + [[ -n linux-kernel-latest ]]
+2022-12-11 15:09:17.992741 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-11 15:09:17.992749 +0000 build-debian42: output: + REPO=linux-kernel-latest
+2022-12-11 15:09:17.992755 +0000 build-debian42: output: + '[' -z /builder/keyring ']'
+2022-12-11 15:09:17.992760 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-11 15:09:17.992771 +0000 build-debian42: output: + GIT_SUFFIX=.git
+2022-12-11 15:09:17.992798 +0000 build-debian42: output: + '[' -z main ']'
+2022-12-11 15:09:17.992899 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-11 15:09:17.992921 +0000 build-debian42: output: + '[' -z https://github.com/QubesOS/qubes-linux-kernel ']'
+2022-12-11 15:09:17.992928 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-11 15:09:17.992945 +0000 build-debian42: output: + case ${IGNORE_MISSING=0} in
+2022-12-11 15:09:17.992990 +0000 build-debian42: output: + :
+2022-12-11 15:09:17.992999 +0000 build-debian42: output: + case ${GIT_CLONE_FAST=0} in
+2022-12-11 15:09:17.993004 +0000 build-debian42: output: + :
+2022-12-11 15:09:17.993180 +0000 build-debian42: output: + GIT_OPTIONS=()
+2022-12-11 15:09:17.993196 +0000 build-debian42: output: + [[ 0 = \1 ]]
+2022-12-11 15:09:17.993203 +0000 build-debian42: output: + GIT_MERGE_OPTS=("--ff-only")
+2022-12-11 15:09:17.993210 +0000 build-debian42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-12-11 15:09:17.993217 +0000 build-debian42: output: + [[ linux-kernel-latest =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-12-11 15:09:17.993223 +0000 build-debian42: output: + trap exit_clean 0 1 2 3 6 15
+2022-12-11 15:09:17.993252 +0000 build-debian42: output: + fresh_clone=false
+2022-12-11 15:09:17.993260 +0000 build-debian42: output: + [[ '' = \1 ]]
+2022-12-11 15:09:17.993266 +0000 build-debian42: output: + [[ -d linux-kernel-latest ]]
+2022-12-11 15:09:17.993272 +0000 build-debian42: output: + cd linux-kernel-latest
+2022-12-11 15:09:17.993278 +0000 build-debian42: output: ++ git rev-parse --is-shallow-repository
+2022-12-11 15:09:18.018966 +0000 build-debian42: output: + is_shallow=false
+2022-12-11 15:09:18.019048 +0000 build-debian42: output: + [[ 0 -ne 1 ]]
+2022-12-11 15:09:18.019069 +0000 build-debian42: output: + [[ false = \t\r\u\e ]]
+2022-12-11 15:09:18.019176 +0000 build-debian42: output: + print_headers
+2022-12-11 15:09:18.019203 +0000 build-debian42: output: -> Updating sources for linux-kernel-latest...
+2022-12-11 15:09:18.019538 +0000 build-debian42: output: --> Fetching from https://github.com/QubesOS/qubes-linux-kernel main...
+2022-12-11 15:09:18.019599 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-11 15:09:18.019624 +0000 build-debian42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-linux-kernel main'
+2022-12-11 15:09:18.019644 +0000 build-debian42: output: + echo '-> Updating sources for linux-kernel-latest...'
+2022-12-11 15:09:18.019949 +0000 build-debian42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-linux-kernel main...'
+2022-12-11 15:09:18.020258 +0000 build-debian42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-linux-kernel main
+2022-12-11 15:09:21.705388 +0000 build-debian42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2022-12-11 15:09:21.708351 +0000 build-debian42: output: + rev=135c22336c802a74b985d3dfa0a7f0a4ef8561ec
+2022-12-11 15:09:21.708415 +0000 build-debian42: output: + '[' 1 == 1 ']'
+2022-12-11 15:09:21.708514 +0000 build-debian42: output: + git tag --points-at 135c22336c802a74b985d3dfa0a7f0a4ef8561ec
+2022-12-11 15:09:21.708537 +0000 build-debian42: output: + grep -q '^v'
+2022-12-11 15:09:21.722685 +0000 build-debian42: output: No version tag
+2022-12-11 15:09:21.722745 +0000 build-debian42: output: + echo 'No version tag'
+2022-12-11 15:09:21.722771 +0000 build-debian42: output: + rm -f .git/FETCH_HEAD
+2022-12-11 15:09:21.724075 +0000 build-debian42: output: + exit 0
+2022-12-11 15:09:21.724794 +0000 build-debian42: output: + exit_clean
+2022-12-11 15:09:21.724832 +0000 build-debian42: output: + local exit_code=0
+2022-12-11 15:09:21.724850 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2022-12-11 15:09:21.724866 +0000 build-debian42: output: + exit 0
+2022-12-11 15:09:21.778406 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9781 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2022-12-11 15:09:26.712592 +0000 build-debian42: linux-kernel-latest: file linux-6.0.8.tar already downloaded. Skipping.
+2022-12-11 15:09:26.713313 +0000 build-debian42: linux-kernel-latest: file macbook12-spi-driver-2905d318d1a3ee1a227052490bf20eddef2592f9.tar already downloaded. Skipping.
+2022-12-11 15:09:26.724709 +0000 build-debian42: > done
+2022-12-11 15:09:26.724772 +0000 > closing log
