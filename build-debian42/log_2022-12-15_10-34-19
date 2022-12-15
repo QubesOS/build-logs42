@@ -1,0 +1,1202 @@
+2022-12-15 10:34:19.964925 +0000 > starting log
+2022-12-15 10:34:19.965131 +0000 build-debian42: > starting build with log
+2022-12-15 10:34:19.965141 +0000 build-debian42: >> args:
+2022-12-15 10:34:19.965146 +0000 build-debian42: >>   ()
+2022-12-15 10:34:19.965151 +0000 build-debian42: >> component:
+2022-12-15 10:34:19.965157 +0000 build-debian42: >>   windows-tools-cross
+2022-12-15 10:34:19.965163 +0000 build-debian42: >>     commit-hash: aa281171a1b7569373db580877d8c9dbe165d4d1
+2022-12-15 10:34:20.179481 +0000 build-debian42: >>     source-hash: d69f5eef1b900b3205807fd7313d50323e51e2505c8df8218732fd0a40e38aeb46527de7e0951064351fa88d1dcfe6d9250785905a16f92b3ed8e20ec8580b11
+2022-12-15 10:34:20.179521 +0000 build-debian42: >> distributions:
+2022-12-15 10:34:20.179532 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2022-12-15 10:34:20.183338 +0000 build-debian42: windows-tools-cross: source already fetched. Updating.
+2022-12-15 10:35:04.982980 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1440 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:35:06.436348 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1440 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:35:30.699789 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1440 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:35:31.377140 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1440 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:35:31.895113 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1440 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:35:33.727030 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1440 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:35:34.131995 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp1440 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component windows-tools-cross --git-branch main --git-url https://github.com/QubesOS/qubes-windows-tools-cross.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2022-12-15 10:35:34.336173 +0000 build-debian42: output: + unset CLEAN
+2022-12-15 10:35:34.336250 +0000 build-debian42: output: + CLEAN=0
+2022-12-15 10:35:34.336857 +0000 build-debian42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2022-12-15 10:35:34.337968 +0000 build-debian42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component windows-tools-cross --git-branch main --git-url https://github.com/QubesOS/qubes-windows-tools-cross.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2022-12-15 10:35:34.340350 +0000 build-debian42: output: + OPTS=' --component '\''windows-tools-cross'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-windows-tools-cross.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-15 10:35:34.340397 +0000 build-debian42: output: + eval set -- ' --component '\''windows-tools-cross'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-windows-tools-cross.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2022-12-15 10:35:34.340431 +0000 build-debian42: output: ++ set -- --component windows-tools-cross --git-branch main --git-url https://github.com/QubesOS/qubes-windows-tools-cross.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2022-12-15 10:35:34.340438 +0000 build-debian42: output: + [[ 12 -gt 0 ]]
+2022-12-15 10:35:34.340444 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340450 +0000 build-debian42: output: + COMPONENT=windows-tools-cross
+2022-12-15 10:35:34.340455 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340459 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340465 +0000 build-debian42: output: + [[ 10 -gt 0 ]]
+2022-12-15 10:35:34.340470 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340475 +0000 build-debian42: output: + BRANCH=main
+2022-12-15 10:35:34.340479 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340484 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340489 +0000 build-debian42: output: + [[ 8 -gt 0 ]]
+2022-12-15 10:35:34.340494 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340502 +0000 build-debian42: output: + GIT_URL=https://github.com/QubesOS/qubes-windows-tools-cross.git
+2022-12-15 10:35:34.340666 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340687 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340694 +0000 build-debian42: output: + [[ 6 -gt 0 ]]
+2022-12-15 10:35:34.340700 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340706 +0000 build-debian42: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-12-15 10:35:34.340711 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340716 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340721 +0000 build-debian42: output: + [[ 4 -gt 0 ]]
+2022-12-15 10:35:34.340726 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340732 +0000 build-debian42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-12-15 10:35:34.340737 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340742 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340747 +0000 build-debian42: output: + [[ 2 -gt 0 ]]
+2022-12-15 10:35:34.340752 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340757 +0000 build-debian42: output: + FETCH_VERSIONS_ONLY=1
+2022-12-15 10:35:34.340762 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340768 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:35:34.340773 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:35:34.340892 +0000 build-debian42: output: + shift
+2022-12-15 10:35:34.340911 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:35:34.341013 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-15 10:35:34.341024 +0000 build-debian42: output: -]*$ ]]
+2022-12-15 10:35:34.341030 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2022-12-15 10:35:34.341036 +0000 build-debian42: output: -]*$ ]]
+2022-12-15 10:35:34.341042 +0000 build-debian42: output: + [[ -n windows-tools-cross ]]
+2022-12-15 10:35:34.341047 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:35:34.341132 +0000 build-debian42: output: + REPO=windows-tools-cross
+2022-12-15 10:35:34.341144 +0000 build-debian42: output: + '[' -z /builder/keyring ']'
+2022-12-15 10:35:34.341150 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:35:34.341155 +0000 build-debian42: output: + GIT_SUFFIX=.git
+2022-12-15 10:35:34.341160 +0000 build-debian42: output: + '[' -z main ']'
+2022-12-15 10:35:34.341242 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:35:34.341255 +0000 build-debian42: output: + '[' -z https://github.com/QubesOS/qubes-windows-tools-cross.git ']'
+2022-12-15 10:35:34.341261 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:35:34.341279 +0000 build-debian42: output: + case ${IGNORE_MISSING=0} in
+2022-12-15 10:35:34.341284 +0000 build-debian42: output: + :
+2022-12-15 10:35:34.341485 +0000 build-debian42: output: + case ${GIT_CLONE_FAST=0} in
+2022-12-15 10:35:34.341498 +0000 build-debian42: output: + :
+2022-12-15 10:35:34.341504 +0000 build-debian42: output: + GIT_OPTIONS=()
+2022-12-15 10:35:34.341512 +0000 build-debian42: output: + [[ 0 = \1 ]]
+2022-12-15 10:35:34.341518 +0000 build-debian42: output: + GIT_MERGE_OPTS=("--ff-only")
+2022-12-15 10:35:34.341525 +0000 build-debian42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-12-15 10:35:34.341537 +0000 build-debian42: output: + [[ windows-tools-cross =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-12-15 10:35:34.341543 +0000 build-debian42: output: + trap exit_clean 0 1 2 3 6 15
+2022-12-15 10:35:34.341548 +0000 build-debian42: output: + fresh_clone=false
+2022-12-15 10:35:34.341553 +0000 build-debian42: output: + [[ '' = \1 ]]
+2022-12-15 10:35:34.341579 +0000 build-debian42: output: + [[ -d windows-tools-cross ]]
+2022-12-15 10:35:34.341587 +0000 build-debian42: output: + cd windows-tools-cross
+2022-12-15 10:35:34.341593 +0000 build-debian42: output: ++ git rev-parse --is-shallow-repository
+2022-12-15 10:35:34.492596 +0000 build-debian42: output: + is_shallow=false
+2022-12-15 10:35:34.492641 +0000 build-debian42: output: + [[ 0 -ne 1 ]]
+2022-12-15 10:35:34.492648 +0000 build-debian42: output: + [[ false = \t\r\u\e ]]
+2022-12-15 10:35:34.492660 +0000 build-debian42: output: + print_headers
+2022-12-15 10:35:34.492693 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:35:34.492703 +0000 build-debian42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-windows-tools-cross.git main'
+2022-12-15 10:35:34.492711 +0000 build-debian42: output: + echo '-> Updating sources for windows-tools-cross...'
+2022-12-15 10:35:34.492720 +0000 build-debian42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-windows-tools-cross.git main...'
+2022-12-15 10:35:34.492729 +0000 build-debian42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-windows-tools-cross.git main
+2022-12-15 10:35:34.492736 +0000 build-debian42: output: -> Updating sources for windows-tools-cross...
+2022-12-15 10:35:34.492744 +0000 build-debian42: output: --> Fetching from https://github.com/QubesOS/qubes-windows-tools-cross.git main...
+2022-12-15 10:35:36.561520 +0000 build-debian42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2022-12-15 10:35:36.564507 +0000 build-debian42: output: + rev=11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.564575 +0000 build-debian42: output: + '[' 1 == 1 ']'
+2022-12-15 10:35:36.564878 +0000 build-debian42: output: + grep -q '^v'
+2022-12-15 10:35:36.564921 +0000 build-debian42: output: + git tag --points-at 11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.567375 +0000 build-debian42: output: + VERIFY_REF=11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.567428 +0000 build-debian42: output: + fresh_clone=false
+2022-12-15 10:35:36.567648 +0000 build-debian42: output: + cd -
+2022-12-15 10:35:36.567870 +0000 build-debian42: output: + export CHECK=signed-tag
+2022-12-15 10:35:36.567888 +0000 build-debian42: output: + CHECK=signed-tag
+2022-12-15 10:35:36.567894 +0000 build-debian42: output: + verify=true
+2022-12-15 10:35:36.568474 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:35:36.568528 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:35:36.568616 +0000 build-debian42: output: ++ git -C windows-tools-cross rev-parse -q --verify 11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.569662 +0000 build-debian42: output: + VERIFY_REF=11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.569704 +0000 build-debian42: output: + '[' true = false ']'
+2022-12-15 10:35:36.569730 +0000 build-debian42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-12-15 10:35:36.569749 +0000 build-debian42: output: + echo '--> Verifying tags...'
+2022-12-15 10:35:36.569795 +0000 build-debian42: output: --> Verifying tags...
+2022-12-15 10:35:36.570160 +0000 build-debian42: output: ++ readlink -m /builder/keyring
+2022-12-15 10:35:36.570858 +0000 build-debian42: output: + GNUPGHOME=/builder/keyring
+2022-12-15 10:35:36.571036 +0000 build-debian42: output: + export GNUPGHOME
+2022-12-15 10:35:36.571182 +0000 build-debian42: output: + '[' '!' -d /builder/keyring ']'
+2022-12-15 10:35:36.571651 +0000 build-debian42: output: + mkdir -p /builder/keyring
+2022-12-15 10:35:36.573088 +0000 build-debian42: output: + chmod 700 /builder/keyring
+2022-12-15 10:35:36.574349 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-12-15 10:35:36.585270 +0000 build-debian42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-12-15 10:35:36.589933 +0000 build-debian42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-12-15 10:35:36.589993 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-12-15 10:35:36.607475 +0000 build-debian42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-12-15 10:35:36.609327 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-12-15 10:35:36.610022 +0000 build-debian42: output: gpg: Total number processed: 3
+2022-12-15 10:35:36.610076 +0000 build-debian42: output: gpg:               imported: 3
+2022-12-15 10:35:36.610163 +0000 build-debian42: output: gpg: no ultimately trusted keys found
+2022-12-15 10:35:36.612207 +0000 build-debian42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-12-15 10:35:36.612734 +0000 build-debian42: output: + gpg --import-ownertrust
+2022-12-15 10:35:36.617347 +0000 build-debian42: output: gpg: inserting ownertrust of 6
+2022-12-15 10:35:36.618117 +0000 build-debian42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-12-15 10:35:36.618137 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-12-15 10:35:36.623771 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-12-15 10:35:36.625582 +0000 build-debian42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-12-15 10:35:36.626624 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-12-15 10:35:36.626670 +0000 build-debian42: output: gpg: Total number processed: 3
+2022-12-15 10:35:36.626690 +0000 build-debian42: output: gpg:              unchanged: 3
+2022-12-15 10:35:36.626709 +0000 build-debian42: output: + touch /builder/keyring/pubring.gpg
+2022-12-15 10:35:36.629927 +0000 build-debian42: output: + gpgconf --kill gpg-agent
+2022-12-15 10:35:36.638896 +0000 build-debian42: output: + pushd windows-tools-cross
+2022-12-15 10:35:36.638950 +0000 build-debian42: output: + expected_hash=11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.638967 +0000 build-debian42: output: + hash_len=40
+2022-12-15 10:35:36.639371 +0000 build-debian42: output: + '[' 40 -ne 40 ']'
+2022-12-15 10:35:36.639397 +0000 build-debian42: output: + [[ 11d0b04c32638e1270957b7ed1ad8938e7dcde9e =~ ^[a-f0-9]+$ ]]
+2022-12-15 10:35:36.639655 +0000 build-debian42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-12-15 10:35:36.640928 +0000 build-debian42: output: ++ git tag --points-at=11d0b04c32638e1270957b7ed1ad8938e7dcde9e '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-12-15 10:35:36.641244 +0000 build-debian42: output: ++ head -c 500
+2022-12-15 10:35:36.645375 +0000 build-debian42: output: + tags=fb2aa8a935585eba0f2e17eda717363833eea3c5:11d0b04c32638e1270957b7ed1ad8938e7dcde9e:
+2022-12-15 10:35:36.645453 +0000 build-debian42: output: + for tag in $tags
+2022-12-15 10:35:36.645533 +0000 build-debian42: output: + (( 82 != hash_len * 2 + 2 ))
+2022-12-15 10:35:36.645816 +0000 build-debian42: output: + [[ :11d0b04c32638e1270957b7ed1ad8938e7dcde9e: == \:\1\1\d\0\b\0\4\c\3\2\6\3\8\e\1\2\7\0\9\5\7\b\7\e\d\1\a\d\8\9\3\8\e\7\d\c\d\e\9\e\: ]]
+2022-12-15 10:35:36.645869 +0000 build-debian42: output: + tag=fb2aa8a935585eba0f2e17eda717363833eea3c5
+2022-12-15 10:35:36.645895 +0000 build-debian42: output: + verify_git_obj tag fb2aa8a935585eba0f2e17eda717363833eea3c5
+2022-12-15 10:35:36.645971 +0000 build-debian42: output: + local content newsig_number
+2022-12-15 10:35:36.646158 +0000 build-debian42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- fb2aa8a935585eba0f2e17eda717363833eea3c5
+2022-12-15 10:35:36.654169 +0000 build-debian42: output: + content='[GNUPG:] NEWSIG
+2022-12-15 10:35:36.654239 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.654340 +0000 build-debian42: output: [GNUPG:] SIG_ID +yId8SFbKu2jk6di+fpeGP6eucI 2022-12-15 1671100444
+2022-12-15 10:35:36.654383 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.654418 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.654517 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.654570 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.654718 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-15 10:35:36.654947 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-15 1671100444 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-15 10:35:36.655213 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-15 10:35:36.655673 +0000 build-debian42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-12-15 10:35:36.656249 +0000 build-debian42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-12-15 10:35:36.656321 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.656405 +0000 build-debian42: output: [GNUPG:] SIG_ID +yId8SFbKu2jk6di+fpeGP6eucI 2022-12-15 1671100444
+2022-12-15 10:35:36.656434 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.656467 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.656540 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.656578 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.656656 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-15 10:35:36.656772 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-15 1671100444 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-15 10:35:36.656844 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-15 10:35:36.657443 +0000 build-debian42: output: + newsig_number=1
+2022-12-15 10:35:36.657678 +0000 build-debian42: output: + '[' 1 = 1 ']'
+2022-12-15 10:35:36.658216 +0000 build-debian42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2022-12-15 10:35:36.658503 +0000 build-debian42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-12-15 10:35:36.658519 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.658544 +0000 build-debian42: output: [GNUPG:] SIG_ID +yId8SFbKu2jk6di+fpeGP6eucI 2022-12-15 1671100444
+2022-12-15 10:35:36.658639 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-12-15 10:35:36.658757 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.658775 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.658961 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-12-15 10:35:36.658978 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-12-15 10:35:36.659236 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-12-15 1671100444 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-12-15 10:35:36.659267 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-12-15 10:35:36.659796 +0000 build-debian42: output: + echo '---> Good tag fb2aa8a935585eba0f2e17eda717363833eea3c5'
+2022-12-15 10:35:36.659894 +0000 build-debian42: output: + '[' -z x ']'
+2022-12-15 10:35:36.659925 +0000 build-debian42: output: + popd
+2022-12-15 10:35:36.659943 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:35:36.659961 +0000 build-debian42: output: + pushd windows-tools-cross
+2022-12-15 10:35:36.659982 +0000 build-debian42: output: ---> Good tag fb2aa8a935585eba0f2e17eda717363833eea3c5
+2022-12-15 10:35:36.660401 +0000 build-debian42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-12-15 10:35:36.661244 +0000 build-debian42: output: + CURRENT_BRANCH=master
+2022-12-15 10:35:36.661649 +0000 build-debian42: output: + '[' master '!=' main ']'
+2022-12-15 10:35:36.661664 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:35:36.661670 +0000 build-debian42: output: + red='.[1;31m'
+2022-12-15 10:35:36.661980 +0000 build-debian42: output: + green='.[1;32m'
+2022-12-15 10:35:36.662017 +0000 build-debian42: output: + normal='.[0;0m'
+2022-12-15 10:35:36.662386 +0000 build-debian42: output: ++ git name-rev --name-only main
+2022-12-15 10:35:36.664714 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:35:36.664761 +0000 build-debian42: output: + echo -e '--> Switching branch from master branch to new .[1;31mmain.[0;0m'
+2022-12-15 10:35:36.664844 +0000 build-debian42: output: --> Switching branch from master branch to new .[1;31mmain.[0;0m
+2022-12-15 10:35:36.664924 +0000 build-debian42: output: + git checkout 11d0b04c32638e1270957b7ed1ad8938e7dcde9e -b main
+2022-12-15 10:35:36.704375 +0000 build-debian42: output: Switched to a new branch 'main'
+2022-12-15 10:35:36.704955 +0000 build-debian42: output: + '[' -e .gitmodules ']'
+2022-12-15 10:35:36.705021 +0000 build-debian42: output: + echo -e '--> Updating submodules'
+2022-12-15 10:35:36.705042 +0000 build-debian42: output: + git submodule init
+2022-12-15 10:35:36.705059 +0000 build-debian42: output: --> Updating submodules
+2022-12-15 10:35:36.745965 +0000 build-debian42: output: + git submodule update --recursive
+2022-12-15 10:35:36.806582 +0000 build-debian42: output: + false
+2022-12-15 10:35:36.806651 +0000 build-debian42: output: + echo '--> Merging...'
+2022-12-15 10:35:36.806678 +0000 build-debian42: output: --> Merging...
+2022-12-15 10:35:36.806705 +0000 build-debian42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q 11d0b04c32638e1270957b7ed1ad8938e7dcde9e
+2022-12-15 10:35:36.808290 +0000 build-debian42: output: + tracking_branch=refs/remotes//main
+2022-12-15 10:35:36.808322 +0000 build-debian42: output: + '[' -f .git/refs/remotes//main ']'
+2022-12-15 10:35:36.808441 +0000 build-debian42: output: + popd
+2022-12-15 10:35:36.808454 +0000 build-debian42: output: + exit_clean
+2022-12-15 10:35:36.808654 +0000 build-debian42: output: + local exit_code=0
+2022-12-15 10:35:36.808799 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2022-12-15 10:35:36.808817 +0000 build-debian42: output: + exit 0
+2022-12-15 10:35:36.885711 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1440 qubesbuilder.FileCopyOut+__builder__windows-tools-cross /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2022-12-15 10:36:07.697192 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3863 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:36:29.583235 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:36:30.502783 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3863 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:36:54.568981 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3863 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:36:54.855978 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:36:55.822682 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3863 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:36:56.011982 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp3863 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar''.
+2022-12-15 10:36:56.191891 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:36:56.191950 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-12-15 10:36:56.193835 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenbus-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar'\'' --'
+2022-12-15 10:36:56.193879 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenbus-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar'\'' --'
+2022-12-15 10:36:56.193892 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar --
+2022-12-15 10:36:56.193898 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:36:56.193904 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:36:56.193911 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:36:56.193916 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.193921 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194263 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:36:56.194290 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:36:56.194315 +0000 build-debian42: output: + FILE_NAME=xenbus-8.2.2.tar
+2022-12-15 10:36:56.194321 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194327 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194332 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:36:56.194337 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:36:56.194346 +0000 build-debian42: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-12-15 10:36:56.194381 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194387 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194392 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:36:56.194397 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:36:56.194402 +0000 build-debian42: output: + shift
+2022-12-15 10:36:56.194407 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:36:56.194415 +0000 build-debian42: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar ']'
+2022-12-15 10:36:56.194424 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:36:56.194430 +0000 build-debian42: output: + '[' -z xenbus-8.2.2.tar ']'
+2022-12-15 10:36:56.194436 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenbus-8.2.2.tar
+2022-12-15 10:36:56.194443 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:36:56.194449 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:36:56.194739 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:36:56.194763 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenbus-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-12-15 10:37:19.359725 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:37:19.359797 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:37:19.363644 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3863 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenbus-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v
+2022-12-15 10:37:25.163528 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'.
+2022-12-15 10:37:25.165762 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:37:25.166134 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-12-15 10:37:25.167255 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:37:25.167289 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:37:25.167323 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 --
+2022-12-15 10:37:25.167351 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:37:25.167357 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:37:25.167362 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:37:25.167372 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v
+2022-12-15 10:37:25.167377 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167382 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167387 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:37:25.167393 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:37:25.167401 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar
+2022-12-15 10:37:25.167406 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167411 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167418 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:37:25.167423 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:37:25.167429 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:37:25.167434 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167439 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167444 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:37:25.167449 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:37:25.167458 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-12-15 10:37:25.167463 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167468 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167473 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:37:25.167478 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:37:25.167483 +0000 build-debian42: output: + shift
+2022-12-15 10:37:25.167488 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:37:25.167496 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar ']'
+2022-12-15 10:37:25.167503 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v ']'
+2022-12-15 10:37:25.167510 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v
+2022-12-15 10:37:25.168756 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar
+2022-12-15 10:37:25.170254 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenbus-8.2.2.tar
+2022-12-15 10:37:25.170341 +0000 build-debian42: output: + FILE_NAME=xenbus-8.2.2.tar
+2022-12-15 10:37:25.170368 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-12-15 10:37:25.170393 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-12-15 10:37:25.170415 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-12-15 10:37:25.170429 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:37:25.170443 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:37:25.170456 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:37:25.170470 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:37:25.170491 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-12-15 10:37:25.170506 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:37:25.170521 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:37:25.171160 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-12-15 10:37:25.172912 +0000 build-debian42: output: ++ printf '%s  -\n' 443c7f87c6e5145856fb4fd82d54210802a10446982b379dc288c1592486e719c33d40532bbb8c54868f7df31ae7378bfa2c0ee6fa89cc9e96d57a83dae44df2
+2022-12-15 10:37:25.295609 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/untrusted_xenbus-8.2.2.tar /home/user/builder-r4.2-debian/tmp/tmpci2ypq1v/xenbus-8.2.2.tar
+2022-12-15 10:38:13.012655 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7989 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:38:13.670942 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7989 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:38:36.566188 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7989 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:38:37.032094 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7989 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:38:37.385712 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7989 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:38:37.963671 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7989 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:38:38.213691 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7989 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar''.
+2022-12-15 10:38:38.538425 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:38:38.538775 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-12-15 10:38:38.541036 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xeniface-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar'\'' --'
+2022-12-15 10:38:38.541072 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xeniface-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar'\'' --'
+2022-12-15 10:38:38.541209 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar --
+2022-12-15 10:38:38.541222 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:38:38.541228 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:38:38.541235 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:38:38.541241 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541246 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541251 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:38:38.541256 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:38:38.541262 +0000 build-debian42: output: + FILE_NAME=xeniface-8.2.2.tar
+2022-12-15 10:38:38.541378 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541389 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541415 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:38:38.541465 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:38:38.541476 +0000 build-debian42: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-12-15 10:38:38.541481 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541486 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541491 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:38:38.541499 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:38:38.541503 +0000 build-debian42: output: + shift
+2022-12-15 10:38:38.541509 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:38:38.541517 +0000 build-debian42: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar ']'
+2022-12-15 10:38:38.541617 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:38:38.541628 +0000 build-debian42: output: + '[' -z xeniface-8.2.2.tar ']'
+2022-12-15 10:38:38.541635 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xeniface-8.2.2.tar
+2022-12-15 10:38:38.541642 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:38:38.541648 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:38:38.543409 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:38:38.543443 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xeniface-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-12-15 10:39:20.406471 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:39:20.406550 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:39:20.415456 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7989 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xeniface-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk
+2022-12-15 10:39:24.889705 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'.
+2022-12-15 10:39:24.891750 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:39:24.891956 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-12-15 10:39:24.892907 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:39:24.893103 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:39:24.893294 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 --
+2022-12-15 10:39:24.893420 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:39:24.893499 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:39:24.893518 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:24.893592 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk
+2022-12-15 10:39:24.893613 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.893628 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.893650 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:39:24.893666 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:24.893751 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar
+2022-12-15 10:39:24.893833 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.893941 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.894058 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:39:24.894124 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:24.894223 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:39:24.894332 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.894411 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.894514 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:39:24.894616 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:24.894743 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-12-15 10:39:24.894820 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.894928 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.895029 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:39:24.895116 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:24.895241 +0000 build-debian42: output: + shift
+2022-12-15 10:39:24.895320 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:39:24.895433 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar ']'
+2022-12-15 10:39:24.895524 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk ']'
+2022-12-15 10:39:24.895651 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk
+2022-12-15 10:39:24.895761 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar
+2022-12-15 10:39:24.896158 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xeniface-8.2.2.tar
+2022-12-15 10:39:24.896298 +0000 build-debian42: output: + FILE_NAME=xeniface-8.2.2.tar
+2022-12-15 10:39:24.896389 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-12-15 10:39:24.896483 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-12-15 10:39:24.896570 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-12-15 10:39:24.896592 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:39:24.896610 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:39:24.896685 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:39:24.896705 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:39:24.896805 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-12-15 10:39:24.897088 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:39:24.897130 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:39:24.897554 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-12-15 10:39:24.898420 +0000 build-debian42: output: ++ printf '%s  -\n' 044d171eca80ac88d32f37c64b613a8ff005eaecf4cc5445f2f90a1bdf2296835979c121093f376efaee9a390a7235f9ddde18df0ec567ea24733e1a932cd736
+2022-12-15 10:39:24.998346 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/untrusted_xeniface-8.2.2.tar /home/user/builder-r4.2-debian/tmp/tmp8s3rddfk/xeniface-8.2.2.tar
+2022-12-15 10:39:49.673622 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5157 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:39:50.814394 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5157 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:39:52.163474 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5157 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:39:52.351031 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5157 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:39:52.659240 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5157 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:39:53.317163 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5157 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:39:53.481373 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp5157 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar''.
+2022-12-15 10:39:53.584292 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:39:53.584749 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-12-15 10:39:53.585991 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvbd-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar'\'' --'
+2022-12-15 10:39:53.586021 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvbd-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar'\'' --'
+2022-12-15 10:39:53.586034 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar --
+2022-12-15 10:39:53.586040 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:39:53.586080 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:53.586090 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:39:53.586095 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586100 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586105 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:39:53.586192 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:53.586214 +0000 build-debian42: output: + FILE_NAME=xenvbd-8.2.2.tar
+2022-12-15 10:39:53.586221 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586226 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586258 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:39:53.586541 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:53.586558 +0000 build-debian42: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-12-15 10:39:53.586565 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586570 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586575 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:39:53.586580 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:39:53.586585 +0000 build-debian42: output: + shift
+2022-12-15 10:39:53.586590 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:39:53.586598 +0000 build-debian42: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar ']'
+2022-12-15 10:39:53.586607 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:39:53.586613 +0000 build-debian42: output: + '[' -z xenvbd-8.2.2.tar ']'
+2022-12-15 10:39:53.586619 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenvbd-8.2.2.tar
+2022-12-15 10:39:53.586626 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:39:53.586632 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:39:53.587888 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:39:53.588155 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenvbd-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-12-15 10:40:30.980062 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:40:30.980144 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:40:30.989014 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5157 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenvbd-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpku3_ny29
+2022-12-15 10:40:35.461681 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpku3_ny29 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'.
+2022-12-15 10:40:35.466940 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:40:35.468203 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpku3_ny29 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-12-15 10:40:35.470361 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpku3_ny29'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:40:35.470434 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpku3_ny29'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:40:35.470509 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpku3_ny29 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 --
+2022-12-15 10:40:35.470530 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:40:35.470544 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:40:35.470597 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:40:35.470938 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpku3_ny29
+2022-12-15 10:40:35.471000 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.471035 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.471054 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:40:35.471623 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:40:35.471723 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar
+2022-12-15 10:40:35.472107 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.472353 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.472377 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:40:35.472394 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:40:35.472423 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:40:35.472439 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.472507 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.472533 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:40:35.473066 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:40:35.473329 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-12-15 10:40:35.473469 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.473492 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.473526 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:40:35.473543 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:40:35.473559 +0000 build-debian42: output: + shift
+2022-12-15 10:40:35.473575 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:40:35.473603 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar ']'
+2022-12-15 10:40:35.473627 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpku3_ny29 ']'
+2022-12-15 10:40:35.473649 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpku3_ny29
+2022-12-15 10:40:35.475690 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar
+2022-12-15 10:40:35.477764 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenvbd-8.2.2.tar
+2022-12-15 10:40:35.477799 +0000 build-debian42: output: + FILE_NAME=xenvbd-8.2.2.tar
+2022-12-15 10:40:35.477824 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-12-15 10:40:35.477849 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-12-15 10:40:35.477872 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-12-15 10:40:35.478095 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:40:35.478174 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:40:35.478194 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:40:35.478209 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:40:35.478293 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-12-15 10:40:35.478311 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:40:35.478334 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:40:35.479406 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-12-15 10:40:35.480103 +0000 build-debian42: output: ++ printf '%s  -\n' 1f68c7d604ee384845436e88b28a278db329877fb6fd6e33c12d256caabe9a7826dc3f447f1d83b251e75fae3b2cfadbf1748dc03804870482d4093149ef6d59
+2022-12-15 10:40:35.525875 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/untrusted_xenvbd-8.2.2.tar /home/user/builder-r4.2-debian/tmp/tmpku3_ny29/xenvbd-8.2.2.tar
+2022-12-15 10:40:58.316425 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6034 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:40:58.666823 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6034 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:40:59.079976 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6034 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:40:59.429965 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6034 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:40:59.772597 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6034 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:41:00.601291 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6034 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:41:00.880160 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp6034 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar''.
+2022-12-15 10:41:01.154496 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:41:01.155118 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-12-15 10:41:01.157359 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xennet-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar'\'' --'
+2022-12-15 10:41:01.157581 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xennet-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar'\'' --'
+2022-12-15 10:41:01.157891 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar --
+2022-12-15 10:41:01.157915 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:41:01.157930 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:01.157955 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:41:01.157968 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.157980 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.157994 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:41:01.158038 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:01.158054 +0000 build-debian42: output: + FILE_NAME=xennet-8.2.2.tar
+2022-12-15 10:41:01.158066 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.158078 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.158327 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:41:01.158384 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:01.158414 +0000 build-debian42: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-12-15 10:41:01.158502 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.158528 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.158544 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:41:01.158560 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:01.158574 +0000 build-debian42: output: + shift
+2022-12-15 10:41:01.158589 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:41:01.158614 +0000 build-debian42: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar ']'
+2022-12-15 10:41:01.158639 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:41:01.159071 +0000 build-debian42: output: + '[' -z xennet-8.2.2.tar ']'
+2022-12-15 10:41:01.159116 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xennet-8.2.2.tar
+2022-12-15 10:41:01.159134 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:41:01.159151 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:41:01.161186 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:41:01.161400 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xennet-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-12-15 10:41:52.159742 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:41:52.159891 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:41:52.166939 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6034 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xennet-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r
+2022-12-15 10:41:56.361073 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r --untrusted-file /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'.
+2022-12-15 10:41:56.363597 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:41:56.363797 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r --untrusted-file /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-12-15 10:41:56.365326 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:41:56.365369 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:41:56.365406 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r --untrusted-file /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 --
+2022-12-15 10:41:56.365414 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:41:56.365420 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:41:56.365425 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:56.365432 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r
+2022-12-15 10:41:56.365438 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365443 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365448 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:41:56.365453 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:56.365461 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar
+2022-12-15 10:41:56.365486 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365491 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365496 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:41:56.365501 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:56.365507 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:41:56.365512 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365517 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365522 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:41:56.365527 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:56.365536 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-12-15 10:41:56.365541 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365546 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365551 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:41:56.365556 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:41:56.365561 +0000 build-debian42: output: + shift
+2022-12-15 10:41:56.365566 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:41:56.365574 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar ']'
+2022-12-15 10:41:56.365581 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r ']'
+2022-12-15 10:41:56.365588 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r
+2022-12-15 10:41:56.366049 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar
+2022-12-15 10:41:56.367009 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xennet-8.2.2.tar
+2022-12-15 10:41:56.367037 +0000 build-debian42: output: + FILE_NAME=xennet-8.2.2.tar
+2022-12-15 10:41:56.367063 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-12-15 10:41:56.367088 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-12-15 10:41:56.367113 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-12-15 10:41:56.367129 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:41:56.367145 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:41:56.367160 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:41:56.367175 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:41:56.367249 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-12-15 10:41:56.367268 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:41:56.367287 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:41:56.367509 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-12-15 10:41:56.368193 +0000 build-debian42: output: ++ printf '%s  -\n' 6b9bce38733376fd7b4a3783e81052b279aa77b96cc3f34bc7ed8433eae23a1bcea4dda56e5e3aad290cea352679ef9ea4c2cf7bc0b1fa5d866a1f4b1975700f
+2022-12-15 10:41:56.398753 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/untrusted_xennet-8.2.2.tar /home/user/builder-r4.2-debian/tmp/tmphyk5_p9r/xennet-8.2.2.tar
+2022-12-15 10:42:19.763828 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9044 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:42:20.085371 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9044 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:42:20.374930 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9044 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:42:20.732284 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9044 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:42:21.124986 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9044 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:42:21.938778 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9044 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:42:22.202095 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp9044 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar''.
+2022-12-15 10:42:22.456992 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:42:22.457795 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-12-15 10:42:22.459170 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvif-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar'\'' --'
+2022-12-15 10:42:22.459333 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvif-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar'\'' --'
+2022-12-15 10:42:22.459369 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar --
+2022-12-15 10:42:22.459396 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:42:22.459455 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:42:22.459484 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:42:22.459490 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459495 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459500 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:42:22.459589 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:42:22.459597 +0000 build-debian42: output: + FILE_NAME=xenvif-8.2.2.tar
+2022-12-15 10:42:22.459602 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459627 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459651 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:42:22.459658 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:42:22.459709 +0000 build-debian42: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-12-15 10:42:22.459736 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459742 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459747 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:42:22.459753 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:42:22.459757 +0000 build-debian42: output: + shift
+2022-12-15 10:42:22.459764 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:42:22.459773 +0000 build-debian42: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar ']'
+2022-12-15 10:42:22.459781 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:42:22.459787 +0000 build-debian42: output: + '[' -z xenvif-8.2.2.tar ']'
+2022-12-15 10:42:22.459796 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenvif-8.2.2.tar
+2022-12-15 10:42:22.459803 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:42:22.459809 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:42:22.460870 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:42:22.460899 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenvif-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-12-15 10:43:40.868059 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:43:40.868105 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:43:40.871774 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9044 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenvif-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpico7_pt9
+2022-12-15 10:43:47.121948 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpico7_pt9 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'.
+2022-12-15 10:43:47.124189 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:43:47.124805 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpico7_pt9 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-12-15 10:43:47.125111 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpico7_pt9'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:43:47.125246 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpico7_pt9'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'\'' --'
+2022-12-15 10:43:47.125337 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpico7_pt9 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 --
+2022-12-15 10:43:47.125370 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:43:47.125475 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:43:47.125535 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:43:47.125761 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpico7_pt9
+2022-12-15 10:43:47.125816 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.125876 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.125991 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:43:47.126129 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:43:47.126223 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar
+2022-12-15 10:43:47.126283 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.126380 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.126421 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:43:47.126508 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:43:47.126549 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:43:47.126676 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.126713 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.126783 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:43:47.126832 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:43:47.126944 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-12-15 10:43:47.126978 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.127044 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.127189 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:43:47.127246 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:43:47.127472 +0000 build-debian42: output: + shift
+2022-12-15 10:43:47.127487 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:43:47.127497 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar ']'
+2022-12-15 10:43:47.127541 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpico7_pt9 ']'
+2022-12-15 10:43:47.127684 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpico7_pt9
+2022-12-15 10:43:47.128891 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar
+2022-12-15 10:43:47.129406 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_xenvif-8.2.2.tar
+2022-12-15 10:43:47.129460 +0000 build-debian42: output: + FILE_NAME=xenvif-8.2.2.tar
+2022-12-15 10:43:47.129589 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-12-15 10:43:47.129726 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-12-15 10:43:47.129747 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-12-15 10:43:47.129846 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:43:47.129895 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:43:47.130000 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:43:47.130034 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:43:47.130176 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-12-15 10:43:47.130228 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:43:47.131033 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:43:47.131051 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-12-15 10:43:47.131654 +0000 build-debian42: output: ++ printf '%s  -\n' 268fe9189004a68cda0fb01ee1f88e19b11ed7df8d9bebc6eedff9686f9b23f5659f256163fbe654995b623f758ae4b7c2bc8afed40d063d7bc32e1f029795b7
+2022-12-15 10:43:47.163865 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/untrusted_xenvif-8.2.2.tar /home/user/builder-r4.2-debian/tmp/tmpico7_pt9/xenvif-8.2.2.tar
+2022-12-15 10:44:35.424189 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3051 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:44:36.022428 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3051 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:44:36.715770 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3051 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:44:37.520045 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3051 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:44:38.270561 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3051 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:44:39.013123 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3051 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:44:40.400539 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp3051 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip''.
+2022-12-15 10:44:40.883541 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:44:40.883646 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-12-15 10:44:41.303533 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''wix311-binaries.zip'\'' --file-url '\''https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip'\'' --'
+2022-12-15 10:44:41.303582 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''wix311-binaries.zip'\'' --file-url '\''https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip'\'' --'
+2022-12-15 10:44:41.303755 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip --
+2022-12-15 10:44:41.303770 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:44:41.303777 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:44:41.303784 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:44:41.303791 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.303819 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.304126 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:44:41.304313 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:44:41.304454 +0000 build-debian42: output: + FILE_NAME=wix311-binaries.zip
+2022-12-15 10:44:41.304607 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.304636 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.304652 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:44:41.304762 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:44:41.304886 +0000 build-debian42: output: + FILE_URL=https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-12-15 10:44:41.305016 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.305034 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.305049 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:44:41.305118 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:44:41.305134 +0000 build-debian42: output: + shift
+2022-12-15 10:44:41.305148 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:44:41.305519 +0000 build-debian42: output: + '[' -z https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip ']'
+2022-12-15 10:44:41.305590 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:44:41.305611 +0000 build-debian42: output: + '[' -z wix311-binaries.zip ']'
+2022-12-15 10:44:41.305630 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_wix311-binaries.zip
+2022-12-15 10:44:41.305648 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:44:41.305665 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:44:41.305681 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:44:41.305715 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_wix311-binaries.zip -- https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-12-15 10:48:33.079515 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:48:33.079560 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:48:33.082034 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3051 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_wix311-binaries.zip /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg
+2022-12-15 10:48:36.955603 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512'.
+2022-12-15 10:48:36.960400 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:48:36.961058 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-12-15 10:48:36.962761 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512'\'' --'
+2022-12-15 10:48:36.962858 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512'\'' --'
+2022-12-15 10:48:36.963586 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512 --
+2022-12-15 10:48:36.963682 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:48:36.963704 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:48:36.963720 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:48:36.963741 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg
+2022-12-15 10:48:36.963756 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.963832 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.963851 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:48:36.963865 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:48:36.963890 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip
+2022-12-15 10:48:36.963914 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.963983 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.964007 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:48:36.964170 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:48:36.964365 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:48:36.964839 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.965114 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.965274 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:48:36.965368 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:48:36.965596 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-12-15 10:48:36.965784 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.965946 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.966099 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:48:36.966280 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:48:36.966416 +0000 build-debian42: output: + shift
+2022-12-15 10:48:36.966577 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:48:36.966780 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip ']'
+2022-12-15 10:48:36.966942 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg ']'
+2022-12-15 10:48:36.967107 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg
+2022-12-15 10:48:36.967299 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip
+2022-12-15 10:48:36.967449 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_wix311-binaries.zip
+2022-12-15 10:48:36.967608 +0000 build-debian42: output: + FILE_NAME=wix311-binaries.zip
+2022-12-15 10:48:36.967811 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-12-15 10:48:36.967981 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-12-15 10:48:36.968152 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-12-15 10:48:36.968308 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:48:36.968502 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:48:36.968627 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:48:36.968798 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:48:36.968977 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-12-15 10:48:36.969128 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:48:36.969293 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:48:36.969466 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-12-15 10:48:36.969648 +0000 build-debian42: output: ++ printf '%s  -\n' a8c3c2243489fc79e7a18b321ed03133354d43620dd265f087d32ba508f7baf769d32d12b1ccbc22f924573e205ebda7fd8d8ca5e35d5d4a7181af4997657a20
+2022-12-15 10:48:37.031414 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/untrusted_wix311-binaries.zip /home/user/builder-r4.2-debian/tmp/tmpqtd6gszg/wix311-binaries.zip
+2022-12-15 10:49:02.170269 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6574 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:49:02.434189 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6574 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:49:02.918842 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6574 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:49:04.070348 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6574 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:49:04.215963 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6574 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:49:05.538416 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6574 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:49:05.726229 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp6574 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe''.
+2022-12-15 10:49:05.875061 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:49:05.877080 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:49:05.879791 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''dotNetFx40_Full_x86_x64.exe'\'' --file-url '\''https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe'\'' --'
+2022-12-15 10:49:05.879836 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''dotNetFx40_Full_x86_x64.exe'\'' --file-url '\''https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe'\'' --'
+2022-12-15 10:49:05.879871 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe --
+2022-12-15 10:49:05.879877 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:49:05.879884 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:49:05.879891 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:49:05.879896 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.879901 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.879906 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:49:05.879911 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:49:05.879918 +0000 build-debian42: output: + FILE_NAME=dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:49:05.880042 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.880055 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.880062 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:49:05.880067 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:49:05.880100 +0000 build-debian42: output: + FILE_URL=https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:49:05.880108 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.880113 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.880118 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:49:05.880123 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:49:05.880128 +0000 build-debian42: output: + shift
+2022-12-15 10:49:05.880134 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:49:05.880145 +0000 build-debian42: output: + '[' -z https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe ']'
+2022-12-15 10:49:05.880153 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:49:05.880160 +0000 build-debian42: output: + '[' -z dotNetFx40_Full_x86_x64.exe ']'
+2022-12-15 10:49:05.880167 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:49:05.880176 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:49:05.880182 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:49:05.883862 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:49:05.883897 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_dotNetFx40_Full_x86_x64.exe -- https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:49:50.857175 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:49:50.857242 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:49:50.861149 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6574 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_dotNetFx40_Full_x86_x64.exe /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf
+2022-12-15 10:50:04.498175 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'.
+2022-12-15 10:50:04.500374 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:50:04.500925 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-12-15 10:50:04.501495 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'\'' --'
+2022-12-15 10:50:04.501528 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'\'' --'
+2022-12-15 10:50:04.501575 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf --untrusted-file /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 --
+2022-12-15 10:50:04.501763 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:50:04.501784 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:50:04.501815 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:04.501919 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf
+2022-12-15 10:50:04.501956 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502019 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502070 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:50:04.502171 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:04.502421 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:50:04.502461 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502473 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502541 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:50:04.502610 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:04.502714 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:50:04.502857 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502874 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.502881 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:50:04.502886 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:04.503029 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-12-15 10:50:04.503040 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.503046 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.503051 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:50:04.503072 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:04.503157 +0000 build-debian42: output: + shift
+2022-12-15 10:50:04.503168 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:50:04.503178 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe ']'
+2022-12-15 10:50:04.503270 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf ']'
+2022-12-15 10:50:04.503287 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf
+2022-12-15 10:50:04.504678 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:50:04.505270 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:50:04.505428 +0000 build-debian42: output: + FILE_NAME=dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:50:04.505495 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-12-15 10:50:04.505580 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-12-15 10:50:04.505599 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-12-15 10:50:04.505713 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:50:04.505725 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:50:04.505731 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:50:04.505931 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:50:04.505948 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-12-15 10:50:04.505955 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:50:04.506109 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:50:04.506772 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-12-15 10:50:04.507475 +0000 build-debian42: output: ++ printf '%s  -\n' 241ba3f82f37818407bc00909c160b653b45a1a3d156e043b87ba18a7819294716705c952c7b46516c4afd86e6f99bad23e7235b951a371ae6728107f19e5f23
+2022-12-15 10:50:04.607898 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/untrusted_dotNetFx40_Full_x86_x64.exe /home/user/builder-r4.2-debian/tmp/tmp4tovf7gf/dotNetFx40_Full_x86_x64.exe
+2022-12-15 10:50:28.835704 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8792 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:50:52.265029 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8792 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:50:52.828741 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8792 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:50:53.161801 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8792 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:50:53.331731 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8792 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:50:53.856920 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8792 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:50:54.083514 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8792 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz''.
+2022-12-15 10:50:54.266665 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-12-15 10:50:54.267064 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-12-15 10:50:54.268700 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''devcon.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz'\'' --'
+2022-12-15 10:50:54.268737 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''devcon.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz'\'' --'
+2022-12-15 10:50:54.268753 +0000 build-debian42: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz --
+2022-12-15 10:50:54.268759 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:50:54.268765 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:54.269221 +0000 build-debian42: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-12-15 10:50:54.269241 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269247 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269253 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:50:54.269258 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:54.269264 +0000 build-debian42: output: + FILE_NAME=devcon.tar.gz
+2022-12-15 10:50:54.269268 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269291 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269296 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:50:54.269301 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:54.269311 +0000 build-debian42: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-12-15 10:50:54.269316 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269321 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269327 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:50:54.269332 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:50:54.269337 +0000 build-debian42: output: + shift
+2022-12-15 10:50:54.269342 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:50:54.269351 +0000 build-debian42: output: + '[' -z https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz ']'
+2022-12-15 10:50:54.269359 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-12-15 10:50:54.269365 +0000 build-debian42: output: + '[' -z devcon.tar.gz ']'
+2022-12-15 10:50:54.269372 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_devcon.tar.gz
+2022-12-15 10:50:54.269378 +0000 build-debian42: output: + '[' -n /builder/windows-tools-cross ']'
+2022-12-15 10:50:54.269384 +0000 build-debian42: output: + mkdir -p /builder/windows-tools-cross
+2022-12-15 10:50:54.270197 +0000 build-debian42: output: + cd /builder/windows-tools-cross
+2022-12-15 10:50:54.270225 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_devcon.tar.gz -- https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-12-15 10:50:56.126191 +0000 build-debian42: output: + '[' '' == 1 ']'
+2022-12-15 10:50:56.126360 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:50:56.131794 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8792 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_devcon.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpqixwg407
+2022-12-15 10:51:01.929437 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpqixwg407 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512'.
+2022-12-15 10:51:01.931303 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-12-15 10:51:01.931469 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpqixwg407 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512
+2022-12-15 10:51:01.933334 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpqixwg407'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512'\'' --'
+2022-12-15 10:51:01.933407 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpqixwg407'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512'\'' --'
+2022-12-15 10:51:01.933447 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpqixwg407 --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512 --
+2022-12-15 10:51:01.933461 +0000 build-debian42: output: + PUBKEY_FILE=()
+2022-12-15 10:51:01.933473 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2022-12-15 10:51:01.933484 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:51:01.933500 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpqixwg407
+2022-12-15 10:51:01.933511 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933521 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933533 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2022-12-15 10:51:01.933544 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:51:01.933566 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz
+2022-12-15 10:51:01.933578 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933588 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933599 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2022-12-15 10:51:01.933610 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:51:01.933622 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2022-12-15 10:51:01.933632 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933642 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933682 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2022-12-15 10:51:01.933694 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:51:01.933712 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512
+2022-12-15 10:51:01.933722 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933733 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933744 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2022-12-15 10:51:01.933755 +0000 build-debian42: output: + case "$1" in
+2022-12-15 10:51:01.933765 +0000 build-debian42: output: + shift
+2022-12-15 10:51:01.933776 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2022-12-15 10:51:01.933792 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz ']'
+2022-12-15 10:51:01.933808 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpqixwg407 ']'
+2022-12-15 10:51:01.933822 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpqixwg407
+2022-12-15 10:51:01.933961 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz
+2022-12-15 10:51:01.935705 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_devcon.tar.gz
+2022-12-15 10:51:01.935725 +0000 build-debian42: output: + FILE_NAME=devcon.tar.gz
+2022-12-15 10:51:01.935735 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512 ']'
+2022-12-15 10:51:01.935744 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512 ']'
+2022-12-15 10:51:01.935904 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512 ']'
+2022-12-15 10:51:01.936108 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:51:01.936244 +0000 build-debian42: output: + '[' -z '' ']'
+2022-12-15 10:51:01.936439 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:51:01.936476 +0000 build-debian42: output: + '[' -n '' ']'
+2022-12-15 10:51:01.936489 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512 ']'
+2022-12-15 10:51:01.936499 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2022-12-15 10:51:01.936506 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2022-12-15 10:51:01.937395 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/windows-tools-cross/devcon.tar.gz.sha512
+2022-12-15 10:51:01.938790 +0000 build-debian42: output: ++ printf '%s  -\n' 2aa9f390d9a7b4d2a357f9d5ac4dff79ebb4f01f120a3e2419ff0d49e24977c08396f1d84764494eb4e6c8e0098e2190c557fcfbf85c19e1b02ca24758784a32
+2022-12-15 10:51:01.939259 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpqixwg407/untrusted_devcon.tar.gz /home/user/builder-r4.2-debian/tmp/tmpqixwg407/devcon.tar.gz
+2022-12-15 10:51:48.387887 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5753 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:51:48.945467 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5753 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:51:49.736284 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5753 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:51:50.101449 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp5753 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/windows-tools-cross/hash /builder/windows-tools-cross/vtags && cd /builder && git -C /builder/windows-tools-cross rev-parse '\''HEAD^{}'\'' >> /builder/windows-tools-cross/hash && git -C /builder/windows-tools-cross tag --points-at HEAD --list '\''v*'\'' >> /builder/windows-tools-cross/vtags''.
+2022-12-15 10:51:50.723820 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5753 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpflsz3bmg
+2022-12-15 10:51:51.162262 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5753 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpflsz3bmg
+2022-12-15 10:52:18.237507 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9527 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:52:18.614617 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9527 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:52:19.313528 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9527 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:52:19.813428 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp9527 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/windows-tools-cross/modules && cd /builder && git -C /builder/windows-tools-cross/qubes-core-vchan-xen rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-core-agent-windows rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-core-qubesdb rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-windows-utils rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-gui-common rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-gui-agent-windows rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers rev-parse HEAD >> /builder/windows-tools-cross/modules && git -C /builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface rev-parse HEAD >> /builder/windows-tools-cross/modules''.
+2022-12-15 10:52:20.353525 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9527 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__modules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpflsz3bmg
+2022-12-15 10:53:09.068821 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3853 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-12-15 10:53:09.532159 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/windows-tools-cross
+2022-12-15 10:53:10.239419 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3853 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-12-15 10:53:10.746477 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3853 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-15 10:53:11.173420 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-15 10:53:11.746994 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3853 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-15 10:53:12.262379 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp3853 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-core-vchan-xen qubes-core-vchan-xen-ab3de83c88bdf5ce.tar.gz qubes-core-vchan-xen/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-core-agent-windows qubes-core-agent-windows-1f00ddafec8179ac.tar.gz qubes-core-agent-windows/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-core-qubesdb qubes-core-qubesdb-e94f2c908b04de45.tar.gz qubes-core-qubesdb/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-windows-utils qubes-windows-utils-256c20d1100b3f62.tar.gz qubes-windows-utils/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-gui-common qubes-gui-common-d39f0576ae18626e.tar.gz qubes-gui-common/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-gui-agent-windows qubes-gui-agent-windows-8d9980bc5b2de3c3.tar.gz qubes-gui-agent-windows/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar.gz qubes-installer-qubes-os-windows-tools/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar.gz qubes-vmm-xen-windows-pvdrivers/ && /builder/plugins/fetch/scripts/create-archive /builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar.gz qubes-vmm-xen-win-pvdrivers-xeniface/''.
+2022-12-15 10:53:12.625113 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.625157 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.625373 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.638912 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.638977 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-core-vchan-xen
+2022-12-15 10:53:12.639881 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-core-vchan-xen
+2022-12-15 10:53:12.639909 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.639918 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-core-vchan-xen-ab3de83c88bdf5ce.tar
+2022-12-15 10:53:12.639925 +0000 build-debian42: output: + '[' xqubes-core-vchan-xen/ '!=' x ']'
+2022-12-15 10:53:12.639931 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-vchan-xen/
+2022-12-15 10:53:12.639938 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-core-vchan-xen
+2022-12-15 10:53:12.639945 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-core-vchan-xen ~
+2022-12-15 10:53:12.639973 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.659098 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1645474118
+2022-12-15 10:53:12.660131 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.660749 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.660768 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.663260 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.663326 +0000 build-debian42: output: + tar --sort=name --mtime=@1645474118 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-core-vchan-xen/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-core-vchan-xen-ab3de83c88bdf5ce.tar -cf qubes-core-vchan-xen-ab3de83c88bdf5ce.tar .
+2022-12-15 10:53:12.665468 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.665501 +0000 build-debian42: output: + gzip -fn qubes-core-vchan-xen-ab3de83c88bdf5ce.tar
+2022-12-15 10:53:12.669673 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.669711 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.671840 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.671874 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.672158 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.673291 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.673573 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-core-agent-windows
+2022-12-15 10:53:12.674489 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-core-agent-windows
+2022-12-15 10:53:12.674508 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.674522 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-core-agent-windows-1f00ddafec8179ac.tar
+2022-12-15 10:53:12.674529 +0000 build-debian42: output: + '[' xqubes-core-agent-windows/ '!=' x ']'
+2022-12-15 10:53:12.674536 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-agent-windows/
+2022-12-15 10:53:12.674545 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-core-agent-windows
+2022-12-15 10:53:12.674552 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-core-agent-windows ~
+2022-12-15 10:53:12.674579 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.675992 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647577233
+2022-12-15 10:53:12.676534 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.676842 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.676856 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.678043 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.678078 +0000 build-debian42: output: + tar --sort=name --mtime=@1647577233 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-core-agent-windows/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-core-agent-windows-1f00ddafec8179ac.tar -cf qubes-core-agent-windows-1f00ddafec8179ac.tar .
+2022-12-15 10:53:12.682851 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.682900 +0000 build-debian42: output: + gzip -fn qubes-core-agent-windows-1f00ddafec8179ac.tar
+2022-12-15 10:53:12.693504 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.693528 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.694837 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.695056 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.695807 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.696944 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.697156 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-core-qubesdb
+2022-12-15 10:53:12.697930 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-core-qubesdb
+2022-12-15 10:53:12.697990 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.698007 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-core-qubesdb-e94f2c908b04de45.tar
+2022-12-15 10:53:12.698069 +0000 build-debian42: output: + '[' xqubes-core-qubesdb/ '!=' x ']'
+2022-12-15 10:53:12.698120 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-core-qubesdb/
+2022-12-15 10:53:12.698183 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-core-qubesdb
+2022-12-15 10:53:12.698347 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-core-qubesdb ~
+2022-12-15 10:53:12.698364 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.700428 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1649537558
+2022-12-15 10:53:12.701046 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.701338 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.701353 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.703113 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.703204 +0000 build-debian42: output: + tar --sort=name --mtime=@1649537558 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-core-qubesdb/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-core-qubesdb-e94f2c908b04de45.tar -cf qubes-core-qubesdb-e94f2c908b04de45.tar .
+2022-12-15 10:53:12.706591 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.706678 +0000 build-debian42: output: + gzip -fn qubes-core-qubesdb-e94f2c908b04de45.tar
+2022-12-15 10:53:12.711832 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.711872 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.714032 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.714366 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.714866 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.716586 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.716839 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-windows-utils
+2022-12-15 10:53:12.718093 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-windows-utils
+2022-12-15 10:53:12.718163 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.718247 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-windows-utils-256c20d1100b3f62.tar
+2022-12-15 10:53:12.718506 +0000 build-debian42: output: + '[' xqubes-windows-utils/ '!=' x ']'
+2022-12-15 10:53:12.718530 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-windows-utils/
+2022-12-15 10:53:12.718553 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-windows-utils
+2022-12-15 10:53:12.718598 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-windows-utils ~
+2022-12-15 10:53:12.718731 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.720539 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647879901
+2022-12-15 10:53:12.721084 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.721419 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.721483 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.723651 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.723760 +0000 build-debian42: output: + tar --sort=name --mtime=@1647879901 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-windows-utils/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-windows-utils-256c20d1100b3f62.tar -cf qubes-windows-utils-256c20d1100b3f62.tar .
+2022-12-15 10:53:12.726180 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.726283 +0000 build-debian42: output: + gzip -fn qubes-windows-utils-256c20d1100b3f62.tar
+2022-12-15 10:53:12.731614 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.731771 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.733727 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.733957 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.736001 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.737354 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.737848 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-gui-common
+2022-12-15 10:53:12.738713 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-gui-common
+2022-12-15 10:53:12.738981 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.738997 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-gui-common-d39f0576ae18626e.tar
+2022-12-15 10:53:12.739270 +0000 build-debian42: output: + '[' xqubes-gui-common/ '!=' x ']'
+2022-12-15 10:53:12.739448 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-gui-common/
+2022-12-15 10:53:12.739470 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-gui-common
+2022-12-15 10:53:12.739601 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-gui-common ~
+2022-12-15 10:53:12.739817 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.741423 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647880228
+2022-12-15 10:53:12.742161 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.742471 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.743025 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.745130 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.745174 +0000 build-debian42: output: + tar --sort=name --mtime=@1647880228 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-gui-common/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-gui-common-d39f0576ae18626e.tar -cf qubes-gui-common-d39f0576ae18626e.tar .
+2022-12-15 10:53:12.747894 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.747968 +0000 build-debian42: output: + gzip -fn qubes-gui-common-d39f0576ae18626e.tar
+2022-12-15 10:53:12.750223 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.750320 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.752503 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.752990 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.755112 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.755917 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.756474 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-gui-agent-windows
+2022-12-15 10:53:12.757422 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-gui-agent-windows
+2022-12-15 10:53:12.757638 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.757666 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-gui-agent-windows-8d9980bc5b2de3c3.tar
+2022-12-15 10:53:12.757946 +0000 build-debian42: output: + '[' xqubes-gui-agent-windows/ '!=' x ']'
+2022-12-15 10:53:12.758014 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-gui-agent-windows/
+2022-12-15 10:53:12.758111 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-gui-agent-windows
+2022-12-15 10:53:12.758200 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-gui-agent-windows ~
+2022-12-15 10:53:12.758595 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.761210 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647879935
+2022-12-15 10:53:12.762056 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.762081 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.762740 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.763827 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.764207 +0000 build-debian42: output: + tar --sort=name --mtime=@1647879935 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-gui-agent-windows/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-gui-agent-windows-8d9980bc5b2de3c3.tar -cf qubes-gui-agent-windows-8d9980bc5b2de3c3.tar .
+2022-12-15 10:53:12.770967 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.771032 +0000 build-debian42: output: + gzip -fn qubes-gui-agent-windows-8d9980bc5b2de3c3.tar
+2022-12-15 10:53:12.786517 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.786554 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.789911 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.790477 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.791612 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.793242 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.793956 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools
+2022-12-15 10:53:12.796042 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools
+2022-12-15 10:53:12.796085 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.796119 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar
+2022-12-15 10:53:12.796185 +0000 build-debian42: output: + '[' xqubes-installer-qubes-os-windows-tools/ '!=' x ']'
+2022-12-15 10:53:12.796315 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-installer-qubes-os-windows-tools/
+2022-12-15 10:53:12.796806 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools
+2022-12-15 10:53:12.796885 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.797132 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools ~
+2022-12-15 10:53:12.798181 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647879996
+2022-12-15 10:53:12.798543 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.798781 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.799227 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.800515 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.801068 +0000 build-debian42: output: + tar --sort=name --mtime=@1647879996 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-installer-qubes-os-windows-tools/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar -cf qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar .
+2022-12-15 10:53:12.805197 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.805240 +0000 build-debian42: output: + gzip -fn qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar
+2022-12-15 10:53:12.810661 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.810692 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.813934 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.814387 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.816267 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.818350 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.819280 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers
+2022-12-15 10:53:12.819324 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers
+2022-12-15 10:53:12.819340 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.819419 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar
+2022-12-15 10:53:12.819453 +0000 build-debian42: output: + '[' xqubes-vmm-xen-windows-pvdrivers/ '!=' x ']'
+2022-12-15 10:53:12.819471 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-vmm-xen-windows-pvdrivers/
+2022-12-15 10:53:12.819492 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers
+2022-12-15 10:53:12.819552 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers ~
+2022-12-15 10:53:12.819915 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.821019 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1647655413
+2022-12-15 10:53:12.821575 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.822047 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.822066 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.824762 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.825153 +0000 build-debian42: output: + tar --sort=name --mtime=@1647655413 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-vmm-xen-windows-pvdrivers/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar -cf qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar .
+2022-12-15 10:53:12.827138 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.827163 +0000 build-debian42: output: + gzip -fn qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar
+2022-12-15 10:53:12.835497 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.835549 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.837443 +0000 build-debian42: output: ++ tar --version
+2022-12-15 10:53:12.838183 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-15 10:53:12.838887 +0000 build-debian42: output: ++ head -1
+2022-12-15 10:53:12.841305 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-15 10:53:12.841963 +0000 build-debian42: output: ++ readlink -f /builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface
+2022-12-15 10:53:12.843677 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface
+2022-12-15 10:53:12.843721 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-15 10:53:12.844089 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar
+2022-12-15 10:53:12.844135 +0000 build-debian42: output: /builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface ~
+2022-12-15 10:53:12.845730 +0000 build-debian42: output: + '[' xqubes-vmm-xen-win-pvdrivers-xeniface/ '!=' x ']'
+2022-12-15 10:53:12.845887 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-vmm-xen-win-pvdrivers-xeniface/
+2022-12-15 10:53:12.846295 +0000 build-debian42: output: + pushd /builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface
+2022-12-15 10:53:12.846358 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-15 10:53:12.847812 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1642760675
+2022-12-15 10:53:12.848571 +0000 build-debian42: output: ++ sort -V
+2022-12-15 10:53:12.848858 +0000 build-debian42: output: ++ head -n1
+2022-12-15 10:53:12.850244 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-15 10:53:12.851169 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-15 10:53:12.851387 +0000 build-debian42: output: + tar --sort=name --mtime=@1642760675 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-vmm-xen-win-pvdrivers-xeniface/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar -cf qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar .
+2022-12-15 10:53:12.855042 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-15 10:53:12.855074 +0000 build-debian42: output: + gzip -fn qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar
+2022-12-15 10:53:12.867162 +0000 build-debian42: output: + popd
+2022-12-15 10:53:12.867196 +0000 build-debian42: output: ~
+2022-12-15 10:53:12.873012 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-core-vchan-xen__qubes-core-vchan-xen-ab3de83c88bdf5ce.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:13.288958 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-core-agent-windows__qubes-core-agent-windows-1f00ddafec8179ac.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:13.510973 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-core-qubesdb__qubes-core-qubesdb-e94f2c908b04de45.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:13.742457 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-windows-utils__qubes-windows-utils-256c20d1100b3f62.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:14.017502 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-gui-common__qubes-gui-common-d39f0576ae18626e.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:14.325049 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-gui-agent-windows__qubes-gui-agent-windows-8d9980bc5b2de3c3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:14.613359 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-installer-qubes-os-windows-tools__qubes-installer-qubes-os-windows-tools-d131b40eaa71af0f.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:14.919360 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-vmm-xen-windows-pvdrivers__qubes-vmm-xen-windows-pvdrivers-873e5e8598fefed7.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:15.251600 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3853 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__qubes-vmm-xen-win-pvdrivers-xeniface__qubes-vmm-xen-win-pvdrivers-xeniface-92236b2f92acebb8.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/windows-tools-cross
+2022-12-15 10:53:21.777985 +0000 build-debian42: > done
+2022-12-15 10:53:21.778032 +0000 > closing log
