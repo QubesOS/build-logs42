@@ -1,0 +1,964 @@
+2022-12-16 17:40:43.744832 +0000 > starting log
+2022-12-16 17:40:43.745055 +0000 build-debian42: > starting build with log
+2022-12-16 17:40:43.745065 +0000 build-debian42: >> args:
+2022-12-16 17:40:43.745070 +0000 build-debian42: >>   ()
+2022-12-16 17:40:43.745076 +0000 build-debian42: >> component:
+2022-12-16 17:40:43.745081 +0000 build-debian42: >>   manager
+2022-12-16 17:40:43.745088 +0000 build-debian42: >>     commit-hash: 00318904f6fa4c84b16005980a7edba9136fe002
+2022-12-16 17:40:43.745099 +0000 build-debian42: >>     source-hash: 0d5734ccf3d5456038d801d2b3d0843d7af89d1aec756f383e7d6b846fe25a5617551d3e9318037067977cc90adfd6ed039b7593b9c9d21332d8741478a98ea7
+2022-12-16 17:40:43.745105 +0000 build-debian42: >> distributions:
+2022-12-16 17:40:43.745113 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2022-12-16 17:41:05.648115 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'rm -rf /builder/incoming/manager /builder/manager'
+2022-12-16 17:41:06.108387 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7372 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/manager
+2022-12-16 17:41:06.733562 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'mkdir -p /builder && mv /builder/incoming/manager /builder'
+2022-12-16 17:41:07.233725 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-12-16 17:41:07.757526 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7372 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-12-16 17:41:08.650093 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-12-16 17:41:08.894393 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-16 17:41:09.101076 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7372 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-16 17:41:09.314974 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-16 17:41:09.498119 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2022-12-16 17:41:09.732514 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7372 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2022-12-16 17:41:09.940227 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7372 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2022-12-16 17:41:10.149994 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7372 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/manager debian bookworm deb12  && /builder/plugins/source_deb/scripts/get-source-info /builder/manager debian''.
+2022-12-16 17:41:10.332700 +0000 build-debian42: output: + test 4 -lt 4
+2022-12-16 17:41:10.332744 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2022-12-16 17:41:10.332752 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-12-16 17:41:10.332757 +0000 build-debian42: output: + DIST_NAME=bookworm
+2022-12-16 17:41:10.332763 +0000 build-debian42: output: + DIST_TAG=deb12
+2022-12-16 17:41:10.332768 +0000 build-debian42: output: + DEVEL_VERSION=
+2022-12-16 17:41:10.332776 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2022-12-16 17:41:10.334141 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-12-16 17:41:10.334208 +0000 build-debian42: output: + cd /builder/manager
+2022-12-16 17:41:10.334217 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2022-12-16 17:41:10.334225 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2022-12-16 17:41:10.488304 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2022-12-16 17:41:10.628900 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2022-12-16 17:41:10.683158 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2022-12-16 17:41:10.683222 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2022-12-16 17:41:10.686557 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/manager/debian/changelog
+2022-12-16 17:41:10.694248 +0000 build-debian42: output: + test 2 -ne 2
+2022-12-16 17:41:10.694290 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2022-12-16 17:41:10.694297 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-12-16 17:41:10.694303 +0000 build-debian42: output: ++ basename debian
+2022-12-16 17:41:10.694571 +0000 build-debian42: output: + DIRECTORY_BN=debian
+2022-12-16 17:41:10.694587 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2022-12-16 17:41:10.694594 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2022-12-16 17:41:10.695398 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/get-source-info
+2022-12-16 17:41:10.696629 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-12-16 17:41:10.696655 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name /builder/manager/debian/changelog
+2022-12-16 17:41:10.736378 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name-full /builder/manager/debian/changelog
+2022-12-16 17:41:10.777573 +0000 build-debian42: output: + grep -Po '(?<=^3.0 \()\w+'
+2022-12-16 17:41:10.785245 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7372 qubesbuilder.FileCopyOut+__builder__manager__debian_package_release_name /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpc4z08fcm
+2022-12-16 17:41:34.967094 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'rm -rf /builder/incoming/manager /builder/manager'
+2022-12-16 17:41:35.450501 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/manager
+2022-12-16 17:41:38.990074 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'mkdir -p /builder && mv /builder/incoming/manager /builder'
+2022-12-16 17:41:40.689389 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'rm -rf /builder/incoming/manager /builder/distfiles/manager'
+2022-12-16 17:41:40.923999 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/distfiles/manager
+2022-12-16 17:41:41.540967 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'mkdir -p /builder/distfiles && mv /builder/incoming/manager /builder/distfiles'
+2022-12-16 17:41:41.821657 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-12-16 17:41:42.203928 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-12-16 17:42:04.565863 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-12-16 17:42:05.438326 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-12-16 17:42:05.899612 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2022-12-16 17:42:06.230395 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-12-16 17:42:06.674449 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2022-12-16 17:42:06.966952 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2022-12-16 17:42:07.396123 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp3456 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2022-12-16 17:42:07.772192 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp3456 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/manager qubes-manager_4.1.27.orig.tar.gz && mv /builder/manager/qubes-manager_4.1.27.orig.tar.gz /builder && /builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/manager debian bookworm deb12  && mkdir -p /builder/build && cd /builder/build && cp -a /builder/manager/debian . && chmod -R -- u+rwX,g+rX-w,o+rX-w . && chmod +x debian/rules && dpkg-source -b . && /builder/plugins/source_deb/scripts/debian-get-packages-list /builder/qubes-manager_4.1.27-1+deb12u1.dsc 12 >/builder/debian_packages.list''.
+2022-12-16 17:42:08.423528 +0000 build-debian42: output: ++ head -1
+2022-12-16 17:42:08.423575 +0000 build-debian42: output: ++ awk '{print $4}'
+2022-12-16 17:42:08.423583 +0000 build-debian42: output: ++ tar --version
+2022-12-16 17:42:08.455266 +0000 build-debian42: output: + TAR_VERSION=1.34
+2022-12-16 17:42:08.455805 +0000 build-debian42: output: ++ readlink -f /builder/manager
+2022-12-16 17:42:08.456403 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/manager
+2022-12-16 17:42:08.456424 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2022-12-16 17:42:08.456432 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-manager_4.1.27.orig.tar
+2022-12-16 17:42:08.456438 +0000 build-debian42: output: + '[' x '!=' x ']'
+2022-12-16 17:42:08.456445 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.1.27.orig.tar
+2022-12-16 17:42:08.456452 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.1.27.orig
+2022-12-16 17:42:08.456458 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.1.27
+2022-12-16 17:42:08.456497 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.1.27/
+2022-12-16 17:42:08.456509 +0000 build-debian42: output: + pushd /builder/manager
+2022-12-16 17:42:08.456515 +0000 build-debian42: output: /builder/manager ~
+2022-12-16 17:42:08.456764 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2022-12-16 17:42:08.494911 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1671211355
+2022-12-16 17:42:08.495286 +0000 build-debian42: output: ++ sort -V
+2022-12-16 17:42:08.495313 +0000 build-debian42: output: ++ head -n1
+2022-12-16 17:42:08.495991 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2022-12-16 17:42:08.501699 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2022-12-16 17:42:08.501754 +0000 build-debian42: output: + tar --sort=name --mtime=@1671211355 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-manager_4.1.27/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-manager_4.1.27.orig.tar -cf qubes-manager_4.1.27.orig.tar .
+2022-12-16 17:42:08.508118 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-12-16 17:42:08.508179 +0000 build-debian42: output: + gzip -fn qubes-manager_4.1.27.orig.tar
+2022-12-16 17:42:08.548627 +0000 build-debian42: output: + popd
+2022-12-16 17:42:08.548669 +0000 build-debian42: output: ~
+2022-12-16 17:42:08.550502 +0000 build-debian42: output: + test 4 -lt 4
+2022-12-16 17:42:08.550544 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2022-12-16 17:42:08.550552 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2022-12-16 17:42:08.550563 +0000 build-debian42: output: + DIST_NAME=bookworm
+2022-12-16 17:42:08.550569 +0000 build-debian42: output: + DIST_TAG=deb12
+2022-12-16 17:42:08.550574 +0000 build-debian42: output: + DEVEL_VERSION=
+2022-12-16 17:42:08.551234 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2022-12-16 17:42:08.552404 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2022-12-16 17:42:08.552431 +0000 build-debian42: output: + cd /builder/manager
+2022-12-16 17:42:08.552462 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2022-12-16 17:42:08.552473 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2022-12-16 17:42:08.690014 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2022-12-16 17:42:08.894555 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2022-12-16 17:42:08.959780 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2022-12-16 17:42:08.959824 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2022-12-16 17:42:08.963431 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/manager/debian/changelog
+2022-12-16 17:42:09.264694 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2022-12-16 17:42:09.264775 +0000 build-debian42: output: dpkg-source: info: building qubes-manager using existing ./qubes-manager_4.1.27.orig.tar.gz
+2022-12-16 17:42:09.292051 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file setup.py, use --include-removal to override
+2022-12-16 17:42:09.292098 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager.pro, use --include-removal to override
+2022-12-16 17:42:09.292122 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .pylintrc, use --include-removal to override
+2022-12-16 17:42:09.292177 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-template-manager.desktop, use --include-removal to override
+2022-12-16 17:42:09.292189 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file version, use --include-removal to override
+2022-12-16 17:42:09.292198 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rel, use --include-removal to override
+2022-12-16 17:42:09.292207 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file resources.qrc, use --include-removal to override
+2022-12-16 17:42:09.292320 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-tools.directory, use --include-removal to override
+2022-12-16 17:42:09.292336 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-global-settings.desktop, use --include-removal to override
+2022-12-16 17:42:09.292345 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile, use --include-removal to override
+2022-12-16 17:42:09.292354 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .gitlab-ci.yml, use --include-removal to override
+2022-12-16 17:42:09.292487 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-tools.menu, use --include-removal to override
+2022-12-16 17:42:09.292518 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-backup.desktop, use --include-removal to override
+2022-12-16 17:42:09.292529 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-vm-create.desktop, use --include-removal to override
+2022-12-16 17:42:09.292538 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile.builder, use --include-removal to override
+2022-12-16 17:42:09.293143 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file build-deps.list, use --include-removal to override
+2022-12-16 17:42:09.293163 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-backup-restore.desktop, use --include-removal to override
+2022-12-16 17:42:09.293173 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-qube-manager.desktop, use --include-removal to override
+2022-12-16 17:42:09.293322 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file README.md, use --include-removal to override
+2022-12-16 17:42:09.293337 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .qubesbuilder, use --include-removal to override
+2022-12-16 17:42:09.293345 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons
+2022-12-16 17:42:09.293356 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/kbd-layout.png, use --include-removal to override
+2022-12-16 17:42:09.293365 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/pencil.png, use --include-removal to override
+2022-12-16 17:42:09.293374 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/outdated.png, use --include-removal to override
+2022-12-16 17:42:09.293385 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/root.png, use --include-removal to override
+2022-12-16 17:42:09.293394 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/shutdownvm.png, use --include-removal to override
+2022-12-16 17:42:09.293402 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/appvm.png, use --include-removal to override
+2022-12-16 17:42:09.293411 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/wall.png, use --include-removal to override
+2022-12-16 17:42:09.293422 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-green.png, use --include-removal to override
+2022-12-16 17:42:09.293732 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/running.png, use --include-removal to override
+2022-12-16 17:42:09.293749 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/eye-off.svg, use --include-removal to override
+2022-12-16 17:42:09.295001 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/pausevm.png, use --include-removal to override
+2022-12-16 17:42:09.295024 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/mount.png, use --include-removal to override
+2022-12-16 17:42:09.295034 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/netvm.png, use --include-removal to override
+2022-12-16 17:42:09.295044 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/updateable.png, use --include-removal to override
+2022-12-16 17:42:09.295052 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/readme.txt, use --include-removal to override
+2022-12-16 17:42:09.295061 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/networking.png, use --include-removal to override
+2022-12-16 17:42:09.295084 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/appsprefs.png, use --include-removal to override
+2022-12-16 17:42:09.295093 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/resumevm.png, use --include-removal to override
+2022-12-16 17:42:09.295102 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/log.png, use --include-removal to override
+2022-12-16 17:42:09.295111 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/mic.png, use --include-removal to override
+2022-12-16 17:42:09.295145 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/remove.png, use --include-removal to override
+2022-12-16 17:42:09.295156 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/copy.png, use --include-removal to override
+2022-12-16 17:42:09.295177 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/createvm.png, use --include-removal to override
+2022-12-16 17:42:09.295185 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/home.png, use --include-removal to override
+2022-12-16 17:42:09.295195 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/update-recommended.png, use --include-removal to override
+2022-12-16 17:42:09.295203 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/add.png, use --include-removal to override
+2022-12-16 17:42:09.295215 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/restartvm.png, use --include-removal to override
+2022-12-16 17:42:09.295258 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/to-be-outdated.png, use --include-removal to override
+2022-12-16 17:42:09.295270 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/removevm.png, use --include-removal to override
+2022-12-16 17:42:09.295284 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/settings.png, use --include-removal to override
+2022-12-16 17:42:09.295293 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/standalonevm.png, use --include-removal to override
+2022-12-16 17:42:09.295320 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/proxyvm.png, use --include-removal to override
+2022-12-16 17:42:09.295607 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/edit.png, use --include-removal to override
+2022-12-16 17:42:09.295721 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/backup.png, use --include-removal to override
+2022-12-16 17:42:09.295736 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/run-command.png, use --include-removal to override
+2022-12-16 17:42:09.295746 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/apps.png, use --include-removal to override
+2022-12-16 17:42:09.295828 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-yellow.png, use --include-removal to override
+2022-12-16 17:42:09.295842 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-red.png, use --include-removal to override
+2022-12-16 17:42:09.295922 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-blue.png, use --include-removal to override
+2022-12-16 17:42:09.295937 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/global-settings.png, use --include-removal to override
+2022-12-16 17:42:09.296383 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/kill.png, use --include-removal to override
+2022-12-16 17:42:09.296411 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/eye.svg, use --include-removal to override
+2022-12-16 17:42:09.296421 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/restore.png, use --include-removal to override
+2022-12-16 17:42:09.296430 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/warning.png, use --include-removal to override
+2022-12-16 17:42:09.296439 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/storagevm.png, use --include-removal to override
+2022-12-16 17:42:09.296448 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/show-all-running.png, use --include-removal to override
+2022-12-16 17:42:09.296458 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/templatevm.png, use --include-removal to override
+2022-12-16 17:42:09.296503 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/dom0.png, use --include-removal to override
+2022-12-16 17:42:09.296515 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/paused.png, use --include-removal to override
+2022-12-16 17:42:09.296903 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/showcpuload.png, use --include-removal to override
+2022-12-16 17:42:09.296928 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/transient.png, use --include-removal to override
+2022-12-16 17:42:09.296937 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/on-icon
+2022-12-16 17:42:09.297026 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/on-icon/on.png, use --include-removal to override
+2022-12-16 17:42:09.297042 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/on-icon/off.png, use --include-removal to override
+2022-12-16 17:42:09.297051 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory .tx
+2022-12-16 17:42:09.297134 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .tx/config, use --include-removal to override
+2022-12-16 17:42:09.297447 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages
+2022-12-16 17:42:09.297543 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin
+2022-12-16 17:42:09.297558 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/utils.py, use --include-removal to override
+2022-12-16 17:42:09.297645 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.297667 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/exc.py, use --include-removal to override
+2022-12-16 17:42:09.297695 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/devices.py, use --include-removal to override
+2022-12-16 17:42:09.297810 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/events.py, use --include-removal to override
+2022-12-16 17:42:09.297830 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/firewall.py, use --include-removal to override
+2022-12-16 17:42:09.297839 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/tools
+2022-12-16 17:42:09.298175 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/tools/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.298196 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/tools/qvm_start.py, use --include-removal to override
+2022-12-16 17:42:09.298214 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/backup
+2022-12-16 17:42:09.298225 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/backup/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.298327 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/backup/restore
+2022-12-16 17:42:09.298347 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/backup/restore/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.298355 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager
+2022-12-16 17:42:09.298697 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/clipboard.py, use --include-removal to override
+2022-12-16 17:42:09.298716 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/create_new_vm.py, use --include-removal to override
+2022-12-16 17:42:09.298726 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/utils.py, use --include-removal to override
+2022-12-16 17:42:09.298756 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/settings.py, use --include-removal to override
+2022-12-16 17:42:09.298767 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/common_threads.py, use --include-removal to override
+2022-12-16 17:42:09.298845 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/about.py, use --include-removal to override
+2022-12-16 17:42:09.298863 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/backup_utils.py, use --include-removal to override
+2022-12-16 17:42:09.298873 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/global_settings.css, use --include-removal to override
+2022-12-16 17:42:09.298883 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/restore.py, use --include-removal to override
+2022-12-16 17:42:09.299936 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/log_dialog.py, use --include-removal to override
+2022-12-16 17:42:09.299959 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/multiselectwidget.py, use --include-removal to override
+2022-12-16 17:42:09.299969 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.299979 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qube_manager.py, use --include-removal to override
+2022-12-16 17:42:09.299988 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/backup.py, use --include-removal to override
+2022-12-16 17:42:09.299997 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qvm_about.sh, use --include-removal to override
+2022-12-16 17:42:09.300006 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/informationnotes.py, use --include-removal to override
+2022-12-16 17:42:09.300016 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/template_manager.py, use --include-removal to override
+2022-12-16 17:42:09.300025 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/bootfromdevice.py, use --include-removal to override
+2022-12-16 17:42:09.300034 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/mount_for_backup.sh, use --include-removal to override
+2022-12-16 17:42:09.300053 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/clone_vm.py, use --include-removal to override
+2022-12-16 17:42:09.300064 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/global_settings.py, use --include-removal to override
+2022-12-16 17:42:09.300074 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/device_list.py, use --include-removal to override
+2022-12-16 17:42:09.300083 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/releasenotes.py, use --include-removal to override
+2022-12-16 17:42:09.300533 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qvm_template_gui.py, use --include-removal to override
+2022-12-16 17:42:09.300553 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/appmenu_select.py, use --include-removal to override
+2022-12-16 17:42:09.300563 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/firewall.py, use --include-removal to override
+2022-12-16 17:42:09.301496 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager/tests
+2022-12-16 17:42:09.301521 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_qube_manager.py, use --include-removal to override
+2022-12-16 17:42:09.301531 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/__init__.py, use --include-removal to override
+2022-12-16 17:42:09.301541 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_backup.py, use --include-removal to override
+2022-12-16 17:42:09.301551 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_create_new_vm.py, use --include-removal to override
+2022-12-16 17:42:09.301561 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_vm_settings.py, use --include-removal to override
+2022-12-16 17:42:09.301571 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_clone_vm.py, use --include-removal to override
+2022-12-16 17:42:09.301580 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_backup_utils.py, use --include-removal to override
+2022-12-16 17:42:09.301590 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_global_settings.py, use --include-removal to override
+2022-12-16 17:42:09.301598 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager/i18n
+2022-12-16 17:42:09.301608 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/i18n/qubesmanager_en.ts, use --include-removal to override
+2022-12-16 17:42:09.301715 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/i18n/qubesmanager_es.ts, use --include-removal to override
+2022-12-16 17:42:09.301754 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory ci
+2022-12-16 17:42:09.301764 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ci/requirements.txt, use --include-removal to override
+2022-12-16 17:42:09.301772 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory rpm_spec
+2022-12-16 17:42:09.301781 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rpm_spec/qmgr.spec.in, use --include-removal to override
+2022-12-16 17:42:09.301791 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory ui
+2022-12-16 17:42:09.302630 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/releasenotes.ui, use --include-removal to override
+2022-12-16 17:42:09.302660 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/globalsettingsdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302670 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/newfwruledlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302679 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/multiselectwidget.ui, use --include-removal to override
+2022-12-16 17:42:09.302687 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/backupdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302696 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/qvmtemplate.ui, use --include-removal to override
+2022-12-16 17:42:09.302705 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/logdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302715 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templateinstallconfirmdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302724 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/bootfromdevice.ui, use --include-removal to override
+2022-12-16 17:42:09.302733 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templatemanager.ui, use --include-removal to override
+2022-12-16 17:42:09.302742 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/restoredlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302750 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/newappvmdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302759 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/settingsdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302854 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/qubemanager.ui, use --include-removal to override
+2022-12-16 17:42:09.302871 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/devicelist.ui, use --include-removal to override
+2022-12-16 17:42:09.302881 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/informationnotes.ui, use --include-removal to override
+2022-12-16 17:42:09.302892 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templateinstallprogressdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.302902 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/about.ui, use --include-removal to override
+2022-12-16 17:42:09.303174 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/clonevmdlg.ui, use --include-removal to override
+2022-12-16 17:42:09.306913 +0000 build-debian42: output: dpkg-source: info: building qubes-manager in qubes-manager_4.1.27-1+deb12u1.debian.tar.xz
+2022-12-16 17:42:09.327137 +0000 build-debian42: output: dpkg-source: info: building qubes-manager in qubes-manager_4.1.27-1+deb12u1.dsc
+2022-12-16 17:42:09.482549 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.1.27-1+deb12u1.dsc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep
+2022-12-16 17:42:09.965961 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.1.27-1+deb12u1.debian.tar.xz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep
+2022-12-16 17:42:10.373688 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyOut+__builder__debian_packages.list /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpc4z08fcm
+2022-12-16 17:42:10.884066 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3456 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.1.27.orig.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep
+2022-12-16 17:42:36.637532 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/pbuilder /builder/pbuilder'
+2022-12-16 17:42:38.207508 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb/pbuilder
+2022-12-16 17:42:38.617884 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder && mv /builder/incoming/pbuilder /builder'
+2022-12-16 17:42:39.096971 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/vm-bookworm /builder/repository/vm-bookworm'
+2022-12-16 17:42:39.727028 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-bookworm
+2022-12-16 17:42:40.485745 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/repository && mv /builder/incoming/vm-bookworm /builder/repository'
+2022-12-16 17:42:40.698222 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/build_deb /builder/plugins/build_deb'
+2022-12-16 17:42:40.993852 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2022-12-16 17:42:41.214068 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build_deb /builder/plugins'
+2022-12-16 17:42:41.429987 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2022-12-16 17:42:41.678204 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2022-12-16 17:42:41.977486 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2022-12-16 17:42:42.256329 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/build /builder/plugins/build'
+2022-12-16 17:42:42.542215 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2022-12-16 17:42:42.915428 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build /builder/plugins'
+2022-12-16 17:42:43.224296 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/qubes-manager_4.1.27-1+deb12u1.dsc /builder/build/qubes-manager_4.1.27-1+deb12u1.dsc'
+2022-12-16 17:42:43.524097 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep/qubes-manager_4.1.27-1+deb12u1.dsc
+2022-12-16 17:42:43.778434 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.1.27-1+deb12u1.dsc /builder/build'
+2022-12-16 17:42:44.119648 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/qubes-manager_4.1.27-1+deb12u1.debian.tar.xz /builder/build/qubes-manager_4.1.27-1+deb12u1.debian.tar.xz'
+2022-12-16 17:42:44.412570 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep/qubes-manager_4.1.27-1+deb12u1.debian.tar.xz
+2022-12-16 17:42:44.744909 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.1.27-1+deb12u1.debian.tar.xz /builder/build'
+2022-12-16 17:42:45.018220 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/qubes-manager_4.1.27.orig.tar.gz /builder/build/qubes-manager_4.1.27.orig.tar.gz'
+2022-12-16 17:42:45.315397 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.1.27-1/vm-bookworm/prep/qubes-manager_4.1.27.orig.tar.gz
+2022-12-16 17:42:45.650531 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.1.27.orig.tar.gz /builder/build'
+2022-12-16 17:42:46.008645 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'rm -rf /builder/incoming/base.tgz /builder/pbuilder/base.tgz'
+2022-12-16 17:42:46.252369 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8809 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/bookworm/pbuilder/base.tgz
+2022-12-16 17:42:47.611878 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8809 bash -c 'mkdir -p /builder/pbuilder && mv /builder/incoming/base.tgz /builder/pbuilder'
+2022-12-16 17:42:48.097596 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8809 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian bookworm && sudo -E pbuilder update --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" && sudo -E pbuilder build --override-config --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" /builder/build/qubes-manager_4.1.27-1+deb12u1.dsc''.
+2022-12-16 17:42:48.423550 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2022-12-16 17:42:48.423843 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2022-12-16 17:42:48.423896 +0000 build-debian42: output: + DISTRIBUTION=debian
+2022-12-16 17:42:48.423906 +0000 build-debian42: output: + SUITE=bookworm
+2022-12-16 17:42:48.424249 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2022-12-16 17:42:48.425765 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2022-12-16 17:42:48.426748 +0000 build-debian42: output: + cd /builder/repository
+2022-12-16 17:42:48.426868 +0000 build-debian42: output: + cat
+2022-12-16 17:42:48.428054 +0000 build-debian42: output: + mkdir -p dists/bookworm/main/binary-amd64
+2022-12-16 17:42:48.429476 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2022-12-16 17:42:49.058449 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 96 entries to output Packages file.
+2022-12-16 17:42:49.060351 +0000 build-debian42: output: + gzip -9c dists/bookworm/main/binary-amd64/Packages
+2022-12-16 17:42:49.066346 +0000 build-debian42: output: ++ LC_ALL=C
+2022-12-16 17:42:49.066414 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2022-12-16 17:42:49.066995 +0000 build-debian42: output: + DATE='Fri, 16 Dec 2022 17:42:47 UTC'
+2022-12-16 17:42:49.067017 +0000 build-debian42: output: + cat
+2022-12-16 17:42:49.069297 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2022-12-16 17:42:49.069317 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages
+2022-12-16 17:42:49.069340 +0000 build-debian42: output: + echo -n ' '
+2022-12-16 17:42:49.069580 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages
+2022-12-16 17:42:49.070154 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2022-12-16 17:42:49.074223 +0000 build-debian42: output: + echo -n 834919c55daba8d108c39c1037d6c1cbbb98aa683b102bb592c4d7758d759e67 ''
+2022-12-16 17:42:49.074767 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages
+2022-12-16 17:42:49.077032 +0000 build-debian42: output: + echo -n 72939 ''
+2022-12-16 17:42:49.077378 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2022-12-16 17:42:49.077903 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2022-12-16 17:42:49.078034 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages.gz
+2022-12-16 17:42:49.078060 +0000 build-debian42: output: + echo -n ' '
+2022-12-16 17:42:49.078702 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2022-12-16 17:42:49.078962 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages.gz
+2022-12-16 17:42:49.079865 +0000 build-debian42: output: + echo -n b645dd593b030d4b1ddeb14d9b9012013c8a879bcb688b07476c7d2804f3e61f ''
+2022-12-16 17:42:49.080181 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages.gz
+2022-12-16 17:42:49.080840 +0000 build-debian42: output: + echo -n 20898 ''
+2022-12-16 17:42:49.081345 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2022-12-16 17:42:49.081781 +0000 build-debian42: output: + mapfile -d '' changes_files
+2022-12-16 17:42:49.082053 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2022-12-16 17:42:49.087095 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.087136 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-u2f_1.2.10/qubes-u2f_1.2.10+deb12u1_amd64.changes
+2022-12-16 17:42:49.187526 +0000 build-debian42: output: 'qubes-u2f_1.2.10+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:49.187598 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:49.236209 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.237510 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.237547 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/artwork_4.1.13/qubes-artwork_4.1.13-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.370207 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.370669 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.370704 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-img-converter_1.2.13/qubes-img-converter_1.2.13-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.398704 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.399007 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.399032 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-i3_4.21/i3-wm_4.21-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.486766 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.488210 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.488293 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/repo-templates_4.2.0/qubes-repo-templates_4.2.0-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.539377 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.539532 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.539588 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt_4.1.16/qubes-mgmt-salt_4.1.16-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.554780 +0000 build-debian42: output: 'qubes-mgmt-salt_4.1.16-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:49.554824 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:49.610020 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.610661 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.610827 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-xfce4-xfwm4_4.14.2/xfwm4_4.14.2-3+deb12u1_amd64.changes
+2022-12-16 17:42:49.677608 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.677974 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.678009 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-admin-client_4.1.27/qubes-core-admin-client_4.1.27-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.720714 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.721389 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.721431 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-qrexec_4.2.0/qubes-core-qrexec_4.2.0-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.797194 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.797993 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.798088 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-usb-proxy_1.1.2/qubes-usb-proxy_1.1.2+deb12u1_amd64.changes
+2022-12-16 17:42:49.850268 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.850944 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.851095 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-xfce4_4.0.6/xfce4-settings-qubes_4.0.6-2+deb12u1_amd64.changes
+2022-12-16 17:42:49.899902 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:49.900853 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:49.900889 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-agent-linux_4.2.2/qubes-core-agent_4.2.2-1+deb12u1_amd64.changes
+2022-12-16 17:42:49.999645 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.001109 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.001390 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/meta-packages_4.1.21/qubes-meta-packages_4.1.21-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.057386 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.058568 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.058610 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-input-proxy_1.0.29/qubes-input-proxy_1.0.29-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.103484 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.104067 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.104216 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/rpm-oxide_0.2.5/qubes-rpm-oxide_0.2.5-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.122303 +0000 build-debian42: output: 'qubes-rpm-oxide_0.2.5-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:50.122372 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:50.165555 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.165953 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.166282 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-manager_4.2.0/qubes-desktop-linux-manager_4.2.0-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.247107 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.248199 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.248281 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-shutdown-idle_1.0.8/qubes-app-shutdown-idle_1.0.8-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.309389 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.309858 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.310014 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-vchan-xen_4.1.12/libvchan-xen_4.1.12-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.368080 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.369417 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.369486 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base_4.1.5/qubes-mgmt-salt-base_4.1.5-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.388333 +0000 build-debian42: output: 'qubes-mgmt-salt-base_4.1.5-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:50.388387 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:50.434265 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.435603 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.435680 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/python-qasync_0.23.0/python-qasync_0.23.0-2+deb12u1_amd64.changes
+2022-12-16 17:42:50.460452 +0000 build-debian42: output: 'python-qasync_0.23.0-2+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:50.460511 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:50.502001 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.502402 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.502506 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-qubesdb_4.1.14/qubesdb_4.1.14-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.584752 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.585164 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.585195 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-thunderbird_2.0.8/thunderbird-qubes_2.0.8-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.634812 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.636010 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.636070 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-common_4.2.1/qubes-gui-common_4.2.1+deb12u1_amd64.changes
+2022-12-16 17:42:50.696203 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.696769 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.696866 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/vmm-xen-guest_1.1/xen-guest_1.1-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.776347 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.776711 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.777120 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-i3-settings-qubes_1.9/i3-settings-qubes_1.9-2+deb12u1_amd64.changes
+2022-12-16 17:42:50.835686 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.836443 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.836548 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-agent-linux_4.1.28/qubes-gui-agent_4.1.28-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.959320 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.959584 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.959617 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-gbulb_0.6.3/python3-gbulb_0.6.3-1+deb12u1_amd64.changes
+2022-12-16 17:42:50.972427 +0000 build-debian42: output: 'python3-gbulb_0.6.3-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:50.972468 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:50.998309 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:50.998382 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:50.998406 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-common_4.1.14/qubes-desktop-linux-common_4.1.14-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.090290 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.090866 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.091111 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-snapd-helper_1.0.4/qubes-snapd-helper_1.0.4-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.150084 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.150137 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.150624 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-pdf-converter_2.1.15/qubes-pdf-converter_2.1.15-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.205994 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.206332 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.206757 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-daemon_4.2.0/qubes-gui-daemon_4.2.0-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.295693 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.295767 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.296664 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base-topd_4.1.4/qubes-mgmt-salt-base-topd_4.1.4-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.312106 +0000 build-debian42: output: 'qubes-mgmt-salt-base-topd_4.1.4-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:51.312155 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:51.353913 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.354131 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.354166 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-split-gpg_2.0.64/qubes-gpg-split_2.0.64-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.404357 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.404421 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.404453 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-utils_4.2.1/qubes-utils_4.2.1+deb12u1_amd64.changes
+2022-12-16 17:42:51.492756 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.493763 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2022-12-16 17:42:51.493866 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base-config_4.1.2/qubes-mgmt-salt-base-config_4.1.2-1+deb12u1_amd64.changes
+2022-12-16 17:42:51.510664 +0000 build-debian42: output: 'qubes-mgmt-salt-base-config_4.1.2-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2022-12-16 17:42:51.510704 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2022-12-16 17:42:51.544705 +0000 build-debian42: output: Exporting indices...
+2022-12-16 17:42:51.579126 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2022-12-16 17:42:51.615932 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2022-12-16 17:42:51.624470 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2022-12-16 17:42:51.627409 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2022-12-16 17:42:51.633308 +0000 build-debian42: output: I: Current time: Fri Dec 16 17:42:50 GMT 2022
+2022-12-16 17:42:51.634960 +0000 build-debian42: output: I: pbuilder-time-stamp: 1671212570
+2022-12-16 17:42:51.635746 +0000 build-debian42: output: I: Building the build Environment
+2022-12-16 17:42:51.636883 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2022-12-16 17:42:55.080479 +0000 build-debian42: output: I: copying local configuration
+2022-12-16 17:42:55.093313 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2926/etc/hostname to be correct
+2022-12-16 17:42:55.093362 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2926/etc/mailname to be correct
+2022-12-16 17:42:55.099794 +0000 build-debian42: output: I: mounting /proc filesystem
+2022-12-16 17:42:55.099836 +0000 build-debian42: output: W: --override-config is not set; not updating apt.conf Read the manpage for details.
+2022-12-16 17:42:55.110336 +0000 build-debian42: output: I: mounting /sys filesystem
+2022-12-16 17:42:55.115464 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2022-12-16 17:42:55.129713 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2022-12-16 17:42:55.138037 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2022-12-16 17:42:55.146763 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2022-12-16 17:42:55.148973 +0000 build-debian42: output: I: policy-rc.d already exists
+2022-12-16 17:42:55.159588 +0000 build-debian42: output: I: Refreshing the base.tgz
+2022-12-16 17:42:55.159635 +0000 build-debian42: output: I: upgrading packages
+2022-12-16 17:43:01.382925 +0000 build-debian42: output: Ign:1 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:05.648539 +0000 build-debian42: output: Ign:1 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:10.119435 +0000 build-debian42: output: Ign:1 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:16.031513 +0000 build-debian42: output: Err:1 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:16.031596 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:43:16.477460 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:43:16.501545 +0000 build-debian42: output: W: Failed to fetch https://deb.debian.org/debian/dists/bookworm/InRelease  Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:43:16.501592 +0000 build-debian42: output: W: Some index files failed to download. They have been ignored, or old ones used instead.
+2022-12-16 17:43:16.520555 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:43:16.697253 +0000 build-debian42: output: Building dependency tree...
+2022-12-16 17:43:16.697308 +0000 build-debian42: output: Reading state information...
+2022-12-16 17:43:16.763086 +0000 build-debian42: output: Calculating upgrade...
+2022-12-16 17:43:16.858089 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-12-16 17:43:16.870640 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:43:16.987077 +0000 build-debian42: output: Building dependency tree...
+2022-12-16 17:43:16.987124 +0000 build-debian42: output: Reading state information...
+2022-12-16 17:43:17.088963 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-12-16 17:43:17.099934 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:43:17.205927 +0000 build-debian42: output: Building dependency tree...
+2022-12-16 17:43:17.206010 +0000 build-debian42: output: Reading state information...
+2022-12-16 17:43:17.355246 +0000 build-debian42: output: build-essential is already the newest version (12.9).
+2022-12-16 17:43:17.355292 +0000 build-debian42: output: dpkg-dev is already the newest version (1.21.9).
+2022-12-16 17:43:17.355300 +0000 build-debian42: output: aptitude is already the newest version (0.8.13-5).
+2022-12-16 17:43:17.355330 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2022-12-16 17:43:17.356302 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2926/tmp/hooks/E30origin starting
+2022-12-16 17:43:17.360739 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2926/tmp/hooks/E30origin finished
+2022-12-16 17:43:17.360766 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2022-12-16 17:43:17.369133 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2022-12-16 17:43:17.371898 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2022-12-16 17:43:17.374871 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2022-12-16 17:43:17.378783 +0000 build-debian42: output: I: unmounting proc filesystem
+2022-12-16 17:43:17.381822 +0000 build-debian42: output: I: unmounting sys filesystem
+2022-12-16 17:43:17.401307 +0000 build-debian42: output: I: creating base tarball [/builder/pbuilder/base.tgz]
+2022-12-16 17:43:38.095570 +0000 build-debian42: output: I: cleaning the build env
+2022-12-16 17:43:38.095622 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/2926 and its subdirectories
+2022-12-16 17:43:38.565337 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2022-12-16 17:43:38.596267 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2022-12-16 17:43:38.602654 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2022-12-16 17:43:38.603762 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2022-12-16 17:43:38.798944 +0000 build-debian42: output: I: pbuilder: network access will be disabled during build
+2022-12-16 17:43:38.801289 +0000 build-debian42: output: I: Current time: Fri Dec 16 17:43:37 GMT 2022
+2022-12-16 17:43:38.803754 +0000 build-debian42: output: I: pbuilder-time-stamp: 1671212617
+2022-12-16 17:43:38.804915 +0000 build-debian42: output: I: Building the build Environment
+2022-12-16 17:43:38.806173 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2022-12-16 17:43:42.446121 +0000 build-debian42: output: I: copying local configuration
+2022-12-16 17:43:42.449973 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/3056/etc/hostname to be correct
+2022-12-16 17:43:42.450159 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/3056/etc/mailname to be correct
+2022-12-16 17:43:42.455596 +0000 build-debian42: output: I: Installing apt-lines
+2022-12-16 17:43:43.375647 +0000 build-debian42: output: I: mounting /proc filesystem
+2022-12-16 17:43:43.386283 +0000 build-debian42: output: I: mounting /sys filesystem
+2022-12-16 17:43:43.389939 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2022-12-16 17:43:43.396770 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2022-12-16 17:43:43.400370 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2022-12-16 17:43:43.405867 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2022-12-16 17:43:43.407434 +0000 build-debian42: output: I: policy-rc.d already exists
+2022-12-16 17:43:43.411789 +0000 build-debian42: output: I: created buildresult dir: /builder/pbuilder/results
+2022-12-16 17:43:43.433150 +0000 build-debian42: output: I: Copying source file
+2022-12-16 17:43:43.452452 +0000 build-debian42: output: I: copying [/builder/build/qubes-manager_4.1.27-1+deb12u1.dsc]
+2022-12-16 17:43:43.458337 +0000 build-debian42: output: I: copying [/builder/build/qubes-manager_4.1.27.orig.tar.gz]
+2022-12-16 17:43:43.465571 +0000 build-debian42: output: I: copying [/builder/build/qubes-manager_4.1.27-1+deb12u1.debian.tar.xz]
+2022-12-16 17:43:43.485315 +0000 build-debian42: output: I: Extracting source
+2022-12-16 17:43:43.560336 +0000 build-debian42: output: dpkg-source: warning: extracting unsigned source package (qubes-manager_4.1.27-1+deb12u1.dsc)
+2022-12-16 17:43:43.572111 +0000 build-debian42: output: dpkg-source: info: extracting qubes-manager in qubes-manager-4.1.27
+2022-12-16 17:43:43.572175 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-manager_4.1.27.orig.tar.gz
+2022-12-16 17:43:43.586779 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-manager_4.1.27-1+deb12u1.debian.tar.xz
+2022-12-16 17:43:43.600143 +0000 build-debian42: output: I: using fakeroot in build.
+2022-12-16 17:43:43.600236 +0000 build-debian42: output: I: Installing the build-deps
+2022-12-16 17:43:43.600258 +0000 build-debian42: output: I: user script /builder/pbuilder/build/3056/tmp/hooks/D30update starting
+2022-12-16 17:43:43.628297 +0000 build-debian42: output: Get:1 file:/tmp/qubes-deb bookworm InRelease
+2022-12-16 17:43:43.628361 +0000 build-debian42: output: Ign:1 file:/tmp/qubes-deb bookworm InRelease
+2022-12-16 17:43:43.628389 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb bookworm Release [1629 B]
+2022-12-16 17:43:43.634740 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb bookworm Release [1629 B]
+2022-12-16 17:43:43.635409 +0000 build-debian42: output: Get:3 file:/tmp/qubes-deb bookworm Release.gpg
+2022-12-16 17:43:43.635764 +0000 build-debian42: output: Ign:3 file:/tmp/qubes-deb bookworm Release.gpg
+2022-12-16 17:43:43.636316 +0000 build-debian42: output: Get:4 file:/tmp/qubes-deb bookworm/main amd64 Packages [20.8 kB]
+2022-12-16 17:43:46.295551 +0000 build-debian42: output: Ign:5 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:49.346460 +0000 build-debian42: output: Ign:5 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:53.689259 +0000 build-debian42: output: Ign:5 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:59.674838 +0000 build-debian42: output: Err:5 https://deb.debian.org/debian bookworm InRelease
+2022-12-16 17:43:59.674879 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:44:00.174301 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:44:00.187510 +0000 build-debian42: output: W: Failed to fetch https://deb.debian.org/debian/dists/bookworm/InRelease  Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:44:00.188426 +0000 build-debian42: output: W: Some index files failed to download. They have been ignored, or old ones used instead.
+2022-12-16 17:44:00.190499 +0000 build-debian42: output: I: user script /builder/pbuilder/build/3056/tmp/hooks/D30update finished
+2022-12-16 17:44:00.284461 +0000 build-debian42: output:  -> Attempting to satisfy build-dependencies
+2022-12-16 17:44:00.399901 +0000 build-debian42: output:  -> Creating pbuilder-satisfydepends-dummy package
+2022-12-16 17:44:00.404905 +0000 build-debian42: output: Package: pbuilder-satisfydepends-dummy
+2022-12-16 17:44:00.404963 +0000 build-debian42: output: Version: 0.invalid.0
+2022-12-16 17:44:00.405060 +0000 build-debian42: output: Architecture: amd64
+2022-12-16 17:44:00.405104 +0000 build-debian42: output: Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+2022-12-16 17:44:00.405128 +0000 build-debian42: output: Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+2022-12-16 17:44:00.405150 +0000 build-debian42: output:  This package was created automatically by pbuilder to satisfy the
+2022-12-16 17:44:00.405215 +0000 build-debian42: output:  build-dependencies of the package being currently built.
+2022-12-16 17:44:00.405294 +0000 build-debian42: output: Depends: debhelper (>= 9), dh-python, python3-all, python3-setuptools, qtbase5-dev, qttools5-dev-tools, pyqt5-dev-tools
+2022-12-16 17:44:00.406849 +0000 build-debian42: output: dpkg-deb: building package 'pbuilder-satisfydepends-dummy' in '/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
+2022-12-16 17:44:00.448710 +0000 build-debian42: output: Selecting previously unselected package pbuilder-satisfydepends-dummy.
+2022-12-16 17:44:00.458840 +0000 build-debian42: output: (Reading database ... 13223 files and directories currently installed.)
+2022-12-16 17:44:00.459657 +0000 build-debian42: output: Preparing to unpack .../pbuilder-satisfydepends-dummy.deb ...
+2022-12-16 17:44:00.479976 +0000 build-debian42: output: Unpacking pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2022-12-16 17:44:00.549022 +0000 build-debian42: output: Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2022-12-16 17:44:00.549594 +0000 build-debian42: output: dpkg: pbuilder-satisfydepends-dummy: dependency problems, but configuring anyway as you requested:
+2022-12-16 17:44:00.549738 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on debhelper (>= 9); however:
+2022-12-16 17:44:00.549952 +0000 build-debian42: output:   Package debhelper is not installed.
+2022-12-16 17:44:00.550064 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on dh-python; however:
+2022-12-16 17:44:00.550255 +0000 build-debian42: output:   Package dh-python is not installed.
+2022-12-16 17:44:00.550375 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on python3-all; however:
+2022-12-16 17:44:00.550535 +0000 build-debian42: output:   Package python3-all is not installed.
+2022-12-16 17:44:00.550851 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on python3-setuptools; however:
+2022-12-16 17:44:00.550994 +0000 build-debian42: output:   Package python3-setuptools is not installed.
+2022-12-16 17:44:00.551036 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on qtbase5-dev; however:
+2022-12-16 17:44:00.551204 +0000 build-debian42: output:   Package qtbase5-dev is not installed.
+2022-12-16 17:44:00.551377 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on qttools5-dev-tools; however:
+2022-12-16 17:44:00.551528 +0000 build-debian42: output:   Package qttools5-dev-tools is not installed.
+2022-12-16 17:44:00.551720 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on pyqt5-dev-tools; however:
+2022-12-16 17:44:00.551880 +0000 build-debian42: output:   Package pyqt5-dev-tools is not installed.
+2022-12-16 17:44:00.552026 +0000 build-debian42: output: 
+2022-12-16 17:44:00.806093 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:44:00.939316 +0000 build-debian42: output: Building dependency tree...
+2022-12-16 17:44:00.939366 +0000 build-debian42: output: Reading state information...
+2022-12-16 17:44:00.974064 +0000 build-debian42: output: Initializing package states...
+2022-12-16 17:44:01.098963 +0000 build-debian42: output: Writing extended state information...
+2022-12-16 17:44:01.225128 +0000 build-debian42: output: Building tag database...
+2022-12-16 17:44:01.941739 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2022-12-16 17:44:01.941784 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2022-12-16 17:44:01.941793 +0000 build-debian42: output: The following NEW packages will be installed:
+2022-12-16 17:44:01.941961 +0000 build-debian42: output:   autoconf{a} automake{a} autopoint{a} autotools-dev{a} bsdextrautils{a} debhelper{a} dh-autoreconf{a} dh-python{a} dh-strip-nondeterminism{a} dwz{a} file{a} fontconfig{a} fontconfig-config{a} fonts-dejavu-core{a} gettext{a} gettext-base{a} groff-base{a} intltool-debian{a} iso-codes{a} libarchive-zip-perl{a} libavahi-client3{a} libavahi-common-data{a} libavahi-common3{a} libbrotli1{a} libbsd0{a} libcap2-bin{a} libclang1-14{a} libcups2{a} libdbus-1-3{a} libdebhelper-perl{a} libdouble-conversion3{a} libdrm-amdgpu1{a} libdrm-common{a} libdrm-nouveau2{a} libdrm-radeon1{a} libdrm2{a} libdw1{a} libedit2{a} libegl-dev{a} libegl-mesa0{a} libegl1{a} libelf1{a} libevdev2{a} libexpat1{a} libfile-stripnondeterminism-perl{a} libfontconfig1{a} libfreetype6{a} libgbm1{a} libgl-dev{a} libgl1{a} libgl1-mesa-dri{a} libglapi-mesa{a} libglib2.0-0{a} libglu1-mesa{a} libglu1-mesa-dev{a} libglvnd0{a} libglx-dev{a} libglx-mesa0{a} libglx0{a} libgraphite2-3{a} libgstreamer-plugins-base1.0-0{a} libgstreamer1.0-0{a} libgudev-1.0-0{a} libharfbuzz0b{a} libhyphen0{a} libice6{a} libicu71{a} libinput-bin{a} libinput10{a} libjpeg62-turbo{a} libllvm14{a} libmagic-mgc{a} libmagic1{a} libmd0{a} libmd4c0{a} libmpdec3{a} libmtdev1{a} libopengl0{a} liborc-0.4-0{a} libpcre2-16-0{a} libpipeline1{a} libpng16-16{a} libpthread-stubs0-dev{a} libpython3-stdlib{a} libpython3.10{a} libpython3.10-minimal{a} libpython3.10-stdlib{a} libqt5concurrent5{a} libqt5core5a{a} libqt5dbus5{a} libqt5designer5{a} libqt5designercomponents5{a} libqt5gui5{a} libqt5help5{a} libqt5network5{a} libqt5positioning5{a} libqt5printsupport5{a} libqt5qml5{a} libqt5qmlmodels5{a} libqt5quick5{a} libqt5quickwidgets5{a} libqt5sensors5{a} libqt5sql5{a} libqt5sql5-sqlite{a} libqt5test5{a} libqt5webchannel5{a} libqt5webkit5{a} libqt5widgets5{a} libqt5xml5{a} libreadline8{a} libsensors-config{a} libsensors5{a} libsm6{a} libsub-override-perl{a} libtool{a} libuchardet0{a} libunwind8{a} libvulkan-dev{a} libvulkan1{a} libwacom-common{a} libwacom9{a} libwayland-client0{a} libwayland-server0{a} libwebp7{a} libwoff1{a} libx11-6{a} libx11-data{a} libx11-dev{a} libx11-xcb1{a} libxau-dev{a} libxau6{a} libxcb-dri2-0{a} libxcb-dri3-0{a} libxcb-glx0{a} libxcb-icccm4{a} libxcb-image0{a} libxcb-keysyms1{a} libxcb-present0{a} libxcb-randr0{a} libxcb-render-util0{a} libxcb-render0{a} libxcb-shape0{a} libxcb-shm0{a} libxcb-sync1{a} libxcb-util1{a} libxcb-xfixes0{a} libxcb-xinerama0{a} libxcb-xinput0{a} libxcb-xkb1{a} libxcb1{a} libxcb1-dev{a} libxdmcp-dev{a} libxdmcp6{a} libxext-dev{a} libxext6{a} libxfixes3{a} libxkbcommon-x11-0{a} libxkbcommon0{a} libxml2{a} libxrender1{a} libxshmfence1{a} libxslt1.1{a} libxxf86vm1{a} libz3-4{a} m4{a} man-db{a} media-types{a} po-debconf{a} pyqt5-dev-tools{a} python3{a} python3-all{a} python3-distutils{a} python3-lib2to3{a} python3-minimal{a} python3-pkg-resources{a} python3-pyqt5{a} python3-pyqt5.sip{a} python3-setuptools{a} python3.10{a} python3.10-minimal{a} qdoc-qt5{a} qhelpgenerator-qt5{a} qt5-assistant{a} qt5-qmake{a} qt5-qmake-bin{a} qtattributionsscanner-qt5{a} qtbase5-dev{a} qtbase5-dev-tools{a} qtchooser{a} qttools5-dev-tools{a} readline-common{a} sensible-utils{a} shared-mime-info{a} ucf{a} x11-common{a} x11proto-dev{a} xkb-data{a} xorg-sgml-doctools{a} xtrans-dev{a}
+2022-12-16 17:44:01.941983 +0000 build-debian42: output: The following packages are RECOMMENDED but will NOT be installed:
+2022-12-16 17:44:01.942001 +0000 build-debian42: output:   curl dbus geoclue-2.0 gstreamer1.0-plugins-base libarchive-cpio-perl libglib2.0-data libltdl-dev libmail-sendmail-perl libpam-cap libqt5opengl5-dev libqt5svg5 lynx mesa-vulkan-drivers qt5-gtk-platformtheme qttranslations5-l10n wget xdg-user-dirs
+2022-12-16 17:44:01.942010 +0000 build-debian42: output: 0 packages upgraded, 199 newly installed, 0 to remove and 0 not upgraded.
+2022-12-16 17:44:01.942018 +0000 build-debian42: output: Need to get 133 MB of archives. After unpacking 550 MB will be used.
+2022-12-16 17:44:01.942024 +0000 build-debian42: output: Writing extended state information...
+2022-12-16 17:44:03.547416 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libglib2.0-0 amd64 2.74.0-2
+2022-12-16 17:44:05.249466 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libelf1 amd64 0.187-4
+2022-12-16 17:44:06.850149 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdw1 amd64 0.187-4
+2022-12-16 17:44:08.893098 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libunwind8 amd64 1.3.2-2
+2022-12-16 17:44:10.379322 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libcap2-bin amd64 1:2.44-1
+2022-12-16 17:44:12.020965 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libgstreamer1.0-0 amd64 1.20.3-1
+2022-12-16 17:44:13.154377 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 liborc-0.4-0 amd64 1:0.4.32-2
+2022-12-16 17:44:14.490693 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 iso-codes all 4.11.0-1
+2022-12-16 17:44:15.811563 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.20.3-2
+2022-12-16 17:44:17.235009 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libhyphen0 amd64 2.8.8-7
+2022-12-16 17:44:18.734318 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libicu71 amd64 71.1-3
+2022-12-16 17:44:20.582202 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libjpeg62-turbo amd64 1:2.1.2-1+b1
+2022-12-16 17:44:22.457778 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libpng16-16 amd64 1.6.38-2
+2022-12-16 17:44:24.056577 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxml2 amd64 2.9.14+dfsg-1+b1
+2022-12-16 17:44:25.604014 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 shared-mime-info amd64 2.2-1
+2022-12-16 17:44:27.115338 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdouble-conversion3 amd64 3.2.1-1
+2022-12-16 17:44:28.765133 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libpcre2-16-0 amd64 10.40-1
+2022-12-16 17:44:30.672848 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libqt5core5a amd64 5.15.4+dfsg-5
+2022-12-16 17:44:33.073392 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libexpat1 amd64 2.4.9-1
+2022-12-16 17:44:35.447238 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b4
+2022-12-16 17:44:38.042102 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libfreetype6 amd64 2.12.1+dfsg-3
+2022-12-16 17:44:39.919976 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 sensible-utils all 0.0.17
+2022-12-16 17:44:42.592831 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 ucf all 3.0043
+2022-12-16 17:44:44.580089 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 fonts-dejavu-core all 2.37-2
+2022-12-16 17:44:47.095984 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 fontconfig-config amd64 2.13.1-4.5
+2022-12-16 17:44:49.477671 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libfontconfig1 amd64 2.13.1-4.5
+2022-12-16 17:44:51.668267 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 fontconfig amd64 2.13.1-4.5
+2022-12-16 17:44:53.598626 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdrm-common all 2.4.113-2
+2022-12-16 17:44:55.489402 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdrm2 amd64 2.4.113-2
+2022-12-16 17:44:57.062206 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libglvnd0 amd64 1.5.0-1
+2022-12-16 17:44:59.432959 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libwayland-server0 amd64 1.21.0-1
+2022-12-16 17:45:01.807427 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libgbm1 amd64 22.2.0-1
+2022-12-16 17:45:04.518595 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libglapi-mesa amd64 22.2.0-1
+2022-12-16 17:45:07.173873 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libwayland-client0 amd64 1.21.0-1
+2022-12-16 17:45:09.409646 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1
+2022-12-16 17:45:11.052380 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libmd0 amd64 1.0.4-2
+2022-12-16 17:45:12.947957 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.6-1
+2022-12-16 17:45:14.621731 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3
+2022-12-16 17:45:16.478482 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1
+2022-12-16 17:45:18.252118 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.1-2
+2022-12-16 17:45:19.810096 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.1-2
+2022-12-16 17:45:21.785362 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libx11-xcb1 amd64 2:1.8.1-2
+2022-12-16 17:45:23.960095 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-dri2-0 amd64 1.15-1
+2022-12-16 17:45:26.262449 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-dri3-0 amd64 1.15-1
+2022-12-16 17:45:28.468914 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-present0 amd64 1.15-1
+2022-12-16 17:45:30.912909 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-sync1 amd64 1.15-1
+2022-12-16 17:45:33.059377 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-xfixes0 amd64 1.15-1
+2022-12-16 17:45:34.970457 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxshmfence1 amd64 1.3-1
+2022-12-16 17:45:36.703264 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libegl-mesa0 amd64 22.2.0-1
+2022-12-16 17:45:38.845544 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libegl1 amd64 1.5.0-1
+2022-12-16 17:45:40.948213 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-glx0 amd64 1.15-1
+2022-12-16 17:45:42.817334 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxcb-shm0 amd64 1.15-1
+2022-12-16 17:45:45.377424 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1
+2022-12-16 17:45:47.393335 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxfixes3 amd64 1:6.0.0-1
+2022-12-16 17:45:49.626450 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2
+2022-12-16 17:45:52.085998 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdrm-amdgpu1 amd64 2.4.113-2
+2022-12-16 17:45:55.076499 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdrm-nouveau2 amd64 2.4.113-2
+2022-12-16 17:45:58.626428 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libdrm-radeon1 amd64 2.4.113-2
+2022-12-16 17:46:02.547283 +0000 build-debian42: output: Ign https://deb.debian.org/debian bookworm/main amd64 libedit2 amd64 3.1-20210910-1+b1
+2022-12-16 17:46:10.143640 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libz3-4 amd64 4.8.12-1+b2
+2022-12-16 17:46:10.143725 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:10.275906 +0000 build-debian42: output: Get: 1 https://deb.debian.org/debian bookworm/main amd64 libllvm14 amd64 1:14.0.6-2 [21.9 MB]
+2022-12-16 17:46:28.205397 +0000 build-debian42: output: Get: 2 https://deb.debian.org/debian bookworm/main amd64 libsensors-config all 1:3.6.0-7 [32.3 kB]
+2022-12-16 17:46:28.205478 +0000 build-debian42: output: Get: 3 https://deb.debian.org/debian bookworm/main amd64 libsensors5 amd64 1:3.6.0-7 [52.3 kB]
+2022-12-16 17:46:28.207396 +0000 build-debian42: output: Get: 4 https://deb.debian.org/debian bookworm/main amd64 libgl1-mesa-dri amd64 22.2.0-1 [7105 kB]
+2022-12-16 17:46:33.174369 +0000 build-debian42: output: Get: 5 https://deb.debian.org/debian bookworm/main amd64 libglx-mesa0 amd64 22.2.0-1 [189 kB]
+2022-12-16 17:46:33.254769 +0000 build-debian42: output: Get: 6 https://deb.debian.org/debian bookworm/main amd64 libglx0 amd64 1.5.0-1 [35.7 kB]
+2022-12-16 17:46:33.277810 +0000 build-debian42: output: Get: 7 https://deb.debian.org/debian bookworm/main amd64 libgl1 amd64 1.5.0-1 [89.4 kB]
+2022-12-16 17:46:33.320991 +0000 build-debian42: output: Get: 8 https://deb.debian.org/debian bookworm/main amd64 libgraphite2-3 amd64 1.3.14-1 [81.2 kB]
+2022-12-16 17:46:33.381863 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libharfbuzz0b amd64 5.2.0-2
+2022-12-16 17:46:33.381905 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.381941 +0000 build-debian42: output: Get: 9 https://deb.debian.org/debian bookworm/main amd64 x11-common all 1:7.7+23 [252 kB]
+2022-12-16 17:46:33.539182 +0000 build-debian42: output: Get: 10 https://deb.debian.org/debian bookworm/main amd64 libice6 amd64 2:1.0.10-1 [58.5 kB]
+2022-12-16 17:46:33.594509 +0000 build-debian42: output: Get: 11 https://deb.debian.org/debian bookworm/main amd64 libevdev2 amd64 1.13.0+dfsg-1 [34.0 kB]
+2022-12-16 17:46:33.618333 +0000 build-debian42: output: Get: 12 https://deb.debian.org/debian bookworm/main amd64 libmtdev1 amd64 1.1.6-1 [23.0 kB]
+2022-12-16 17:46:33.628022 +0000 build-debian42: output: Get: 13 https://deb.debian.org/debian bookworm/main amd64 libgudev-1.0-0 amd64 237-2 [15.1 kB]
+2022-12-16 17:46:33.629112 +0000 build-debian42: output: Get: 14 https://deb.debian.org/debian bookworm/main amd64 libwacom-common all 2.4.0-3 [58.0 kB]
+2022-12-16 17:46:33.734360 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libwacom9 amd64 2.4.0-3
+2022-12-16 17:46:33.734407 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.734985 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libinput-bin amd64 1.21.0-1
+2022-12-16 17:46:33.735019 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.735241 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libinput10 amd64 1.21.0-1
+2022-12-16 17:46:33.735261 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.735270 +0000 build-debian42: output: Get: 15 https://deb.debian.org/debian bookworm/main amd64 libmd4c0 amd64 0.4.8-1 [44.2 kB]
+2022-12-16 17:46:33.831981 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libdbus-1-3 amd64 1.14.2-1
+2022-12-16 17:46:33.832029 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.845476 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5dbus5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:33.845542 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.891512 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5network5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:33.891578 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:33.891801 +0000 build-debian42: output: Get: 16 https://deb.debian.org/debian bookworm/main amd64 libsm6 amd64 2:1.2.3-1 [35.1 kB]
+2022-12-16 17:46:33.901310 +0000 build-debian42: output: Get: 17 https://deb.debian.org/debian bookworm/main amd64 libxcb-icccm4 amd64 0.4.1-1.1 [27.4 kB]
+2022-12-16 17:46:33.908796 +0000 build-debian42: output: Get: 18 https://deb.debian.org/debian bookworm/main amd64 libxcb-util1 amd64 0.4.0-1+b1 [23.2 kB]
+2022-12-16 17:46:34.004150 +0000 build-debian42: output: Get: 19 https://deb.debian.org/debian bookworm/main amd64 libxcb-image0 amd64 0.4.0-2 [22.9 kB]
+2022-12-16 17:46:34.011117 +0000 build-debian42: output: Get: 20 https://deb.debian.org/debian bookworm/main amd64 libxcb-keysyms1 amd64 0.4.0-1+b2 [16.4 kB]
+2022-12-16 17:46:34.012312 +0000 build-debian42: output: Get: 21 https://deb.debian.org/debian bookworm/main amd64 libxcb-randr0 amd64 1.15-1 [117 kB]
+2022-12-16 17:46:34.118438 +0000 build-debian42: output: Get: 22 https://deb.debian.org/debian bookworm/main amd64 libxcb-render0 amd64 1.15-1 [115 kB]
+2022-12-16 17:46:34.168587 +0000 build-debian42: output: Get: 23 https://deb.debian.org/debian bookworm/main amd64 libxcb-render-util0 amd64 0.3.9-1+b1 [18.3 kB]
+2022-12-16 17:46:34.170099 +0000 build-debian42: output: Get: 24 https://deb.debian.org/debian bookworm/main amd64 libxcb-shape0 amd64 1.15-1 [106 kB]
+2022-12-16 17:46:34.251987 +0000 build-debian42: output: Get: 25 https://deb.debian.org/debian bookworm/main amd64 libxcb-xinerama0 amd64 1.15-1 [105 kB]
+2022-12-16 17:46:34.282771 +0000 build-debian42: output: Get: 26 https://deb.debian.org/debian bookworm/main amd64 libxcb-xinput0 amd64 1.15-1 [130 kB]
+2022-12-16 17:46:34.388505 +0000 build-debian42: output: Get: 27 https://deb.debian.org/debian bookworm/main amd64 libxcb-xkb1 amd64 1.15-1 [129 kB]
+2022-12-16 17:46:34.420983 +0000 build-debian42: output: Get: 28 https://deb.debian.org/debian bookworm/main amd64 xkb-data all 2.35.1-1 [764 kB]
+2022-12-16 17:46:34.989194 +0000 build-debian42: output: Get: 29 https://deb.debian.org/debian bookworm/main amd64 libxkbcommon0 amd64 1.4.1-1 [108 kB]
+2022-12-16 17:46:35.039076 +0000 build-debian42: output: Get: 30 https://deb.debian.org/debian bookworm/main amd64 libxkbcommon-x11-0 amd64 1.4.1-1 [17.8 kB]
+2022-12-16 17:46:35.064949 +0000 build-debian42: output: Get: 31 https://deb.debian.org/debian bookworm/main amd64 libxrender1 amd64 1:0.9.10-1.1 [33.2 kB]
+2022-12-16 17:46:35.101288 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5gui5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:35.101415 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.112015 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5positioning5 amd64 5.15.4+dfsg-2
+2022-12-16 17:46:35.112045 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.140153 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libavahi-common-data amd64 0.8-6
+2022-12-16 17:46:35.140349 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.140383 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libavahi-common3 amd64 0.8-6
+2022-12-16 17:46:35.140513 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.140699 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libavahi-client3 amd64 0.8-6
+2022-12-16 17:46:35.140844 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.140994 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libcups2 amd64 2.4.2-1+b1
+2022-12-16 17:46:35.141132 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.303230 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5widgets5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:35.303301 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.347140 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5printsupport5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:35.347226 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.390962 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5qml5 amd64 5.15.4+dfsg-4
+2022-12-16 17:46:35.391034 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.463076 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5qmlmodels5 amd64 5.15.4+dfsg-4
+2022-12-16 17:46:35.463142 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.550750 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5quick5 amd64 5.15.4+dfsg-4
+2022-12-16 17:46:35.550822 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.621692 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5sensors5 amd64 5.15.4-2
+2022-12-16 17:46:35.621795 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.664716 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5webchannel5 amd64 5.15.4-2
+2022-12-16 17:46:35.664993 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.665126 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libwebp7 amd64 1.2.2-2+b1
+2022-12-16 17:46:35.665156 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.665207 +0000 build-debian42: output: Get: 32 https://deb.debian.org/debian bookworm/main amd64 libwoff1 amd64 1.0.2-2 [43.0 kB]
+2022-12-16 17:46:35.674556 +0000 build-debian42: output: Get: 33 https://deb.debian.org/debian bookworm/main amd64 libxslt1.1 amd64 1.1.35-1 [242 kB]
+2022-12-16 17:46:35.815822 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5webkit5 amd64 5.212.0~alpha4-21
+2022-12-16 17:46:35.815970 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.816061 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libpython3.10-minimal amd64 3.10.7-1
+2022-12-16 17:46:35.816725 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.816774 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3.10-minimal amd64 3.10.7-1
+2022-12-16 17:46:35.817039 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.817192 +0000 build-debian42: output: Get: 34 https://deb.debian.org/debian bookworm/main amd64 python3-minimal amd64 3.10.6-1 [38.7 kB]
+2022-12-16 17:46:35.887201 +0000 build-debian42: output: Get: 35 https://deb.debian.org/debian bookworm/main amd64 media-types all 8.0.0 [33.4 kB]
+2022-12-16 17:46:35.948423 +0000 build-debian42: output: Get: 36 https://deb.debian.org/debian bookworm/main amd64 libmpdec3 amd64 2.5.1-2 [87.8 kB]
+2022-12-16 17:46:35.959938 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 readline-common all 8.2-1
+2022-12-16 17:46:35.960045 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:35.960911 +0000 build-debian42: output: Get: 37 https://deb.debian.org/debian bookworm/main amd64 libreadline8 amd64 8.2-1 [173 kB]
+2022-12-16 17:46:36.097416 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libpython3.10-stdlib amd64 3.10.7-1
+2022-12-16 17:46:36.097480 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:36.098318 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3.10 amd64 3.10.7-1
+2022-12-16 17:46:36.098587 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:36.098677 +0000 build-debian42: output: Get: 38 https://deb.debian.org/debian bookworm/main amd64 libpython3-stdlib amd64 3.10.6-1 [21.7 kB]
+2022-12-16 17:46:36.099995 +0000 build-debian42: output: Get: 39 https://deb.debian.org/debian bookworm/main amd64 python3 amd64 3.10.6-1 [38.2 kB]
+2022-12-16 17:46:36.101515 +0000 build-debian42: output: Get: 40 https://deb.debian.org/debian bookworm/main amd64 libmagic-mgc amd64 1:5.41-4 [295 kB]
+2022-12-16 17:46:36.250451 +0000 build-debian42: output: Get: 41 https://deb.debian.org/debian bookworm/main amd64 libmagic1 amd64 1:5.41-4 [129 kB]
+2022-12-16 17:46:36.344511 +0000 build-debian42: output: Get: 42 https://deb.debian.org/debian bookworm/main amd64 file amd64 1:5.41-4 [67.0 kB]
+2022-12-16 17:46:36.401000 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 gettext-base amd64 0.21-9
+2022-12-16 17:46:36.401091 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:36.401332 +0000 build-debian42: output: Get: 43 https://deb.debian.org/debian bookworm/main amd64 libuchardet0 amd64 0.0.7-1 [67.8 kB]
+2022-12-16 17:46:36.444562 +0000 build-debian42: output: Get: 44 https://deb.debian.org/debian bookworm/main amd64 groff-base amd64 1.22.4-8 [936 kB]
+2022-12-16 17:46:37.059217 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 bsdextrautils amd64 2.38.1-1
+2022-12-16 17:46:37.059268 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:37.059315 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libpipeline1 amd64 1.5.6-3
+2022-12-16 17:46:37.059944 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:37.060004 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 man-db amd64 2.10.2-3
+2022-12-16 17:46:37.060072 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:37.060104 +0000 build-debian42: output: Get: 45 https://deb.debian.org/debian bookworm/main amd64 m4 amd64 1.4.19-1 [291 kB]
+2022-12-16 17:46:37.297699 +0000 build-debian42: output: Get: 46 https://deb.debian.org/debian bookworm/main amd64 autoconf all 2.71-2 [343 kB]
+2022-12-16 17:46:37.455534 +0000 build-debian42: output: Get: 47 https://deb.debian.org/debian bookworm/main amd64 autotools-dev all 20220109.1 [51.6 kB]
+2022-12-16 17:46:37.496386 +0000 build-debian42: output: Get: 48 https://deb.debian.org/debian bookworm/main amd64 automake all 1:1.16.5-1.3 [823 kB]
+2022-12-16 17:46:38.074562 +0000 build-debian42: output: Get: 49 https://deb.debian.org/debian bookworm/main amd64 autopoint all 0.21-9 [510 kB]
+2022-12-16 17:46:38.463323 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libdebhelper-perl all 13.9.1
+2022-12-16 17:46:38.463398 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:38.463427 +0000 build-debian42: output: Get: 50 https://deb.debian.org/debian bookworm/main amd64 libtool all 2.4.7-4 [526 kB]
+2022-12-16 17:46:38.763547 +0000 build-debian42: output: Get: 51 https://deb.debian.org/debian bookworm/main amd64 dh-autoreconf all 20 [17.1 kB]
+2022-12-16 17:46:38.764776 +0000 build-debian42: output: Get: 52 https://deb.debian.org/debian bookworm/main amd64 libarchive-zip-perl all 1.68-1 [104 kB]
+2022-12-16 17:46:38.862600 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libsub-override-perl all 0.09-3
+2022-12-16 17:46:38.862869 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:38.862906 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libfile-stripnondeterminism-perl all 1.13.0-1
+2022-12-16 17:46:38.862936 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:38.862960 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 dh-strip-nondeterminism all 1.13.0-1
+2022-12-16 17:46:38.862978 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:38.863002 +0000 build-debian42: output: Get: 53 https://deb.debian.org/debian bookworm/main amd64 dwz amd64 0.14+20220924-2 [109 kB]
+2022-12-16 17:46:38.876416 +0000 build-debian42: output: Get: 54 https://deb.debian.org/debian bookworm/main amd64 gettext amd64 0.21-9 [1315 kB]
+2022-12-16 17:46:39.897474 +0000 build-debian42: output: Get: 55 https://deb.debian.org/debian bookworm/main amd64 intltool-debian all 0.35.0+20060710.5 [26.8 kB]
+2022-12-16 17:46:39.900246 +0000 build-debian42: output: Get: 56 https://deb.debian.org/debian bookworm/main amd64 po-debconf all 1.0.21+nmu1 [248 kB]
+2022-12-16 17:46:40.036732 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 debhelper all 13.9.1
+2022-12-16 17:46:40.036808 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:40.039011 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-lib2to3 all 3.10.7-1
+2022-12-16 17:46:40.039067 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:40.039100 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-distutils all 3.10.7-1
+2022-12-16 17:46:40.039110 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:40.039253 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 dh-python all 5.20221001
+2022-12-16 17:46:40.039270 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:40.039279 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libclang1-14 amd64 1:14.0.6-2
+2022-12-16 17:46:40.039286 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:40.047644 +0000 build-debian42: output: Get: 57 https://deb.debian.org/debian bookworm/main amd64 xorg-sgml-doctools all 1:1.11-1.1 [22.1 kB]
+2022-12-16 17:46:40.075286 +0000 build-debian42: output: Get: 58 https://deb.debian.org/debian bookworm/main amd64 x11proto-dev all 2022.1-1 [599 kB]
+2022-12-16 17:46:40.469420 +0000 build-debian42: output: Get: 59 https://deb.debian.org/debian bookworm/main amd64 libxau-dev amd64 1:1.0.9-1 [22.9 kB]
+2022-12-16 17:46:40.470497 +0000 build-debian42: output: Get: 60 https://deb.debian.org/debian bookworm/main amd64 libxdmcp-dev amd64 1:1.1.2-3 [42.2 kB]
+2022-12-16 17:46:40.482945 +0000 build-debian42: output: Get: 61 https://deb.debian.org/debian bookworm/main amd64 xtrans-dev all 1.4.0-1 [98.7 kB]
+2022-12-16 17:46:40.532285 +0000 build-debian42: output: Get: 62 https://deb.debian.org/debian bookworm/main amd64 libpthread-stubs0-dev amd64 0.4-1 [5344 B]
+2022-12-16 17:46:40.580829 +0000 build-debian42: output: Get: 63 https://deb.debian.org/debian bookworm/main amd64 libxcb1-dev amd64 1.15-1 [181 kB]
+2022-12-16 17:46:40.642708 +0000 build-debian42: output: Get: 64 https://deb.debian.org/debian bookworm/main amd64 libx11-dev amd64 2:1.8.1-2 [848 kB]
+2022-12-16 17:46:41.320297 +0000 build-debian42: output: Get: 65 https://deb.debian.org/debian bookworm/main amd64 libglx-dev amd64 1.5.0-1 [16.7 kB]
+2022-12-16 17:46:41.320403 +0000 build-debian42: output: Get: 66 https://deb.debian.org/debian bookworm/main amd64 libgl-dev amd64 1.5.0-1 [101 kB]
+2022-12-16 17:46:41.353556 +0000 build-debian42: output: Get: 67 https://deb.debian.org/debian bookworm/main amd64 libegl-dev amd64 1.5.0-1 [20.4 kB]
+2022-12-16 17:46:41.364886 +0000 build-debian42: output: Get: 68 https://deb.debian.org/debian bookworm/main amd64 libopengl0 amd64 1.5.0-1 [32.3 kB]
+2022-12-16 17:46:41.414848 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libglu1-mesa amd64 9.0.2-1
+2022-12-16 17:46:41.414889 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:41.414905 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libglu1-mesa-dev amd64 9.0.2-1
+2022-12-16 17:46:41.414913 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:41.414921 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libpython3.10 amd64 3.10.7-1
+2022-12-16 17:46:41.414928 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:41.414937 +0000 build-debian42: output: Get: 69 https://deb.debian.org/debian bookworm/main amd64 libqt5concurrent5 amd64 5.15.4+dfsg-5 [67.3 kB]
+2022-12-16 17:46:41.476452 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5xml5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:41.476538 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:41.624321 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5designer5 amd64 5.15.4-2+b1
+2022-12-16 17:46:41.624404 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:41.624487 +0000 build-debian42: output: Get: 70 https://deb.debian.org/debian bookworm/main amd64 libqt5designercomponents5 amd64 5.15.4-2+b1 [738 kB]
+2022-12-16 17:46:42.064921 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5sql5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.065101 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.065144 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5help5 amd64 5.15.4-2+b1
+2022-12-16 17:46:42.065204 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.065844 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5quickwidgets5 amd64 5.15.4+dfsg-4
+2022-12-16 17:46:42.066015 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.066328 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5sql5-sqlite amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.066452 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.066497 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5test5 amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.066937 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.067157 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libvulkan1 amd64 1.3.224.0-1
+2022-12-16 17:46:42.067366 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.067736 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libvulkan-dev amd64 1.3.224.0-1
+2022-12-16 17:46:42.067773 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.068396 +0000 build-debian42: output: Get: 71 https://deb.debian.org/debian bookworm/main amd64 libxext-dev amd64 2:1.3.4-1+b1 [107 kB]
+2022-12-16 17:46:42.277597 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-pyqt5.sip amd64 12.11.0-1+b1
+2022-12-16 17:46:42.277683 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.328081 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-pyqt5 amd64 5.15.7+dfsg-1
+2022-12-16 17:46:42.328152 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.382292 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 pyqt5-dev-tools amd64 5.15.7+dfsg-1
+2022-12-16 17:46:42.382374 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.402828 +0000 build-debian42: output: Get: 72 https://deb.debian.org/debian bookworm/main amd64 python3-all amd64 3.10.6-1 [1060 B]
+2022-12-16 17:46:42.436739 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-pkg-resources all 59.6.0-1.2
+2022-12-16 17:46:42.436781 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.468008 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 python3-setuptools all 59.6.0-1.2
+2022-12-16 17:46:42.468092 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.468209 +0000 build-debian42: output: Get: 73 https://deb.debian.org/debian bookworm/main amd64 qtchooser amd64 66-2 [26.3 kB]
+2022-12-16 17:46:42.546752 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qdoc-qt5 amd64 5.15.4-2+b1
+2022-12-16 17:46:42.546826 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.603314 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qhelpgenerator-qt5 amd64 5.15.4-2+b1
+2022-12-16 17:46:42.603369 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.680734 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qt5-assistant amd64 5.15.4-2+b1
+2022-12-16 17:46:42.680782 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.772053 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qt5-qmake-bin amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.772128 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.795774 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qt5-qmake amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.795836 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.846933 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qtattributionsscanner-qt5 amd64 5.15.4-2+b1
+2022-12-16 17:46:42.846970 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.930483 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qtbase5-dev-tools amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.930559 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:42.974914 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qtbase5-dev amd64 5.15.4+dfsg-5
+2022-12-16 17:46:42.974970 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:43.040518 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 qttools5-dev-tools amd64 5.15.4-2+b1
+2022-12-16 17:46:43.040567 +0000 build-debian42: output:   404  Not Found [IP: 146.75.122.132 443]
+2022-12-16 17:46:43.084311 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libglib2.0-0 amd64 2.74.0-2
+2022-12-16 17:46:43.084356 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:43.091051 +0000 build-debian42: output: Get: 74 https://deb.debian.org/debian bookworm/main amd64 libelf1 amd64 0.187-4 [179 kB]
+2022-12-16 17:46:43.144139 +0000 build-debian42: output: Get: 75 https://deb.debian.org/debian bookworm/main amd64 libdw1 amd64 0.187-4 [239 kB]
+2022-12-16 17:46:43.282982 +0000 build-debian42: output: Get: 76 https://deb.debian.org/debian bookworm/main amd64 libunwind8 amd64 1.3.2-2 [54.5 kB]
+2022-12-16 17:46:43.318895 +0000 build-debian42: output: Get: 77 https://deb.debian.org/debian bookworm/main amd64 libcap2-bin amd64 1:2.44-1 [32.6 kB]
+2022-12-16 17:46:43.362118 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libgstreamer1.0-0 amd64 1.20.3-1
+2022-12-16 17:46:43.362195 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:43.362215 +0000 build-debian42: output: Get: 78 https://deb.debian.org/debian bookworm/main amd64 liborc-0.4-0 amd64 1:0.4.32-2 [192 kB]
+2022-12-16 17:46:43.587376 +0000 build-debian42: output: Get: 79 https://deb.debian.org/debian bookworm/main amd64 iso-codes all 4.11.0-1 [2834 kB]
+2022-12-16 17:46:45.416829 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.20.3-2
+2022-12-16 17:46:45.416877 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:45.416888 +0000 build-debian42: output: Get: 80 https://deb.debian.org/debian bookworm/main amd64 libhyphen0 amd64 2.8.8-7 [32.5 kB]
+2022-12-16 17:46:45.422036 +0000 build-debian42: output: Get: 81 https://deb.debian.org/debian bookworm/main amd64 libicu71 amd64 71.1-3 [9218 kB]
+2022-12-16 17:46:52.810355 +0000 build-debian42: output: Get: 82 https://deb.debian.org/debian bookworm/main amd64 libjpeg62-turbo amd64 1:2.1.2-1+b1 [169 kB]
+2022-12-16 17:46:52.811532 +0000 build-debian42: output: Get: 83 https://deb.debian.org/debian bookworm/main amd64 libpng16-16 amd64 1.6.38-2 [290 kB]
+2022-12-16 17:46:52.814949 +0000 build-debian42: output: Get: 84 https://deb.debian.org/debian bookworm/main amd64 libxml2 amd64 2.9.14+dfsg-1+b1 [708 kB]
+2022-12-16 17:46:53.028650 +0000 build-debian42: output: Get: 85 https://deb.debian.org/debian bookworm/main amd64 shared-mime-info amd64 2.2-1 [729 kB]
+2022-12-16 17:46:53.310617 +0000 build-debian42: output: Get: 86 https://deb.debian.org/debian bookworm/main amd64 libdouble-conversion3 amd64 3.2.1-1 [41.5 kB]
+2022-12-16 17:46:53.324235 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libpcre2-16-0 amd64 10.40-1
+2022-12-16 17:46:53.324301 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:53.324313 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libqt5core5a amd64 5.15.4+dfsg-5
+2022-12-16 17:46:53.324370 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:53.328187 +0000 build-debian42: output: Get: 87 https://deb.debian.org/debian bookworm/main amd64 libexpat1 amd64 2.4.9-1 [105 kB]
+2022-12-16 17:46:53.393659 +0000 build-debian42: output: Get: 88 https://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b4 [275 kB]
+2022-12-16 17:46:53.644218 +0000 build-debian42: output: Get: 89 https://deb.debian.org/debian bookworm/main amd64 libfreetype6 amd64 2.12.1+dfsg-3 [420 kB]
+2022-12-16 17:46:53.927922 +0000 build-debian42: output: Get: 90 https://deb.debian.org/debian bookworm/main amd64 sensible-utils all 0.0.17 [21.5 kB]
+2022-12-16 17:46:53.931433 +0000 build-debian42: output: Get: 91 https://deb.debian.org/debian bookworm/main amd64 ucf all 3.0043 [74.0 kB]
+2022-12-16 17:46:53.981079 +0000 build-debian42: output: Get: 92 https://deb.debian.org/debian bookworm/main amd64 fonts-dejavu-core all 2.37-2 [1069 kB]
+2022-12-16 17:46:54.764594 +0000 build-debian42: output: Get: 93 https://deb.debian.org/debian bookworm/main amd64 fontconfig-config amd64 2.13.1-4.5 [281 kB]
+2022-12-16 17:46:54.967721 +0000 build-debian42: output: Get: 94 https://deb.debian.org/debian bookworm/main amd64 libfontconfig1 amd64 2.13.1-4.5 [351 kB]
+2022-12-16 17:46:55.181767 +0000 build-debian42: output: Get: 95 https://deb.debian.org/debian bookworm/main amd64 fontconfig amd64 2.13.1-4.5 [417 kB]
+2022-12-16 17:46:55.560237 +0000 build-debian42: output: Get: 96 https://deb.debian.org/debian bookworm/main amd64 libdrm-common all 2.4.113-2 [15.6 kB]
+2022-12-16 17:46:55.560824 +0000 build-debian42: output: Get: 97 https://deb.debian.org/debian bookworm/main amd64 libdrm2 amd64 2.4.113-2 [46.0 kB]
+2022-12-16 17:46:55.568912 +0000 build-debian42: output: Get: 98 https://deb.debian.org/debian bookworm/main amd64 libglvnd0 amd64 1.5.0-1 [49.2 kB]
+2022-12-16 17:46:55.589895 +0000 build-debian42: output: Get: 99 https://deb.debian.org/debian bookworm/main amd64 libwayland-server0 amd64 1.21.0-1 [35.9 kB]
+2022-12-16 17:46:55.605315 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libgbm1 amd64 22.2.0-1
+2022-12-16 17:46:55.605388 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:55.605473 +0000 build-debian42: output: Get: 100 https://deb.debian.org/debian bookworm/main amd64 libglapi-mesa amd64 22.2.0-1 [75.8 kB]
+2022-12-16 17:46:55.667391 +0000 build-debian42: output: Get: 101 https://deb.debian.org/debian bookworm/main amd64 libwayland-client0 amd64 1.21.0-1 [28.3 kB]
+2022-12-16 17:46:55.698536 +0000 build-debian42: output: Get: 102 https://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+2022-12-16 17:46:55.699506 +0000 build-debian42: output: Get: 103 https://deb.debian.org/debian bookworm/main amd64 libmd0 amd64 1.0.4-2 [29.5 kB]
+2022-12-16 17:46:55.766844 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.6-1
+2022-12-16 17:46:55.766924 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:55.766955 +0000 build-debian42: output: Get: 104 https://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+2022-12-16 17:46:55.771527 +0000 build-debian42: output: Get: 105 https://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1 [144 kB]
+2022-12-16 17:46:55.863639 +0000 build-debian42: output: Get: 106 https://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.1-2 [308 kB]
+2022-12-16 17:46:56.060027 +0000 build-debian42: output: Get: 107 https://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.1-2 [772 kB]
+2022-12-16 17:46:56.650506 +0000 build-debian42: output: Get: 108 https://deb.debian.org/debian bookworm/main amd64 libx11-xcb1 amd64 2:1.8.1-2 [203 kB]
+2022-12-16 17:46:56.904923 +0000 build-debian42: output: Get: 109 https://deb.debian.org/debian bookworm/main amd64 libxcb-dri2-0 amd64 1.15-1 [107 kB]
+2022-12-16 17:46:57.006741 +0000 build-debian42: output: Get: 110 https://deb.debian.org/debian bookworm/main amd64 libxcb-dri3-0 amd64 1.15-1 [107 kB]
+2022-12-16 17:46:57.041278 +0000 build-debian42: output: Get: 111 https://deb.debian.org/debian bookworm/main amd64 libxcb-present0 amd64 1.15-1 [105 kB]
+2022-12-16 17:46:57.121777 +0000 build-debian42: output: Get: 112 https://deb.debian.org/debian bookworm/main amd64 libxcb-sync1 amd64 1.15-1 [109 kB]
+2022-12-16 17:46:57.197966 +0000 build-debian42: output: Get: 113 https://deb.debian.org/debian bookworm/main amd64 libxcb-xfixes0 amd64 1.15-1 [109 kB]
+2022-12-16 17:46:57.248259 +0000 build-debian42: output: Get: 114 https://deb.debian.org/debian bookworm/main amd64 libxshmfence1 amd64 1.3-1 [8820 B]
+2022-12-16 17:46:57.251513 +0000 build-debian42: output: Get: 115 https://deb.debian.org/debian bookworm/main amd64 libegl-mesa0 amd64 22.2.0-1 [148 kB]
+2022-12-16 17:46:57.399975 +0000 build-debian42: output: Get: 116 https://deb.debian.org/debian bookworm/main amd64 libegl1 amd64 1.5.0-1 [35.0 kB]
+2022-12-16 17:46:57.402279 +0000 build-debian42: output: Get: 117 https://deb.debian.org/debian bookworm/main amd64 libxcb-glx0 amd64 1.15-1 [122 kB]
+2022-12-16 17:46:57.461381 +0000 build-debian42: output: Get: 118 https://deb.debian.org/debian bookworm/main amd64 libxcb-shm0 amd64 1.15-1 [105 kB]
+2022-12-16 17:46:57.520037 +0000 build-debian42: output: Get: 119 https://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1 [52.9 kB]
+2022-12-16 17:46:57.589092 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libxfixes3 amd64 1:6.0.0-1
+2022-12-16 17:46:57.589200 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:57.589227 +0000 build-debian42: output: Get: 120 https://deb.debian.org/debian bookworm/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2 [20.8 kB]
+2022-12-16 17:46:57.591878 +0000 build-debian42: output: Get: 121 https://deb.debian.org/debian bookworm/main amd64 libdrm-amdgpu1 amd64 2.4.113-2 [29.6 kB]
+2022-12-16 17:46:57.600074 +0000 build-debian42: output: Get: 122 https://deb.debian.org/debian bookworm/main amd64 libdrm-nouveau2 amd64 2.4.113-2 [27.9 kB]
+2022-12-16 17:46:57.603199 +0000 build-debian42: output: Get: 123 https://deb.debian.org/debian bookworm/main amd64 libdrm-radeon1 amd64 2.4.113-2 [30.7 kB]
+2022-12-16 17:46:57.654863 +0000 build-debian42: output: Err https://deb.debian.org/debian bookworm/main amd64 libedit2 amd64 3.1-20210910-1+b1
+2022-12-16 17:46:57.654940 +0000 build-debian42: output:   Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:57.654963 +0000 build-debian42: output: Fetched 61.8 MB in 2min 56s (352 kB/s)
+2022-12-16 17:46:57.692915 +0000 build-debian42: output: E: Failed to fetch https://deb.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.74.0-2_amd64.deb: Temporary failure resolving 'deb.debian.org'
+2022-12-16 17:46:57.692986 +0000 build-debian42: output: E: Unable to fetch some packages; try '-o APT::Get::Fix-Missing=true' to continue with missing packages
+2022-12-16 17:46:57.846100 +0000 build-debian42: output: Reading package lists...
+2022-12-16 17:46:58.015561 +0000 build-debian42: output: Building dependency tree...
+2022-12-16 17:46:58.015614 +0000 build-debian42: output: Reading state information...
+2022-12-16 17:46:58.089819 +0000 build-debian42: output: Reading extended state information...
+2022-12-16 17:46:58.118251 +0000 build-debian42: output: Initializing package states...
+2022-12-16 17:46:58.300385 +0000 build-debian42: output: Writing extended state information...
+2022-12-16 17:46:58.407478 +0000 build-debian42: output: Building tag database...
+2022-12-16 17:46:58.430043 +0000 build-debian42: output: E: pbuilder-satisfydepends failed.
+2022-12-16 17:46:58.430109 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2022-12-16 17:46:58.444802 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2022-12-16 17:46:58.447524 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2022-12-16 17:46:58.450313 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2022-12-16 17:46:58.453080 +0000 build-debian42: output: I: unmounting proc filesystem
+2022-12-16 17:46:58.455429 +0000 build-debian42: output: I: unmounting sys filesystem
+2022-12-16 17:46:58.459720 +0000 build-debian42: output: I: cleaning the build env
+2022-12-16 17:46:58.459744 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/3056 and its subdirectories
+2022-12-16 17:47:12.969395 +0000 > closing log
