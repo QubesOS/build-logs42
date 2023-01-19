@@ -1,0 +1,671 @@
+2023-01-19 19:14:50.382669 +0000 > starting log
+2023-01-19 19:14:50.382923 +0000 build-debian42: > starting build with log
+2023-01-19 19:14:50.382932 +0000 build-debian42: >> args:
+2023-01-19 19:14:50.382938 +0000 build-debian42: >>   ()
+2023-01-19 19:14:50.382943 +0000 build-debian42: >> component:
+2023-01-19 19:14:50.382948 +0000 build-debian42: >>   artwork
+2023-01-19 19:14:50.382955 +0000 build-debian42: >>     commit-hash: 1706ff8cc46a0796c3e073bb667ba267d7deca2a
+2023-01-19 19:14:50.382966 +0000 build-debian42: >>     source-hash: f54ddadad5109601afd63533ca90a85cf24688ba1f258f9961c37fbfa84132172404b5fd7829f2cdfd4f44522c24d758f02a67ac511865c075d67f4f73b6cd74
+2023-01-19 19:14:50.382972 +0000 build-debian42: >> distributions:
+2023-01-19 19:14:50.382980 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-01-19 19:15:20.069730 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'rm -rf /builder/incoming/artwork /builder/artwork'
+2023-01-19 19:15:20.642120 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp193 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/artwork
+2023-01-19 19:15:22.692815 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'mkdir -p /builder && mv /builder/incoming/artwork /builder'
+2023-01-19 19:15:23.125696 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-19 19:15:23.637913 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp193 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-19 19:15:24.212397 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-19 19:15:24.486515 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-19 19:15:24.752517 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp193 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-19 19:15:25.042633 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-19 19:15:25.326356 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2023-01-19 19:15:25.614407 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp193 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2023-01-19 19:15:25.917207 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp193 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2023-01-19 19:15:26.193839 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp193 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/artwork debian bookworm deb12  && /builder/plugins/source_deb/scripts/get-source-info /builder/artwork debian''.
+2023-01-19 19:15:26.486870 +0000 build-debian42: output: + test 4 -lt 4
+2023-01-19 19:15:26.486917 +0000 build-debian42: output: + SOURCE_DIR=/builder/artwork
+2023-01-19 19:15:26.486924 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-19 19:15:26.487077 +0000 build-debian42: output: + DIST_NAME=bookworm
+2023-01-19 19:15:26.487118 +0000 build-debian42: output: + DIST_TAG=deb12
+2023-01-19 19:15:26.487131 +0000 build-debian42: output: + DEVEL_VERSION=
+2023-01-19 19:15:26.488537 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2023-01-19 19:15:26.493954 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-19 19:15:26.494017 +0000 build-debian42: output: + cd /builder/artwork
+2023-01-19 19:15:26.494029 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-01-19 19:15:26.494049 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2023-01-19 19:15:26.745950 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2023-01-19 19:15:27.087835 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2023-01-19 19:15:27.151868 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2023-01-19 19:15:27.151915 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2023-01-19 19:15:27.155172 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/artwork/debian/changelog
+2023-01-19 19:15:27.163982 +0000 build-debian42: output: + test 2 -ne 2
+2023-01-19 19:15:27.164039 +0000 build-debian42: output: + SOURCE_DIR=/builder/artwork
+2023-01-19 19:15:27.164050 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-19 19:15:27.164060 +0000 build-debian42: output: ++ basename debian
+2023-01-19 19:15:27.164450 +0000 build-debian42: output: + DIRECTORY_BN=debian
+2023-01-19 19:15:27.164476 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2023-01-19 19:15:27.164483 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2023-01-19 19:15:27.165796 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/get-source-info
+2023-01-19 19:15:27.168511 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-19 19:15:27.168542 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name /builder/artwork/debian/changelog
+2023-01-19 19:15:27.211121 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name-full /builder/artwork/debian/changelog
+2023-01-19 19:15:27.251610 +0000 build-debian42: output: + grep -Po '(?<=^3.0 \()\w+'
+2023-01-19 19:15:27.258088 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp193 qubesbuilder.FileCopyOut+__builder__artwork__debian_package_release_name /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpet72hour
+2023-01-19 19:15:59.620884 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'rm -rf /builder/incoming/artwork /builder/artwork'
+2023-01-19 19:16:01.006897 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/artwork
+2023-01-19 19:16:03.816407 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'mkdir -p /builder && mv /builder/incoming/artwork /builder'
+2023-01-19 19:16:04.250742 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'rm -rf /builder/incoming/artwork /builder/distfiles/artwork'
+2023-01-19 19:16:04.584306 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/distfiles/artwork
+2023-01-19 19:16:04.915500 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'mkdir -p /builder/distfiles && mv /builder/incoming/artwork /builder/distfiles'
+2023-01-19 19:16:05.188464 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-19 19:16:05.450657 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-19 19:16:05.774237 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-19 19:16:06.057241 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-19 19:16:06.319356 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-19 19:16:06.615176 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-19 19:16:06.913706 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2023-01-19 19:16:07.200667 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2023-01-19 19:16:07.681617 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7910 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2023-01-19 19:16:08.085991 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7910 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/artwork qubes-artwork_4.1.16.orig.tar.gz && mv /builder/artwork/qubes-artwork_4.1.16.orig.tar.gz /builder && /builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/artwork debian bookworm deb12  && mkdir -p /builder/build && cd /builder/build && cp -a /builder/artwork/debian . && chmod -R -- u+rwX,g+rX-w,o+rX-w . && chmod +x debian/rules && dpkg-source -b . && /builder/plugins/source_deb/scripts/debian-get-packages-list /builder/qubes-artwork_4.1.16-1+deb12u1.dsc 12 >/builder/debian_packages.list''.
+2023-01-19 19:16:08.441073 +0000 build-debian42: output: ++ tar --version
+2023-01-19 19:16:08.441118 +0000 build-debian42: output: ++ head -1
+2023-01-19 19:16:08.441126 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-01-19 19:16:08.461474 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-01-19 19:16:08.461519 +0000 build-debian42: output: ++ readlink -f /builder/artwork
+2023-01-19 19:16:08.461943 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/artwork
+2023-01-19 19:16:08.461978 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-01-19 19:16:08.461987 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-artwork_4.1.16.orig.tar
+2023-01-19 19:16:08.461993 +0000 build-debian42: output: + '[' x '!=' x ']'
+2023-01-19 19:16:08.462000 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-artwork_4.1.16.orig.tar
+2023-01-19 19:16:08.462007 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-artwork_4.1.16.orig
+2023-01-19 19:16:08.462013 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-artwork_4.1.16
+2023-01-19 19:16:08.462020 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-artwork_4.1.16/
+2023-01-19 19:16:08.462027 +0000 build-debian42: output: + pushd /builder/artwork
+2023-01-19 19:16:08.462033 +0000 build-debian42: output: /builder/artwork ~
+2023-01-19 19:16:08.462181 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-01-19 19:16:08.490954 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1674154624
+2023-01-19 19:16:08.490998 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-01-19 19:16:08.491005 +0000 build-debian42: output: ++ head -n1
+2023-01-19 19:16:08.491064 +0000 build-debian42: output: ++ sort -V
+2023-01-19 19:16:08.494252 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-01-19 19:16:08.494304 +0000 build-debian42: output: + tar --sort=name --mtime=@1674154624 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-artwork_4.1.16/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-artwork_4.1.16.orig.tar -cf qubes-artwork_4.1.16.orig.tar .
+2023-01-19 19:16:08.553834 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-01-19 19:16:08.553880 +0000 build-debian42: output: + gzip -fn qubes-artwork_4.1.16.orig.tar
+2023-01-19 19:16:10.225895 +0000 build-debian42: output: + popd
+2023-01-19 19:16:10.225940 +0000 build-debian42: output: ~
+2023-01-19 19:16:10.227649 +0000 build-debian42: output: + test 4 -lt 4
+2023-01-19 19:16:10.227676 +0000 build-debian42: output: + SOURCE_DIR=/builder/artwork
+2023-01-19 19:16:10.227710 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-19 19:16:10.228014 +0000 build-debian42: output: + DIST_NAME=bookworm
+2023-01-19 19:16:10.228031 +0000 build-debian42: output: + DIST_TAG=deb12
+2023-01-19 19:16:10.228037 +0000 build-debian42: output: + DEVEL_VERSION=
+2023-01-19 19:16:10.228045 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2023-01-19 19:16:10.229198 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-19 19:16:10.229219 +0000 build-debian42: output: + cd /builder/artwork
+2023-01-19 19:16:10.229226 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-01-19 19:16:10.229234 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2023-01-19 19:16:10.361921 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2023-01-19 19:16:10.484363 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2023-01-19 19:16:10.535286 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2023-01-19 19:16:10.535354 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2023-01-19 19:16:10.538234 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/artwork/debian/changelog
+2023-01-19 19:16:11.068847 +0000 build-debian42: output: dpkg-source: info: using options from build/debian/source/options: --extend-diff-ignore=(^|/)(.git/.*)$ --extend-diff-ignore=(^|/)(deb/.*)$ --extend-diff-ignore=(^|/)(pkgs/.*)$ --extend-diff-ignore=(^|/)(rpm/.*)$
+2023-01-19 19:16:11.068887 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2023-01-19 19:16:11.068897 +0000 build-debian42: output: dpkg-source: info: building qubes-artwork using existing ./qubes-artwork_4.1.16.orig.tar.gz
+2023-01-19 19:16:11.403663 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-artwork.spec.in, use --include-removal to override
+2023-01-19 19:16:11.403707 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file COPYING, use --include-removal to override
+2023-01-19 19:16:11.403717 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file version, use --include-removal to override
+2023-01-19 19:16:11.403730 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rel, use --include-removal to override
+2023-01-19 19:16:11.403739 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile, use --include-removal to override
+2023-01-19 19:16:11.403748 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .gitlab-ci.yml, use --include-removal to override
+2023-01-19 19:16:11.403757 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile.builder, use --include-removal to override
+2023-01-19 19:16:11.403765 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file LICENCE-GPL2, use --include-removal to override
+2023-01-19 19:16:11.403774 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .qubesbuilder, use --include-removal to override
+2023-01-19 19:16:11.403828 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file HACKING, use --include-removal to override
+2023-01-19 19:16:11.403838 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons
+2023-01-19 19:16:11.403853 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/Makefile.common, use --include-removal to override
+2023-01-19 19:16:11.403862 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/Makefile, use --include-removal to override
+2023-01-19 19:16:11.403869 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/128x128
+2023-01-19 19:16:11.403896 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/Makefile, use --include-removal to override
+2023-01-19 19:16:11.404092 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/128x128/devices
+2023-01-19 19:16:11.404128 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.404162 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.404211 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.404317 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.404333 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.404370 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.405440 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.405463 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.405474 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.405484 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.405494 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.405504 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.405514 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.405525 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.405535 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.405545 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.405555 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.405575 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.405589 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.405605 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.405615 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.405625 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.405635 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.405643 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/128x128/apps
+2023-01-19 19:16:11.405653 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.405663 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/128x128/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.405671 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/128x128/apps/qubes-manager.png
+2023-01-19 19:16:11.405679 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/scalable
+2023-01-19 19:16:11.405688 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/Makefile, use --include-removal to override
+2023-01-19 19:16:11.405696 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/scalable/apps
+2023-01-19 19:16:11.405730 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-purple.svg, use --include-removal to override
+2023-01-19 19:16:11.405742 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-yellow.svg, use --include-removal to override
+2023-01-19 19:16:11.405752 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-orange.svg, use --include-removal to override
+2023-01-19 19:16:11.405785 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-red.svg, use --include-removal to override
+2023-01-19 19:16:11.406921 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-black.svg, use --include-removal to override
+2023-01-19 19:16:11.406948 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-red.svg, use --include-removal to override
+2023-01-19 19:16:11.406958 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-orange.svg, use --include-removal to override
+2023-01-19 19:16:11.406968 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.406979 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-black.svg, use --include-removal to override
+2023-01-19 19:16:11.406988 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.406998 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-orange.svg, use --include-removal to override
+2023-01-19 19:16:11.407015 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-gray.svg, use --include-removal to override
+2023-01-19 19:16:11.407026 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-green.svg, use --include-removal to override
+2023-01-19 19:16:11.407035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-red.svg, use --include-removal to override
+2023-01-19 19:16:11.407050 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-orange.svg, use --include-removal to override
+2023-01-19 19:16:11.407062 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-green.svg, use --include-removal to override
+2023-01-19 19:16:11.407072 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-yellow.svg, use --include-removal to override
+2023-01-19 19:16:11.407082 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-green.svg, use --include-removal to override
+2023-01-19 19:16:11.407091 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-purple.svg, use --include-removal to override
+2023-01-19 19:16:11.407101 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-gray.svg, use --include-removal to override
+2023-01-19 19:16:11.407111 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-yellow.svg, use --include-removal to override
+2023-01-19 19:16:11.407121 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-gray.svg, use --include-removal to override
+2023-01-19 19:16:11.407130 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-green.svg, use --include-removal to override
+2023-01-19 19:16:11.407140 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-purple.svg, use --include-removal to override
+2023-01-19 19:16:11.407150 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/adminvm-black.svg, use --include-removal to override
+2023-01-19 19:16:11.407160 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-red.svg, use --include-removal to override
+2023-01-19 19:16:11.407169 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.407179 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-purple.svg, use --include-removal to override
+2023-01-19 19:16:11.407189 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/templatevm-gray.svg, use --include-removal to override
+2023-01-19 19:16:11.407221 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/dispvm-black.svg, use --include-removal to override
+2023-01-19 19:16:11.407232 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/servicevm-black.svg, use --include-removal to override
+2023-01-19 19:16:11.407242 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.407778 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/apps/appvm-yellow.svg, use --include-removal to override
+2023-01-19 19:16:11.407807 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/scalable/places
+2023-01-19 19:16:11.407818 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/places/start-here-qubes-yellow.svg, use --include-removal to override
+2023-01-19 19:16:11.407829 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/places/start-here-qubes-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.407839 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/places/start-here-qubes-red.svg, use --include-removal to override
+2023-01-19 19:16:11.407849 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/scalable/places/start-here-qubes-green.svg, use --include-removal to override
+2023-01-19 19:16:11.407857 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/32x32
+2023-01-19 19:16:11.407866 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/Makefile, use --include-removal to override
+2023-01-19 19:16:11.407874 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/32x32/devices
+2023-01-19 19:16:11.407884 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.407893 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.407927 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.407939 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.407954 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.407964 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.407991 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.408038 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.408335 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.408354 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.408372 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.408382 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.408428 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.408459 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.408739 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.408769 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.408781 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.408791 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.408801 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.408832 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.408844 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.408981 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.409005 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.409034 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/32x32/apps
+2023-01-19 19:16:11.409138 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.409178 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.409257 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/32x32/apps/qubes-manager.png
+2023-01-19 19:16:11.410239 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/32x32/places
+2023-01-19 19:16:11.410266 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/places/start-here-qubes-green.png, use --include-removal to override
+2023-01-19 19:16:11.410277 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/places/start-here-qubes-blue.png, use --include-removal to override
+2023-01-19 19:16:11.410288 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/places/start-here-qubes-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.410298 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/32x32/places/start-here-qubes-red.png, use --include-removal to override
+2023-01-19 19:16:11.410306 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/16x16
+2023-01-19 19:16:11.410332 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/Makefile, use --include-removal to override
+2023-01-19 19:16:11.410341 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/16x16/devices
+2023-01-19 19:16:11.410351 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.410361 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.410371 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.410381 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.410400 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.410410 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.410422 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.410431 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.410440 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.410450 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.410460 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.410470 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.410502 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.410514 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.411385 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.411415 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.411427 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.411438 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.411448 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.411457 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.411467 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.411477 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.411487 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.411496 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.411504 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/16x16/apps
+2023-01-19 19:16:11.411514 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.411524 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.411540 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/16x16/apps/qubes-manager.png
+2023-01-19 19:16:11.411548 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/16x16/places
+2023-01-19 19:16:11.411584 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/places/start-here-qubes-green.png, use --include-removal to override
+2023-01-19 19:16:11.411596 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/places/start-here-qubes-blue.png, use --include-removal to override
+2023-01-19 19:16:11.411606 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/places/start-here-qubes-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.411616 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/16x16/places/start-here-qubes-red.png, use --include-removal to override
+2023-01-19 19:16:11.411735 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/512x512
+2023-01-19 19:16:11.411776 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/Makefile, use --include-removal to override
+2023-01-19 19:16:11.411790 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/512x512/devices
+2023-01-19 19:16:11.412646 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.412668 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.412678 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.412688 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.412698 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.412708 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.412718 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.412727 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.412737 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.412747 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.412757 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.412766 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.412776 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.412786 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.412802 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.412812 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.412822 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.412831 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.412841 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.414014 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.414035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.414045 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.414055 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.414065 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.414073 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/512x512/apps
+2023-01-19 19:16:11.414084 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.414093 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/512x512/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.414102 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/512x512/apps/qubes-manager.png
+2023-01-19 19:16:11.414110 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/96x96
+2023-01-19 19:16:11.414119 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/Makefile, use --include-removal to override
+2023-01-19 19:16:11.414147 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/96x96/devices
+2023-01-19 19:16:11.414159 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.414169 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.414179 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.414189 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.414217 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.414229 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.414245 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.414255 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.414284 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.414296 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.414308 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.414346 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.414358 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.414370 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.414476 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.414501 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.414537 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.414612 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.414659 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.414742 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.414790 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.414861 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.414902 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.414975 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.415035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/96x96/apps
+2023-01-19 19:16:11.415116 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.415437 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/96x96/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.415473 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/96x96/apps/qubes-manager.png
+2023-01-19 19:16:11.415484 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/192x192
+2023-01-19 19:16:11.416218 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/192x192/Makefile, use --include-removal to override
+2023-01-19 19:16:11.416236 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/192x192/apps
+2023-01-19 19:16:11.416247 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/192x192/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.416257 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/192x192/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.416286 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/192x192/apps/qubes-manager.png
+2023-01-19 19:16:11.416294 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/48x48
+2023-01-19 19:16:11.416303 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/Makefile, use --include-removal to override
+2023-01-19 19:16:11.416311 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/48x48/devices
+2023-01-19 19:16:11.416344 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.416356 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.416366 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.416397 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.416408 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.416419 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.416428 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.416457 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.416472 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.416482 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.416492 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.416521 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.416532 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.416544 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.416614 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.417517 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.417568 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.417924 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.417944 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.417954 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.417983 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.417995 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.418004 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.418012 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/48x48/apps
+2023-01-19 19:16:11.418044 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.418056 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.418066 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/48x48/apps/qubes-manager.png
+2023-01-19 19:16:11.418105 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/48x48/places
+2023-01-19 19:16:11.418216 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/places/start-here-qubes-green.png, use --include-removal to override
+2023-01-19 19:16:11.418240 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/places/start-here-qubes-blue.png, use --include-removal to override
+2023-01-19 19:16:11.418369 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/places/start-here-qubes-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.418388 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/48x48/places/start-here-qubes-red.png, use --include-removal to override
+2023-01-19 19:16:11.418396 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/24x24
+2023-01-19 19:16:11.418439 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/Makefile, use --include-removal to override
+2023-01-19 19:16:11.419278 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/24x24/devices
+2023-01-19 19:16:11.419299 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.419347 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.419533 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.419553 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.419563 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.419605 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.419617 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.419660 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.419784 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.419808 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.419853 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.420448 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.420466 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.420482 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.420509 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.420519 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.420529 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.420558 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.420570 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.420580 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.420590 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.420618 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.420630 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.420640 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.420670 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/24x24/apps
+2023-01-19 19:16:11.420682 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.420692 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/24x24/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.420700 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/24x24/apps/qubes-manager.png
+2023-01-19 19:16:11.420734 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/36x36
+2023-01-19 19:16:11.420748 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/36x36/Makefile, use --include-removal to override
+2023-01-19 19:16:11.421378 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/36x36/apps
+2023-01-19 19:16:11.421969 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/36x36/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.421991 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/36x36/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.422022 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/36x36/apps/qubes-manager.png
+2023-01-19 19:16:11.422032 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/64x64
+2023-01-19 19:16:11.422042 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/Makefile, use --include-removal to override
+2023-01-19 19:16:11.422050 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/64x64/apps
+2023-01-19 19:16:11.422078 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.422090 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.422098 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/64x64/apps/qubes-manager.png
+2023-01-19 19:16:11.422106 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/64x64/places
+2023-01-19 19:16:11.422135 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/places/start-here-qubes-green.png, use --include-removal to override
+2023-01-19 19:16:11.422151 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/places/start-here-qubes-blue.png, use --include-removal to override
+2023-01-19 19:16:11.422161 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/places/start-here-qubes-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.422171 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/64x64/places/start-here-qubes-red.png, use --include-removal to override
+2023-01-19 19:16:11.422199 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/72x72
+2023-01-19 19:16:11.422210 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/Makefile, use --include-removal to override
+2023-01-19 19:16:11.422367 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/72x72/devices
+2023-01-19 19:16:11.422386 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.422980 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.423023 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.423035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.423045 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.423082 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.423095 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.423105 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.423133 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.423145 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.423155 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.423187 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.423199 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.423209 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.423220 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.423254 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.423366 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.423391 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.423711 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.423731 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.423742 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.423752 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.423762 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.424565 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.424606 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/72x72/apps
+2023-01-19 19:16:11.424703 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.424745 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/72x72/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.425347 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/72x72/apps/qubes-manager.png
+2023-01-19 19:16:11.425407 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/22x22
+2023-01-19 19:16:11.425419 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/22x22/Makefile, use --include-removal to override
+2023-01-19 19:16:11.425448 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/22x22/apps
+2023-01-19 19:16:11.425459 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/22x22/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.425469 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/22x22/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.425477 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/22x22/apps/qubes-manager.png
+2023-01-19 19:16:11.425503 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/256x256
+2023-01-19 19:16:11.425514 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/Makefile, use --include-removal to override
+2023-01-19 19:16:11.425522 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/256x256/devices
+2023-01-19 19:16:11.425532 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.425560 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.425572 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.425582 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.425596 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-red.png, use --include-removal to override
+2023-01-19 19:16:11.425625 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-black.png, use --include-removal to override
+2023-01-19 19:16:11.425640 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.425648 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-yellow.png, use --include-removal to override
+2023-01-19 19:16:11.425687 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.425701 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.425966 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.425988 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-orange.png, use --include-removal to override
+2023-01-19 19:16:11.425999 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.426009 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-green.png, use --include-removal to override
+2023-01-19 19:16:11.426019 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-gray.png, use --include-removal to override
+2023-01-19 19:16:11.426736 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-green.png, use --include-removal to override
+2023-01-19 19:16:11.426758 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.426789 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-black.png, use --include-removal to override
+2023-01-19 19:16:11.426801 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.426810 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.426820 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/dispvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.426850 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/appvm-red.png, use --include-removal to override
+2023-01-19 19:16:11.426861 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-blue.png, use --include-removal to override
+2023-01-19 19:16:11.426875 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/devices/templatevm-purple.png, use --include-removal to override
+2023-01-19 19:16:11.426902 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/256x256/apps
+2023-01-19 19:16:11.426914 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/apps/qubes-appmenu-select.png, use --include-removal to override
+2023-01-19 19:16:11.426926 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/256x256/apps/qubes-logo-icon.png, use --include-removal to override
+2023-01-19 19:16:11.427009 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink icons/256x256/apps/qubes-manager.png
+2023-01-19 19:16:11.427048 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory backgrounds
+2023-01-19 19:16:11.427065 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-blackcurrant.svg, use --include-removal to override
+2023-01-19 19:16:11.427168 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-grass.svg, use --include-removal to override
+2023-01-19 19:16:11.427191 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-sea.svg, use --include-removal to override
+2023-01-19 19:16:11.427235 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/lucas-benjamin-wQLAGv4_OYs-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.428014 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-sky.svg, use --include-removal to override
+2023-01-19 19:16:11.428392 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/remi-jacquaint-U4ccDfMOE1g-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.428411 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-smoke.svg, use --include-removal to override
+2023-01-19 19:16:11.428441 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-honey.svg, use --include-removal to override
+2023-01-19 19:16:11.428453 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nathan-anderson-9o-VrJSwGuw-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.428470 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-pia18033.jpg, use --include-removal to override
+2023-01-19 19:16:11.428499 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-pia15985.jpg, use --include-removal to override
+2023-01-19 19:16:11.428512 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/usukhbayar-gankhuyag-m_MdXo-axyg-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.428521 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/Makefile, use --include-removal to override
+2023-01-19 19:16:11.428553 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/benjamin-voros-phIFdC6lA4E-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.428565 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-wild-strawberry.svg, use --include-removal to override
+2023-01-19 19:16:11.428577 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-swamp.svg, use --include-removal to override
+2023-01-19 19:16:11.429094 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-chemtrail.svg, use --include-removal to override
+2023-01-19 19:16:11.429113 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-salmon.svg, use --include-removal to override
+2023-01-19 19:16:11.429124 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/garrett-parker-DlkF4-dbCOU-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429133 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-plum.svg, use --include-removal to override
+2023-01-19 19:16:11.429143 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/phil-botha-a0TJ3hy-UD8-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429154 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/jeremy-thomas-pq2DJBntZW0-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429163 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-sun.svg, use --include-removal to override
+2023-01-19 19:16:11.429173 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-pia16008.jpg, use --include-removal to override
+2023-01-19 19:16:11.429182 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-wine.svg, use --include-removal to override
+2023-01-19 19:16:11.429191 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-poison.svg, use --include-removal to override
+2023-01-19 19:16:11.429201 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/vincent-ledvina-xG3YWsaljIo-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429592 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/renden-yoder-qebM8Nmr7Ok-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429612 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/README.md, use --include-removal to override
+2023-01-19 19:16:11.429622 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-paper.svg, use --include-removal to override
+2023-01-19 19:16:11.429653 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-pia01120.jpg, use --include-removal to override
+2023-01-19 19:16:11.429663 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-dawn.svg, use --include-removal to override
+2023-01-19 19:16:11.429680 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-wasp.svg, use --include-removal to override
+2023-01-19 19:16:11.429692 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/qubes-steel.svg, use --include-removal to override
+2023-01-19 19:16:11.429724 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/john-fowler-RsRTIofe0HE-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429736 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-iss054e012391.jpg, use --include-removal to override
+2023-01-19 19:16:11.429918 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/veeterzy-sMQiL_2v4vs-unsplash.jpg, use --include-removal to override
+2023-01-19 19:16:11.429938 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file backgrounds/nasa-pia12348.jpg, use --include-removal to override
+2023-01-19 19:16:11.429966 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bin
+2023-01-19 19:16:11.429978 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bin/mkkdewallpaper.sh, use --include-removal to override
+2023-01-19 19:16:11.429990 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bin/mkpadlock.py, use --include-removal to override
+2023-01-19 19:16:11.430370 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bootloader
+2023-01-19 19:16:11.430387 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bootloader/apple
+2023-01-19 19:16:11.430397 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes.icns, use --include-removal to override
+2023-01-19 19:16:11.430407 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/Makefile, use --include-removal to override
+2023-01-19 19:16:11.430416 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/README, use --include-removal to override
+2023-01-19 19:16:11.430444 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bootloader/apple/qubes
+2023-01-19 19:16:11.430457 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes/disk_label, use --include-removal to override
+2023-01-19 19:16:11.430467 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes/disk_label.contentDetails, use --include-removal to override
+2023-01-19 19:16:11.430478 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes/disk_label_2x, use --include-removal to override
+2023-01-19 19:16:11.430494 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bootloader/apple/qubes-rescue
+2023-01-19 19:16:11.430522 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-rescue/disk_label, use --include-removal to override
+2023-01-19 19:16:11.430594 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-rescue/disk_label.contentDetails, use --include-removal to override
+2023-01-19 19:16:11.430937 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-rescue/disk_label_2x, use --include-removal to override
+2023-01-19 19:16:11.430957 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory bootloader/apple/qubes-install
+2023-01-19 19:16:11.430969 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-install/disk_label, use --include-removal to override
+2023-01-19 19:16:11.431010 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-install/disk_label.contentDetails, use --include-removal to override
+2023-01-19 19:16:11.431023 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file bootloader/apple/qubes-install/disk_label_2x, use --include-removal to override
+2023-01-19 19:16:11.431031 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory firstboot
+2023-01-19 19:16:11.431059 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory firstboot/qubes
+2023-01-19 19:16:11.431073 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file firstboot/qubes/firstboot-left.png, use --include-removal to override
+2023-01-19 19:16:11.431082 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink firstboot/qubes/splash-small.svg
+2023-01-19 19:16:11.431091 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file firstboot/qubes/Makefile, use --include-removal to override
+2023-01-19 19:16:11.431122 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file firstboot/qubes/workstation.png, use --include-removal to override
+2023-01-19 19:16:11.431211 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory plymouth
+2023-01-19 19:16:11.431253 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/plymouth-missing-fonts.conf, use --include-removal to override
+2023-01-19 19:16:11.431410 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/Makefile, use --include-removal to override
+2023-01-19 19:16:11.431427 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory plymouth/qubes-dark
+2023-01-19 19:16:11.432525 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/qubes-logo-outline.svg, use --include-removal to override
+2023-01-19 19:16:11.432544 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/Makefile, use --include-removal to override
+2023-01-19 19:16:11.432555 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/qubes-logo-solid.svg, use --include-removal to override
+2023-01-19 19:16:11.432564 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/progress_bar.png, use --include-removal to override
+2023-01-19 19:16:11.432574 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/qubes-dark.script, use --include-removal to override
+2023-01-19 19:16:11.432584 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/bullet.png, use --include-removal to override
+2023-01-19 19:16:11.432593 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/progress_box.png, use --include-removal to override
+2023-01-19 19:16:11.432602 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/entry.png, use --include-removal to override
+2023-01-19 19:16:11.432612 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file plymouth/qubes-dark/qubes-dark.plymouth, use --include-removal to override
+2023-01-19 19:16:11.432620 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory logo
+2023-01-19 19:16:11.432629 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file logo/qubes-logo-grain.png, use --include-removal to override
+2023-01-19 19:16:11.432638 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file logo/qubes-logo-blue.svg, use --include-removal to override
+2023-01-19 19:16:11.432645 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory anaconda
+2023-01-19 19:16:11.432661 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/splash.svg, use --include-removal to override
+2023-01-19 19:16:11.432670 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/Makefile, use --include-removal to override
+2023-01-19 19:16:11.432679 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/sidebar-bg.png, use --include-removal to override
+2023-01-19 19:16:11.432688 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/anaconda_header.png, use --include-removal to override
+2023-01-19 19:16:11.432696 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of symlink anaconda/topbar-bg.png
+2023-01-19 19:16:11.432705 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/sidebar-logo.png, use --include-removal to override
+2023-01-19 19:16:11.432715 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/syslinux-splash.svg, use --include-removal to override
+2023-01-19 19:16:11.432723 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/README, use --include-removal to override
+2023-01-19 19:16:11.432731 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory anaconda/attic
+2023-01-19 19:16:11.432741 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file anaconda/attic/anaconda_header_02.png, use --include-removal to override
+2023-01-19 19:16:11.441207 +0000 build-debian42: output: dpkg-source: info: building qubes-artwork in qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz
+2023-01-19 19:16:11.461479 +0000 build-debian42: output: dpkg-source: info: building qubes-artwork in qubes-artwork_4.1.16-1+deb12u1.dsc
+2023-01-19 19:16:11.544297 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyOut+__builder__qubes-artwork_4.1.16-1+deb12u1.dsc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep
+2023-01-19 19:16:11.820655 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyOut+__builder__qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep
+2023-01-19 19:16:12.082690 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyOut+__builder__debian_packages.list /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpet72hour
+2023-01-19 19:16:12.345295 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7910 qubesbuilder.FileCopyOut+__builder__qubes-artwork_4.1.16.orig.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep
+2023-01-19 19:16:46.245943 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/pbuilder /builder/pbuilder'
+2023-01-19 19:16:47.176774 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb/pbuilder
+2023-01-19 19:16:51.113811 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder && mv /builder/incoming/pbuilder /builder'
+2023-01-19 19:16:51.590652 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/vm-bookworm /builder/repository/vm-bookworm'
+2023-01-19 19:16:51.697030 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-bookworm
+2023-01-19 19:16:52.244231 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/repository && mv /builder/incoming/vm-bookworm /builder/repository'
+2023-01-19 19:16:52.402411 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/build_deb /builder/plugins/build_deb'
+2023-01-19 19:16:52.650724 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2023-01-19 19:16:52.788076 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build_deb /builder/plugins'
+2023-01-19 19:16:52.969279 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-19 19:16:53.211250 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-19 19:16:53.375588 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-19 19:16:53.665553 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/build /builder/plugins/build'
+2023-01-19 19:16:53.849622 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2023-01-19 19:16:54.066489 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build /builder/plugins'
+2023-01-19 19:16:54.380210 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/qubes-artwork_4.1.16-1+deb12u1.dsc /builder/build/qubes-artwork_4.1.16-1+deb12u1.dsc'
+2023-01-19 19:17:20.093336 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep/qubes-artwork_4.1.16-1+deb12u1.dsc
+2023-01-19 19:17:20.763217 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-artwork_4.1.16-1+deb12u1.dsc /builder/build'
+2023-01-19 19:17:21.500669 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz /builder/build/qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz'
+2023-01-19 19:17:21.883558 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep/qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz
+2023-01-19 19:17:22.391213 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-artwork_4.1.16-1+deb12u1.debian.tar.xz /builder/build'
+2023-01-19 19:17:22.844954 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/qubes-artwork_4.1.16.orig.tar.gz /builder/build/qubes-artwork_4.1.16.orig.tar.gz'
+2023-01-19 19:17:24.514459 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/artwork/4.1.16-1/vm-bookworm/prep/qubes-artwork_4.1.16.orig.tar.gz
+2023-01-19 19:17:27.603396 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-artwork_4.1.16.orig.tar.gz /builder/build'
+2023-01-19 19:17:27.838574 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'rm -rf /builder/incoming/base.tgz /builder/pbuilder/base.tgz'
+2023-01-19 19:17:28.045784 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp863 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/bookworm/pbuilder/base.tgz
+2023-01-19 19:17:29.691355 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp863 bash -c 'mkdir -p /builder/pbuilder && mv /builder/incoming/base.tgz /builder/pbuilder'
+2023-01-19 19:17:30.414412 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp863 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian bookworm && sudo -E pbuilder update --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" && sudo -E pbuilder build --override-config --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" /builder/build/qubes-artwork_4.1.16-1+deb12u1.dsc''.
+2023-01-19 19:17:30.758949 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2023-01-19 19:17:30.758994 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2023-01-19 19:17:30.759001 +0000 build-debian42: output: + DISTRIBUTION=debian
+2023-01-19 19:17:30.759007 +0000 build-debian42: output: + SUITE=bookworm
+2023-01-19 19:17:30.759013 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2023-01-19 19:17:30.759757 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2023-01-19 19:17:30.760654 +0000 build-debian42: output: + cd /builder/repository
+2023-01-19 19:17:30.760675 +0000 build-debian42: output: + cat
+2023-01-19 19:17:30.761880 +0000 build-debian42: output: + mkdir -p dists/bookworm/main/binary-amd64
+2023-01-19 19:17:30.763553 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2023-01-19 19:17:31.315879 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 90 entries to output Packages file.
+2023-01-19 19:17:31.317653 +0000 build-debian42: output: + gzip -9c dists/bookworm/main/binary-amd64/Packages
+2023-01-19 19:17:31.321464 +0000 build-debian42: output: ++ LC_ALL=C
+2023-01-19 19:17:31.321491 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2023-01-19 19:17:31.322285 +0000 build-debian42: output: + DATE='Thu, 19 Jan 2023 19:17:31 UTC'
+2023-01-19 19:17:31.322306 +0000 build-debian42: output: + cat
+2023-01-19 19:17:31.324368 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2023-01-19 19:17:31.324563 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages
+2023-01-19 19:17:31.324616 +0000 build-debian42: output: + echo -n ' '
+2023-01-19 19:17:31.325505 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages
+2023-01-19 19:17:31.325549 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2023-01-19 19:17:31.327871 +0000 build-debian42: output: + echo -n 7427dc17dc2a55652db113adf8e211415bebba500de4361cb6aca1c3888b4d05 ''
+2023-01-19 19:17:31.328440 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages
+2023-01-19 19:17:31.331741 +0000 build-debian42: output: + echo -n 69505 ''
+2023-01-19 19:17:31.331767 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2023-01-19 19:17:31.331796 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2023-01-19 19:17:31.331805 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-19 19:17:31.331811 +0000 build-debian42: output: + echo -n ' '
+2023-01-19 19:17:31.332703 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-19 19:17:31.333401 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2023-01-19 19:17:31.335017 +0000 build-debian42: output: + echo -n 79e831d255b3e3f706196cdf57af056e977e6e01fe69269e20b68174708cfb95 ''
+2023-01-19 19:17:31.335643 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-19 19:17:31.336290 +0000 build-debian42: output: + echo -n 19807 ''
+2023-01-19 19:17:31.336537 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2023-01-19 19:17:31.337044 +0000 build-debian42: output: + mapfile -d '' changes_files
+2023-01-19 19:17:31.337382 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2023-01-19 19:17:31.342090 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-19 19:17:31.342160 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-u2f_1.2.10/qubes-u2f_1.2.10+deb12u1_amd64.changes
+2023-01-19 19:17:31.454094 +0000 build-debian42: output: 'qubes-u2f_1.2.10+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2023-01-19 19:17:31.454175 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2023-01-19 19:17:31.507004 +0000 build-debian42: output: Exporting indices...
+2023-01-19 19:17:31.507905 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-19 19:17:31.507999 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/manager_4.1.28/qubes-manager_4.1.28-1+deb12u1_amd64.changes
+2023-01-19 19:17:31.563550 +0000 build-debian42: output: Exporting indices...
+2023-01-19 19:17:31.564342 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-19 19:17:31.564389 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-i3_4.21/i3-wm_4.21-1+deb12u1_amd64.changes
+2023-01-19 19:17:31.643658 +0000 build-debian42: output: Exporting indices...
+2023-01-19 19:17:31.644429 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-19 19:17:31.644464 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-utils_4.2.4/qubes-utils_4.2.4+deb12u1_amd64.changes
+2023-01-19 19:17:31.656959 +0000 build-debian42: output: ERROR: Unexpected content of file '/builder/repository/vm-bookworm/linux-utils_4.2.4/qubes-utils_4.2.4+deb12u1.tar.xz'!
+2023-01-19 19:17:31.657002 +0000 build-debian42: output: md5 expected: 1e638769f6725104becad75eceaf6e6f, got: 93ed52af9ebd060dbe23d8204fb9e804
+2023-01-19 19:17:31.657037 +0000 build-debian42: output: sha1 expected: f1d2fb5cd5b5d1692a21e93d5c583c97695def7c, got: 385b1a135d3dc37d5a613d2a75a3491737debd24
+2023-01-19 19:17:31.657060 +0000 build-debian42: output: sha256 expected: 4d00771eeae4ff0324aedcac5fc4d9173e405fc6880f60f923cf5bec0cad4328, got: 56305efe7e696aa7e960f760fd57c3a58a77db36114c24a90cd91c9146cdfedc
+2023-01-19 19:17:31.657088 +0000 build-debian42: output: size expected: 40672, got: 40664
+2023-01-19 19:17:31.664005 +0000 build-debian42: output: There have been errors!
+2023-01-19 19:17:31.664048 +0000 build-debian42: output: Deleting files just added to the pool but not used.
+2023-01-19 19:17:31.664081 +0000 build-debian42: output: (to avoid use --keepunusednewfiles next time)
+2023-01-19 19:17:35.742132 +0000 > closing log
