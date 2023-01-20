@@ -1,0 +1,326 @@
+2023-01-20 16:48:45.903366 +0000 > starting log
+2023-01-20 16:48:45.903631 +0000 build-debian42: > starting build with log
+2023-01-20 16:48:45.903641 +0000 build-debian42: >> args:
+2023-01-20 16:48:45.903646 +0000 build-debian42: >>   ()
+2023-01-20 16:48:45.903651 +0000 build-debian42: >> component:
+2023-01-20 16:48:45.903657 +0000 build-debian42: >>   pykickstart
+2023-01-20 16:48:45.903664 +0000 build-debian42: >>     commit-hash: faf58fb504905724b73d0957c50d168bfa75c82f
+2023-01-20 16:48:45.903675 +0000 build-debian42: >>     source-hash: d0e6a62d9f2dd4d91a572d15a2f474dc284622c317e7d4c4795f77df971c666670a8473a6e7f6a562537c2026584fa0965e16689b04384894ae4951959ae8375
+2023-01-20 16:48:45.903680 +0000 build-debian42: >> distributions:
+2023-01-20 16:48:45.903688 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-01-20 16:48:45.903694 +0000 build-debian42: pykickstart: source already fetched. Updating.
+2023-01-20 16:49:13.851554 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5202 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-20 16:49:41.441696 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5202 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-20 16:49:42.213726 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5202 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-20 16:49:42.620634 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5202 bash -c 'rm -rf /builder/incoming/pykickstart /builder/pykickstart'
+2023-01-20 16:49:42.841636 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5202 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/pykickstart
+2023-01-20 16:49:43.061929 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5202 bash -c 'mkdir -p /builder && mv /builder/incoming/pykickstart /builder'
+2023-01-20 16:49:43.252186 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp5202 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component pykickstart --git-branch main --git-url https://github.com/QubesOS/qubes-pykickstart.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2023-01-20 16:49:43.575603 +0000 build-debian42: output: + unset CLEAN
+2023-01-20 16:49:43.575669 +0000 build-debian42: output: + CLEAN=0
+2023-01-20 16:49:43.575719 +0000 build-debian42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2023-01-20 16:49:43.577332 +0000 build-debian42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component pykickstart --git-branch main --git-url https://github.com/QubesOS/qubes-pykickstart.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2023-01-20 16:49:43.581136 +0000 build-debian42: output: + OPTS=' --component '\''pykickstart'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-pykickstart.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-01-20 16:49:43.581188 +0000 build-debian42: output: + eval set -- ' --component '\''pykickstart'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-pykickstart.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-01-20 16:49:43.581226 +0000 build-debian42: output: ++ set -- --component pykickstart --git-branch main --git-url https://github.com/QubesOS/qubes-pykickstart.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2023-01-20 16:49:43.585585 +0000 build-debian42: output: + [[ 12 -gt 0 ]]
+2023-01-20 16:49:43.585629 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585636 +0000 build-debian42: output: + COMPONENT=pykickstart
+2023-01-20 16:49:43.585642 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585647 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585652 +0000 build-debian42: output: + [[ 10 -gt 0 ]]
+2023-01-20 16:49:43.585658 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585663 +0000 build-debian42: output: + BRANCH=main
+2023-01-20 16:49:43.585668 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585673 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585678 +0000 build-debian42: output: + [[ 8 -gt 0 ]]
+2023-01-20 16:49:43.585683 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585690 +0000 build-debian42: output: + GIT_URL=https://github.com/QubesOS/qubes-pykickstart.git
+2023-01-20 16:49:43.585695 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585700 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585706 +0000 build-debian42: output: + [[ 6 -gt 0 ]]
+2023-01-20 16:49:43.585711 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585718 +0000 build-debian42: output: + KEYRING_DIR_GIT=/builder/keyring
+2023-01-20 16:49:43.585723 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585727 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585733 +0000 build-debian42: output: + [[ 4 -gt 0 ]]
+2023-01-20 16:49:43.585738 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585744 +0000 build-debian42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2023-01-20 16:49:43.585749 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585753 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585759 +0000 build-debian42: output: + [[ 2 -gt 0 ]]
+2023-01-20 16:49:43.585764 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585769 +0000 build-debian42: output: + FETCH_VERSIONS_ONLY=1
+2023-01-20 16:49:43.585774 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585779 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2023-01-20 16:49:43.585784 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:49:43.585789 +0000 build-debian42: output: + shift
+2023-01-20 16:49:43.585794 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-01-20 16:49:43.585800 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-01-20 16:49:43.585804 +0000 build-debian42: output: -]*$ ]]
+2023-01-20 16:49:43.585810 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-01-20 16:49:43.585815 +0000 build-debian42: output: -]*$ ]]
+2023-01-20 16:49:43.585820 +0000 build-debian42: output: + [[ -n pykickstart ]]
+2023-01-20 16:49:43.585825 +0000 build-debian42: output: + '[' -z '' ']'
+2023-01-20 16:49:43.585831 +0000 build-debian42: output: + REPO=pykickstart
+2023-01-20 16:49:43.585836 +0000 build-debian42: output: + '[' -z /builder/keyring ']'
+2023-01-20 16:49:43.585842 +0000 build-debian42: output: + '[' -z '' ']'
+2023-01-20 16:49:43.585847 +0000 build-debian42: output: + GIT_SUFFIX=.git
+2023-01-20 16:49:43.585852 +0000 build-debian42: output: + '[' -z main ']'
+2023-01-20 16:49:43.585857 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:49:43.585864 +0000 build-debian42: output: + '[' -z https://github.com/QubesOS/qubes-pykickstart.git ']'
+2023-01-20 16:49:43.585869 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:49:43.585875 +0000 build-debian42: output: + case ${IGNORE_MISSING=0} in
+2023-01-20 16:49:43.585899 +0000 build-debian42: output: + :
+2023-01-20 16:49:43.585905 +0000 build-debian42: output: + case ${GIT_CLONE_FAST=0} in
+2023-01-20 16:49:43.585910 +0000 build-debian42: output: + :
+2023-01-20 16:49:43.585916 +0000 build-debian42: output: + GIT_OPTIONS=()
+2023-01-20 16:49:43.585921 +0000 build-debian42: output: + [[ 0 = \1 ]]
+2023-01-20 16:49:43.585927 +0000 build-debian42: output: + GIT_MERGE_OPTS=("--ff-only")
+2023-01-20 16:49:43.585933 +0000 build-debian42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2023-01-20 16:49:43.585940 +0000 build-debian42: output: + [[ pykickstart =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2023-01-20 16:49:43.585946 +0000 build-debian42: output: + trap exit_clean 0 1 2 3 6 15
+2023-01-20 16:49:43.585951 +0000 build-debian42: output: + fresh_clone=false
+2023-01-20 16:49:43.585956 +0000 build-debian42: output: + [[ '' = \1 ]]
+2023-01-20 16:49:43.585962 +0000 build-debian42: output: + [[ -d pykickstart ]]
+2023-01-20 16:49:43.585967 +0000 build-debian42: output: + cd pykickstart
+2023-01-20 16:49:43.585973 +0000 build-debian42: output: ++ git rev-parse --is-shallow-repository
+2023-01-20 16:49:43.600340 +0000 build-debian42: output: + is_shallow=false
+2023-01-20 16:49:43.600386 +0000 build-debian42: output: + [[ 0 -ne 1 ]]
+2023-01-20 16:49:43.600423 +0000 build-debian42: output: + [[ false = \t\r\u\e ]]
+2023-01-20 16:49:43.600431 +0000 build-debian42: output: + print_headers
+2023-01-20 16:49:43.600437 +0000 build-debian42: output: + '[' -z '' ']'
+2023-01-20 16:49:43.600445 +0000 build-debian42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-pykickstart.git main'
+2023-01-20 16:49:43.600452 +0000 build-debian42: output: + echo '-> Updating sources for pykickstart...'
+2023-01-20 16:49:43.600461 +0000 build-debian42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-pykickstart.git main...'
+2023-01-20 16:49:43.600634 +0000 build-debian42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-pykickstart.git main
+2023-01-20 16:49:43.600664 +0000 build-debian42: output: -> Updating sources for pykickstart...
+2023-01-20 16:49:43.600673 +0000 build-debian42: output: --> Fetching from https://github.com/QubesOS/qubes-pykickstart.git main...
+2023-01-20 16:50:01.442240 +0000 build-debian42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2023-01-20 16:50:01.443737 +0000 build-debian42: output: + rev=1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.443776 +0000 build-debian42: output: + '[' 1 == 1 ']'
+2023-01-20 16:50:01.444764 +0000 build-debian42: output: + grep -q '^v'
+2023-01-20 16:50:01.444839 +0000 build-debian42: output: + git tag --points-at 1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.448751 +0000 build-debian42: output: + VERIFY_REF=1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.448793 +0000 build-debian42: output: + fresh_clone=false
+2023-01-20 16:50:01.448799 +0000 build-debian42: output: + cd -
+2023-01-20 16:50:01.448806 +0000 build-debian42: output: + export CHECK=signed-tag
+2023-01-20 16:50:01.448811 +0000 build-debian42: output: + CHECK=signed-tag
+2023-01-20 16:50:01.448817 +0000 build-debian42: output: + verify=true
+2023-01-20 16:50:01.448846 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-01-20 16:50:01.448854 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-01-20 16:50:01.449331 +0000 build-debian42: output: ++ git -C pykickstart rev-parse -q --verify 1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.450578 +0000 build-debian42: output: + VERIFY_REF=1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.452306 +0000 build-debian42: output: + '[' true = false ']'
+2023-01-20 16:50:01.452337 +0000 build-debian42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2023-01-20 16:50:01.452346 +0000 build-debian42: output: + echo '--> Verifying tags...'
+2023-01-20 16:50:01.452352 +0000 build-debian42: output: ++ readlink -m /builder/keyring
+2023-01-20 16:50:01.452358 +0000 build-debian42: output: + GNUPGHOME=/builder/keyring
+2023-01-20 16:50:01.452380 +0000 build-debian42: output: + export GNUPGHOME
+2023-01-20 16:50:01.452387 +0000 build-debian42: output: + '[' '!' -d /builder/keyring ']'
+2023-01-20 16:50:01.452415 +0000 build-debian42: output: + mkdir -p /builder/keyring
+2023-01-20 16:50:01.452552 +0000 build-debian42: output: --> Verifying tags...
+2023-01-20 16:50:01.452851 +0000 build-debian42: output: + chmod 700 /builder/keyring
+2023-01-20 16:50:01.453225 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-01-20 16:50:01.461991 +0000 build-debian42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2023-01-20 16:50:01.465083 +0000 build-debian42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2023-01-20 16:50:01.465121 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2023-01-20 16:50:01.475360 +0000 build-debian42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2023-01-20 16:50:01.476132 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2023-01-20 16:50:01.476339 +0000 build-debian42: output: gpg: Total number processed: 3
+2023-01-20 16:50:01.476362 +0000 build-debian42: output: gpg:               imported: 3
+2023-01-20 16:50:01.476370 +0000 build-debian42: output: gpg: no ultimately trusted keys found
+2023-01-20 16:50:01.477287 +0000 build-debian42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2023-01-20 16:50:01.477568 +0000 build-debian42: output: + gpg --import-ownertrust
+2023-01-20 16:50:01.479073 +0000 build-debian42: output: gpg: inserting ownertrust of 6
+2023-01-20 16:50:01.479497 +0000 build-debian42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2023-01-20 16:50:01.479515 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-01-20 16:50:01.481427 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2023-01-20 16:50:01.482021 +0000 build-debian42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2023-01-20 16:50:01.482603 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2023-01-20 16:50:01.482940 +0000 build-debian42: output: gpg: Total number processed: 3
+2023-01-20 16:50:01.482959 +0000 build-debian42: output: gpg:              unchanged: 3
+2023-01-20 16:50:01.483123 +0000 build-debian42: output: + touch /builder/keyring/pubring.gpg
+2023-01-20 16:50:01.484904 +0000 build-debian42: output: + gpgconf --kill gpg-agent
+2023-01-20 16:50:01.489237 +0000 build-debian42: output: + pushd pykickstart
+2023-01-20 16:50:01.489271 +0000 build-debian42: output: + expected_hash=1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.489302 +0000 build-debian42: output: + hash_len=40
+2023-01-20 16:50:01.489310 +0000 build-debian42: output: + '[' 40 -ne 40 ']'
+2023-01-20 16:50:01.489318 +0000 build-debian42: output: + [[ 1fbc5c2a074c769b00e59cda566c6e81f9c078bc =~ ^[a-f0-9]+$ ]]
+2023-01-20 16:50:01.489566 +0000 build-debian42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-01-20 16:50:01.489970 +0000 build-debian42: output: ++ git tag --points-at=1fbc5c2a074c769b00e59cda566c6e81f9c078bc '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-01-20 16:50:01.490094 +0000 build-debian42: output: ++ head -c 500
+2023-01-20 16:50:01.491622 +0000 build-debian42: output: + tags=e44dead03929d0e560b5da67bf652ecbc106d3d4:1fbc5c2a074c769b00e59cda566c6e81f9c078bc:
+2023-01-20 16:50:01.491643 +0000 build-debian42: output: + for tag in $tags
+2023-01-20 16:50:01.491651 +0000 build-debian42: output: + (( 82 != hash_len * 2 + 2 ))
+2023-01-20 16:50:01.491783 +0000 build-debian42: output: + [[ :1fbc5c2a074c769b00e59cda566c6e81f9c078bc: == \:\1\f\b\c\5\c\2\a\0\7\4\c\7\6\9\b\0\0\e\5\9\c\d\a\5\6\6\c\6\e\8\1\f\9\c\0\7\8\b\c\: ]]
+2023-01-20 16:50:01.491798 +0000 build-debian42: output: + tag=e44dead03929d0e560b5da67bf652ecbc106d3d4
+2023-01-20 16:50:01.491831 +0000 build-debian42: output: + verify_git_obj tag e44dead03929d0e560b5da67bf652ecbc106d3d4
+2023-01-20 16:50:01.491839 +0000 build-debian42: output: + local content newsig_number
+2023-01-20 16:50:01.492113 +0000 build-debian42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- e44dead03929d0e560b5da67bf652ecbc106d3d4
+2023-01-20 16:50:01.496206 +0000 build-debian42: output: + content='[GNUPG:] NEWSIG
+2023-01-20 16:50:01.496234 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.496264 +0000 build-debian42: output: [GNUPG:] SIG_ID 8im5yY0lFSz79NkxIcnoglpBZp8 2023-01-20 1674232979
+2023-01-20 16:50:01.496274 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.496281 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.496418 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.496441 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.496451 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-01-20 16:50:01.496467 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-01-20 1674232979 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-01-20 16:50:01.496474 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-01-20 16:50:01.497075 +0000 build-debian42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2023-01-20 16:50:01.497095 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.497104 +0000 build-debian42: output: [GNUPG:] SIG_ID 8im5yY0lFSz79NkxIcnoglpBZp8 2023-01-20 1674232979
+2023-01-20 16:50:01.497112 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.497119 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.497126 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.497134 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.497143 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-01-20 16:50:01.497154 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-01-20 1674232979 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-01-20 16:50:01.497160 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-01-20 16:50:01.497166 +0000 build-debian42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2023-01-20 16:50:01.497877 +0000 build-debian42: output: + newsig_number=1
+2023-01-20 16:50:01.497896 +0000 build-debian42: output: + '[' 1 = 1 ']'
+2023-01-20 16:50:01.498172 +0000 build-debian42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2023-01-20 16:50:01.498190 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.498298 +0000 build-debian42: output: [GNUPG:] SIG_ID 8im5yY0lFSz79NkxIcnoglpBZp8 2023-01-20 1674232979
+2023-01-20 16:50:01.498312 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-01-20 16:50:01.498320 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.498342 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.498351 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-01-20 16:50:01.498438 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-01-20 16:50:01.498462 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-01-20 1674232979 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-01-20 16:50:01.498468 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-01-20 16:50:01.498740 +0000 build-debian42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2023-01-20 16:50:01.499456 +0000 build-debian42: output: + echo '---> Good tag e44dead03929d0e560b5da67bf652ecbc106d3d4'
+2023-01-20 16:50:01.499473 +0000 build-debian42: output: + '[' -z x ']'
+2023-01-20 16:50:01.499480 +0000 build-debian42: output: + popd
+2023-01-20 16:50:01.499488 +0000 build-debian42: output: ---> Good tag e44dead03929d0e560b5da67bf652ecbc106d3d4
+2023-01-20 16:50:01.499663 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-01-20 16:50:01.499677 +0000 build-debian42: output: + pushd pykickstart
+2023-01-20 16:50:01.499895 +0000 build-debian42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2023-01-20 16:50:01.501019 +0000 build-debian42: output: + CURRENT_BRANCH=master
+2023-01-20 16:50:01.501065 +0000 build-debian42: output: + '[' master '!=' main ']'
+2023-01-20 16:50:01.501108 +0000 build-debian42: output: + '[' -z '' ']'
+2023-01-20 16:50:01.501301 +0000 build-debian42: output: + red='.[1;31m'
+2023-01-20 16:50:01.501321 +0000 build-debian42: output: + green='.[1;32m'
+2023-01-20 16:50:01.501328 +0000 build-debian42: output: + normal='.[0;0m'
+2023-01-20 16:50:01.501472 +0000 build-debian42: output: ++ git name-rev --name-only main
+2023-01-20 16:50:01.503951 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:50:01.503986 +0000 build-debian42: output: + echo -e '--> Switching branch from master branch to new .[1;31mmain.[0;0m'
+2023-01-20 16:50:01.504045 +0000 build-debian42: output: --> Switching branch from master branch to new .[1;31mmain.[0;0m
+2023-01-20 16:50:01.504056 +0000 build-debian42: output: + git checkout 1fbc5c2a074c769b00e59cda566c6e81f9c078bc -b main
+2023-01-20 16:50:01.506853 +0000 build-debian42: output: Switched to a new branch 'main'
+2023-01-20 16:50:01.507202 +0000 build-debian42: output: + false
+2023-01-20 16:50:01.507257 +0000 build-debian42: output: + echo '--> Merging...'
+2023-01-20 16:50:01.507270 +0000 build-debian42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q 1fbc5c2a074c769b00e59cda566c6e81f9c078bc
+2023-01-20 16:50:01.507312 +0000 build-debian42: output: --> Merging...
+2023-01-20 16:50:01.508656 +0000 build-debian42: output: + tracking_branch=refs/remotes//main
+2023-01-20 16:50:01.508677 +0000 build-debian42: output: + '[' -f .git/refs/remotes//main ']'
+2023-01-20 16:50:01.510354 +0000 build-debian42: output: + '[' -e .gitmodules ']'
+2023-01-20 16:50:01.510384 +0000 build-debian42: output: + popd
+2023-01-20 16:50:01.510391 +0000 build-debian42: output: + exit_clean
+2023-01-20 16:50:01.510397 +0000 build-debian42: output: + local exit_code=0
+2023-01-20 16:50:01.510403 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-01-20 16:50:01.510408 +0000 build-debian42: output: + exit 0
+2023-01-20 16:50:01.514699 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5202 qubesbuilder.FileCopyOut+__builder__pykickstart /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2023-01-20 16:50:30.805161 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8963 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-20 16:50:31.439891 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8963 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-20 16:50:32.148459 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8963 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-20 16:51:00.169953 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8963 bash -c 'rm -rf /builder/incoming/pykickstart /builder/pykickstart'
+2023-01-20 16:51:00.993776 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8963 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/pykickstart
+2023-01-20 16:51:01.777781 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8963 bash -c 'mkdir -p /builder && mv /builder/incoming/pykickstart /builder'
+2023-01-20 16:51:02.127420 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8963 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/pykickstart --file-name pykickstart-3.41.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz''.
+2023-01-20 16:51:03.405058 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2023-01-20 16:51:03.405173 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/pykickstart --file-name pykickstart-3.41.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz
+2023-01-20 16:51:03.854603 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/pykickstart'\'' --file-name '\''pykickstart-3.41.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz'\'' --'
+2023-01-20 16:51:03.854656 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/pykickstart'\'' --file-name '\''pykickstart-3.41.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz'\'' --'
+2023-01-20 16:51:03.854669 +0000 build-debian42: output: ++ set -- --output-dir /builder/pykickstart --file-name pykickstart-3.41.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz --
+2023-01-20 16:51:03.854677 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2023-01-20 16:51:03.854683 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:03.854689 +0000 build-debian42: output: + OUTPUT_DIR=/builder/pykickstart
+2023-01-20 16:51:03.854695 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854753 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854766 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2023-01-20 16:51:03.854772 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:03.854778 +0000 build-debian42: output: + FILE_NAME=pykickstart-3.41.tar.gz
+2023-01-20 16:51:03.854783 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854788 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854793 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2023-01-20 16:51:03.854798 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:03.854806 +0000 build-debian42: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz
+2023-01-20 16:51:03.854811 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854815 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854821 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2023-01-20 16:51:03.854826 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:03.854830 +0000 build-debian42: output: + shift
+2023-01-20 16:51:03.854836 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-01-20 16:51:03.854843 +0000 build-debian42: output: + '[' -z https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz ']'
+2023-01-20 16:51:03.854852 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2023-01-20 16:51:03.854873 +0000 build-debian42: output: + '[' -z pykickstart-3.41.tar.gz ']'
+2023-01-20 16:51:03.854880 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_pykickstart-3.41.tar.gz
+2023-01-20 16:51:03.854886 +0000 build-debian42: output: + '[' -n /builder/pykickstart ']'
+2023-01-20 16:51:03.854912 +0000 build-debian42: output: + mkdir -p /builder/pykickstart
+2023-01-20 16:51:03.856291 +0000 build-debian42: output: + cd /builder/pykickstart
+2023-01-20 16:51:03.856384 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_pykickstart-3.41.tar.gz -- https://ftp.qubes-os.org/distfiles/pykickstart-3.41.tar.gz
+2023-01-20 16:51:17.142886 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-01-20 16:51:17.142935 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:51:17.148142 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8963 qubesbuilder.FileCopyOut+__builder__pykickstart__untrusted_pykickstart-3.41.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc
+2023-01-20 16:51:21.200061 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512'.
+2023-01-20 16:51:21.202436 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2023-01-20 16:51:21.202633 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512
+2023-01-20 16:51:21.203976 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512'\'' --'
+2023-01-20 16:51:21.204267 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512'\'' --'
+2023-01-20 16:51:21.204288 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512 --
+2023-01-20 16:51:21.204295 +0000 build-debian42: output: + PUBKEY_FILE=()
+2023-01-20 16:51:21.204307 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2023-01-20 16:51:21.204313 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:21.204339 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc
+2023-01-20 16:51:21.204381 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.204443 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.204512 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2023-01-20 16:51:21.204577 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:21.204662 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz
+2023-01-20 16:51:21.204716 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.204783 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.204892 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2023-01-20 16:51:21.204939 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:21.205015 +0000 build-debian42: output: + CHECKSUM_CMD=sha512sum
+2023-01-20 16:51:21.205085 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.205156 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.205227 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2023-01-20 16:51:21.205307 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:21.205384 +0000 build-debian42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512
+2023-01-20 16:51:21.205451 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.205520 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.205592 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2023-01-20 16:51:21.205663 +0000 build-debian42: output: + case "$1" in
+2023-01-20 16:51:21.205730 +0000 build-debian42: output: + shift
+2023-01-20 16:51:21.205798 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-01-20 16:51:21.205932 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz ']'
+2023-01-20 16:51:21.205995 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc ']'
+2023-01-20 16:51:21.206072 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc
+2023-01-20 16:51:21.207617 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz
+2023-01-20 16:51:21.209704 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_pykickstart-3.41.tar.gz
+2023-01-20 16:51:21.209714 +0000 build-debian42: output: + FILE_NAME=pykickstart-3.41.tar.gz
+2023-01-20 16:51:21.209722 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512 ']'
+2023-01-20 16:51:21.209731 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512 ']'
+2023-01-20 16:51:21.209744 +0000 build-debian42: output: + '[' -e /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512 ']'
+2023-01-20 16:51:21.209749 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:51:21.209755 +0000 build-debian42: output: + '[' -z '' ']'
+2023-01-20 16:51:21.209760 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:51:21.209783 +0000 build-debian42: output: + '[' -n '' ']'
+2023-01-20 16:51:21.209849 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512 ']'
+2023-01-20 16:51:21.209950 +0000 build-debian42: output: + '[' -z sha512sum ']'
+2023-01-20 16:51:21.210018 +0000 build-debian42: output: + sha512sum --status -c /dev/fd/63
+2023-01-20 16:51:21.210845 +0000 build-debian42: output: +++ cat /home/user/builder-r4.2-debian/sources/pykickstart/pykickstart-3.41.tar.gz.sha512
+2023-01-20 16:51:21.213568 +0000 build-debian42: output: ++ printf '%s  -\n' 8af758aee222c5c94f0fddbeb67097794c7d9fb57e97c13e1eb552f8ca0cb43bd855d85e190ecc3192defa3706b45d551d4e75ed98691d80ff0c5b12ac511438
+2023-01-20 16:51:21.217732 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/untrusted_pykickstart-3.41.tar.gz /home/user/builder-r4.2-debian/tmp/tmpiyhwkgqc/pykickstart-3.41.tar.gz
+2023-01-20 16:51:46.296154 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6405 bash -c 'rm -rf /builder/incoming/pykickstart /builder/pykickstart'
+2023-01-20 16:51:47.526972 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6405 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/pykickstart
+2023-01-20 16:52:15.627379 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6405 bash -c 'mkdir -p /builder && mv /builder/incoming/pykickstart /builder'
+2023-01-20 16:52:16.307411 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp6405 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/pykickstart/hash /builder/pykickstart/vtags && cd /builder && git -C /builder/pykickstart rev-parse '\''HEAD^{}'\'' >> /builder/pykickstart/hash && git -C /builder/pykickstart tag --points-at HEAD --list '\''v*'\'' >> /builder/pykickstart/vtags''.
+2023-01-20 16:52:16.917075 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6405 qubesbuilder.FileCopyOut+__builder__pykickstart__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmphqbo1siv
+2023-01-20 16:52:17.497427 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6405 qubesbuilder.FileCopyOut+__builder__pykickstart__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmphqbo1siv
+2023-01-20 16:52:50.687442 +0000 build-debian42: > done
+2023-01-20 16:52:50.687521 +0000 > closing log
