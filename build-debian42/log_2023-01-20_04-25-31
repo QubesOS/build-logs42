@@ -1,0 +1,356 @@
+2023-01-20 04:25:31.713269 +0000 > starting log
+2023-01-20 04:25:31.713526 +0000 build-debian42: > starting build with log
+2023-01-20 04:25:31.713550 +0000 build-debian42: >> args:
+2023-01-20 04:25:31.713556 +0000 build-debian42: >>   ()
+2023-01-20 04:25:31.713562 +0000 build-debian42: >> component:
+2023-01-20 04:25:31.713567 +0000 build-debian42: >>   manager
+2023-01-20 04:25:31.713574 +0000 build-debian42: >>     commit-hash: bafa70fe1a1b139276d01de05d1e772e90db7199
+2023-01-20 04:25:31.713585 +0000 build-debian42: >>     source-hash: 73d1f8a18d2af963f53cf45f100e884e1b5c0be9a4c093af006c4b16cd391afc787180d15c4549ce0dd8ef81492ad749c0cbb01f02b019e01b7535177039b90e
+2023-01-20 04:25:31.713590 +0000 build-debian42: >> distributions:
+2023-01-20 04:25:31.713598 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-01-20 04:26:02.048277 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'rm -rf /builder/incoming/manager /builder/manager'
+2023-01-20 04:26:02.431767 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2419 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/manager
+2023-01-20 04:26:03.002746 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'mkdir -p /builder && mv /builder/incoming/manager /builder'
+2023-01-20 04:26:03.480817 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-20 04:26:04.103079 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2419 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-20 04:26:04.599888 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-20 04:26:04.976805 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-20 04:26:05.263874 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2419 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-20 04:26:05.600117 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-20 04:26:05.952595 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2023-01-20 04:26:06.211093 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2419 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2023-01-20 04:26:06.500652 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2419 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2023-01-20 04:26:07.629925 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp2419 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/manager debian bookworm deb12  && /builder/plugins/source_deb/scripts/get-source-info /builder/manager debian''.
+2023-01-20 04:26:08.087629 +0000 build-debian42: output: + test 4 -lt 4
+2023-01-20 04:26:08.087689 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2023-01-20 04:26:08.087701 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-20 04:26:08.087711 +0000 build-debian42: output: + DIST_NAME=bookworm
+2023-01-20 04:26:08.087720 +0000 build-debian42: output: + DIST_TAG=deb12
+2023-01-20 04:26:08.087728 +0000 build-debian42: output: + DEVEL_VERSION=
+2023-01-20 04:26:08.087741 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2023-01-20 04:26:08.516935 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-20 04:26:08.517004 +0000 build-debian42: output: + cd /builder/manager
+2023-01-20 04:26:08.517012 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-01-20 04:26:08.517025 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2023-01-20 04:26:09.328367 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2023-01-20 04:26:09.517256 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2023-01-20 04:26:09.574455 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2023-01-20 04:26:09.574528 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2023-01-20 04:26:09.579783 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/manager/debian/changelog
+2023-01-20 04:26:09.608080 +0000 build-debian42: output: + test 2 -ne 2
+2023-01-20 04:26:09.608125 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2023-01-20 04:26:09.608133 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-20 04:26:09.609130 +0000 build-debian42: output: ++ basename debian
+2023-01-20 04:26:09.610319 +0000 build-debian42: output: + DIRECTORY_BN=debian
+2023-01-20 04:26:09.610343 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2023-01-20 04:26:09.610350 +0000 build-debian42: output: + DIRECTORY_MANGLE_PATH=debian
+2023-01-20 04:26:09.610681 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/get-source-info
+2023-01-20 04:26:09.610732 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-20 04:26:09.610764 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name /builder/manager/debian/changelog
+2023-01-20 04:26:09.650431 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-parser changelog --package-release-name-full /builder/manager/debian/changelog
+2023-01-20 04:26:09.695888 +0000 build-debian42: output: + grep -Po '(?<=^3.0 \()\w+'
+2023-01-20 04:26:09.703561 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2419 qubesbuilder.FileCopyOut+__builder__manager__debian_package_release_name /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpwainbc45
+2023-01-20 04:26:39.689998 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'rm -rf /builder/incoming/manager /builder/manager'
+2023-01-20 04:26:40.254940 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/manager
+2023-01-20 04:27:08.069376 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'mkdir -p /builder && mv /builder/incoming/manager /builder'
+2023-01-20 04:27:08.472095 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'rm -rf /builder/incoming/manager /builder/distfiles/manager'
+2023-01-20 04:27:08.721744 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/distfiles/manager
+2023-01-20 04:27:09.029195 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'mkdir -p /builder/distfiles && mv /builder/incoming/manager /builder/distfiles'
+2023-01-20 04:27:09.421605 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-20 04:27:09.719725 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-20 04:27:10.198356 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-20 04:27:10.709898 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-01-20 04:27:11.064329 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-01-20 04:27:11.719665 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-01-20 04:27:12.209434 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'rm -rf /builder/incoming/source /builder/plugins/source'
+2023-01-20 04:27:12.530534 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source
+2023-01-20 04:27:12.985280 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7485 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source /builder/plugins'
+2023-01-20 04:27:13.277105 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7485 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' DIST='bookworm' LC_ALL='C' DEBFULLNAME='Builder' DEBEMAIL='user@localhost' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/manager qubes-manager_4.2.0.orig.tar.gz && mv /builder/manager/qubes-manager_4.2.0.orig.tar.gz /builder && /builder/plugins/source_deb/scripts/modify-changelog-for-build /builder/manager debian bookworm deb12  && mkdir -p /builder/build && cd /builder/build && cp -a /builder/manager/debian . && chmod -R -- u+rwX,g+rX-w,o+rX-w . && chmod +x debian/rules && dpkg-source -b . && /builder/plugins/source_deb/scripts/debian-get-packages-list /builder/qubes-manager_4.2.0-1+deb12u1.dsc 12 >/builder/debian_packages.list''.
+2023-01-20 04:27:13.491613 +0000 build-debian42: output: ++ tar --version
+2023-01-20 04:27:13.491657 +0000 build-debian42: output: ++ head -1
+2023-01-20 04:27:13.492045 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-01-20 04:27:13.508650 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-01-20 04:27:13.508707 +0000 build-debian42: output: ++ readlink -f /builder/manager
+2023-01-20 04:27:13.509829 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/manager
+2023-01-20 04:27:13.509885 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-01-20 04:27:13.509905 +0000 build-debian42: output: + GIT_TARBALL_NAME=qubes-manager_4.2.0.orig.tar
+2023-01-20 04:27:13.509917 +0000 build-debian42: output: + '[' x '!=' x ']'
+2023-01-20 04:27:13.509931 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.2.0.orig.tar
+2023-01-20 04:27:13.509945 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.2.0.orig
+2023-01-20 04:27:13.509959 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.2.0
+2023-01-20 04:27:13.509972 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=qubes-manager_4.2.0/
+2023-01-20 04:27:13.509984 +0000 build-debian42: output: + pushd /builder/manager
+2023-01-20 04:27:13.509997 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-01-20 04:27:13.510008 +0000 build-debian42: output: /builder/manager ~
+2023-01-20 04:27:13.530173 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1674186737
+2023-01-20 04:27:13.530812 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-01-20 04:27:13.531715 +0000 build-debian42: output: ++ sort -V
+2023-01-20 04:27:13.532099 +0000 build-debian42: output: ++ head -n1
+2023-01-20 04:27:13.535944 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-01-20 04:27:13.536024 +0000 build-debian42: output: + tar --sort=name --mtime=@1674186737 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%qubes-manager_4.2.0/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude qubes-manager_4.2.0.orig.tar -cf qubes-manager_4.2.0.orig.tar .
+2023-01-20 04:27:13.545824 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-01-20 04:27:13.545871 +0000 build-debian42: output: + gzip -fn qubes-manager_4.2.0.orig.tar
+2023-01-20 04:27:13.591686 +0000 build-debian42: output: + popd
+2023-01-20 04:27:13.591748 +0000 build-debian42: output: ~
+2023-01-20 04:27:13.595668 +0000 build-debian42: output: + test 4 -lt 4
+2023-01-20 04:27:13.595700 +0000 build-debian42: output: + SOURCE_DIR=/builder/manager
+2023-01-20 04:27:13.595717 +0000 build-debian42: output: + DEBIAN_DIRECTORY=debian
+2023-01-20 04:27:13.595732 +0000 build-debian42: output: + DIST_NAME=bookworm
+2023-01-20 04:27:13.595746 +0000 build-debian42: output: + DIST_TAG=deb12
+2023-01-20 04:27:13.595759 +0000 build-debian42: output: + DEVEL_VERSION=
+2023-01-20 04:27:13.596500 +0000 build-debian42: output: ++ dirname /builder/plugins/source_deb/scripts/modify-changelog-for-build
+2023-01-20 04:27:13.597712 +0000 build-debian42: output: + SCRIPTS_DIR=/builder/plugins/source_deb/scripts
+2023-01-20 04:27:13.597769 +0000 build-debian42: output: + cd /builder/manager
+2023-01-20 04:27:13.597846 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-01-20 04:27:13.597874 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/debian-changelog --verify
+2023-01-20 04:27:13.780433 +0000 build-debian42: output: + debchange -t -l+deb12u 'Build for bookworm'
+2023-01-20 04:27:13.959831 +0000 build-debian42: output: + debchange -t --force-distribution -r -D bookworm bookworm
+2023-01-20 04:27:14.040742 +0000 build-debian42: output: libdistro-info-perl is not installed, Debian release names are not known.
+2023-01-20 04:27:14.040866 +0000 build-debian42: output: libdistro-info-perl is not installed, Ubuntu release names are not known.
+2023-01-20 04:27:14.045569 +0000 build-debian42: output: + /builder/plugins/source_deb/scripts/clamp-changelog-entry-date /builder/manager/debian/changelog
+2023-01-20 04:27:14.199498 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2023-01-20 04:27:14.199563 +0000 build-debian42: output: dpkg-source: info: building qubes-manager using existing ./qubes-manager_4.2.0.orig.tar.gz
+2023-01-20 04:27:14.221413 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file setup.py, use --include-removal to override
+2023-01-20 04:27:14.221634 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager.pro, use --include-removal to override
+2023-01-20 04:27:14.221672 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .pylintrc, use --include-removal to override
+2023-01-20 04:27:14.221799 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-template-manager.desktop, use --include-removal to override
+2023-01-20 04:27:14.222053 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file version, use --include-removal to override
+2023-01-20 04:27:14.222225 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rel, use --include-removal to override
+2023-01-20 04:27:14.222460 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file resources.qrc, use --include-removal to override
+2023-01-20 04:27:14.223240 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-tools.directory, use --include-removal to override
+2023-01-20 04:27:14.223309 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-global-settings.desktop, use --include-removal to override
+2023-01-20 04:27:14.223402 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile, use --include-removal to override
+2023-01-20 04:27:14.223435 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .gitlab-ci.yml, use --include-removal to override
+2023-01-20 04:27:14.224594 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-tools.menu, use --include-removal to override
+2023-01-20 04:27:14.224708 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-backup.desktop, use --include-removal to override
+2023-01-20 04:27:14.224848 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-vm-create.desktop, use --include-removal to override
+2023-01-20 04:27:14.224988 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file Makefile.builder, use --include-removal to override
+2023-01-20 04:27:14.225103 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file build-deps.list, use --include-removal to override
+2023-01-20 04:27:14.225194 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-backup-restore.desktop, use --include-removal to override
+2023-01-20 04:27:14.225503 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubes-qube-manager.desktop, use --include-removal to override
+2023-01-20 04:27:14.225613 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file README.md, use --include-removal to override
+2023-01-20 04:27:14.225690 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .qubesbuilder, use --include-removal to override
+2023-01-20 04:27:14.225775 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons
+2023-01-20 04:27:14.225861 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/kbd-layout.png, use --include-removal to override
+2023-01-20 04:27:14.226083 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/pencil.png, use --include-removal to override
+2023-01-20 04:27:14.226235 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/outdated.png, use --include-removal to override
+2023-01-20 04:27:14.226267 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/root.png, use --include-removal to override
+2023-01-20 04:27:14.226348 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/shutdownvm.png, use --include-removal to override
+2023-01-20 04:27:14.226435 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/appvm.png, use --include-removal to override
+2023-01-20 04:27:14.226621 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/wall.png, use --include-removal to override
+2023-01-20 04:27:14.226714 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-green.png, use --include-removal to override
+2023-01-20 04:27:14.227122 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/running.png, use --include-removal to override
+2023-01-20 04:27:14.227213 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/eye-off.svg, use --include-removal to override
+2023-01-20 04:27:14.227241 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/pausevm.png, use --include-removal to override
+2023-01-20 04:27:14.227326 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/mount.png, use --include-removal to override
+2023-01-20 04:27:14.227412 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/netvm.png, use --include-removal to override
+2023-01-20 04:27:14.227449 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/updateable.png, use --include-removal to override
+2023-01-20 04:27:14.227610 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/readme.txt, use --include-removal to override
+2023-01-20 04:27:14.227696 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/networking.png, use --include-removal to override
+2023-01-20 04:27:14.227803 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/appsprefs.png, use --include-removal to override
+2023-01-20 04:27:14.227848 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/resumevm.png, use --include-removal to override
+2023-01-20 04:27:14.228096 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/log.png, use --include-removal to override
+2023-01-20 04:27:14.228328 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/mic.png, use --include-removal to override
+2023-01-20 04:27:14.229229 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/remove.png, use --include-removal to override
+2023-01-20 04:27:14.229273 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/copy.png, use --include-removal to override
+2023-01-20 04:27:14.229299 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/createvm.png, use --include-removal to override
+2023-01-20 04:27:14.229323 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/home.png, use --include-removal to override
+2023-01-20 04:27:14.229348 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/update-recommended.png, use --include-removal to override
+2023-01-20 04:27:14.229373 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/add.png, use --include-removal to override
+2023-01-20 04:27:14.229485 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/restartvm.png, use --include-removal to override
+2023-01-20 04:27:14.229865 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/to-be-outdated.png, use --include-removal to override
+2023-01-20 04:27:14.229915 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/removevm.png, use --include-removal to override
+2023-01-20 04:27:14.229991 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/settings.png, use --include-removal to override
+2023-01-20 04:27:14.230074 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/standalonevm.png, use --include-removal to override
+2023-01-20 04:27:14.230157 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/proxyvm.png, use --include-removal to override
+2023-01-20 04:27:14.230192 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/edit.png, use --include-removal to override
+2023-01-20 04:27:14.230266 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/backup.png, use --include-removal to override
+2023-01-20 04:27:14.230342 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/run-command.png, use --include-removal to override
+2023-01-20 04:27:14.230422 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/apps.png, use --include-removal to override
+2023-01-20 04:27:14.230456 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-yellow.png, use --include-removal to override
+2023-01-20 04:27:14.230603 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-red.png, use --include-removal to override
+2023-01-20 04:27:14.230649 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/flag-blue.png, use --include-removal to override
+2023-01-20 04:27:14.230720 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/global-settings.png, use --include-removal to override
+2023-01-20 04:27:14.230798 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/kill.png, use --include-removal to override
+2023-01-20 04:27:14.230928 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/eye.svg, use --include-removal to override
+2023-01-20 04:27:14.231012 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/restore.png, use --include-removal to override
+2023-01-20 04:27:14.231115 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/warning.png, use --include-removal to override
+2023-01-20 04:27:14.231197 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/storagevm.png, use --include-removal to override
+2023-01-20 04:27:14.231280 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/show-all-running.png, use --include-removal to override
+2023-01-20 04:27:14.231386 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/templatevm.png, use --include-removal to override
+2023-01-20 04:27:14.231525 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/dom0.png, use --include-removal to override
+2023-01-20 04:27:14.231561 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/paused.png, use --include-removal to override
+2023-01-20 04:27:14.231639 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/showcpuload.png, use --include-removal to override
+2023-01-20 04:27:14.231745 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/transient.png, use --include-removal to override
+2023-01-20 04:27:14.231875 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory icons/on-icon
+2023-01-20 04:27:14.232019 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/on-icon/on.png, use --include-removal to override
+2023-01-20 04:27:14.232134 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file icons/on-icon/off.png, use --include-removal to override
+2023-01-20 04:27:14.232249 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory .tx
+2023-01-20 04:27:14.232375 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file .tx/config, use --include-removal to override
+2023-01-20 04:27:14.232521 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages
+2023-01-20 04:27:14.232612 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin
+2023-01-20 04:27:14.232741 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/utils.py, use --include-removal to override
+2023-01-20 04:27:14.232866 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.233009 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/exc.py, use --include-removal to override
+2023-01-20 04:27:14.233144 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/devices.py, use --include-removal to override
+2023-01-20 04:27:14.233349 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/events.py, use --include-removal to override
+2023-01-20 04:27:14.233505 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/firewall.py, use --include-removal to override
+2023-01-20 04:27:14.233609 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/tools
+2023-01-20 04:27:14.233744 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/tools/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.233872 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/tools/qvm_start.py, use --include-removal to override
+2023-01-20 04:27:14.233990 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/backup
+2023-01-20 04:27:14.234256 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/backup/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.234308 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory test-packages/qubesadmin/backup/restore
+2023-01-20 04:27:14.234820 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file test-packages/qubesadmin/backup/restore/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.235187 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager
+2023-01-20 04:27:14.235375 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/clipboard.py, use --include-removal to override
+2023-01-20 04:27:14.235387 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/create_new_vm.py, use --include-removal to override
+2023-01-20 04:27:14.235397 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/utils.py, use --include-removal to override
+2023-01-20 04:27:14.235406 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/settings.py, use --include-removal to override
+2023-01-20 04:27:14.235426 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/common_threads.py, use --include-removal to override
+2023-01-20 04:27:14.235436 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/about.py, use --include-removal to override
+2023-01-20 04:27:14.235445 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/backup_utils.py, use --include-removal to override
+2023-01-20 04:27:14.235454 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/global_settings.css, use --include-removal to override
+2023-01-20 04:27:14.235474 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/restore.py, use --include-removal to override
+2023-01-20 04:27:14.235483 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/log_dialog.py, use --include-removal to override
+2023-01-20 04:27:14.235493 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/multiselectwidget.py, use --include-removal to override
+2023-01-20 04:27:14.235502 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.235511 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qube_manager.py, use --include-removal to override
+2023-01-20 04:27:14.235520 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/backup.py, use --include-removal to override
+2023-01-20 04:27:14.235529 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qvm_about.sh, use --include-removal to override
+2023-01-20 04:27:14.235539 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/informationnotes.py, use --include-removal to override
+2023-01-20 04:27:14.235548 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/template_manager.py, use --include-removal to override
+2023-01-20 04:27:14.235557 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/bootfromdevice.py, use --include-removal to override
+2023-01-20 04:27:14.235566 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/mount_for_backup.sh, use --include-removal to override
+2023-01-20 04:27:14.235585 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/clone_vm.py, use --include-removal to override
+2023-01-20 04:27:14.236294 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/global_settings.py, use --include-removal to override
+2023-01-20 04:27:14.236795 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/device_list.py, use --include-removal to override
+2023-01-20 04:27:14.236821 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/releasenotes.py, use --include-removal to override
+2023-01-20 04:27:14.236843 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/qvm_template_gui.py, use --include-removal to override
+2023-01-20 04:27:14.236853 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/appmenu_select.py, use --include-removal to override
+2023-01-20 04:27:14.236862 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/firewall.py, use --include-removal to override
+2023-01-20 04:27:14.236870 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager/tests
+2023-01-20 04:27:14.236880 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_qube_manager.py, use --include-removal to override
+2023-01-20 04:27:14.236890 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/__init__.py, use --include-removal to override
+2023-01-20 04:27:14.236899 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_backup.py, use --include-removal to override
+2023-01-20 04:27:14.236909 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_create_new_vm.py, use --include-removal to override
+2023-01-20 04:27:14.236919 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_vm_settings.py, use --include-removal to override
+2023-01-20 04:27:14.236954 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_clone_vm.py, use --include-removal to override
+2023-01-20 04:27:14.236966 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_backup_utils.py, use --include-removal to override
+2023-01-20 04:27:14.236976 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/tests/test_global_settings.py, use --include-removal to override
+2023-01-20 04:27:14.236984 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory qubesmanager/i18n
+2023-01-20 04:27:14.236993 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/i18n/qubesmanager_en.ts, use --include-removal to override
+2023-01-20 04:27:14.237003 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file qubesmanager/i18n/qubesmanager_es.ts, use --include-removal to override
+2023-01-20 04:27:14.237010 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory ci
+2023-01-20 04:27:14.237019 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ci/requirements.txt, use --include-removal to override
+2023-01-20 04:27:14.237026 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory rpm_spec
+2023-01-20 04:27:14.237035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file rpm_spec/qmgr.spec.in, use --include-removal to override
+2023-01-20 04:27:14.237044 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of directory ui
+2023-01-20 04:27:14.237117 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/releasenotes.ui, use --include-removal to override
+2023-01-20 04:27:14.237407 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/globalsettingsdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.237466 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/newfwruledlg.ui, use --include-removal to override
+2023-01-20 04:27:14.237574 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/multiselectwidget.ui, use --include-removal to override
+2023-01-20 04:27:14.237686 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/backupdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.237803 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/qvmtemplate.ui, use --include-removal to override
+2023-01-20 04:27:14.238035 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/logdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238189 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templateinstallconfirmdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238303 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/bootfromdevice.ui, use --include-removal to override
+2023-01-20 04:27:14.238367 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templatemanager.ui, use --include-removal to override
+2023-01-20 04:27:14.238430 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/restoredlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238578 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/newappvmdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238641 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/settingsdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238670 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/qubemanager.ui, use --include-removal to override
+2023-01-20 04:27:14.238690 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/devicelist.ui, use --include-removal to override
+2023-01-20 04:27:14.238709 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/informationnotes.ui, use --include-removal to override
+2023-01-20 04:27:14.238730 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/templateinstallprogressdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238748 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/about.ui, use --include-removal to override
+2023-01-20 04:27:14.238767 +0000 build-debian42: output: dpkg-source: warning: ignoring deletion of file ui/clonevmdlg.ui, use --include-removal to override
+2023-01-20 04:27:14.238785 +0000 build-debian42: output: dpkg-source: info: building qubes-manager in qubes-manager_4.2.0-1+deb12u1.debian.tar.xz
+2023-01-20 04:27:14.257107 +0000 build-debian42: output: dpkg-source: info: building qubes-manager in qubes-manager_4.2.0-1+deb12u1.dsc
+2023-01-20 04:27:14.399753 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.2.0-1+deb12u1.dsc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep
+2023-01-20 04:27:14.715649 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.2.0-1+deb12u1.debian.tar.xz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep
+2023-01-20 04:27:15.017833 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyOut+__builder__debian_packages.list /usr/lib/qubes/qfile-unpacker 1000 /tmp/tmpwainbc45
+2023-01-20 04:27:15.310866 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7485 qubesbuilder.FileCopyOut+__builder__qubes-manager_4.2.0.orig.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep
+2023-01-20 04:27:45.216503 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/pbuilder /builder/pbuilder'
+2023-01-20 04:27:46.288749 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb/pbuilder
+2023-01-20 04:27:46.651831 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder && mv /builder/incoming/pbuilder /builder'
+2023-01-20 04:27:47.031592 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/vm-bookworm /builder/repository/vm-bookworm'
+2023-01-20 04:27:47.570067 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-bookworm
+2023-01-20 04:27:48.192105 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/repository && mv /builder/incoming/vm-bookworm /builder/repository'
+2023-01-20 04:27:48.497805 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/build_deb /builder/plugins/build_deb'
+2023-01-20 04:27:48.798428 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2023-01-20 04:27:49.162716 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build_deb /builder/plugins'
+2023-01-20 04:27:49.484134 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/source_deb /builder/plugins/source_deb'
+2023-01-20 04:27:49.779411 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/source_deb
+2023-01-20 04:27:50.104607 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/source_deb /builder/plugins'
+2023-01-20 04:27:50.412556 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/build /builder/plugins/build'
+2023-01-20 04:27:50.714845 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2023-01-20 04:27:51.047564 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/build /builder/plugins'
+2023-01-20 04:27:51.350747 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/qubes-manager_4.2.0-1+deb12u1.dsc /builder/build/qubes-manager_4.2.0-1+deb12u1.dsc'
+2023-01-20 04:27:51.614811 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep/qubes-manager_4.2.0-1+deb12u1.dsc
+2023-01-20 04:27:51.929275 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.2.0-1+deb12u1.dsc /builder/build'
+2023-01-20 04:27:52.252695 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/qubes-manager_4.2.0-1+deb12u1.debian.tar.xz /builder/build/qubes-manager_4.2.0-1+deb12u1.debian.tar.xz'
+2023-01-20 04:27:52.541020 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep/qubes-manager_4.2.0-1+deb12u1.debian.tar.xz
+2023-01-20 04:27:52.843323 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.2.0-1+deb12u1.debian.tar.xz /builder/build'
+2023-01-20 04:27:53.154707 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/qubes-manager_4.2.0.orig.tar.gz /builder/build/qubes-manager_4.2.0.orig.tar.gz'
+2023-01-20 04:27:53.417610 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/manager/4.2.0-1/vm-bookworm/prep/qubes-manager_4.2.0.orig.tar.gz
+2023-01-20 04:27:53.737376 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/build && mv /builder/incoming/qubes-manager_4.2.0.orig.tar.gz /builder/build'
+2023-01-20 04:27:54.010633 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'rm -rf /builder/incoming/base.tgz /builder/pbuilder/base.tgz'
+2023-01-20 04:27:54.283269 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8979 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/bookworm/pbuilder/base.tgz
+2023-01-20 04:27:55.742970 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8979 bash -c 'mkdir -p /builder/pbuilder && mv /builder/incoming/base.tgz /builder/pbuilder'
+2023-01-20 04:27:56.382626 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8979 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian bookworm && sudo -E pbuilder update --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" && sudo -E pbuilder build --override-config --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" /builder/build/qubes-manager_4.2.0-1+deb12u1.dsc''.
+2023-01-20 04:27:56.689632 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2023-01-20 04:27:56.689705 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2023-01-20 04:27:56.689723 +0000 build-debian42: output: + DISTRIBUTION=debian
+2023-01-20 04:27:56.689737 +0000 build-debian42: output: + SUITE=bookworm
+2023-01-20 04:27:56.689753 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2023-01-20 04:27:56.692495 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2023-01-20 04:27:56.694743 +0000 build-debian42: output: + cd /builder/repository
+2023-01-20 04:27:56.694878 +0000 build-debian42: output: + cat
+2023-01-20 04:27:56.695996 +0000 build-debian42: output: + mkdir -p dists/bookworm/main/binary-amd64
+2023-01-20 04:27:56.696828 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2023-01-20 04:27:57.403896 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 86 entries to output Packages file.
+2023-01-20 04:27:57.405713 +0000 build-debian42: output: + gzip -9c dists/bookworm/main/binary-amd64/Packages
+2023-01-20 04:27:57.412849 +0000 build-debian42: output: ++ LC_ALL=C
+2023-01-20 04:27:57.412907 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2023-01-20 04:27:57.415622 +0000 build-debian42: output: + DATE='Fri, 20 Jan 2023 04:27:57 UTC'
+2023-01-20 04:27:57.415660 +0000 build-debian42: output: + cat
+2023-01-20 04:27:57.417516 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2023-01-20 04:27:57.417571 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages
+2023-01-20 04:27:57.417615 +0000 build-debian42: output: + echo -n ' '
+2023-01-20 04:27:57.418398 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages
+2023-01-20 04:27:57.418522 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2023-01-20 04:27:57.422725 +0000 build-debian42: output: + echo -n 0580dbb44092b29428817dbcb90180823b0433c9e8f8ba0959dce58218dd35d0 ''
+2023-01-20 04:27:57.423104 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages
+2023-01-20 04:27:57.425966 +0000 build-debian42: output: + echo -n 66675 ''
+2023-01-20 04:27:57.426085 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2023-01-20 04:27:57.426126 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2023-01-20 04:27:57.426201 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-20 04:27:57.426223 +0000 build-debian42: output: + echo -n ' '
+2023-01-20 04:27:57.426974 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-20 04:27:57.427340 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2023-01-20 04:27:57.429718 +0000 build-debian42: output: + echo -n 2542762b2c68568113b75399fa7298cc916f181f7afdaa13a81aee6e99ebdb12 ''
+2023-01-20 04:27:57.430266 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages.gz
+2023-01-20 04:27:57.432587 +0000 build-debian42: output: + echo -n 19109 ''
+2023-01-20 04:27:57.432637 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2023-01-20 04:27:57.432666 +0000 build-debian42: output: + mapfile -d '' changes_files
+2023-01-20 04:27:57.432879 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2023-01-20 04:27:57.438837 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-20 04:27:57.438967 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-u2f_1.2.10/qubes-u2f_1.2.10+deb12u1_amd64.changes
+2023-01-20 04:27:57.552246 +0000 build-debian42: output: 'qubes-u2f_1.2.10+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2023-01-20 04:27:57.552317 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2023-01-20 04:27:57.595441 +0000 build-debian42: output: Exporting indices...
+2023-01-20 04:27:57.596379 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-20 04:27:57.596439 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-i3_4.21/i3-wm_4.21-1+deb12u1_amd64.changes
+2023-01-20 04:27:57.707889 +0000 build-debian42: output: Exporting indices...
+2023-01-20 04:27:57.709551 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2023-01-20 04:27:57.709622 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-utils_4.2.4/qubes-utils_4.2.4+deb12u1_amd64.changes
+2023-01-20 04:27:57.726799 +0000 build-debian42: output: ERROR: Unexpected content of file '/builder/repository/vm-bookworm/linux-utils_4.2.4/qubes-utils_4.2.4+deb12u1.tar.xz'!
+2023-01-20 04:27:57.726846 +0000 build-debian42: output: md5 expected: 1e638769f6725104becad75eceaf6e6f, got: 93ed52af9ebd060dbe23d8204fb9e804
+2023-01-20 04:27:57.726858 +0000 build-debian42: output: sha1 expected: f1d2fb5cd5b5d1692a21e93d5c583c97695def7c, got: 385b1a135d3dc37d5a613d2a75a3491737debd24
+2023-01-20 04:27:57.726876 +0000 build-debian42: output: sha256 expected: 4d00771eeae4ff0324aedcac5fc4d9173e405fc6880f60f923cf5bec0cad4328, got: 56305efe7e696aa7e960f760fd57c3a58a77db36114c24a90cd91c9146cdfedc
+2023-01-20 04:27:57.726883 +0000 build-debian42: output: size expected: 40672, got: 40664
+2023-01-20 04:27:57.735577 +0000 build-debian42: output: There have been errors!
+2023-01-20 04:27:57.735614 +0000 build-debian42: output: Deleting files just added to the pool but not used.
+2023-01-20 04:27:57.735621 +0000 build-debian42: output: (to avoid use --keepunusednewfiles next time)
+2023-01-20 04:28:01.738357 +0000 > closing log
