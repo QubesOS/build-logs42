@@ -1,0 +1,317 @@
+2023-02-07 05:12:31.787118 +0000 > starting log
+2023-02-07 05:12:31.787430 +0000 build-centos42: > starting build with log
+2023-02-07 05:12:31.787440 +0000 build-centos42: >> args:
+2023-02-07 05:12:31.790402 +0000 build-centos42: >>   ()
+2023-02-07 05:12:31.790410 +0000 build-centos42: >> component:
+2023-02-07 05:12:31.790419 +0000 build-centos42: >>   anaconda
+2023-02-07 05:12:31.790426 +0000 build-centos42: >>     commit-hash: b6c1b1e09aeb694bc692ceeede83bf57ef788eec
+2023-02-07 05:12:31.790438 +0000 build-centos42: >>     source-hash: 1c76e427b3cd6a9977a69e6a8b4709839afeebc9b24fcc16b437dc739e56df94e9e2b1c661021392b4b0647fde809aceb9e5a4cb49f139a7db6d22d220fdad05
+2023-02-07 05:12:31.790444 +0000 build-centos42: >> distributions:
+2023-02-07 05:12:31.790451 +0000 build-centos42: >>   [<QubesDistribution vm-centos-stream-8.x86_64>]
+2023-02-07 05:12:31.790457 +0000 build-centos42: anaconda: source already fetched. Updating.
+2023-02-07 05:13:05.889579 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3431 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-02-07 05:13:07.512469 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3431 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-02-07 05:13:08.793217 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3431 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-02-07 05:13:10.024605 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3431 bash -c 'rm -rf /builder/incoming/anaconda /builder/anaconda'
+2023-02-07 05:13:11.067812 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3431 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/anaconda
+2023-02-07 05:13:11.925478 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3431 bash -c 'mkdir -p /builder && mv /builder/incoming/anaconda /builder'
+2023-02-07 05:13:12.466776 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp3431 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component anaconda --git-branch main --git-url https://github.com/QubesOS/qubes-anaconda.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2023-02-07 05:13:16.335426 +0000 build-centos42: output: + unset CLEAN
+2023-02-07 05:13:16.335472 +0000 build-centos42: output: + CLEAN=0
+2023-02-07 05:13:16.335865 +0000 build-centos42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2023-02-07 05:13:16.335915 +0000 build-centos42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component anaconda --git-branch main --git-url https://github.com/QubesOS/qubes-anaconda.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2023-02-07 05:13:16.592378 +0000 build-centos42: output: + OPTS=' --component '\''anaconda'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-anaconda.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-02-07 05:13:16.592434 +0000 build-centos42: output: + eval set -- ' --component '\''anaconda'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-anaconda.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-02-07 05:13:16.592457 +0000 build-centos42: output: ++ set -- --component anaconda --git-branch main --git-url https://github.com/QubesOS/qubes-anaconda.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2023-02-07 05:13:16.592478 +0000 build-centos42: output: + [[ 12 -gt 0 ]]
+2023-02-07 05:13:16.592484 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592489 +0000 build-centos42: output: + COMPONENT=anaconda
+2023-02-07 05:13:16.592495 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592499 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592505 +0000 build-centos42: output: + [[ 10 -gt 0 ]]
+2023-02-07 05:13:16.592510 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592515 +0000 build-centos42: output: + BRANCH=main
+2023-02-07 05:13:16.592520 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592525 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592530 +0000 build-centos42: output: + [[ 8 -gt 0 ]]
+2023-02-07 05:13:16.592539 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592547 +0000 build-centos42: output: + GIT_URL=https://github.com/QubesOS/qubes-anaconda.git
+2023-02-07 05:13:16.592552 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592556 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592562 +0000 build-centos42: output: + [[ 6 -gt 0 ]]
+2023-02-07 05:13:16.592567 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592573 +0000 build-centos42: output: + KEYRING_DIR_GIT=/builder/keyring
+2023-02-07 05:13:16.592577 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592582 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592590 +0000 build-centos42: output: + [[ 4 -gt 0 ]]
+2023-02-07 05:13:16.592595 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592601 +0000 build-centos42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2023-02-07 05:13:16.592606 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592611 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592616 +0000 build-centos42: output: + [[ 2 -gt 0 ]]
+2023-02-07 05:13:16.592621 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592626 +0000 build-centos42: output: + FETCH_VERSIONS_ONLY=1
+2023-02-07 05:13:16.592631 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592636 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-02-07 05:13:16.592660 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:13:16.592665 +0000 build-centos42: output: + shift
+2023-02-07 05:13:16.592670 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-02-07 05:13:16.592677 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-02-07 05:13:16.592682 +0000 build-centos42: output: -]*$ ]]
+2023-02-07 05:13:16.592687 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-02-07 05:13:16.592692 +0000 build-centos42: output: -]*$ ]]
+2023-02-07 05:13:16.592698 +0000 build-centos42: output: + [[ -n anaconda ]]
+2023-02-07 05:13:16.592703 +0000 build-centos42: output: + '[' -z '' ']'
+2023-02-07 05:13:16.592708 +0000 build-centos42: output: + REPO=anaconda
+2023-02-07 05:13:16.592714 +0000 build-centos42: output: + '[' -z /builder/keyring ']'
+2023-02-07 05:13:16.592719 +0000 build-centos42: output: + '[' -z '' ']'
+2023-02-07 05:13:16.592724 +0000 build-centos42: output: + GIT_SUFFIX=.git
+2023-02-07 05:13:16.592730 +0000 build-centos42: output: + '[' -z main ']'
+2023-02-07 05:13:16.592735 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:13:16.592742 +0000 build-centos42: output: + '[' -z https://github.com/QubesOS/qubes-anaconda.git ']'
+2023-02-07 05:13:16.592747 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:13:16.592753 +0000 build-centos42: output: + case ${IGNORE_MISSING=0} in
+2023-02-07 05:13:16.592757 +0000 build-centos42: output: + :
+2023-02-07 05:13:16.592763 +0000 build-centos42: output: + case ${GIT_CLONE_FAST=0} in
+2023-02-07 05:13:16.592768 +0000 build-centos42: output: + :
+2023-02-07 05:13:16.592773 +0000 build-centos42: output: + GIT_OPTIONS=()
+2023-02-07 05:13:16.592784 +0000 build-centos42: output: + [[ 0 = \1 ]]
+2023-02-07 05:13:16.592790 +0000 build-centos42: output: + GIT_MERGE_OPTS=("--ff-only")
+2023-02-07 05:13:16.592797 +0000 build-centos42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2023-02-07 05:13:16.592803 +0000 build-centos42: output: + [[ anaconda =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2023-02-07 05:13:16.592809 +0000 build-centos42: output: + trap exit_clean 0 1 2 3 6 15
+2023-02-07 05:13:16.592814 +0000 build-centos42: output: + fresh_clone=false
+2023-02-07 05:13:16.592820 +0000 build-centos42: output: + [[ '' = \1 ]]
+2023-02-07 05:13:16.592825 +0000 build-centos42: output: + [[ -d anaconda ]]
+2023-02-07 05:13:16.592830 +0000 build-centos42: output: + cd anaconda
+2023-02-07 05:13:16.592836 +0000 build-centos42: output: ++ git rev-parse --is-shallow-repository
+2023-02-07 05:13:16.703028 +0000 build-centos42: output: + is_shallow=false
+2023-02-07 05:13:16.703072 +0000 build-centos42: output: + [[ 0 -ne 1 ]]
+2023-02-07 05:13:16.703080 +0000 build-centos42: output: + [[ false = \t\r\u\e ]]
+2023-02-07 05:13:16.703086 +0000 build-centos42: output: + print_headers
+2023-02-07 05:13:16.703091 +0000 build-centos42: output: + '[' -z '' ']'
+2023-02-07 05:13:16.703099 +0000 build-centos42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-anaconda.git main'
+2023-02-07 05:13:16.703106 +0000 build-centos42: output: + echo '-> Updating sources for anaconda...'
+2023-02-07 05:13:16.703114 +0000 build-centos42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-anaconda.git main...'
+2023-02-07 05:13:16.703122 +0000 build-centos42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-anaconda.git main
+2023-02-07 05:13:16.703128 +0000 build-centos42: output: -> Updating sources for anaconda...
+2023-02-07 05:13:16.703136 +0000 build-centos42: output: --> Fetching from https://github.com/QubesOS/qubes-anaconda.git main...
+2023-02-07 05:13:24.006444 +0000 build-centos42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2023-02-07 05:13:24.007781 +0000 build-centos42: output: + rev=d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.007812 +0000 build-centos42: output: + '[' 1 == 1 ']'
+2023-02-07 05:13:24.007821 +0000 build-centos42: output: + grep -q '^v'
+2023-02-07 05:13:24.008545 +0000 build-centos42: output: + git tag --points-at d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.011173 +0000 build-centos42: output: + VERIFY_REF=d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.011205 +0000 build-centos42: output: + fresh_clone=false
+2023-02-07 05:13:24.011212 +0000 build-centos42: output: + cd -
+2023-02-07 05:13:24.011218 +0000 build-centos42: output: + export CHECK=signed-tag
+2023-02-07 05:13:24.011224 +0000 build-centos42: output: + CHECK=signed-tag
+2023-02-07 05:13:24.011229 +0000 build-centos42: output: + verify=true
+2023-02-07 05:13:24.011234 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-02-07 05:13:24.011239 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-02-07 05:13:24.011248 +0000 build-centos42: output: ++ git -C anaconda rev-parse -q --verify d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.012027 +0000 build-centos42: output: + VERIFY_REF=d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.012050 +0000 build-centos42: output: + '[' true = false ']'
+2023-02-07 05:13:24.012059 +0000 build-centos42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2023-02-07 05:13:24.012065 +0000 build-centos42: output: + echo '--> Verifying tags...'
+2023-02-07 05:13:24.012165 +0000 build-centos42: output: --> Verifying tags...
+2023-02-07 05:13:24.012185 +0000 build-centos42: output: ++ readlink -m /builder/keyring
+2023-02-07 05:13:24.012928 +0000 build-centos42: output: + GNUPGHOME=/builder/keyring
+2023-02-07 05:13:24.012947 +0000 build-centos42: output: + export GNUPGHOME
+2023-02-07 05:13:24.012957 +0000 build-centos42: output: + '[' '!' -d /builder/keyring ']'
+2023-02-07 05:13:24.012963 +0000 build-centos42: output: + mkdir -p /builder/keyring
+2023-02-07 05:13:24.013753 +0000 build-centos42: output: + chmod 700 /builder/keyring
+2023-02-07 05:13:24.015195 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-02-07 05:13:24.023339 +0000 build-centos42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2023-02-07 05:13:24.026051 +0000 build-centos42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2023-02-07 05:13:24.026086 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2023-02-07 05:13:24.037386 +0000 build-centos42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2023-02-07 05:13:24.037888 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2023-02-07 05:13:24.037916 +0000 build-centos42: output: gpg: Total number processed: 3
+2023-02-07 05:13:24.037926 +0000 build-centos42: output: gpg:               imported: 3
+2023-02-07 05:13:24.037956 +0000 build-centos42: output: gpg: no ultimately trusted keys found
+2023-02-07 05:13:24.039123 +0000 build-centos42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2023-02-07 05:13:24.039405 +0000 build-centos42: output: + gpg --import-ownertrust
+2023-02-07 05:13:24.040943 +0000 build-centos42: output: gpg: inserting ownertrust of 6
+2023-02-07 05:13:24.041440 +0000 build-centos42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2023-02-07 05:13:24.041459 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-02-07 05:13:24.043482 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2023-02-07 05:13:24.043937 +0000 build-centos42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2023-02-07 05:13:24.044597 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2023-02-07 05:13:24.044615 +0000 build-centos42: output: gpg: Total number processed: 3
+2023-02-07 05:13:24.044642 +0000 build-centos42: output: gpg:              unchanged: 3
+2023-02-07 05:13:24.044950 +0000 build-centos42: output: + touch /builder/keyring/pubring.gpg
+2023-02-07 05:13:24.046708 +0000 build-centos42: output: + gpgconf --kill gpg-agent
+2023-02-07 05:13:24.051429 +0000 build-centos42: output: + pushd anaconda
+2023-02-07 05:13:24.051467 +0000 build-centos42: output: + expected_hash=d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.051474 +0000 build-centos42: output: + hash_len=40
+2023-02-07 05:13:24.051479 +0000 build-centos42: output: + '[' 40 -ne 40 ']'
+2023-02-07 05:13:24.051487 +0000 build-centos42: output: + [[ d354ec0c9040fe8bb64450c923ff7a2428c70f85 =~ ^[a-f0-9]+$ ]]
+2023-02-07 05:13:24.051495 +0000 build-centos42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-02-07 05:13:24.052091 +0000 build-centos42: output: ++ head -c 500
+2023-02-07 05:13:24.052434 +0000 build-centos42: output: ++ git tag --points-at=d354ec0c9040fe8bb64450c923ff7a2428c70f85 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-02-07 05:13:24.054155 +0000 build-centos42: output: + tags=2a93aea2fe50229a9bcbdefb7ce36153144b151f:d354ec0c9040fe8bb64450c923ff7a2428c70f85:
+2023-02-07 05:13:24.054174 +0000 build-centos42: output: + for tag in $tags
+2023-02-07 05:13:24.054188 +0000 build-centos42: output: + (( 82 != hash_len * 2 + 2 ))
+2023-02-07 05:13:24.054199 +0000 build-centos42: output: + [[ :d354ec0c9040fe8bb64450c923ff7a2428c70f85: == \:\d\3\5\4\e\c\0\c\9\0\4\0\f\e\8\b\b\6\4\4\5\0\c\9\2\3\f\f\7\a\2\4\2\8\c\7\0\f\8\5\: ]]
+2023-02-07 05:13:24.054230 +0000 build-centos42: output: + tag=2a93aea2fe50229a9bcbdefb7ce36153144b151f
+2023-02-07 05:13:24.054278 +0000 build-centos42: output: + verify_git_obj tag 2a93aea2fe50229a9bcbdefb7ce36153144b151f
+2023-02-07 05:13:24.054432 +0000 build-centos42: output: + local content newsig_number
+2023-02-07 05:13:24.054455 +0000 build-centos42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 2a93aea2fe50229a9bcbdefb7ce36153144b151f
+2023-02-07 05:13:24.058994 +0000 build-centos42: output: + content='[GNUPG:] NEWSIG
+2023-02-07 05:13:24.059021 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.059030 +0000 build-centos42: output: [GNUPG:] SIG_ID M4UZIADeS2egfYUE9cpg2BMqueM 2023-02-07 1675746352
+2023-02-07 05:13:24.059038 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.059045 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.059054 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.059061 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.059070 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-07 05:13:24.059106 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-07 1675746352 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-07 05:13:24.059115 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-07 05:13:24.059381 +0000 build-centos42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2023-02-07 05:13:24.060179 +0000 build-centos42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2023-02-07 05:13:24.060203 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.060211 +0000 build-centos42: output: [GNUPG:] SIG_ID M4UZIADeS2egfYUE9cpg2BMqueM 2023-02-07 1675746352
+2023-02-07 05:13:24.060218 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.060230 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.060237 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.060244 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.060254 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-07 05:13:24.060265 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-07 1675746352 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-07 05:13:24.060292 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-07 05:13:24.060446 +0000 build-centos42: output: + newsig_number=1
+2023-02-07 05:13:24.060487 +0000 build-centos42: output: + '[' 1 = 1 ']'
+2023-02-07 05:13:24.060692 +0000 build-centos42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2023-02-07 05:13:24.061754 +0000 build-centos42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2023-02-07 05:13:24.061774 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.061782 +0000 build-centos42: output: [GNUPG:] SIG_ID M4UZIADeS2egfYUE9cpg2BMqueM 2023-02-07 1675746352
+2023-02-07 05:13:24.061789 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-07 05:13:24.061796 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.061804 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.061825 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-07 05:13:24.061855 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-07 05:13:24.061873 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-07 1675746352 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-07 05:13:24.061897 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-07 05:13:24.062216 +0000 build-centos42: output: + echo '---> Good tag 2a93aea2fe50229a9bcbdefb7ce36153144b151f'
+2023-02-07 05:13:24.062236 +0000 build-centos42: output: + '[' -z x ']'
+2023-02-07 05:13:24.062242 +0000 build-centos42: output: + popd
+2023-02-07 05:13:24.062248 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-02-07 05:13:24.062254 +0000 build-centos42: output: + pushd anaconda
+2023-02-07 05:13:24.062261 +0000 build-centos42: output: ---> Good tag 2a93aea2fe50229a9bcbdefb7ce36153144b151f
+2023-02-07 05:13:24.062655 +0000 build-centos42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2023-02-07 05:13:24.063306 +0000 build-centos42: output: + CURRENT_BRANCH=main
+2023-02-07 05:13:24.063321 +0000 build-centos42: output: + '[' main '!=' main ']'
+2023-02-07 05:13:24.063361 +0000 build-centos42: output: + false
+2023-02-07 05:13:24.063472 +0000 build-centos42: output: + false
+2023-02-07 05:13:24.063493 +0000 build-centos42: output: + echo '--> Merging...'
+2023-02-07 05:13:24.063530 +0000 build-centos42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q d354ec0c9040fe8bb64450c923ff7a2428c70f85
+2023-02-07 05:13:24.063649 +0000 build-centos42: output: --> Merging...
+2023-02-07 05:13:24.075591 +0000 build-centos42: output: + tracking_branch=refs/remotes//main
+2023-02-07 05:13:24.075664 +0000 build-centos42: output: + '[' -f .git/refs/remotes//main ']'
+2023-02-07 05:13:24.075673 +0000 build-centos42: output: + '[' -e .gitmodules ']'
+2023-02-07 05:13:24.075680 +0000 build-centos42: output: + popd
+2023-02-07 05:13:24.075687 +0000 build-centos42: output: + exit_clean
+2023-02-07 05:13:24.075693 +0000 build-centos42: output: + local exit_code=0
+2023-02-07 05:13:24.075699 +0000 build-centos42: output: + '[' 0 -gt 0 ']'
+2023-02-07 05:13:24.075704 +0000 build-centos42: output: + exit 0
+2023-02-07 05:13:24.084812 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3431 qubesbuilder.FileCopyOut+__builder__anaconda /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/sources
+2023-02-07 05:14:04.995313 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5627 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-02-07 05:14:05.372423 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5627 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-02-07 05:14:36.370852 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5627 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-02-07 05:14:37.197979 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5627 bash -c 'rm -rf /builder/incoming/anaconda /builder/anaconda'
+2023-02-07 05:14:37.695562 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5627 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/anaconda
+2023-02-07 05:14:38.378739 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp5627 bash -c 'mkdir -p /builder && mv /builder/incoming/anaconda /builder'
+2023-02-07 05:14:38.898674 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp5627 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/anaconda --file-name anaconda-37.12.6.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2''.
+2023-02-07 05:14:39.483824 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2023-02-07 05:14:39.484642 +0000 build-centos42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/anaconda --file-name anaconda-37.12.6.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2
+2023-02-07 05:14:39.487659 +0000 build-centos42: output: + OPTS=' --output-dir '\''/builder/anaconda'\'' --file-name '\''anaconda-37.12.6.tar.bz2'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2'\'' --'
+2023-02-07 05:14:39.487713 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/builder/anaconda'\'' --file-name '\''anaconda-37.12.6.tar.bz2'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2'\'' --'
+2023-02-07 05:14:39.487727 +0000 build-centos42: output: ++ set -- --output-dir /builder/anaconda --file-name anaconda-37.12.6.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2 --
+2023-02-07 05:14:39.487898 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2023-02-07 05:14:39.487912 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:14:39.487919 +0000 build-centos42: output: + OUTPUT_DIR=/builder/anaconda
+2023-02-07 05:14:39.487930 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.487935 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.487940 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2023-02-07 05:14:39.487945 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:14:39.487951 +0000 build-centos42: output: + FILE_NAME=anaconda-37.12.6.tar.bz2
+2023-02-07 05:14:39.487956 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.487961 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.487966 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2023-02-07 05:14:39.487971 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:14:39.487979 +0000 build-centos42: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2
+2023-02-07 05:14:39.488026 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.488034 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.488039 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-02-07 05:14:39.488078 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:14:39.488086 +0000 build-centos42: output: + shift
+2023-02-07 05:14:39.488091 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-02-07 05:14:39.488099 +0000 build-centos42: output: + '[' -z https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2 ']'
+2023-02-07 05:14:39.488108 +0000 build-centos42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2023-02-07 05:14:39.488309 +0000 build-centos42: output: + '[' -z anaconda-37.12.6.tar.bz2 ']'
+2023-02-07 05:14:39.488335 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_anaconda-37.12.6.tar.bz2
+2023-02-07 05:14:39.488342 +0000 build-centos42: output: + '[' -n /builder/anaconda ']'
+2023-02-07 05:14:39.488348 +0000 build-centos42: output: + mkdir -p /builder/anaconda
+2023-02-07 05:14:39.488354 +0000 build-centos42: output: + cd /builder/anaconda
+2023-02-07 05:14:39.488366 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_anaconda-37.12.6.tar.bz2 -- https://ftp.qubes-os.org/distfiles/anaconda-37.12.6.tar.bz2
+2023-02-07 05:15:16.649321 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-02-07 05:15:16.649365 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:15:16.656854 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5627 qubesbuilder.FileCopyOut+__builder__anaconda__untrusted_anaconda-37.12.6.tar.bz2 /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpluck6l60
+2023-02-07 05:15:36.837810 +0000 build-centos42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-centos/tmp/tmpluck6l60 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2 --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512'.
+2023-02-07 05:15:36.840578 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2023-02-07 05:15:36.840904 +0000 build-centos42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpluck6l60 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2 --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512
+2023-02-07 05:15:36.841700 +0000 build-centos42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpluck6l60'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512'\'' --'
+2023-02-07 05:15:36.842423 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpluck6l60'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512'\'' --'
+2023-02-07 05:15:36.842455 +0000 build-centos42: output: ++ set -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpluck6l60 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2 --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512 --
+2023-02-07 05:15:36.842462 +0000 build-centos42: output: + PUBKEY_FILE=()
+2023-02-07 05:15:36.842468 +0000 build-centos42: output: + [[ 9 -gt 0 ]]
+2023-02-07 05:15:36.842473 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:15:36.842481 +0000 build-centos42: output: + OUTPUT_DIR=/home/user/builder-r4.2-centos/tmp/tmpluck6l60
+2023-02-07 05:15:36.842486 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842491 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842496 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2023-02-07 05:15:36.842501 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:15:36.842510 +0000 build-centos42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2
+2023-02-07 05:15:36.842515 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842522 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842528 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2023-02-07 05:15:36.842533 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:15:36.842539 +0000 build-centos42: output: + CHECKSUM_CMD=sha512sum
+2023-02-07 05:15:36.842544 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842549 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842554 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2023-02-07 05:15:36.842559 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:15:36.842567 +0000 build-centos42: output: + FILE_CHECKSUM=/home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512
+2023-02-07 05:15:36.842588 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842593 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842598 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-02-07 05:15:36.842603 +0000 build-centos42: output: + case "$1" in
+2023-02-07 05:15:36.842608 +0000 build-centos42: output: + shift
+2023-02-07 05:15:36.842626 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-02-07 05:15:36.842635 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2 ']'
+2023-02-07 05:15:36.842642 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpluck6l60 ']'
+2023-02-07 05:15:36.842649 +0000 build-centos42: output: + mkdir -p /home/user/builder-r4.2-centos/tmp/tmpluck6l60
+2023-02-07 05:15:36.843240 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2
+2023-02-07 05:15:36.844667 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_anaconda-37.12.6.tar.bz2
+2023-02-07 05:15:36.844692 +0000 build-centos42: output: + FILE_NAME=anaconda-37.12.6.tar.bz2
+2023-02-07 05:15:36.844702 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512 ']'
+2023-02-07 05:15:36.844725 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512 ']'
+2023-02-07 05:15:36.844734 +0000 build-centos42: output: + '[' -e /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512 ']'
+2023-02-07 05:15:36.844740 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:15:36.844745 +0000 build-centos42: output: + '[' -z '' ']'
+2023-02-07 05:15:36.844751 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:15:36.844756 +0000 build-centos42: output: + '[' -n '' ']'
+2023-02-07 05:15:36.844764 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512 ']'
+2023-02-07 05:15:36.844770 +0000 build-centos42: output: + '[' -z sha512sum ']'
+2023-02-07 05:15:36.844776 +0000 build-centos42: output: + sha512sum --status -c /dev/fd/63
+2023-02-07 05:15:36.845562 +0000 build-centos42: output: +++ cat /home/user/builder-r4.2-centos/sources/anaconda/anaconda-37.12.6.tar.bz2.sha512
+2023-02-07 05:15:36.846132 +0000 build-centos42: output: ++ printf '%s  -\n' 6f4b3c13f7ecbd64501a1aff9ba1d8fde867b52df8a517821c1a70a4ab2af81ef6a22c8534afba8239a5c608f4c06fdd505e6d4c7a58a23fa8d852e54a79694a
+2023-02-07 05:15:36.854782 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmpluck6l60/untrusted_anaconda-37.12.6.tar.bz2 /home/user/builder-r4.2-centos/tmp/tmpluck6l60/anaconda-37.12.6.tar.bz2
+2023-02-07 05:16:07.111609 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp4134 bash -c 'rm -rf /builder/incoming/anaconda /builder/anaconda'
+2023-02-07 05:16:10.277406 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4134 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/anaconda
+2023-02-07 05:16:13.132661 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp4134 bash -c 'mkdir -p /builder && mv /builder/incoming/anaconda /builder'
+2023-02-07 05:16:13.387797 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp4134 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/anaconda/hash /builder/anaconda/vtags && cd /builder && git -C /builder/anaconda rev-parse '\''HEAD^{}'\'' >> /builder/anaconda/hash && git -C /builder/anaconda tag --points-at HEAD --list '\''v*'\'' >> /builder/anaconda/vtags''.
+2023-02-07 05:16:13.591338 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4134 qubesbuilder.FileCopyOut+__builder__anaconda__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmp6fgf63r1
+2023-02-07 05:16:14.300913 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4134 qubesbuilder.FileCopyOut+__builder__anaconda__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmp6fgf63r1
+2023-02-07 05:16:46.793450 +0000 build-centos42: > done
+2023-02-07 05:16:46.793496 +0000 > closing log
