@@ -1,0 +1,462 @@
+2023-02-14 05:07:28.306765 +0000 > starting log
+2023-02-14 05:07:28.307071 +0000 build-debian42: > starting build with log
+2023-02-14 05:07:28.307086 +0000 build-debian42: >> args:
+2023-02-14 05:07:28.307095 +0000 build-debian42: >>   ()
+2023-02-14 05:07:28.307103 +0000 build-debian42: >> component:
+2023-02-14 05:07:28.307112 +0000 build-debian42: >>   linux-kernel-latest
+2023-02-14 05:07:28.307124 +0000 build-debian42: >>     commit-hash: de45612da14e03124aa820458481da4381405976
+2023-02-14 05:07:28.307142 +0000 build-debian42: >>     source-hash: e15521de28fa699e9e480febc052a7ecc8ae58172dff41e8153c9eac1cdf21061bc154a42bb9156fae0b8ae352196ef9508fb6b459a84da65dd87fd144ead8df
+2023-02-14 05:07:28.307151 +0000 build-debian42: >> distributions:
+2023-02-14 05:07:28.307164 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-02-14 05:07:28.307175 +0000 build-debian42: linux-kernel-latest: source already fetched. Updating.
+2023-02-14 05:08:00.440887 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7521 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-02-14 05:08:01.020645 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7521 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-02-14 05:08:01.591471 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7521 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-02-14 05:08:02.283188 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7521 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2023-02-14 05:08:03.007832 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7521 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2023-02-14 05:08:04.302102 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7521 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2023-02-14 05:08:04.664916 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7521 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2023-02-14 05:08:05.037236 +0000 build-debian42: output: + unset CLEAN
+2023-02-14 05:08:05.037278 +0000 build-debian42: output: + CLEAN=0
+2023-02-14 05:08:05.037297 +0000 build-debian42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2023-02-14 05:08:05.038729 +0000 build-debian42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2023-02-14 05:08:05.039510 +0000 build-debian42: output: + OPTS=' --component '\''linux-kernel-latest'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-02-14 05:08:05.039906 +0000 build-debian42: output: + eval set -- ' --component '\''linux-kernel-latest'\'' --git-branch '\''main'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-02-14 05:08:05.040006 +0000 build-debian42: output: ++ set -- --component linux-kernel-latest --git-branch main --git-url https://github.com/QubesOS/qubes-linux-kernel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2023-02-14 05:08:05.040021 +0000 build-debian42: output: + [[ 12 -gt 0 ]]
+2023-02-14 05:08:05.040032 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.040042 +0000 build-debian42: output: + COMPONENT=linux-kernel-latest
+2023-02-14 05:08:05.040051 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.040063 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.040072 +0000 build-debian42: output: + [[ 10 -gt 0 ]]
+2023-02-14 05:08:05.040122 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.040183 +0000 build-debian42: output: + BRANCH=main
+2023-02-14 05:08:05.040494 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041269 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041309 +0000 build-debian42: output: + [[ 8 -gt 0 ]]
+2023-02-14 05:08:05.041316 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.041325 +0000 build-debian42: output: + GIT_URL=https://github.com/QubesOS/qubes-linux-kernel
+2023-02-14 05:08:05.041330 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041335 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041340 +0000 build-debian42: output: + [[ 6 -gt 0 ]]
+2023-02-14 05:08:05.041345 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.041352 +0000 build-debian42: output: + KEYRING_DIR_GIT=/builder/keyring
+2023-02-14 05:08:05.041356 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041383 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041389 +0000 build-debian42: output: + [[ 4 -gt 0 ]]
+2023-02-14 05:08:05.041394 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.041400 +0000 build-debian42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2023-02-14 05:08:05.041405 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041410 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041415 +0000 build-debian42: output: + [[ 2 -gt 0 ]]
+2023-02-14 05:08:05.041420 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.041426 +0000 build-debian42: output: + FETCH_VERSIONS_ONLY=1
+2023-02-14 05:08:05.041431 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041436 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2023-02-14 05:08:05.041445 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:05.041450 +0000 build-debian42: output: + shift
+2023-02-14 05:08:05.041456 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-02-14 05:08:05.041461 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-02-14 05:08:05.041660 +0000 build-debian42: output: -]*$ ]]
+2023-02-14 05:08:05.042015 +0000 build-debian42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-02-14 05:08:05.042166 +0000 build-debian42: output: -]*$ ]]
+2023-02-14 05:08:05.042288 +0000 build-debian42: output: + [[ -n linux-kernel-latest ]]
+2023-02-14 05:08:05.042360 +0000 build-debian42: output: + '[' -z '' ']'
+2023-02-14 05:08:05.042452 +0000 build-debian42: output: + REPO=linux-kernel-latest
+2023-02-14 05:08:05.042480 +0000 build-debian42: output: + '[' -z /builder/keyring ']'
+2023-02-14 05:08:05.042495 +0000 build-debian42: output: + '[' -z '' ']'
+2023-02-14 05:08:05.042564 +0000 build-debian42: output: + GIT_SUFFIX=.git
+2023-02-14 05:08:05.042692 +0000 build-debian42: output: + '[' -z main ']'
+2023-02-14 05:08:05.042854 +0000 build-debian42: output: + '[' -n '' ']'
+2023-02-14 05:08:05.042892 +0000 build-debian42: output: + '[' -z https://github.com/QubesOS/qubes-linux-kernel ']'
+2023-02-14 05:08:05.043057 +0000 build-debian42: output: + '[' -n '' ']'
+2023-02-14 05:08:05.043091 +0000 build-debian42: output: + case ${IGNORE_MISSING=0} in
+2023-02-14 05:08:05.043101 +0000 build-debian42: output: + :
+2023-02-14 05:08:05.043111 +0000 build-debian42: output: + case ${GIT_CLONE_FAST=0} in
+2023-02-14 05:08:05.043119 +0000 build-debian42: output: + :
+2023-02-14 05:08:05.043128 +0000 build-debian42: output: + GIT_OPTIONS=()
+2023-02-14 05:08:05.043137 +0000 build-debian42: output: + [[ 0 = \1 ]]
+2023-02-14 05:08:05.043146 +0000 build-debian42: output: + GIT_MERGE_OPTS=("--ff-only")
+2023-02-14 05:08:05.043157 +0000 build-debian42: output: + [[ main =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2023-02-14 05:08:05.043176 +0000 build-debian42: output: + [[ linux-kernel-latest =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2023-02-14 05:08:05.043186 +0000 build-debian42: output: + trap exit_clean 0 1 2 3 6 15
+2023-02-14 05:08:05.043195 +0000 build-debian42: output: + fresh_clone=false
+2023-02-14 05:08:05.043204 +0000 build-debian42: output: + [[ '' = \1 ]]
+2023-02-14 05:08:05.043213 +0000 build-debian42: output: + [[ -d linux-kernel-latest ]]
+2023-02-14 05:08:05.043222 +0000 build-debian42: output: + cd linux-kernel-latest
+2023-02-14 05:08:05.043233 +0000 build-debian42: output: ++ git rev-parse --is-shallow-repository
+2023-02-14 05:08:05.061921 +0000 build-debian42: output: + is_shallow=false
+2023-02-14 05:08:05.061972 +0000 build-debian42: output: + [[ 0 -ne 1 ]]
+2023-02-14 05:08:05.061985 +0000 build-debian42: output: + [[ false = \t\r\u\e ]]
+2023-02-14 05:08:05.061996 +0000 build-debian42: output: + print_headers
+2023-02-14 05:08:05.062006 +0000 build-debian42: output: + '[' -z '' ']'
+2023-02-14 05:08:05.062019 +0000 build-debian42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-linux-kernel main'
+2023-02-14 05:08:05.062032 +0000 build-debian42: output: + echo '-> Updating sources for linux-kernel-latest...'
+2023-02-14 05:08:05.062044 +0000 build-debian42: output: -> Updating sources for linux-kernel-latest...
+2023-02-14 05:08:05.062057 +0000 build-debian42: output: --> Fetching from https://github.com/QubesOS/qubes-linux-kernel main...
+2023-02-14 05:08:05.062073 +0000 build-debian42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-linux-kernel main...'
+2023-02-14 05:08:05.062087 +0000 build-debian42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-linux-kernel main
+2023-02-14 05:08:08.083500 +0000 build-debian42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2023-02-14 05:08:08.086321 +0000 build-debian42: output: + rev=49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.086353 +0000 build-debian42: output: + '[' 1 == 1 ']'
+2023-02-14 05:08:08.087138 +0000 build-debian42: output: + git tag --points-at 49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.087177 +0000 build-debian42: output: + grep -q '^v'
+2023-02-14 05:08:08.113005 +0000 build-debian42: output: + VERIFY_REF=49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.113080 +0000 build-debian42: output: + fresh_clone=false
+2023-02-14 05:08:08.113100 +0000 build-debian42: output: + cd -
+2023-02-14 05:08:08.113119 +0000 build-debian42: output: + export CHECK=signed-tag
+2023-02-14 05:08:08.113136 +0000 build-debian42: output: + CHECK=signed-tag
+2023-02-14 05:08:08.113152 +0000 build-debian42: output: + verify=true
+2023-02-14 05:08:08.113167 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-02-14 05:08:08.113193 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-02-14 05:08:08.113920 +0000 build-debian42: output: ++ git -C linux-kernel-latest rev-parse -q --verify 49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.116911 +0000 build-debian42: output: + VERIFY_REF=49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.117238 +0000 build-debian42: output: + '[' true = false ']'
+2023-02-14 05:08:08.117281 +0000 build-debian42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2023-02-14 05:08:08.117302 +0000 build-debian42: output: + echo '--> Verifying tags...'
+2023-02-14 05:08:08.117319 +0000 build-debian42: output: --> Verifying tags...
+2023-02-14 05:08:08.118045 +0000 build-debian42: output: ++ readlink -m /builder/keyring
+2023-02-14 05:08:08.121453 +0000 build-debian42: output: + GNUPGHOME=/builder/keyring
+2023-02-14 05:08:08.121509 +0000 build-debian42: output: + export GNUPGHOME
+2023-02-14 05:08:08.121660 +0000 build-debian42: output: + '[' '!' -d /builder/keyring ']'
+2023-02-14 05:08:08.121685 +0000 build-debian42: output: + mkdir -p /builder/keyring
+2023-02-14 05:08:08.122854 +0000 build-debian42: output: + chmod 700 /builder/keyring
+2023-02-14 05:08:08.125041 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-02-14 05:08:08.137744 +0000 build-debian42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2023-02-14 05:08:08.147093 +0000 build-debian42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2023-02-14 05:08:08.147170 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2023-02-14 05:08:08.166806 +0000 build-debian42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2023-02-14 05:08:08.168808 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2023-02-14 05:08:08.169719 +0000 build-debian42: output: gpg: Total number processed: 3
+2023-02-14 05:08:08.170330 +0000 build-debian42: output: gpg:               imported: 3
+2023-02-14 05:08:08.170413 +0000 build-debian42: output: gpg: no ultimately trusted keys found
+2023-02-14 05:08:08.173122 +0000 build-debian42: output: + gpg --import-ownertrust
+2023-02-14 05:08:08.173191 +0000 build-debian42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2023-02-14 05:08:08.174816 +0000 build-debian42: output: gpg: inserting ownertrust of 6
+2023-02-14 05:08:08.176130 +0000 build-debian42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2023-02-14 05:08:08.176237 +0000 build-debian42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-02-14 05:08:08.180348 +0000 build-debian42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2023-02-14 05:08:08.182480 +0000 build-debian42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2023-02-14 05:08:08.184298 +0000 build-debian42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2023-02-14 05:08:08.184891 +0000 build-debian42: output: gpg: Total number processed: 3
+2023-02-14 05:08:08.184935 +0000 build-debian42: output: gpg:              unchanged: 3
+2023-02-14 05:08:08.186089 +0000 build-debian42: output: + touch /builder/keyring/pubring.gpg
+2023-02-14 05:08:08.188482 +0000 build-debian42: output: + gpgconf --kill gpg-agent
+2023-02-14 05:08:08.196996 +0000 build-debian42: output: + pushd linux-kernel-latest
+2023-02-14 05:08:08.197109 +0000 build-debian42: output: + expected_hash=49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.197140 +0000 build-debian42: output: + hash_len=40
+2023-02-14 05:08:08.197242 +0000 build-debian42: output: + '[' 40 -ne 40 ']'
+2023-02-14 05:08:08.199005 +0000 build-debian42: output: + [[ 49782f196f121b85cea910d2314fa3faef9f68a2 =~ ^[a-f0-9]+$ ]]
+2023-02-14 05:08:08.199082 +0000 build-debian42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-02-14 05:08:08.199179 +0000 build-debian42: output: ++ git tag --points-at=49782f196f121b85cea910d2314fa3faef9f68a2 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-02-14 05:08:08.199277 +0000 build-debian42: output: ++ head -c 500
+2023-02-14 05:08:08.211058 +0000 build-debian42: output: + tags=ca02ec7b4043bea7f1c0736337c386d5e404e0f5:49782f196f121b85cea910d2314fa3faef9f68a2:
+2023-02-14 05:08:08.211209 +0000 build-debian42: output: + for tag in $tags
+2023-02-14 05:08:08.211304 +0000 build-debian42: output: + (( 82 != hash_len * 2 + 2 ))
+2023-02-14 05:08:08.211388 +0000 build-debian42: output: + [[ :49782f196f121b85cea910d2314fa3faef9f68a2: == \:\4\9\7\8\2\f\1\9\6\f\1\2\1\b\8\5\c\e\a\9\1\0\d\2\3\1\4\f\a\3\f\a\e\f\9\f\6\8\a\2\: ]]
+2023-02-14 05:08:08.211423 +0000 build-debian42: output: + tag=ca02ec7b4043bea7f1c0736337c386d5e404e0f5
+2023-02-14 05:08:08.211506 +0000 build-debian42: output: + verify_git_obj tag ca02ec7b4043bea7f1c0736337c386d5e404e0f5
+2023-02-14 05:08:08.211622 +0000 build-debian42: output: + local content newsig_number
+2023-02-14 05:08:08.212566 +0000 build-debian42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- ca02ec7b4043bea7f1c0736337c386d5e404e0f5
+2023-02-14 05:08:08.220666 +0000 build-debian42: output: + content='[GNUPG:] NEWSIG
+2023-02-14 05:08:08.220793 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.220819 +0000 build-debian42: output: [GNUPG:] SIG_ID 1DqvaPlSozjk2Mk2eew7UtySo44 2023-02-14 1676350962
+2023-02-14 05:08:08.221191 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.221226 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.221644 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.221687 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.221699 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-14 05:08:08.221711 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-14 1676350962 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-14 05:08:08.221718 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-14 05:08:08.222667 +0000 build-debian42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2023-02-14 05:08:08.222780 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.222815 +0000 build-debian42: output: [GNUPG:] SIG_ID 1DqvaPlSozjk2Mk2eew7UtySo44 2023-02-14 1676350962
+2023-02-14 05:08:08.222895 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.223369 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.223412 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.223437 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.223602 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-14 05:08:08.223735 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-14 1676350962 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-14 05:08:08.224198 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-14 05:08:08.224239 +0000 build-debian42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2023-02-14 05:08:08.225830 +0000 build-debian42: output: + newsig_number=1
+2023-02-14 05:08:08.225954 +0000 build-debian42: output: + '[' 1 = 1 ']'
+2023-02-14 05:08:08.226481 +0000 build-debian42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2023-02-14 05:08:08.226499 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.226507 +0000 build-debian42: output: [GNUPG:] SIG_ID 1DqvaPlSozjk2Mk2eew7UtySo44 2023-02-14 1676350962
+2023-02-14 05:08:08.226557 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-02-14 05:08:08.226569 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.226777 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.227155 +0000 build-debian42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-02-14 05:08:08.227336 +0000 build-debian42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-02-14 05:08:08.227500 +0000 build-debian42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-02-14 1676350962 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-02-14 05:08:08.227620 +0000 build-debian42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-02-14 05:08:08.227991 +0000 build-debian42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2023-02-14 05:08:08.228209 +0000 build-debian42: output: + echo '---> Good tag ca02ec7b4043bea7f1c0736337c386d5e404e0f5'
+2023-02-14 05:08:08.228236 +0000 build-debian42: output: + '[' -z x ']'
+2023-02-14 05:08:08.228259 +0000 build-debian42: output: ---> Good tag ca02ec7b4043bea7f1c0736337c386d5e404e0f5
+2023-02-14 05:08:08.228773 +0000 build-debian42: output: + popd
+2023-02-14 05:08:08.229199 +0000 build-debian42: output: + '[' '' == 1 ']'
+2023-02-14 05:08:08.229216 +0000 build-debian42: output: + pushd linux-kernel-latest
+2023-02-14 05:08:08.230010 +0000 build-debian42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2023-02-14 05:08:08.231875 +0000 build-debian42: output: + CURRENT_BRANCH=main
+2023-02-14 05:08:08.231977 +0000 build-debian42: output: + '[' main '!=' main ']'
+2023-02-14 05:08:08.232176 +0000 build-debian42: output: + false
+2023-02-14 05:08:08.233211 +0000 build-debian42: output: + false
+2023-02-14 05:08:08.233230 +0000 build-debian42: output: + echo '--> Merging...'
+2023-02-14 05:08:08.233240 +0000 build-debian42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q 49782f196f121b85cea910d2314fa3faef9f68a2
+2023-02-14 05:08:08.233246 +0000 build-debian42: output: --> Merging...
+2023-02-14 05:08:08.241311 +0000 build-debian42: output: + tracking_branch=refs/remotes//main
+2023-02-14 05:08:08.241360 +0000 build-debian42: output: + '[' -f .git/refs/remotes//main ']'
+2023-02-14 05:08:08.241459 +0000 build-debian42: output: + '[' -e .gitmodules ']'
+2023-02-14 05:08:08.241624 +0000 build-debian42: output: + echo -e '--> Updating submodules'
+2023-02-14 05:08:08.241869 +0000 build-debian42: output: + git submodule init
+2023-02-14 05:08:08.242128 +0000 build-debian42: output: --> Updating submodules
+2023-02-14 05:08:08.275098 +0000 build-debian42: output: + git submodule update --recursive
+2023-02-14 05:08:08.317371 +0000 build-debian42: output: + popd
+2023-02-14 05:08:08.317468 +0000 build-debian42: output: + exit_clean
+2023-02-14 05:08:08.317529 +0000 build-debian42: output: + local exit_code=0
+2023-02-14 05:08:08.317545 +0000 build-debian42: output: + '[' 0 -gt 0 ']'
+2023-02-14 05:08:08.317556 +0000 build-debian42: output: + exit 0
+2023-02-14 05:08:08.387023 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7521 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2023-02-14 05:08:49.765677 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8014 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-02-14 05:08:50.418639 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8014 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-02-14 05:08:51.150415 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8014 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-02-14 05:08:51.902991 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8014 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2023-02-14 05:08:52.560330 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8014 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2023-02-14 05:08:53.754550 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8014 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2023-02-14 05:08:54.253275 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8014 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/linux-kernel-latest --file-name linux-6.1.11.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign --uncompress''.
+2023-02-14 05:08:54.757329 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2023-02-14 05:08:54.757401 +0000 build-debian42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/linux-kernel-latest --file-name linux-6.1.11.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign --uncompress
+2023-02-14 05:08:54.758965 +0000 build-debian42: output: + OPTS=' --output-dir '\''/builder/linux-kernel-latest'\'' --file-name '\''linux-6.1.11.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign'\'' --uncompress --'
+2023-02-14 05:08:54.759075 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/builder/linux-kernel-latest'\'' --file-name '\''linux-6.1.11.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign'\'' --uncompress --'
+2023-02-14 05:08:54.759179 +0000 build-debian42: output: ++ set -- --output-dir /builder/linux-kernel-latest --file-name linux-6.1.11.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign --uncompress --
+2023-02-14 05:08:54.759203 +0000 build-debian42: output: + [[ 10 -gt 0 ]]
+2023-02-14 05:08:54.759249 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:54.759265 +0000 build-debian42: output: + OUTPUT_DIR=/builder/linux-kernel-latest
+2023-02-14 05:08:54.759275 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.759323 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.759335 +0000 build-debian42: output: + [[ 8 -gt 0 ]]
+2023-02-14 05:08:54.759767 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:54.759797 +0000 build-debian42: output: + FILE_NAME=linux-6.1.11.tar.xz
+2023-02-14 05:08:54.759831 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.759837 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.759930 +0000 build-debian42: output: + [[ 6 -gt 0 ]]
+2023-02-14 05:08:54.760033 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:54.760309 +0000 build-debian42: output: + FILE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz
+2023-02-14 05:08:54.760376 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.760393 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.760439 +0000 build-debian42: output: + [[ 4 -gt 0 ]]
+2023-02-14 05:08:54.760456 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:54.760492 +0000 build-debian42: output: + SIGNATURE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign
+2023-02-14 05:08:54.760816 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.760838 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.761019 +0000 build-debian42: output: + [[ 2 -gt 0 ]]
+2023-02-14 05:08:54.761063 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:08:54.761077 +0000 build-debian42: output: + UNCOMPRESS=1
+2023-02-14 05:08:54.761086 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.761104 +0000 build-debian42: output: + shift
+2023-02-14 05:08:54.761114 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-02-14 05:08:54.761128 +0000 build-debian42: output: + '[' -z https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz ']'
+2023-02-14 05:08:54.761144 +0000 build-debian42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2023-02-14 05:08:54.761156 +0000 build-debian42: output: + '[' -z linux-6.1.11.tar.xz ']'
+2023-02-14 05:08:54.761168 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.11.tar.xz
+2023-02-14 05:08:54.761179 +0000 build-debian42: output: + '[' -n /builder/linux-kernel-latest ']'
+2023-02-14 05:08:54.761190 +0000 build-debian42: output: + mkdir -p /builder/linux-kernel-latest
+2023-02-14 05:08:54.761201 +0000 build-debian42: output: + cd /builder/linux-kernel-latest
+2023-02-14 05:08:54.761223 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.1.11.tar.xz -- https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.xz
+2023-02-14 05:14:04.202023 +0000 build-debian42: output: + '[' 1 == 1 ']'
+2023-02-14 05:14:04.202104 +0000 build-debian42: output: + '[' linux-6.1.11.tar.xz '!=' linux-6.1.11.tar.xz ']'
+2023-02-14 05:14:04.202139 +0000 build-debian42: output: + '[' linux-6.1.11.tar '!=' linux-6.1.11.tar.xz ']'
+2023-02-14 05:14:04.202157 +0000 build-debian42: output: + unxz untrusted_linux-6.1.11.tar.xz
+2023-02-14 05:14:14.337810 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.11.tar
+2023-02-14 05:14:14.337856 +0000 build-debian42: output: + '[' -n https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:14.337866 +0000 build-debian42: output: ++ basename https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign
+2023-02-14 05:14:14.344581 +0000 build-debian42: output: + SIGNATURE_FILE_NAME=linux-6.1.11.tar.sign
+2023-02-14 05:14:14.344682 +0000 build-debian42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.1.11.tar.sign
+2023-02-14 05:14:14.344720 +0000 build-debian42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.1.11.tar.sign https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.sign
+2023-02-14 05:14:16.378306 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8014 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__untrusted_linux-6.1.11.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw
+2023-02-14 05:14:30.292562 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8014 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__untrusted_linux-6.1.11.tar.sign /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw
+2023-02-14 05:14:37.003070 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar --untrusted-signature-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc'.
+2023-02-14 05:14:37.005266 +0000 build-debian42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2023-02-14 05:14:37.006048 +0000 build-debian42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar --untrusted-signature-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc
+2023-02-14 05:14:37.007139 +0000 build-debian42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc'\'' --'
+2023-02-14 05:14:37.007259 +0000 build-debian42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw'\'' --untrusted-file '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc'\'' --'
+2023-02-14 05:14:37.007340 +0000 build-debian42: output: ++ set -- --output-dir /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw --untrusted-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar --untrusted-signature-file /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc --
+2023-02-14 05:14:37.007359 +0000 build-debian42: output: + PUBKEY_FILE=()
+2023-02-14 05:14:37.007377 +0000 build-debian42: output: + [[ 11 -gt 0 ]]
+2023-02-14 05:14:37.007392 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.007413 +0000 build-debian42: output: + OUTPUT_DIR=/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw
+2023-02-14 05:14:37.007428 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007443 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007458 +0000 build-debian42: output: + [[ 9 -gt 0 ]]
+2023-02-14 05:14:37.007752 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.007788 +0000 build-debian42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar
+2023-02-14 05:14:37.007804 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007819 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007834 +0000 build-debian42: output: + [[ 7 -gt 0 ]]
+2023-02-14 05:14:37.007850 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.007897 +0000 build-debian42: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign
+2023-02-14 05:14:37.007913 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007928 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.007943 +0000 build-debian42: output: + [[ 5 -gt 0 ]]
+2023-02-14 05:14:37.007958 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.007975 +0000 build-debian42: output: + PUBKEY_FILE+=("$2")
+2023-02-14 05:14:37.007989 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.008003 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.008018 +0000 build-debian42: output: + [[ 3 -gt 0 ]]
+2023-02-14 05:14:37.008033 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.008049 +0000 build-debian42: output: + PUBKEY_FILE+=("$2")
+2023-02-14 05:14:37.008064 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.008078 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.008093 +0000 build-debian42: output: + [[ 1 -gt 0 ]]
+2023-02-14 05:14:37.008108 +0000 build-debian42: output: + case "$1" in
+2023-02-14 05:14:37.008122 +0000 build-debian42: output: + shift
+2023-02-14 05:14:37.008137 +0000 build-debian42: output: + [[ 0 -gt 0 ]]
+2023-02-14 05:14:37.008162 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar ']'
+2023-02-14 05:14:37.008239 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw ']'
+2023-02-14 05:14:37.008266 +0000 build-debian42: output: + mkdir -p /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw
+2023-02-14 05:14:37.009822 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar
+2023-02-14 05:14:37.011724 +0000 build-debian42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.11.tar
+2023-02-14 05:14:37.011770 +0000 build-debian42: output: + FILE_NAME=linux-6.1.11.tar
+2023-02-14 05:14:37.011858 +0000 build-debian42: output: + '[' -z '' ']'
+2023-02-14 05:14:37.011891 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:37.011996 +0000 build-debian42: output: + '[' -n '' ']'
+2023-02-14 05:14:37.012027 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:37.012172 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc ']'
+2023-02-14 05:14:37.012393 +0000 build-debian42: output: + '[' -z /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:37.012424 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:37.012450 +0000 build-debian42: output: + '[' '!' -e /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc ']'
+2023-02-14 05:14:37.012465 +0000 build-debian42: output: + '[' -n '' ']'
+2023-02-14 05:14:37.012490 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign ']'
+2023-02-14 05:14:37.012568 +0000 build-debian42: output: + '[' -n /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc ']'
+2023-02-14 05:14:37.012622 +0000 build-debian42: output: ++ basename /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign
+2023-02-14 05:14:37.012834 +0000 build-debian42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.1.11.tar.sign
+2023-02-14 05:14:37.012859 +0000 build-debian42: output: + SIGNATURE_FILE_NAME=linux-6.1.11.tar.sign
+2023-02-14 05:14:37.013053 +0000 build-debian42: output: ++ mktemp -u
+2023-02-14 05:14:37.013872 +0000 build-debian42: output: + keyring=/tmp/tmp.fP94fU45ma
+2023-02-14 05:14:37.013913 +0000 build-debian42: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2023-02-14 05:14:37.013974 +0000 build-debian42: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.fP94fU45ma -q --import /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-2-key.asc
+2023-02-14 05:14:37.017687 +0000 build-debian42: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2023-02-14 05:14:37.017715 +0000 build-debian42: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.fP94fU45ma -q --import /home/user/builder-r4.2-debian/sources/linux-kernel-latest/kernel.org-1-key.asc
+2023-02-14 05:14:37.022498 +0000 build-debian42: output: + gpgv --keyring /tmp/tmp.fP94fU45ma /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar
+2023-02-14 05:14:38.154095 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar.sign /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/linux-6.1.11.tar.sign
+2023-02-14 05:14:38.155609 +0000 build-debian42: output: + rm -rf /tmp/tmp.fP94fU45ma
+2023-02-14 05:14:38.156402 +0000 build-debian42: output: + mv /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/untrusted_linux-6.1.11.tar /home/user/builder-r4.2-debian/tmp/tmpzzszdsrw/linux-6.1.11.tar
+2023-02-14 05:14:46.697359 +0000 build-debian42: linux-kernel-latest: file macbook12-spi-driver-2905d318d1a3ee1a227052490bf20eddef2592f9.tar already downloaded. Skipping.
+2023-02-14 05:15:44.630311 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2693 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2023-02-14 05:16:15.929862 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2693 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2023-02-14 05:16:23.959343 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2693 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2023-02-14 05:16:24.362506 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp2693 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel-latest/hash /builder/linux-kernel-latest/vtags && cd /builder && git -C /builder/linux-kernel-latest rev-parse '\''HEAD^{}'\'' >> /builder/linux-kernel-latest/hash && git -C /builder/linux-kernel-latest tag --points-at HEAD --list '\''v*'\'' >> /builder/linux-kernel-latest/vtags''.
+2023-02-14 05:16:24.793538 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2693 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpvjqf3ht1
+2023-02-14 05:16:25.409086 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2693 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpvjqf3ht1
+2023-02-14 05:16:59.267410 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2090 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2023-02-14 05:17:00.746142 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2090 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2023-02-14 05:17:04.655832 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2090 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2023-02-14 05:17:32.552863 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp2090 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel-latest/modules && cd /builder && git -C /builder/linux-kernel-latest/linux-utils rev-parse HEAD >> /builder/linux-kernel-latest/modules && git -C /builder/linux-kernel-latest/dummy-psu rev-parse HEAD >> /builder/linux-kernel-latest/modules && git -C /builder/linux-kernel-latest/dummy-backlight rev-parse HEAD >> /builder/linux-kernel-latest/modules && git -C /builder/linux-kernel-latest/v4l2loopback rev-parse HEAD >> /builder/linux-kernel-latest/modules''.
+2023-02-14 05:17:33.758824 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2090 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__modules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmpvjqf3ht1
+2023-02-14 05:18:38.345235 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9540 bash -c 'rm -rf /builder/incoming/linux-kernel-latest /builder/linux-kernel-latest'
+2023-02-14 05:18:38.751420 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel-latest
+2023-02-14 05:18:43.916354 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9540 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel-latest /builder'
+2023-02-14 05:18:45.419749 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9540 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-02-14 05:18:45.650345 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-02-14 05:18:46.795688 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp9540 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-02-14 05:18:46.925597 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp9540 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/linux-kernel-latest/linux-utils linux-utils-97271bab41f588b0.tar.gz linux-utils/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel-latest/dummy-psu dummy-psu-49475d88d94e079b.tar.gz dummy-psu/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel-latest/dummy-backlight dummy-backlight-33420931ad20f1e3.tar.gz dummy-backlight/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel-latest/v4l2loopback v4l2loopback-1ecf810f0d687b64.tar.gz v4l2loopback/''.
+2023-02-14 05:18:47.073355 +0000 build-debian42: output: ++ tar --version
+2023-02-14 05:18:47.073403 +0000 build-debian42: output: ++ head -1
+2023-02-14 05:18:47.073411 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-02-14 05:18:47.118365 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-02-14 05:18:47.118414 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel-latest/linux-utils
+2023-02-14 05:18:47.118850 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel-latest/linux-utils
+2023-02-14 05:18:47.118873 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-02-14 05:18:47.118882 +0000 build-debian42: output: + GIT_TARBALL_NAME=linux-utils-97271bab41f588b0.tar
+2023-02-14 05:18:47.118890 +0000 build-debian42: output: + '[' xlinux-utils/ '!=' x ']'
+2023-02-14 05:18:47.118896 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=linux-utils/
+2023-02-14 05:18:47.118929 +0000 build-debian42: output: + pushd /builder/linux-kernel-latest/linux-utils
+2023-02-14 05:18:47.118937 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-02-14 05:18:47.118985 +0000 build-debian42: output: /builder/linux-kernel-latest/linux-utils ~
+2023-02-14 05:18:47.158088 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1603593639
+2023-02-14 05:18:47.158564 +0000 build-debian42: output: ++ sort -V
+2023-02-14 05:18:47.158595 +0000 build-debian42: output: ++ head -n1
+2023-02-14 05:18:47.159113 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-02-14 05:18:47.162508 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-02-14 05:18:47.162558 +0000 build-debian42: output: + tar --sort=name --mtime=@1603593639 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%linux-utils/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude linux-utils-97271bab41f588b0.tar -cf linux-utils-97271bab41f588b0.tar .
+2023-02-14 05:18:47.165376 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-02-14 05:18:47.165416 +0000 build-debian42: output: + gzip -fn linux-utils-97271bab41f588b0.tar
+2023-02-14 05:18:47.174907 +0000 build-debian42: output: + popd
+2023-02-14 05:18:47.174955 +0000 build-debian42: output: ~
+2023-02-14 05:18:47.177039 +0000 build-debian42: output: ++ head -1
+2023-02-14 05:18:47.177076 +0000 build-debian42: output: ++ tar --version
+2023-02-14 05:18:47.177084 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-02-14 05:18:47.180300 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-02-14 05:18:47.180346 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel-latest/dummy-psu
+2023-02-14 05:18:47.181178 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel-latest/dummy-psu
+2023-02-14 05:18:47.181209 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-02-14 05:18:47.181217 +0000 build-debian42: output: + GIT_TARBALL_NAME=dummy-psu-49475d88d94e079b.tar
+2023-02-14 05:18:47.181223 +0000 build-debian42: output: + '[' xdummy-psu/ '!=' x ']'
+2023-02-14 05:18:47.181229 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=dummy-psu/
+2023-02-14 05:18:47.181236 +0000 build-debian42: output: + pushd /builder/linux-kernel-latest/dummy-psu
+2023-02-14 05:18:47.181242 +0000 build-debian42: output: /builder/linux-kernel-latest/dummy-psu ~
+2023-02-14 05:18:47.181695 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-02-14 05:18:47.183264 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1602292420
+2023-02-14 05:18:47.183607 +0000 build-debian42: output: ++ head -n1
+2023-02-14 05:18:47.183626 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-02-14 05:18:47.185061 +0000 build-debian42: output: ++ sort -V
+2023-02-14 05:18:47.187055 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-02-14 05:18:47.187096 +0000 build-debian42: output: + tar --sort=name --mtime=@1602292420 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-psu/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-psu-49475d88d94e079b.tar -cf dummy-psu-49475d88d94e079b.tar .
+2023-02-14 05:18:47.187575 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-02-14 05:18:47.187597 +0000 build-debian42: output: + gzip -fn dummy-psu-49475d88d94e079b.tar
+2023-02-14 05:18:47.191076 +0000 build-debian42: output: + popd
+2023-02-14 05:18:47.191119 +0000 build-debian42: output: ~
+2023-02-14 05:18:47.192845 +0000 build-debian42: output: ++ head -1
+2023-02-14 05:18:47.192881 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-02-14 05:18:47.194279 +0000 build-debian42: output: ++ tar --version
+2023-02-14 05:18:47.197116 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-02-14 05:18:47.197766 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel-latest/dummy-backlight
+2023-02-14 05:18:47.200456 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel-latest/dummy-backlight
+2023-02-14 05:18:47.200485 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-02-14 05:18:47.200493 +0000 build-debian42: output: + GIT_TARBALL_NAME=dummy-backlight-33420931ad20f1e3.tar
+2023-02-14 05:18:47.200500 +0000 build-debian42: output: + '[' xdummy-backlight/ '!=' x ']'
+2023-02-14 05:18:47.200506 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=dummy-backlight/
+2023-02-14 05:18:47.200514 +0000 build-debian42: output: + pushd /builder/linux-kernel-latest/dummy-backlight
+2023-02-14 05:18:47.200540 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-02-14 05:18:47.200546 +0000 build-debian42: output: /builder/linux-kernel-latest/dummy-backlight ~
+2023-02-14 05:18:47.202364 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1600607528
+2023-02-14 05:18:47.203229 +0000 build-debian42: output: ++ head -n1
+2023-02-14 05:18:47.203252 +0000 build-debian42: output: ++ sort -V
+2023-02-14 05:18:47.203260 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-02-14 05:18:47.206240 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-02-14 05:18:47.206288 +0000 build-debian42: output: + tar --sort=name --mtime=@1600607528 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-backlight/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-backlight-33420931ad20f1e3.tar -cf dummy-backlight-33420931ad20f1e3.tar .
+2023-02-14 05:18:47.208484 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-02-14 05:18:47.208516 +0000 build-debian42: output: + gzip -fn dummy-backlight-33420931ad20f1e3.tar
+2023-02-14 05:18:47.209641 +0000 build-debian42: output: ~
+2023-02-14 05:18:47.211159 +0000 build-debian42: output: + popd
+2023-02-14 05:18:47.212027 +0000 build-debian42: output: ++ head -1
+2023-02-14 05:18:47.212738 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-02-14 05:18:47.213417 +0000 build-debian42: output: ++ tar --version
+2023-02-14 05:18:47.216957 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-02-14 05:18:47.217600 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel-latest/v4l2loopback
+2023-02-14 05:18:47.218110 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel-latest/v4l2loopback
+2023-02-14 05:18:47.218131 +0000 build-debian42: output: /builder/linux-kernel-latest/v4l2loopback ~
+2023-02-14 05:18:47.218337 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-02-14 05:18:47.218359 +0000 build-debian42: output: + GIT_TARBALL_NAME=v4l2loopback-1ecf810f0d687b64.tar
+2023-02-14 05:18:47.218466 +0000 build-debian42: output: + '[' xv4l2loopback/ '!=' x ']'
+2023-02-14 05:18:47.218484 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=v4l2loopback/
+2023-02-14 05:18:47.218492 +0000 build-debian42: output: + pushd /builder/linux-kernel-latest/v4l2loopback
+2023-02-14 05:18:47.218498 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-02-14 05:18:47.220206 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1659652207
+2023-02-14 05:18:47.221538 +0000 build-debian42: output: ++ sort -V
+2023-02-14 05:18:47.221559 +0000 build-debian42: output: ++ head -n1
+2023-02-14 05:18:47.223528 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-02-14 05:18:47.224242 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-02-14 05:18:47.224279 +0000 build-debian42: output: + tar --sort=name --mtime=@1659652207 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%v4l2loopback/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude v4l2loopback-1ecf810f0d687b64.tar -cf v4l2loopback-1ecf810f0d687b64.tar .
+2023-02-14 05:18:47.227422 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-02-14 05:18:47.227455 +0000 build-debian42: output: + gzip -fn v4l2loopback-1ecf810f0d687b64.tar
+2023-02-14 05:18:47.239053 +0000 build-debian42: output: ~
+2023-02-14 05:18:47.241488 +0000 build-debian42: output: + popd
+2023-02-14 05:18:47.245692 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__linux-utils__linux-utils-97271bab41f588b0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel-latest
+2023-02-14 05:18:47.408719 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__dummy-psu__dummy-psu-49475d88d94e079b.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel-latest
+2023-02-14 05:18:47.727148 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__dummy-backlight__dummy-backlight-33420931ad20f1e3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel-latest
+2023-02-14 05:18:47.902612 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9540 qubesbuilder.FileCopyOut+__builder__linux-kernel-latest__v4l2loopback__v4l2loopback-1ecf810f0d687b64.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel-latest
+2023-02-14 05:18:52.373940 +0000 build-debian42: > done
+2023-02-14 05:18:52.373989 +0000 > closing log
