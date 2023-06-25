@@ -1,0 +1,461 @@
+2023-06-25 13:06:11.282444 +0000 > starting log
+2023-06-25 13:06:11.282634 +0000 build-centos42: > starting build with log
+2023-06-25 13:06:11.282642 +0000 build-centos42: >> args:
+2023-06-25 13:06:11.282647 +0000 build-centos42: >>   ()
+2023-06-25 13:06:11.282652 +0000 build-centos42: >> component:
+2023-06-25 13:06:11.282656 +0000 build-centos42: >>   linux-kernel
+2023-06-25 13:06:11.282662 +0000 build-centos42: >>     commit-hash: c65440bb6725c06ebdee1b082a30b9bb71061062
+2023-06-25 13:06:11.282671 +0000 build-centos42: >>     source-hash: 7e63233144e03ba4dc109e6c686bcc3a74365fbd57bb053c0dc587c49163c404326600387004b357ca314c70c94877082844f483c19baa087afbcf53e6720a71
+2023-06-25 13:06:11.285571 +0000 build-centos42: >> distributions:
+2023-06-25 13:06:11.285603 +0000 build-centos42: >>   [<QubesDistribution vm-centos-stream-8.x86_64>]
+2023-06-25 13:06:11.285610 +0000 build-centos42: linux-kernel: source already fetched. Updating.
+2023-06-25 13:06:47.067014 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3881 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-06-25 13:06:48.092484 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3881 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-06-25 13:06:48.635365 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3881 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-06-25 13:06:48.955846 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3881 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-06-25 13:06:49.161071 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3881 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/linux-kernel
+2023-06-25 13:06:51.839729 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3881 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-06-25 13:06:51.971824 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp3881 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component linux-kernel --git-branch stable-6.1 --git-url https://github.com/QubesOS/qubes-linux-kernel.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only''.
+2023-06-25 13:06:52.130039 +0000 build-centos42: output: + unset CLEAN
+2023-06-25 13:06:52.131202 +0000 build-centos42: output: + CLEAN=0
+2023-06-25 13:06:52.131233 +0000 build-centos42: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT FETCH_VERSIONS_ONLY MAINTAINERS
+2023-06-25 13:06:52.131257 +0000 build-centos42: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component linux-kernel --git-branch stable-6.1 --git-url https://github.com/QubesOS/qubes-linux-kernel.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only
+2023-06-25 13:06:52.134342 +0000 build-centos42: output: + OPTS=' --component '\''linux-kernel'\'' --git-branch '\''stable-6.1'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-06-25 13:06:52.134372 +0000 build-centos42: output: + eval set -- ' --component '\''linux-kernel'\'' --git-branch '\''stable-6.1'\'' --git-url '\''https://github.com/QubesOS/qubes-linux-kernel.git'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --fetch-versions-only --'
+2023-06-25 13:06:52.134536 +0000 build-centos42: output: ++ set -- --component linux-kernel --git-branch stable-6.1 --git-url https://github.com/QubesOS/qubes-linux-kernel.git --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --fetch-versions-only --
+2023-06-25 13:06:52.134548 +0000 build-centos42: output: + [[ 12 -gt 0 ]]
+2023-06-25 13:06:52.134555 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.134560 +0000 build-centos42: output: + COMPONENT=linux-kernel
+2023-06-25 13:06:52.134565 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134569 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134574 +0000 build-centos42: output: + [[ 10 -gt 0 ]]
+2023-06-25 13:06:52.134578 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.134583 +0000 build-centos42: output: + BRANCH=stable-6.1
+2023-06-25 13:06:52.134587 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134592 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134694 +0000 build-centos42: output: + [[ 8 -gt 0 ]]
+2023-06-25 13:06:52.134704 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.134711 +0000 build-centos42: output: + GIT_URL=https://github.com/QubesOS/qubes-linux-kernel.git
+2023-06-25 13:06:52.134716 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134721 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134725 +0000 build-centos42: output: + [[ 6 -gt 0 ]]
+2023-06-25 13:06:52.134730 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.134734 +0000 build-centos42: output: + KEYRING_DIR_GIT=/builder/keyring
+2023-06-25 13:06:52.134739 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134845 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134855 +0000 build-centos42: output: + [[ 4 -gt 0 ]]
+2023-06-25 13:06:52.134860 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.134866 +0000 build-centos42: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2023-06-25 13:06:52.134870 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134874 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.134878 +0000 build-centos42: output: + [[ 2 -gt 0 ]]
+2023-06-25 13:06:52.134883 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.135008 +0000 build-centos42: output: + FETCH_VERSIONS_ONLY=1
+2023-06-25 13:06:52.135018 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.135024 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-06-25 13:06:52.135028 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:06:52.135032 +0000 build-centos42: output: + shift
+2023-06-25 13:06:52.135037 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-06-25 13:06:52.135042 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-06-25 13:06:52.135046 +0000 build-centos42: output: -]*$ ]]
+2023-06-25 13:06:52.135051 +0000 build-centos42: output: + [[ '' =~ ^[A-Za-z0-9
+2023-06-25 13:06:52.135145 +0000 build-centos42: output: -]*$ ]]
+2023-06-25 13:06:52.135156 +0000 build-centos42: output: + [[ -n linux-kernel ]]
+2023-06-25 13:06:52.135161 +0000 build-centos42: output: + '[' -z '' ']'
+2023-06-25 13:06:52.135166 +0000 build-centos42: output: + REPO=linux-kernel
+2023-06-25 13:06:52.135171 +0000 build-centos42: output: + '[' -z /builder/keyring ']'
+2023-06-25 13:06:52.135175 +0000 build-centos42: output: + '[' -z '' ']'
+2023-06-25 13:06:52.135298 +0000 build-centos42: output: + GIT_SUFFIX=.git
+2023-06-25 13:06:52.135308 +0000 build-centos42: output: + '[' -z stable-6.1 ']'
+2023-06-25 13:06:52.135313 +0000 build-centos42: output: + '[' -n '' ']'
+2023-06-25 13:06:52.135319 +0000 build-centos42: output: + '[' -z https://github.com/QubesOS/qubes-linux-kernel.git ']'
+2023-06-25 13:06:52.135464 +0000 build-centos42: output: + '[' -n '' ']'
+2023-06-25 13:06:52.135489 +0000 build-centos42: output: + case ${IGNORE_MISSING=0} in
+2023-06-25 13:06:52.135494 +0000 build-centos42: output: + :
+2023-06-25 13:06:52.135500 +0000 build-centos42: output: + case ${GIT_CLONE_FAST=0} in
+2023-06-25 13:06:52.135504 +0000 build-centos42: output: + :
+2023-06-25 13:06:52.135509 +0000 build-centos42: output: + GIT_OPTIONS=()
+2023-06-25 13:06:52.135513 +0000 build-centos42: output: + [[ 0 = \1 ]]
+2023-06-25 13:06:52.135518 +0000 build-centos42: output: + GIT_MERGE_OPTS=("--ff-only")
+2023-06-25 13:06:52.136008 +0000 build-centos42: output: + [[ stable-6.1 =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2023-06-25 13:06:52.136023 +0000 build-centos42: output: + [[ linux-kernel =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2023-06-25 13:06:52.136028 +0000 build-centos42: output: + trap exit_clean 0 1 2 3 6 15
+2023-06-25 13:06:52.136033 +0000 build-centos42: output: + fresh_clone=false
+2023-06-25 13:06:52.136037 +0000 build-centos42: output: + [[ '' = \1 ]]
+2023-06-25 13:06:52.136053 +0000 build-centos42: output: + [[ -d linux-kernel ]]
+2023-06-25 13:06:52.136058 +0000 build-centos42: output: + cd linux-kernel
+2023-06-25 13:06:52.136314 +0000 build-centos42: output: ++ git rev-parse --is-shallow-repository
+2023-06-25 13:06:52.156472 +0000 build-centos42: output: + is_shallow=false
+2023-06-25 13:06:52.156506 +0000 build-centos42: output: + [[ 0 -ne 1 ]]
+2023-06-25 13:06:52.156512 +0000 build-centos42: output: + [[ false = \t\r\u\e ]]
+2023-06-25 13:06:52.156517 +0000 build-centos42: output: + print_headers
+2023-06-25 13:06:52.156524 +0000 build-centos42: output: + '[' -z '' ']'
+2023-06-25 13:06:52.156530 +0000 build-centos42: output: + GIT_INFOS='https://github.com/QubesOS/qubes-linux-kernel.git stable-6.1'
+2023-06-25 13:06:52.156536 +0000 build-centos42: output: + echo '-> Updating sources for linux-kernel...'
+2023-06-25 13:06:52.156675 +0000 build-centos42: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-linux-kernel.git stable-6.1...'
+2023-06-25 13:06:52.156710 +0000 build-centos42: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-linux-kernel.git stable-6.1
+2023-06-25 13:06:52.156720 +0000 build-centos42: output: -> Updating sources for linux-kernel...
+2023-06-25 13:06:52.156734 +0000 build-centos42: output: --> Fetching from https://github.com/QubesOS/qubes-linux-kernel.git stable-6.1...
+2023-06-25 13:06:56.133368 +0000 build-centos42: output: ++ git rev-parse -q --verify 'FETCH_HEAD^{commit}'
+2023-06-25 13:06:56.134356 +0000 build-centos42: output: + rev=d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.136664 +0000 build-centos42: output: + '[' 1 == 1 ']'
+2023-06-25 13:06:56.136679 +0000 build-centos42: output: + git tag --points-at d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.136684 +0000 build-centos42: output: + grep -q '^v'
+2023-06-25 13:06:56.146404 +0000 build-centos42: output: + VERIFY_REF=d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.146451 +0000 build-centos42: output: + fresh_clone=false
+2023-06-25 13:06:56.146467 +0000 build-centos42: output: + cd -
+2023-06-25 13:06:56.146484 +0000 build-centos42: output: + export CHECK=signed-tag
+2023-06-25 13:06:56.146497 +0000 build-centos42: output: + CHECK=signed-tag
+2023-06-25 13:06:56.146510 +0000 build-centos42: output: + verify=true
+2023-06-25 13:06:56.146522 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-06-25 13:06:56.146534 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-06-25 13:06:56.146551 +0000 build-centos42: output: ++ git -C linux-kernel rev-parse -q --verify d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.146568 +0000 build-centos42: output: + VERIFY_REF=d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.146580 +0000 build-centos42: output: + '[' true = false ']'
+2023-06-25 13:06:56.146596 +0000 build-centos42: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2023-06-25 13:06:56.146614 +0000 build-centos42: output: + echo '--> Verifying tags...'
+2023-06-25 13:06:56.146650 +0000 build-centos42: output: --> Verifying tags...
+2023-06-25 13:06:56.146670 +0000 build-centos42: output: ++ readlink -m /builder/keyring
+2023-06-25 13:06:56.147384 +0000 build-centos42: output: + GNUPGHOME=/builder/keyring
+2023-06-25 13:06:56.147405 +0000 build-centos42: output: + export GNUPGHOME
+2023-06-25 13:06:56.147411 +0000 build-centos42: output: + '[' '!' -d /builder/keyring ']'
+2023-06-25 13:06:56.147417 +0000 build-centos42: output: + mkdir -p /builder/keyring
+2023-06-25 13:06:56.147763 +0000 build-centos42: output: + chmod 700 /builder/keyring
+2023-06-25 13:06:56.148068 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-06-25 13:06:56.157818 +0000 build-centos42: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2023-06-25 13:06:56.160502 +0000 build-centos42: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2023-06-25 13:06:56.160525 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2023-06-25 13:06:56.172556 +0000 build-centos42: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2023-06-25 13:06:56.192062 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2023-06-25 13:06:56.192407 +0000 build-centos42: output: gpg: Total number processed: 3
+2023-06-25 13:06:56.193138 +0000 build-centos42: output: gpg:               imported: 3
+2023-06-25 13:06:56.193159 +0000 build-centos42: output: gpg: no ultimately trusted keys found
+2023-06-25 13:06:56.194484 +0000 build-centos42: output: + gpg --import-ownertrust
+2023-06-25 13:06:56.194499 +0000 build-centos42: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2023-06-25 13:06:56.195852 +0000 build-centos42: output: gpg: inserting ownertrust of 6
+2023-06-25 13:06:56.196265 +0000 build-centos42: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2023-06-25 13:06:56.196322 +0000 build-centos42: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2023-06-25 13:06:56.199188 +0000 build-centos42: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2023-06-25 13:06:56.199400 +0000 build-centos42: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2023-06-25 13:06:56.200307 +0000 build-centos42: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2023-06-25 13:06:56.200352 +0000 build-centos42: output: gpg: Total number processed: 3
+2023-06-25 13:06:56.200393 +0000 build-centos42: output: gpg:              unchanged: 3
+2023-06-25 13:06:56.200552 +0000 build-centos42: output: + touch /builder/keyring/pubring.gpg
+2023-06-25 13:06:56.202211 +0000 build-centos42: output: + gpgconf --kill gpg-agent
+2023-06-25 13:06:56.210242 +0000 build-centos42: output: + pushd linux-kernel
+2023-06-25 13:06:56.210284 +0000 build-centos42: output: + expected_hash=d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.210296 +0000 build-centos42: output: + hash_len=40
+2023-06-25 13:06:56.210306 +0000 build-centos42: output: + '[' 40 -ne 40 ']'
+2023-06-25 13:06:56.210317 +0000 build-centos42: output: + [[ d7ba7102ccfaad89a41665ac70a7dec02e80e537 =~ ^[a-f0-9]+$ ]]
+2023-06-25 13:06:56.210330 +0000 build-centos42: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-06-25 13:06:56.210339 +0000 build-centos42: output: ++ head -c 500
+2023-06-25 13:06:56.210394 +0000 build-centos42: output: ++ git tag --points-at=d7ba7102ccfaad89a41665ac70a7dec02e80e537 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2023-06-25 13:06:56.223235 +0000 build-centos42: output: + tags=173cec355b2dfbece3b6907d4b560b07f3e23034:d7ba7102ccfaad89a41665ac70a7dec02e80e537:
+2023-06-25 13:06:56.223283 +0000 build-centos42: output: + for tag in $tags
+2023-06-25 13:06:56.223290 +0000 build-centos42: output: + (( 82 != hash_len * 2 + 2 ))
+2023-06-25 13:06:56.223299 +0000 build-centos42: output: + [[ :d7ba7102ccfaad89a41665ac70a7dec02e80e537: == \:\d\7\b\a\7\1\0\2\c\c\f\a\a\d\8\9\a\4\1\6\6\5\a\c\7\0\a\7\d\e\c\0\2\e\8\0\e\5\3\7\: ]]
+2023-06-25 13:06:56.223305 +0000 build-centos42: output: + tag=173cec355b2dfbece3b6907d4b560b07f3e23034
+2023-06-25 13:06:56.223311 +0000 build-centos42: output: + verify_git_obj tag 173cec355b2dfbece3b6907d4b560b07f3e23034
+2023-06-25 13:06:56.223316 +0000 build-centos42: output: + local content newsig_number
+2023-06-25 13:06:56.223563 +0000 build-centos42: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 173cec355b2dfbece3b6907d4b560b07f3e23034
+2023-06-25 13:06:56.227029 +0000 build-centos42: output: + content='[GNUPG:] NEWSIG
+2023-06-25 13:06:56.227057 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.227069 +0000 build-centos42: output: [GNUPG:] SIG_ID WB068/o7U6ogk+EX+TeGDQSllJE 2023-06-25 1687698333
+2023-06-25 13:06:56.227095 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.227100 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.227107 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.227112 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.227119 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-06-25 13:06:56.227128 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-06-25 1687698333 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-06-25 13:06:56.227134 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-06-25 13:06:56.227158 +0000 build-centos42: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2023-06-25 13:06:56.228065 +0000 build-centos42: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2023-06-25 13:06:56.228086 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.228094 +0000 build-centos42: output: [GNUPG:] SIG_ID WB068/o7U6ogk+EX+TeGDQSllJE 2023-06-25 1687698333
+2023-06-25 13:06:56.228100 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.228106 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.228112 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.228157 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.228260 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-06-25 13:06:56.228631 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-06-25 1687698333 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-06-25 13:06:56.228647 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-06-25 13:06:56.228653 +0000 build-centos42: output: + newsig_number=1
+2023-06-25 13:06:56.228658 +0000 build-centos42: output: + '[' 1 = 1 ']'
+2023-06-25 13:06:56.228664 +0000 build-centos42: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2023-06-25 13:06:56.229442 +0000 build-centos42: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2023-06-25 13:06:56.229458 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.229477 +0000 build-centos42: output: [GNUPG:] SIG_ID WB068/o7U6ogk+EX+TeGDQSllJE 2023-06-25 1687698333
+2023-06-25 13:06:56.229484 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2023-06-25 13:06:56.229490 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.229495 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.229501 +0000 build-centos42: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2023-06-25 13:06:56.229508 +0000 build-centos42: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2023-06-25 13:06:56.229517 +0000 build-centos42: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2023-06-25 1687698333 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2023-06-25 13:06:56.229522 +0000 build-centos42: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2023-06-25 13:06:56.231481 +0000 build-centos42: output: ---> Good tag 173cec355b2dfbece3b6907d4b560b07f3e23034
+2023-06-25 13:06:56.231499 +0000 build-centos42: output: + echo '---> Good tag 173cec355b2dfbece3b6907d4b560b07f3e23034'
+2023-06-25 13:06:56.231505 +0000 build-centos42: output: + '[' -z x ']'
+2023-06-25 13:06:56.231510 +0000 build-centos42: output: + popd
+2023-06-25 13:06:56.231515 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-06-25 13:06:56.231519 +0000 build-centos42: output: + pushd linux-kernel
+2023-06-25 13:06:56.231524 +0000 build-centos42: output: ++ exec git rev-parse --abbrev-ref HEAD
+2023-06-25 13:06:56.231529 +0000 build-centos42: output: + CURRENT_BRANCH=stable-6.1
+2023-06-25 13:06:56.231534 +0000 build-centos42: output: + '[' stable-6.1 '!=' stable-6.1 ']'
+2023-06-25 13:06:56.231539 +0000 build-centos42: output: + false
+2023-06-25 13:06:56.231543 +0000 build-centos42: output: + false
+2023-06-25 13:06:56.231547 +0000 build-centos42: output: + echo '--> Merging...'
+2023-06-25 13:06:56.231554 +0000 build-centos42: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q d7ba7102ccfaad89a41665ac70a7dec02e80e537
+2023-06-25 13:06:56.231560 +0000 build-centos42: output: --> Merging...
+2023-06-25 13:06:56.237453 +0000 build-centos42: output: --> Updating submodules
+2023-06-25 13:06:56.237486 +0000 build-centos42: output: + tracking_branch=refs/remotes//stable-6.1
+2023-06-25 13:06:56.237493 +0000 build-centos42: output: + '[' -f .git/refs/remotes//stable-6.1 ']'
+2023-06-25 13:06:56.237498 +0000 build-centos42: output: + '[' -e .gitmodules ']'
+2023-06-25 13:06:56.237503 +0000 build-centos42: output: + echo -e '--> Updating submodules'
+2023-06-25 13:06:56.237508 +0000 build-centos42: output: + git submodule init
+2023-06-25 13:06:56.260194 +0000 build-centos42: output: + git submodule update --recursive
+2023-06-25 13:06:56.288944 +0000 build-centos42: output: + popd
+2023-06-25 13:06:56.288993 +0000 build-centos42: output: + exit_clean
+2023-06-25 13:06:56.288999 +0000 build-centos42: output: + local exit_code=0
+2023-06-25 13:06:56.289004 +0000 build-centos42: output: + '[' 0 -gt 0 ']'
+2023-06-25 13:06:56.289008 +0000 build-centos42: output: + exit 0
+2023-06-25 13:06:56.337545 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3881 qubesbuilder.FileCopyOut+__builder__linux-kernel /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/sources
+2023-06-25 13:07:33.257800 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3465 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-06-25 13:07:34.517433 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3465 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-06-25 13:07:48.762341 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3465 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-06-25 13:07:49.065398 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3465 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-06-25 13:07:49.248154 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3465 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/linux-kernel
+2023-06-25 13:07:50.531869 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3465 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-06-25 13:08:08.108110 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp3465 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/linux-kernel --file-name linux-6.1.35.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign --uncompress''.
+2023-06-25 13:08:08.639396 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2023-06-25 13:08:08.640284 +0000 build-centos42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/linux-kernel --file-name linux-6.1.35.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign --uncompress
+2023-06-25 13:08:08.642322 +0000 build-centos42: output: + OPTS=' --output-dir '\''/builder/linux-kernel'\'' --file-name '\''linux-6.1.35.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign'\'' --uncompress --'
+2023-06-25 13:08:08.642360 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/builder/linux-kernel'\'' --file-name '\''linux-6.1.35.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign'\'' --uncompress --'
+2023-06-25 13:08:08.642461 +0000 build-centos42: output: ++ set -- --output-dir /builder/linux-kernel --file-name linux-6.1.35.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign --uncompress --
+2023-06-25 13:08:08.642472 +0000 build-centos42: output: + [[ 10 -gt 0 ]]
+2023-06-25 13:08:08.642478 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:08:08.642484 +0000 build-centos42: output: + OUTPUT_DIR=/builder/linux-kernel
+2023-06-25 13:08:08.642488 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642493 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642497 +0000 build-centos42: output: + [[ 8 -gt 0 ]]
+2023-06-25 13:08:08.642502 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:08:08.642507 +0000 build-centos42: output: + FILE_NAME=linux-6.1.35.tar.xz
+2023-06-25 13:08:08.642641 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642652 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642657 +0000 build-centos42: output: + [[ 6 -gt 0 ]]
+2023-06-25 13:08:08.642662 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:08:08.642669 +0000 build-centos42: output: + FILE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz
+2023-06-25 13:08:08.642673 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642678 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642682 +0000 build-centos42: output: + [[ 4 -gt 0 ]]
+2023-06-25 13:08:08.642687 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:08:08.642693 +0000 build-centos42: output: + SIGNATURE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign
+2023-06-25 13:08:08.642782 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642792 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642797 +0000 build-centos42: output: + [[ 2 -gt 0 ]]
+2023-06-25 13:08:08.642802 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:08:08.642808 +0000 build-centos42: output: + UNCOMPRESS=1
+2023-06-25 13:08:08.642812 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642816 +0000 build-centos42: output: + shift
+2023-06-25 13:08:08.642887 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-06-25 13:08:08.642899 +0000 build-centos42: output: + '[' -z https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz ']'
+2023-06-25 13:08:08.642907 +0000 build-centos42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2023-06-25 13:08:08.642913 +0000 build-centos42: output: + '[' -z linux-6.1.35.tar.xz ']'
+2023-06-25 13:08:08.642919 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.35.tar.xz
+2023-06-25 13:08:08.642943 +0000 build-centos42: output: + '[' -n /builder/linux-kernel ']'
+2023-06-25 13:08:08.642948 +0000 build-centos42: output: + mkdir -p /builder/linux-kernel
+2023-06-25 13:08:08.644071 +0000 build-centos42: output: + cd /builder/linux-kernel
+2023-06-25 13:08:08.644105 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.1.35.tar.xz -- https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.xz
+2023-06-25 13:09:38.573075 +0000 build-centos42: output: + '[' 1 == 1 ']'
+2023-06-25 13:09:38.573124 +0000 build-centos42: output: + '[' linux-6.1.35.tar.xz '!=' linux-6.1.35.tar.xz ']'
+2023-06-25 13:09:38.573131 +0000 build-centos42: output: + '[' linux-6.1.35.tar '!=' linux-6.1.35.tar.xz ']'
+2023-06-25 13:09:38.573477 +0000 build-centos42: output: + unxz untrusted_linux-6.1.35.tar.xz
+2023-06-25 13:09:47.888534 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.35.tar
+2023-06-25 13:09:47.888608 +0000 build-centos42: output: + '[' -n https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign ']'
+2023-06-25 13:09:47.888628 +0000 build-centos42: output: ++ basename https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign
+2023-06-25 13:09:47.898875 +0000 build-centos42: output: + SIGNATURE_FILE_NAME=linux-6.1.35.tar.sign
+2023-06-25 13:09:47.898951 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.1.35.tar.sign
+2023-06-25 13:09:47.898978 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.1.35.tar.sign https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.35.tar.sign
+2023-06-25 13:09:49.389718 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3465 qubesbuilder.FileCopyOut+__builder__linux-kernel__untrusted_linux-6.1.35.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49
+2023-06-25 13:09:57.512514 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3465 qubesbuilder.FileCopyOut+__builder__linux-kernel__untrusted_linux-6.1.35.tar.sign /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49
+2023-06-25 13:10:07.462557 +0000 build-centos42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc'.
+2023-06-25 13:10:07.471402 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2023-06-25 13:10:07.471810 +0000 build-centos42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc
+2023-06-25 13:10:07.472890 +0000 build-centos42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc'\'' --'
+2023-06-25 13:10:07.472924 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc'\'' --'
+2023-06-25 13:10:07.472943 +0000 build-centos42: output: ++ set -- --output-dir /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49 --untrusted-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc --
+2023-06-25 13:10:07.472949 +0000 build-centos42: output: + PUBKEY_FILE=()
+2023-06-25 13:10:07.472954 +0000 build-centos42: output: + [[ 11 -gt 0 ]]
+2023-06-25 13:10:07.472959 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.472964 +0000 build-centos42: output: + OUTPUT_DIR=/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49
+2023-06-25 13:10:07.472969 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.472974 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.472978 +0000 build-centos42: output: + [[ 9 -gt 0 ]]
+2023-06-25 13:10:07.472982 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.472989 +0000 build-centos42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar
+2023-06-25 13:10:07.472994 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473218 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473232 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2023-06-25 13:10:07.473237 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.473244 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign
+2023-06-25 13:10:07.473250 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473254 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473259 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2023-06-25 13:10:07.473263 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.473268 +0000 build-centos42: output: + PUBKEY_FILE+=("$2")
+2023-06-25 13:10:07.473272 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473276 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473290 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2023-06-25 13:10:07.473294 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.473299 +0000 build-centos42: output: + PUBKEY_FILE+=("$2")
+2023-06-25 13:10:07.473303 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473307 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473312 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-06-25 13:10:07.473316 +0000 build-centos42: output: + case "$1" in
+2023-06-25 13:10:07.473320 +0000 build-centos42: output: + shift
+2023-06-25 13:10:07.473412 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-06-25 13:10:07.473432 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar ']'
+2023-06-25 13:10:07.473439 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49 ']'
+2023-06-25 13:10:07.473445 +0000 build-centos42: output: + mkdir -p /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49
+2023-06-25 13:10:07.474230 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar
+2023-06-25 13:10:07.475453 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.1.35.tar
+2023-06-25 13:10:07.475469 +0000 build-centos42: output: + FILE_NAME=linux-6.1.35.tar
+2023-06-25 13:10:07.475475 +0000 build-centos42: output: + '[' -z '' ']'
+2023-06-25 13:10:07.475482 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign ']'
+2023-06-25 13:10:07.475487 +0000 build-centos42: output: + '[' -n '' ']'
+2023-06-25 13:10:07.475494 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign ']'
+2023-06-25 13:10:07.475500 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc ']'
+2023-06-25 13:10:07.475507 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign ']'
+2023-06-25 13:10:07.475513 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign ']'
+2023-06-25 13:10:07.475519 +0000 build-centos42: output: + '[' '!' -e /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc ']'
+2023-06-25 13:10:07.475524 +0000 build-centos42: output: + '[' -n '' ']'
+2023-06-25 13:10:07.475530 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign ']'
+2023-06-25 13:10:07.475537 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc ']'
+2023-06-25 13:10:07.475671 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign
+2023-06-25 13:10:07.476075 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.1.35.tar.sign
+2023-06-25 13:10:07.476092 +0000 build-centos42: output: + SIGNATURE_FILE_NAME=linux-6.1.35.tar.sign
+2023-06-25 13:10:07.476324 +0000 build-centos42: output: ++ mktemp -u
+2023-06-25 13:10:07.477272 +0000 build-centos42: output: + keyring=/tmp/tmp.flwAC0pxKh
+2023-06-25 13:10:07.477288 +0000 build-centos42: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2023-06-25 13:10:07.477297 +0000 build-centos42: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.flwAC0pxKh -q --import /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-2-key.asc
+2023-06-25 13:10:07.485213 +0000 build-centos42: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2023-06-25 13:10:07.485328 +0000 build-centos42: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.flwAC0pxKh -q --import /home/user/builder-r4.2-centos/sources/linux-kernel/kernel.org-1-key.asc
+2023-06-25 13:10:07.487564 +0000 build-centos42: output: + gpgv --keyring /tmp/tmp.flwAC0pxKh /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar
+2023-06-25 13:10:08.595925 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar.sign /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/linux-6.1.35.tar.sign
+2023-06-25 13:10:08.597670 +0000 build-centos42: output: + rm -rf /tmp/tmp.flwAC0pxKh
+2023-06-25 13:10:08.598663 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/untrusted_linux-6.1.35.tar /home/user/builder-r4.2-centos/tmp/tmpg1v8kq49/linux-6.1.35.tar
+2023-06-25 13:10:41.778456 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp4639 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-06-25 13:10:42.522435 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4639 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/linux-kernel
+2023-06-25 13:10:46.384747 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp4639 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-06-25 13:10:46.533724 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp4639 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel/hash /builder/linux-kernel/vtags && cd /builder && git -C /builder/linux-kernel rev-parse '\''HEAD^{}'\'' >> /builder/linux-kernel/hash && git -C /builder/linux-kernel tag --points-at HEAD --list '\''v*'\'' >> /builder/linux-kernel/vtags''.
+2023-06-25 13:10:46.718096 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4639 qubesbuilder.FileCopyOut+__builder__linux-kernel__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpdcrf0_fk
+2023-06-25 13:10:46.864158 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4639 qubesbuilder.FileCopyOut+__builder__linux-kernel__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpdcrf0_fk
+2023-06-25 13:11:08.073528 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3843 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-06-25 13:11:08.466322 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3843 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/linux-kernel
+2023-06-25 13:11:28.233012 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp3843 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-06-25 13:11:28.379276 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp3843 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel/modules && cd /builder && git -C /builder/linux-kernel/linux-utils rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-psu rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-backlight rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/v4l2loopback rev-parse HEAD >> /builder/linux-kernel/modules''.
+2023-06-25 13:11:28.583083 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3843 qubesbuilder.FileCopyOut+__builder__linux-kernel__modules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpdcrf0_fk
+2023-06-25 13:11:50.271867 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1794 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-06-25 13:11:51.246018 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/linux-kernel
+2023-06-25 13:11:52.855255 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1794 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-06-25 13:11:53.140783 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1794 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-06-25 13:11:53.642703 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-06-25 13:11:54.393674 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1794 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-06-25 13:12:11.803512 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp1794 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/linux-utils linux-utils-97271bab41f588b0.tar.gz linux-utils/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-psu dummy-psu-49475d88d94e079b.tar.gz dummy-psu/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-backlight dummy-backlight-33420931ad20f1e3.tar.gz dummy-backlight/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/v4l2loopback v4l2loopback-1ecf810f0d687b64.tar.gz v4l2loopback/''.
+2023-06-25 13:12:11.955766 +0000 build-centos42: output: ++ tar --version
+2023-06-25 13:12:11.955811 +0000 build-centos42: output: ++ awk '{print $4}'
+2023-06-25 13:12:11.955817 +0000 build-centos42: output: ++ head -1
+2023-06-25 13:12:11.969693 +0000 build-centos42: output: + TAR_VERSION=1.34
+2023-06-25 13:12:11.969750 +0000 build-centos42: output: ++ readlink -f /builder/linux-kernel/linux-utils
+2023-06-25 13:12:11.970671 +0000 build-centos42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/linux-utils
+2023-06-25 13:12:11.970723 +0000 build-centos42: output: + GIT_ARCHIVE_TYPE=gz
+2023-06-25 13:12:11.970742 +0000 build-centos42: output: + GIT_TARBALL_NAME=linux-utils-97271bab41f588b0.tar
+2023-06-25 13:12:11.970756 +0000 build-centos42: output: + '[' xlinux-utils/ '!=' x ']'
+2023-06-25 13:12:11.970768 +0000 build-centos42: output: + GIT_ARCHIVE_PREFIX=linux-utils/
+2023-06-25 13:12:11.970782 +0000 build-centos42: output: + pushd /builder/linux-kernel/linux-utils
+2023-06-25 13:12:11.970794 +0000 build-centos42: output: ++ git log -1 --format=%ct
+2023-06-25 13:12:11.970848 +0000 build-centos42: output: /builder/linux-kernel/linux-utils ~
+2023-06-25 13:12:11.988818 +0000 build-centos42: output: + SOURCE_DATE_EPOCH=1603593639
+2023-06-25 13:12:11.988879 +0000 build-centos42: output: ++ printf '%s\n' 1.34 1.28
+2023-06-25 13:12:11.989679 +0000 build-centos42: output: ++ sort -V
+2023-06-25 13:12:11.989721 +0000 build-centos42: output: ++ head -n1
+2023-06-25 13:12:11.994688 +0000 build-centos42: output: + '[' 1.28 == 1.28 ']'
+2023-06-25 13:12:11.994766 +0000 build-centos42: output: + tar --sort=name --mtime=@1603593639 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%linux-utils/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude linux-utils-97271bab41f588b0.tar -cf linux-utils-97271bab41f588b0.tar .
+2023-06-25 13:12:11.996950 +0000 build-centos42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-06-25 13:12:11.996995 +0000 build-centos42: output: + gzip -fn linux-utils-97271bab41f588b0.tar
+2023-06-25 13:12:12.002822 +0000 build-centos42: output: + popd
+2023-06-25 13:12:12.002844 +0000 build-centos42: output: ~
+2023-06-25 13:12:12.003812 +0000 build-centos42: output: ++ tar --version
+2023-06-25 13:12:12.003994 +0000 build-centos42: output: ++ awk '{print $4}'
+2023-06-25 13:12:12.004891 +0000 build-centos42: output: ++ head -1
+2023-06-25 13:12:12.005740 +0000 build-centos42: output: + TAR_VERSION=1.34
+2023-06-25 13:12:12.005920 +0000 build-centos42: output: ++ readlink -f /builder/linux-kernel/dummy-psu
+2023-06-25 13:12:12.006822 +0000 build-centos42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-psu
+2023-06-25 13:12:12.006836 +0000 build-centos42: output: + GIT_ARCHIVE_TYPE=gz
+2023-06-25 13:12:12.006842 +0000 build-centos42: output: + GIT_TARBALL_NAME=dummy-psu-49475d88d94e079b.tar
+2023-06-25 13:12:12.006863 +0000 build-centos42: output: + '[' xdummy-psu/ '!=' x ']'
+2023-06-25 13:12:12.006868 +0000 build-centos42: output: + GIT_ARCHIVE_PREFIX=dummy-psu/
+2023-06-25 13:12:12.006874 +0000 build-centos42: output: + pushd /builder/linux-kernel/dummy-psu
+2023-06-25 13:12:12.006878 +0000 build-centos42: output: ++ git log -1 --format=%ct
+2023-06-25 13:12:12.006898 +0000 build-centos42: output: /builder/linux-kernel/dummy-psu ~
+2023-06-25 13:12:12.007793 +0000 build-centos42: output: + SOURCE_DATE_EPOCH=1602292420
+2023-06-25 13:12:12.008044 +0000 build-centos42: output: ++ printf '%s\n' 1.34 1.28
+2023-06-25 13:12:12.008058 +0000 build-centos42: output: ++ sort -V
+2023-06-25 13:12:12.008267 +0000 build-centos42: output: ++ head -n1
+2023-06-25 13:12:12.009171 +0000 build-centos42: output: + '[' 1.28 == 1.28 ']'
+2023-06-25 13:12:12.009198 +0000 build-centos42: output: + tar --sort=name --mtime=@1602292420 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-psu/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-psu-49475d88d94e079b.tar -cf dummy-psu-49475d88d94e079b.tar .
+2023-06-25 13:12:12.010556 +0000 build-centos42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-06-25 13:12:12.010570 +0000 build-centos42: output: + gzip -fn dummy-psu-49475d88d94e079b.tar
+2023-06-25 13:12:12.012187 +0000 build-centos42: output: ~
+2023-06-25 13:12:12.012224 +0000 build-centos42: output: + popd
+2023-06-25 13:12:12.013835 +0000 build-centos42: output: ++ tar --version
+2023-06-25 13:12:12.013856 +0000 build-centos42: output: ++ head -1
+2023-06-25 13:12:12.014114 +0000 build-centos42: output: ++ awk '{print $4}'
+2023-06-25 13:12:12.015430 +0000 build-centos42: output: + TAR_VERSION=1.34
+2023-06-25 13:12:12.015621 +0000 build-centos42: output: ++ readlink -f /builder/linux-kernel/dummy-backlight
+2023-06-25 13:12:12.016207 +0000 build-centos42: output: /builder/linux-kernel/dummy-backlight ~
+2023-06-25 13:12:12.016491 +0000 build-centos42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-backlight
+2023-06-25 13:12:12.016505 +0000 build-centos42: output: + GIT_ARCHIVE_TYPE=gz
+2023-06-25 13:12:12.016511 +0000 build-centos42: output: + GIT_TARBALL_NAME=dummy-backlight-33420931ad20f1e3.tar
+2023-06-25 13:12:12.016516 +0000 build-centos42: output: + '[' xdummy-backlight/ '!=' x ']'
+2023-06-25 13:12:12.016522 +0000 build-centos42: output: + GIT_ARCHIVE_PREFIX=dummy-backlight/
+2023-06-25 13:12:12.016527 +0000 build-centos42: output: + pushd /builder/linux-kernel/dummy-backlight
+2023-06-25 13:12:12.016692 +0000 build-centos42: output: ++ git log -1 --format=%ct
+2023-06-25 13:12:12.017819 +0000 build-centos42: output: + SOURCE_DATE_EPOCH=1600607528
+2023-06-25 13:12:12.018245 +0000 build-centos42: output: ++ sort -V
+2023-06-25 13:12:12.018258 +0000 build-centos42: output: ++ head -n1
+2023-06-25 13:12:12.018783 +0000 build-centos42: output: ++ printf '%s\n' 1.34 1.28
+2023-06-25 13:12:12.019609 +0000 build-centos42: output: + '[' 1.28 == 1.28 ']'
+2023-06-25 13:12:12.019634 +0000 build-centos42: output: + tar --sort=name --mtime=@1600607528 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-backlight/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-backlight-33420931ad20f1e3.tar -cf dummy-backlight-33420931ad20f1e3.tar .
+2023-06-25 13:12:12.020842 +0000 build-centos42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-06-25 13:12:12.020856 +0000 build-centos42: output: + gzip -fn dummy-backlight-33420931ad20f1e3.tar
+2023-06-25 13:12:12.021960 +0000 build-centos42: output: ~
+2023-06-25 13:12:12.022142 +0000 build-centos42: output: + popd
+2023-06-25 13:12:12.024177 +0000 build-centos42: output: ++ tar --version
+2023-06-25 13:12:12.024198 +0000 build-centos42: output: ++ awk '{print $4}'
+2023-06-25 13:12:12.024420 +0000 build-centos42: output: ++ head -1
+2023-06-25 13:12:12.025110 +0000 build-centos42: output: + TAR_VERSION=1.34
+2023-06-25 13:12:12.025161 +0000 build-centos42: output: ++ readlink -f /builder/linux-kernel/v4l2loopback
+2023-06-25 13:12:12.025972 +0000 build-centos42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/v4l2loopback
+2023-06-25 13:12:12.025996 +0000 build-centos42: output: + GIT_ARCHIVE_TYPE=gz
+2023-06-25 13:12:12.026031 +0000 build-centos42: output: + GIT_TARBALL_NAME=v4l2loopback-1ecf810f0d687b64.tar
+2023-06-25 13:12:12.026038 +0000 build-centos42: output: + '[' xv4l2loopback/ '!=' x ']'
+2023-06-25 13:12:12.026072 +0000 build-centos42: output: + GIT_ARCHIVE_PREFIX=v4l2loopback/
+2023-06-25 13:12:12.026095 +0000 build-centos42: output: + pushd /builder/linux-kernel/v4l2loopback
+2023-06-25 13:12:12.026161 +0000 build-centos42: output: /builder/linux-kernel/v4l2loopback ~
+2023-06-25 13:12:12.026362 +0000 build-centos42: output: ++ git log -1 --format=%ct
+2023-06-25 13:12:12.027265 +0000 build-centos42: output: + SOURCE_DATE_EPOCH=1659652207
+2023-06-25 13:12:12.027593 +0000 build-centos42: output: ++ sort -V
+2023-06-25 13:12:12.027607 +0000 build-centos42: output: ++ head -n1
+2023-06-25 13:12:12.028038 +0000 build-centos42: output: ++ printf '%s\n' 1.34 1.28
+2023-06-25 13:12:12.028887 +0000 build-centos42: output: + '[' 1.28 == 1.28 ']'
+2023-06-25 13:12:12.028929 +0000 build-centos42: output: + tar --sort=name --mtime=@1659652207 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%v4l2loopback/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude v4l2loopback-1ecf810f0d687b64.tar -cf v4l2loopback-1ecf810f0d687b64.tar .
+2023-06-25 13:12:12.030291 +0000 build-centos42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-06-25 13:12:12.030307 +0000 build-centos42: output: + gzip -fn v4l2loopback-1ecf810f0d687b64.tar
+2023-06-25 13:12:12.038252 +0000 build-centos42: output: + popd
+2023-06-25 13:12:12.038287 +0000 build-centos42: output: ~
+2023-06-25 13:12:12.042112 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyOut+__builder__linux-kernel__linux-utils__linux-utils-97271bab41f588b0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/distfiles/linux-kernel
+2023-06-25 13:12:12.293226 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyOut+__builder__linux-kernel__dummy-psu__dummy-psu-49475d88d94e079b.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/distfiles/linux-kernel
+2023-06-25 13:12:12.452069 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyOut+__builder__linux-kernel__dummy-backlight__dummy-backlight-33420931ad20f1e3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/distfiles/linux-kernel
+2023-06-25 13:12:12.614872 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1794 qubesbuilder.FileCopyOut+__builder__linux-kernel__v4l2loopback__v4l2loopback-1ecf810f0d687b64.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/distfiles/linux-kernel
+2023-06-25 13:12:16.211699 +0000 build-centos42: > done
+2023-06-25 13:12:16.211747 +0000 > closing log
