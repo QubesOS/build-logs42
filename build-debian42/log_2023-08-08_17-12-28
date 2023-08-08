@@ -1,0 +1,141 @@
+2023-08-08 17:12:28.642915 +0000 > starting log
+2023-08-08 17:12:28.643104 +0000 build-debian42: > starting build with log
+2023-08-08 17:12:28.643112 +0000 build-debian42: >> args:
+2023-08-08 17:12:28.643117 +0000 build-debian42: >>   ()
+2023-08-08 17:12:28.643122 +0000 build-debian42: >> component:
+2023-08-08 17:12:28.643127 +0000 build-debian42: >>   linux-kernel
+2023-08-08 17:12:28.643133 +0000 build-debian42: >>     commit-hash: b3b52e6bcc511dcd120f00d7b6fd4a8176dd104c
+2023-08-08 17:12:28.643142 +0000 build-debian42: >>     source-hash: a9bcbe96ffd676b79ce0bb8aeea36b0e65af16588f505371797b0e19f9cab5f39228becc03439c8dbc09eccc716df8620f3976af430a1fdf10e3b0d2c81958e5
+2023-08-08 17:12:28.643151 +0000 build-debian42: >> distributions:
+2023-08-08 17:12:28.643158 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-08-08 17:12:28.643164 +0000 build-debian42: linux-kernel: source already fetched. Updating.
+2023-08-08 17:12:53.161247 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8387 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-08-08 17:12:53.568091 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8387 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-08-08 17:12:54.029445 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8387 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-08-08 17:12:55.394308 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8387 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-08-08 17:12:55.659775 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8387 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel
+2023-08-08 17:12:57.337692 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp8387 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-08-08 17:12:57.826920 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp8387 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-linux-kernel.git /builder/linux-kernel /builder/keyring /builder/plugins/fetch/keys --git-branch stable-6.1 --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF --fetch-versions-only''.
+2023-08-08 17:13:01.244615 +0000 build-debian42: output: --> Verifying tags...
+2023-08-08 17:13:01.244668 +0000 build-debian42: output: ---> Good tag a666c4651f5c0adcfb6aac2abd3b5d3fea2a9dc7.
+2023-08-08 17:13:01.244676 +0000 build-debian42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2023-08-08 17:13:01.244715 +0000 build-debian42: output: --> Merging...
+2023-08-08 17:13:01.244813 +0000 build-debian42: output: --> Updating submodules
+2023-08-08 17:13:01.313421 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp8387 qubesbuilder.FileCopyOut+__builder__linux-kernel /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2023-08-08 17:13:44.018689 +0000 build-debian42: linux-kernel: file linux-6.1.43.tar already downloaded. Skipping.
+2023-08-08 17:14:06.874800 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6721 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-08-08 17:14:08.112596 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6721 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel
+2023-08-08 17:14:10.228489 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp6721 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-08-08 17:14:10.404665 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp6721 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel/hash /builder/linux-kernel/vtags && cd /builder && git -C /builder/linux-kernel rev-parse '\''HEAD^{}'\'' >> /builder/linux-kernel/hash && git -C /builder/linux-kernel tag --points-at HEAD --list '\''v*'\'' >> /builder/linux-kernel/vtags''.
+2023-08-08 17:14:10.917473 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6721 qubesbuilder.FileCopyOut+__builder__linux-kernel__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmp5qlw0_za
+2023-08-08 17:14:11.086600 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6721 qubesbuilder.FileCopyOut+__builder__linux-kernel__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmp5qlw0_za
+2023-08-08 17:14:35.480661 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2610 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-08-08 17:14:55.497081 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2610 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel
+2023-08-08 17:15:17.623692 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp2610 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-08-08 17:15:17.872479 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp2610 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/linux-kernel/modules && cd /builder && git -C /builder/linux-kernel/linux-utils rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-psu rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-backlight rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/v4l2loopback rev-parse HEAD >> /builder/linux-kernel/modules''.
+2023-08-08 17:15:18.197266 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2610 qubesbuilder.FileCopyOut+__builder__linux-kernel__modules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmp5qlw0_za
+2023-08-08 17:15:42.339528 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5643 bash -c 'rm -rf /builder/incoming/linux-kernel /builder/linux-kernel'
+2023-08-08 17:15:43.292750 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/linux-kernel
+2023-08-08 17:15:46.144634 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5643 bash -c 'mkdir -p /builder && mv /builder/incoming/linux-kernel /builder'
+2023-08-08 17:15:46.474790 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5643 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-08-08 17:15:46.986665 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-08-08 17:16:06.906887 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp5643 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-08-08 17:16:07.263722 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp5643 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/linux-utils linux-utils-97271bab41f588b0.tar.gz linux-utils/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-psu dummy-psu-49475d88d94e079b.tar.gz dummy-psu/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-backlight dummy-backlight-33420931ad20f1e3.tar.gz dummy-backlight/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/v4l2loopback v4l2loopback-1ecf810f0d687b64.tar.gz v4l2loopback/''.
+2023-08-08 17:16:07.775477 +0000 build-debian42: output: ++ head -1
+2023-08-08 17:16:07.775522 +0000 build-debian42: output: ++ tar --version
+2023-08-08 17:16:07.775545 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-08-08 17:16:07.812264 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-08-08 17:16:07.813228 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel/linux-utils
+2023-08-08 17:16:07.813590 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/linux-utils
+2023-08-08 17:16:07.813607 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-08-08 17:16:07.813614 +0000 build-debian42: output: + GIT_TARBALL_NAME=linux-utils-97271bab41f588b0.tar
+2023-08-08 17:16:07.813932 +0000 build-debian42: output: + '[' xlinux-utils/ '!=' x ']'
+2023-08-08 17:16:07.813946 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=linux-utils/
+2023-08-08 17:16:07.813952 +0000 build-debian42: output: + pushd /builder/linux-kernel/linux-utils
+2023-08-08 17:16:07.814144 +0000 build-debian42: output: /builder/linux-kernel/linux-utils ~
+2023-08-08 17:16:07.814838 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-08-08 17:16:07.848539 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1603593639
+2023-08-08 17:16:07.848592 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-08-08 17:16:07.848599 +0000 build-debian42: output: ++ sort -V
+2023-08-08 17:16:07.848605 +0000 build-debian42: output: ++ head -n1
+2023-08-08 17:16:07.852285 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-08-08 17:16:07.852370 +0000 build-debian42: output: + tar --sort=name --mtime=@1603593639 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%linux-utils/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude linux-utils-97271bab41f588b0.tar -cf linux-utils-97271bab41f588b0.tar .
+2023-08-08 17:16:07.855407 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-08-08 17:16:07.855468 +0000 build-debian42: output: + gzip -fn linux-utils-97271bab41f588b0.tar
+2023-08-08 17:16:07.864856 +0000 build-debian42: output: + popd
+2023-08-08 17:16:07.865131 +0000 build-debian42: output: ~
+2023-08-08 17:16:07.866594 +0000 build-debian42: output: ++ tar --version
+2023-08-08 17:16:07.866824 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-08-08 17:16:07.868069 +0000 build-debian42: output: ++ head -1
+2023-08-08 17:16:07.868713 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-08-08 17:16:07.869185 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel/dummy-psu
+2023-08-08 17:16:07.870125 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-psu
+2023-08-08 17:16:07.870143 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-08-08 17:16:07.870150 +0000 build-debian42: output: + GIT_TARBALL_NAME=dummy-psu-49475d88d94e079b.tar
+2023-08-08 17:16:07.870155 +0000 build-debian42: output: + '[' xdummy-psu/ '!=' x ']'
+2023-08-08 17:16:07.870160 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=dummy-psu/
+2023-08-08 17:16:07.870165 +0000 build-debian42: output: + pushd /builder/linux-kernel/dummy-psu
+2023-08-08 17:16:07.871626 +0000 build-debian42: output: /builder/linux-kernel/dummy-psu ~
+2023-08-08 17:16:07.872711 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-08-08 17:16:07.872733 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1602292420
+2023-08-08 17:16:07.872739 +0000 build-debian42: output: ++ head -n1
+2023-08-08 17:16:07.875089 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-08-08 17:16:07.875124 +0000 build-debian42: output: ++ sort -V
+2023-08-08 17:16:07.875130 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-08-08 17:16:07.875149 +0000 build-debian42: output: + tar --sort=name --mtime=@1602292420 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-psu/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-psu-49475d88d94e079b.tar -cf dummy-psu-49475d88d94e079b.tar .
+2023-08-08 17:16:07.877928 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-08-08 17:16:07.877968 +0000 build-debian42: output: + gzip -fn dummy-psu-49475d88d94e079b.tar
+2023-08-08 17:16:07.879293 +0000 build-debian42: output: + popd
+2023-08-08 17:16:07.880715 +0000 build-debian42: output: ~
+2023-08-08 17:16:07.880746 +0000 build-debian42: output: ++ head -1
+2023-08-08 17:16:07.880751 +0000 build-debian42: output: ++ tar --version
+2023-08-08 17:16:07.882030 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-08-08 17:16:07.884995 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-08-08 17:16:07.885032 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel/dummy-backlight
+2023-08-08 17:16:07.885039 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-backlight
+2023-08-08 17:16:07.885044 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-08-08 17:16:07.885050 +0000 build-debian42: output: + GIT_TARBALL_NAME=dummy-backlight-33420931ad20f1e3.tar
+2023-08-08 17:16:07.885055 +0000 build-debian42: output: + '[' xdummy-backlight/ '!=' x ']'
+2023-08-08 17:16:07.885060 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=dummy-backlight/
+2023-08-08 17:16:07.885066 +0000 build-debian42: output: + pushd /builder/linux-kernel/dummy-backlight
+2023-08-08 17:16:07.885070 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-08-08 17:16:07.886795 +0000 build-debian42: output: /builder/linux-kernel/dummy-backlight ~
+2023-08-08 17:16:07.886825 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1600607528
+2023-08-08 17:16:07.886830 +0000 build-debian42: output: ++ sort -V
+2023-08-08 17:16:07.888217 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-08-08 17:16:07.888245 +0000 build-debian42: output: ++ head -n1
+2023-08-08 17:16:07.888618 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-08-08 17:16:07.888670 +0000 build-debian42: output: + tar --sort=name --mtime=@1600607528 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-backlight/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-backlight-33420931ad20f1e3.tar -cf dummy-backlight-33420931ad20f1e3.tar .
+2023-08-08 17:16:07.890607 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-08-08 17:16:07.890638 +0000 build-debian42: output: + gzip -fn dummy-backlight-33420931ad20f1e3.tar
+2023-08-08 17:16:07.894227 +0000 build-debian42: output: + popd
+2023-08-08 17:16:07.894261 +0000 build-debian42: output: ++ head -1
+2023-08-08 17:16:07.894267 +0000 build-debian42: output: ++ awk '{print $4}'
+2023-08-08 17:16:07.894272 +0000 build-debian42: output: ++ tar --version
+2023-08-08 17:16:07.894277 +0000 build-debian42: output: ~
+2023-08-08 17:16:07.895786 +0000 build-debian42: output: + TAR_VERSION=1.34
+2023-08-08 17:16:07.895810 +0000 build-debian42: output: ++ readlink -f /builder/linux-kernel/v4l2loopback
+2023-08-08 17:16:07.896290 +0000 build-debian42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/v4l2loopback
+2023-08-08 17:16:07.896312 +0000 build-debian42: output: + GIT_ARCHIVE_TYPE=gz
+2023-08-08 17:16:07.896319 +0000 build-debian42: output: + GIT_TARBALL_NAME=v4l2loopback-1ecf810f0d687b64.tar
+2023-08-08 17:16:07.896324 +0000 build-debian42: output: + '[' xv4l2loopback/ '!=' x ']'
+2023-08-08 17:16:07.896330 +0000 build-debian42: output: + GIT_ARCHIVE_PREFIX=v4l2loopback/
+2023-08-08 17:16:07.896335 +0000 build-debian42: output: + pushd /builder/linux-kernel/v4l2loopback
+2023-08-08 17:16:07.896356 +0000 build-debian42: output: ++ git log -1 --format=%ct
+2023-08-08 17:16:07.896380 +0000 build-debian42: output: /builder/linux-kernel/v4l2loopback ~
+2023-08-08 17:16:07.898585 +0000 build-debian42: output: + SOURCE_DATE_EPOCH=1659652207
+2023-08-08 17:16:07.898615 +0000 build-debian42: output: ++ printf '%s\n' 1.34 1.28
+2023-08-08 17:16:07.898621 +0000 build-debian42: output: ++ sort -V
+2023-08-08 17:16:07.898902 +0000 build-debian42: output: ++ head -n1
+2023-08-08 17:16:07.900817 +0000 build-debian42: output: + '[' 1.28 == 1.28 ']'
+2023-08-08 17:16:07.900852 +0000 build-debian42: output: + tar --sort=name --mtime=@1659652207 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%v4l2loopback/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude v4l2loopback-1ecf810f0d687b64.tar -cf v4l2loopback-1ecf810f0d687b64.tar .
+2023-08-08 17:16:07.902598 +0000 build-debian42: output: + case "$GIT_ARCHIVE_TYPE" in
+2023-08-08 17:16:07.902625 +0000 build-debian42: output: + gzip -fn v4l2loopback-1ecf810f0d687b64.tar
+2023-08-08 17:16:07.908888 +0000 build-debian42: output: ~
+2023-08-08 17:16:07.910111 +0000 build-debian42: output: + popd
+2023-08-08 17:16:07.915598 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyOut+__builder__linux-kernel__linux-utils__linux-utils-97271bab41f588b0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel
+2023-08-08 17:16:08.126273 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyOut+__builder__linux-kernel__dummy-psu__dummy-psu-49475d88d94e079b.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel
+2023-08-08 17:16:08.363601 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyOut+__builder__linux-kernel__dummy-backlight__dummy-backlight-33420931ad20f1e3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel
+2023-08-08 17:16:08.863308 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5643 qubesbuilder.FileCopyOut+__builder__linux-kernel__v4l2loopback__v4l2loopback-1ecf810f0d687b64.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/distfiles/linux-kernel
+2023-08-08 17:16:33.150512 +0000 build-debian42: > done
+2023-08-08 17:16:33.150604 +0000 > closing log
