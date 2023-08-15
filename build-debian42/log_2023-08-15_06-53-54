@@ -1,0 +1,31 @@
+2023-08-15 06:53:54.898637 +0000 > starting log
+2023-08-15 06:53:54.898922 +0000 build-debian42: > starting build with log
+2023-08-15 06:53:54.898931 +0000 build-debian42: >> args:
+2023-08-15 06:53:54.898937 +0000 build-debian42: >>   ()
+2023-08-15 06:53:54.898941 +0000 build-debian42: >> component:
+2023-08-15 06:53:54.898946 +0000 build-debian42: >>   release-configs
+2023-08-15 06:53:54.898953 +0000 build-debian42: >>     commit-hash: e14bc5115988e6a867f9e0a16f69cd46f4499ebc
+2023-08-15 06:53:54.898962 +0000 build-debian42: >>     source-hash: 714d466152d725080164edb6f876ef9d0e54790d2f0dac1d915161c2db97d1500dcc002ba17928bbfdfd6d234ae055e0e5499745d506bf95eb5eacb89facab2a
+2023-08-15 06:53:54.898972 +0000 build-debian42: >> distributions:
+2023-08-15 06:53:54.898979 +0000 build-debian42: >>   [<QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-debian-12.amd64>]
+2023-08-15 06:53:54.898985 +0000 build-debian42: release-configs: source already fetched. Updating.
+2023-08-15 06:54:18.248492 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1646 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-08-15 06:54:39.956668 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1646 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-08-15 06:54:40.647192 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1646 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-08-15 06:54:41.123200 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1646 bash -c 'rm -rf /builder/incoming/release-configs /builder/release-configs'
+2023-08-15 06:54:41.369686 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1646 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/release-configs
+2023-08-15 06:54:42.073980 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp1646 bash -c 'mkdir -p /builder && mv /builder/incoming/release-configs /builder'
+2023-08-15 06:54:42.479945 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp1646 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-release-configs.git /builder/release-configs /builder/keyring /builder/plugins/fetch/keys --git-branch main --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF''.
+2023-08-15 06:54:47.086367 +0000 build-debian42: output: --> Verifying tags...
+2023-08-15 06:54:47.086433 +0000 build-debian42: output: ---> Good tag e54a15880e3d932ed4b8a6d779fb9b55d861c0c7.
+2023-08-15 06:54:47.086442 +0000 build-debian42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2023-08-15 06:54:47.086447 +0000 build-debian42: output: --> Merging...
+2023-08-15 06:54:47.106720 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1646 qubesbuilder.FileCopyOut+__builder__release-configs /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/sources
+2023-08-15 06:55:34.018284 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7628 bash -c 'rm -rf /builder/incoming/release-configs /builder/release-configs'
+2023-08-15 06:55:34.868332 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7628 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/sources/release-configs
+2023-08-15 06:55:55.521504 +0000 build-debian42: copy-in (cmd): /usr/bin/qvm-run-vm disp7628 bash -c 'mkdir -p /builder && mv /builder/incoming/release-configs /builder'
+2023-08-15 06:55:56.160161 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm disp7628 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/release-configs/hash /builder/release-configs/vtags && cd /builder && git -C /builder/release-configs rev-parse '\''HEAD^{}'\'' >> /builder/release-configs/hash && git -C /builder/release-configs tag --points-at HEAD --list '\''v*'\'' >> /builder/release-configs/vtags''.
+2023-08-15 06:55:56.644205 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7628 qubesbuilder.FileCopyOut+__builder__release-configs__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmphccce4b3
+2023-08-15 06:55:57.030182 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7628 qubesbuilder.FileCopyOut+__builder__release-configs__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/tmp/tmphccce4b3
+2023-08-15 06:56:03.335517 +0000 build-debian42: > done
+2023-08-15 06:56:03.335572 +0000 > closing log
