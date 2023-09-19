@@ -1,0 +1,136 @@
+2023-09-19 16:43:27.975685 +0000 > starting log
+2023-09-19 16:43:27.975911 +0000 build-centos42: > starting build with log
+2023-09-19 16:43:27.975920 +0000 build-centos42: >> args:
+2023-09-19 16:43:27.975925 +0000 build-centos42: >>   ()
+2023-09-19 16:43:27.975930 +0000 build-centos42: >> component:
+2023-09-19 16:43:27.975934 +0000 build-centos42: >>   python-fido2
+2023-09-19 16:43:27.975939 +0000 build-centos42: >> distributions:
+2023-09-19 16:43:27.975945 +0000 build-centos42: >>   [<QubesDistribution vm-centos-stream-8.x86_64>]
+2023-09-19 16:43:49.606033 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp675 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-09-19 16:44:13.372263 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp675 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-09-19 16:44:13.875735 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp675 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-09-19 16:44:36.785890 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp675 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-python-fido2.git /builder/python-fido2 /builder/keyring /builder/plugins/fetch/keys --git-branch main --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF --fetch-versions-only''.
+2023-09-19 16:44:40.893797 +0000 build-centos42: output: --> Verifying tags...
+2023-09-19 16:44:40.893875 +0000 build-centos42: output: ---> Good tag ae3dc4ea155a12f59fda421cb2b83ddea8fd11b1.
+2023-09-19 16:44:40.893899 +0000 build-centos42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2023-09-19 16:44:40.893916 +0000 build-centos42: output: --> Switching branch from main branch to main
+2023-09-19 16:44:40.917988 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp675 qubesbuilder.FileCopyOut+__builder__python-fido2 /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/sources
+2023-09-19 16:45:11.929486 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp417 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-09-19 16:45:57.447942 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp417 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-09-19 16:45:58.550268 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp417 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-09-19 16:45:59.195203 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp417 bash -c 'rm -rf /builder/incoming/python-fido2 /builder/python-fido2'
+2023-09-19 16:45:59.486870 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp417 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/python-fido2
+2023-09-19 16:45:59.819073 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp417 bash -c 'mkdir -p /builder && mv /builder/incoming/python-fido2 /builder'
+2023-09-19 16:46:00.096358 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp417 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/python-fido2 --file-name fido2-1.1.2.tar.gz --file-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz --signature-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig''.
+2023-09-19 16:46:00.539209 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2023-09-19 16:46:00.539586 +0000 build-centos42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/python-fido2 --file-name fido2-1.1.2.tar.gz --file-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz --signature-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:00.542538 +0000 build-centos42: output: + OPTS=' --output-dir '\''/builder/python-fido2'\'' --file-name '\''fido2-1.1.2.tar.gz'\'' --file-url '\''https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz'\'' --signature-url '\''https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig'\'' --'
+2023-09-19 16:46:00.542583 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/builder/python-fido2'\'' --file-name '\''fido2-1.1.2.tar.gz'\'' --file-url '\''https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz'\'' --signature-url '\''https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig'\'' --'
+2023-09-19 16:46:00.542598 +0000 build-centos42: output: ++ set -- --output-dir /builder/python-fido2 --file-name fido2-1.1.2.tar.gz --file-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz --signature-url https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig --
+2023-09-19 16:46:00.542604 +0000 build-centos42: output: + [[ 9 -gt 0 ]]
+2023-09-19 16:46:00.542610 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:00.542616 +0000 build-centos42: output: + OUTPUT_DIR=/builder/python-fido2
+2023-09-19 16:46:00.542621 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542626 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542631 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2023-09-19 16:46:00.542787 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:00.542799 +0000 build-centos42: output: + FILE_NAME=fido2-1.1.2.tar.gz
+2023-09-19 16:46:00.542804 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542808 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542813 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2023-09-19 16:46:00.542818 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:00.542824 +0000 build-centos42: output: + FILE_URL=https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz
+2023-09-19 16:46:00.542829 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542834 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542838 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2023-09-19 16:46:00.542843 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:00.542850 +0000 build-centos42: output: + SIGNATURE_URL=https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:00.542854 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542859 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542863 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-09-19 16:46:00.542868 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:00.542872 +0000 build-centos42: output: + shift
+2023-09-19 16:46:00.542965 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-09-19 16:46:00.542978 +0000 build-centos42: output: + '[' -z https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz ']'
+2023-09-19 16:46:00.542985 +0000 build-centos42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2023-09-19 16:46:00.542990 +0000 build-centos42: output: + '[' -z fido2-1.1.2.tar.gz ']'
+2023-09-19 16:46:00.542996 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_fido2-1.1.2.tar.gz
+2023-09-19 16:46:00.543001 +0000 build-centos42: output: + '[' -n /builder/python-fido2 ']'
+2023-09-19 16:46:00.543006 +0000 build-centos42: output: + mkdir -p /builder/python-fido2
+2023-09-19 16:46:00.544314 +0000 build-centos42: output: + cd /builder/python-fido2
+2023-09-19 16:46:00.544384 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_fido2-1.1.2.tar.gz -- https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz
+2023-09-19 16:46:02.459670 +0000 build-centos42: output: + '[' '' == 1 ']'
+2023-09-19 16:46:02.459718 +0000 build-centos42: output: + '[' -n https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:02.460136 +0000 build-centos42: output: ++ basename https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:02.463216 +0000 build-centos42: output: + SIGNATURE_FILE_NAME=fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:02.463272 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:02.463454 +0000 build-centos42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_fido2-1.1.2.tar.gz.sig https://github.com/Yubico/python-fido2/releases/download/1.1.2/fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:03.860735 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp417 qubesbuilder.FileCopyOut+__builder__python-fido2__untrusted_fido2-1.1.2.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi
+2023-09-19 16:46:04.116259 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp417 qubesbuilder.FileCopyOut+__builder__python-fido2__untrusted_fido2-1.1.2.tar.gz.sig /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi
+2023-09-19 16:46:07.823559 +0000 build-centos42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi --untrusted-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig --pubkey-file /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc'.
+2023-09-19 16:46:07.826498 +0000 build-centos42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2023-09-19 16:46:07.827280 +0000 build-centos42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi --untrusted-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig --pubkey-file /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc
+2023-09-19 16:46:07.827817 +0000 build-centos42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc'\'' --'
+2023-09-19 16:46:07.827893 +0000 build-centos42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi'\'' --untrusted-file '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig'\'' --pubkey-file '\''/home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc'\'' --'
+2023-09-19 16:46:07.827944 +0000 build-centos42: output: ++ set -- --output-dir /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi --untrusted-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz --untrusted-signature-file /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig --pubkey-file /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc --
+2023-09-19 16:46:07.828189 +0000 build-centos42: output: + PUBKEY_FILE=()
+2023-09-19 16:46:07.828221 +0000 build-centos42: output: + [[ 9 -gt 0 ]]
+2023-09-19 16:46:07.828236 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:07.828254 +0000 build-centos42: output: + OUTPUT_DIR=/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi
+2023-09-19 16:46:07.828268 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828281 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828294 +0000 build-centos42: output: + [[ 7 -gt 0 ]]
+2023-09-19 16:46:07.828330 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:07.828351 +0000 build-centos42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz
+2023-09-19 16:46:07.828365 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828378 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828391 +0000 build-centos42: output: + [[ 5 -gt 0 ]]
+2023-09-19 16:46:07.828405 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:07.828628 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:07.828652 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828659 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828664 +0000 build-centos42: output: + [[ 3 -gt 0 ]]
+2023-09-19 16:46:07.828669 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:07.828673 +0000 build-centos42: output: + PUBKEY_FILE+=("$2")
+2023-09-19 16:46:07.828678 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828682 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828686 +0000 build-centos42: output: + [[ 1 -gt 0 ]]
+2023-09-19 16:46:07.828691 +0000 build-centos42: output: + case "$1" in
+2023-09-19 16:46:07.828695 +0000 build-centos42: output: + shift
+2023-09-19 16:46:07.828700 +0000 build-centos42: output: + [[ 0 -gt 0 ]]
+2023-09-19 16:46:07.828706 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz ']'
+2023-09-19 16:46:07.828713 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi ']'
+2023-09-19 16:46:07.828718 +0000 build-centos42: output: + mkdir -p /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi
+2023-09-19 16:46:07.830627 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz
+2023-09-19 16:46:07.831087 +0000 build-centos42: output: + UNTRUSTED_FILE_NAME=untrusted_fido2-1.1.2.tar.gz
+2023-09-19 16:46:07.831103 +0000 build-centos42: output: + FILE_NAME=fido2-1.1.2.tar.gz
+2023-09-19 16:46:07.831109 +0000 build-centos42: output: + '[' -z '' ']'
+2023-09-19 16:46:07.831117 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:07.831122 +0000 build-centos42: output: + '[' -n '' ']'
+2023-09-19 16:46:07.831129 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:07.831136 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc ']'
+2023-09-19 16:46:07.831143 +0000 build-centos42: output: + '[' -z /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:07.831150 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:07.831157 +0000 build-centos42: output: + '[' '!' -e /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc ']'
+2023-09-19 16:46:07.831172 +0000 build-centos42: output: + '[' -n '' ']'
+2023-09-19 16:46:07.831179 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig ']'
+2023-09-19 16:46:07.831186 +0000 build-centos42: output: + '[' -n /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc ']'
+2023-09-19 16:46:07.831192 +0000 build-centos42: output: ++ basename /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:07.832791 +0000 build-centos42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:07.832839 +0000 build-centos42: output: + SIGNATURE_FILE_NAME=fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:07.832855 +0000 build-centos42: output: ++ mktemp -u
+2023-09-19 16:46:07.834165 +0000 build-centos42: output: + keyring=/tmp/tmp.5eCTzsS0HX
+2023-09-19 16:46:07.834206 +0000 build-centos42: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2023-09-19 16:46:07.834235 +0000 build-centos42: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.5eCTzsS0HX -q --import /home/user/builder-r4.2-centos/sources/python-fido2/debian-pkg/debian/upstream/signing-key.asc
+2023-09-19 16:46:07.870189 +0000 build-centos42: output: + gpgv --keyring /tmp/tmp.5eCTzsS0HX /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz
+2023-09-19 16:46:07.874436 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz.sig /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/fido2-1.1.2.tar.gz.sig
+2023-09-19 16:46:07.876790 +0000 build-centos42: output: + rm -rf /tmp/tmp.5eCTzsS0HX
+2023-09-19 16:46:07.877272 +0000 build-centos42: output: + mv /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/untrusted_fido2-1.1.2.tar.gz /home/user/builder-r4.2-centos/tmp/tmp_3fhquqi/fido2-1.1.2.tar.gz
+2023-09-19 16:46:32.038699 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1942 bash -c 'rm -rf /builder/incoming/python-fido2 /builder/python-fido2'
+2023-09-19 16:46:37.300855 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1942 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/python-fido2
+2023-09-19 16:46:37.604453 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm disp1942 bash -c 'mkdir -p /builder && mv /builder/incoming/python-fido2 /builder'
+2023-09-19 16:46:37.758679 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm disp1942 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/python-fido2/hash /builder/python-fido2/vtags && cd /builder && git -C /builder/python-fido2 rev-parse '\''HEAD^{}'\'' >> /builder/python-fido2/hash && git -C /builder/python-fido2 tag --points-at HEAD --list '\''v*'\'' >> /builder/python-fido2/vtags''.
+2023-09-19 16:46:37.946827 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1942 qubesbuilder.FileCopyOut+__builder__python-fido2__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmprh9gtern
+2023-09-19 16:46:38.290222 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1942 qubesbuilder.FileCopyOut+__builder__python-fido2__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmprh9gtern
+2023-09-19 16:47:03.888902 +0000 build-centos42: > done
+2023-09-19 16:47:03.888952 +0000 > closing log
