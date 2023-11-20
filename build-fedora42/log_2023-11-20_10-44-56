@@ -1,0 +1,32 @@
+2023-11-20 10:44:56.912239 +0000 > starting log
+2023-11-20 10:44:56.912440 +0000 build-fedora42: > starting build with log
+2023-11-20 10:44:56.912449 +0000 build-fedora42: >> args:
+2023-11-20 10:44:56.912455 +0000 build-fedora42: >>   ()
+2023-11-20 10:44:56.912459 +0000 build-fedora42: >> component:
+2023-11-20 10:44:56.912464 +0000 build-fedora42: >>   release-configs
+2023-11-20 10:44:56.912470 +0000 build-fedora42: >>     commit-hash: 9e33ec92b8d0627d51137422b6fea828f95c2fd2
+2023-11-20 10:44:56.912479 +0000 build-fedora42: >>     source-hash: 8f71c29c35c29e4a09027fb09bb35b6e4e9f26e2ef052adbd2f18d39bc48fcc248283ba2815709e93aefe6666e7284c2a5c48198256e3c90a9bc87bcdb8455f5
+2023-11-20 10:44:56.912489 +0000 build-fedora42: >> distributions:
+2023-11-20 10:44:56.912497 +0000 build-fedora42: >>   [<QubesDistribution vm-fedora-37.x86_64>, <QubesDistribution vm-fedora-38.x86_64>, <QubesDistribution vm-fedora-39.x86_64>]
+2023-11-20 10:44:56.912503 +0000 build-fedora42: release-configs: source already fetched. Updating.
+2023-11-20 10:45:08.471018 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp6397 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2023-11-20 10:45:08.715796 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6397 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2023-11-20 10:45:08.876876 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp6397 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2023-11-20 10:45:09.119074 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp6397 bash -c 'rm -rf /builder/incoming/release-configs /builder/release-configs'
+2023-11-20 10:45:09.348706 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6397 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/release-configs
+2023-11-20 10:45:09.695450 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp6397 bash -c 'mkdir -p /builder && mv /builder/incoming/release-configs /builder'
+2023-11-20 10:45:09.823417 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm disp6397 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-release-configs.git /builder/release-configs /builder/keyring /builder/plugins/fetch/keys --git-branch main --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF''.
+2023-11-20 10:45:11.221425 +0000 build-fedora42: output: --> Verifying tags...
+2023-11-20 10:45:11.222293 +0000 build-fedora42: output: ---> Good tag 4f2ae4c74b0b3e01a0e35e250b156b1fb33927b3.
+2023-11-20 10:45:11.222343 +0000 build-fedora42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2023-11-20 10:45:11.222363 +0000 build-fedora42: output: --> Switching branch from release4.2 branch to main
+2023-11-20 10:45:11.222378 +0000 build-fedora42: output: --> Merging...
+2023-11-20 10:45:11.246618 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6397 qubesbuilder.FileCopyOut+__builder__release-configs /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/sources
+2023-11-20 10:45:25.178065 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp4710 bash -c 'rm -rf /builder/incoming/release-configs /builder/release-configs'
+2023-11-20 10:45:25.371624 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4710 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/release-configs
+2023-11-20 10:45:25.611204 +0000 build-fedora42: copy-in (cmd): /usr/bin/qvm-run-vm disp4710 bash -c 'mkdir -p /builder && mv /builder/incoming/release-configs /builder'
+2023-11-20 10:45:25.931691 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm disp4710 env VERBOSE='1' DEBUG='1' BACKEND_VMM='xen' bash -c 'rm -f /builder/release-configs/hash /builder/release-configs/vtags && cd /builder && git -C /builder/release-configs rev-parse '\''HEAD^{}'\'' >> /builder/release-configs/hash && git -C /builder/release-configs tag --points-at HEAD --list '\''v*'\'' >> /builder/release-configs/vtags''.
+2023-11-20 10:45:26.166614 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4710 qubesbuilder.FileCopyOut+__builder__release-configs__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmplyyzmcvl
+2023-11-20 10:45:26.386711 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4710 qubesbuilder.FileCopyOut+__builder__release-configs__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmplyyzmcvl
+2023-11-20 10:45:28.729587 +0000 build-fedora42: > done
+2023-11-20 10:45:28.729654 +0000 > closing log
