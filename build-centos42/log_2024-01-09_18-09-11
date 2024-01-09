@@ -1,0 +1,32 @@
+2024-01-09 18:09:11.422203 +0000 > starting log
+2024-01-09 18:09:11.422384 +0000 build-centos42: > starting build with log
+2024-01-09 18:09:11.422393 +0000 build-centos42: >> args:
+2024-01-09 18:09:11.422398 +0000 build-centos42: >>   ()
+2024-01-09 18:09:11.422402 +0000 build-centos42: >> component:
+2024-01-09 18:09:11.422407 +0000 build-centos42: >>   release-configs
+2024-01-09 18:09:11.422412 +0000 build-centos42: >>     commit-hash: f75859fba25c4ad4c34131e87825b5752a5eb1b4
+2024-01-09 18:09:11.422421 +0000 build-centos42: >>     source-hash: 1c92d522d1cc8d2329a62a8f5935b38d78c3c7e7227efc6abdc85cd6f73b5fb131fe3efdd738c6c9b9466534e18a8d4c18952d564cca90966635a90b70049ff2
+2024-01-09 18:09:11.422431 +0000 build-centos42: >> distributions:
+2024-01-09 18:09:11.422437 +0000 build-centos42: >>   [<QubesDistribution vm-centos-stream-8.x86_64>]
+2024-01-09 18:09:11.422443 +0000 build-centos42: release-configs: source already fetched. Updating.
+2024-01-09 18:09:25.995630 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp6709 rm -rf -- /builder/incoming/fetch /builder/plugins/fetch
+2024-01-09 18:09:26.413436 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp6709 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2024-01-09 18:09:39.774920 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp6709 mkdir -p -- /builder/plugins && mv -- /builder/incoming/fetch /builder/plugins
+2024-01-09 18:09:53.152483 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp6709 rm -rf -- /builder/incoming/release-configs /builder/release-configs
+2024-01-09 18:09:53.652207 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp6709 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/release-configs
+2024-01-09 18:09:54.082662 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp6709 mkdir -p -- /builder && mv -- /builder/incoming/release-configs /builder
+2024-01-09 18:09:54.214265 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm -- disp6709 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-release-configs.git /builder/release-configs /builder/keyring /builder/plugins/fetch/keys --git-branch main --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF''.
+2024-01-09 18:09:56.435168 +0000 build-centos42: output: --> Verifying tags...
+2024-01-09 18:09:56.435221 +0000 build-centos42: output: ---> Good tag fccb13afc623289bddb751174c7d8d6495d46fa0.
+2024-01-09 18:09:56.435365 +0000 build-centos42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2024-01-09 18:09:56.435376 +0000 build-centos42: output: --> Merging...
+2024-01-09 18:09:56.453369 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6709 qubesbuilder.FileCopyOut+__builder__release-configs /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/sources
+2024-01-09 18:10:00.386363 +0000 build-centos42: ['rm -f -- /builder/release-configs/hash /builder/release-configs/vtags', 'cd -- /builder', "git -C /builder/release-configs rev-parse 'HEAD^{}' >> /builder/release-configs/hash", "git -C /builder/release-configs tag --points-at HEAD --list 'v*' >> /builder/release-configs/vtags"]
+2024-01-09 18:10:17.376084 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp9851 rm -rf -- /builder/incoming/release-configs /builder/release-configs
+2024-01-09 18:10:30.359403 +0000 build-centos42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9851 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-centos/sources/release-configs
+2024-01-09 18:10:30.971706 +0000 build-centos42: copy-in (cmd): /usr/bin/qvm-run-vm -- disp9851 mkdir -p -- /builder && mv -- /builder/incoming/release-configs /builder
+2024-01-09 18:10:31.183542 +0000 build-centos42: Executing '/usr/bin/qvm-run-vm -- disp9851 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'rm -f -- /builder/release-configs/hash /builder/release-configs/vtags && cd -- /builder && git -C /builder/release-configs rev-parse '"'"'HEAD^{}'"'"' >> /builder/release-configs/hash && git -C /builder/release-configs tag --points-at HEAD --list '"'"'v*'"'"' >> /builder/release-configs/vtags''.
+2024-01-09 18:10:31.562498 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9851 qubesbuilder.FileCopyOut+__builder__release-configs__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpsq3r9_8_
+2024-01-09 18:10:44.530098 +0000 build-centos42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9851 qubesbuilder.FileCopyOut+__builder__release-configs__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-centos/tmp/tmpsq3r9_8_
+2024-01-09 18:10:48.515703 +0000 build-centos42: > done
+2024-01-09 18:10:48.515778 +0000 > closing log
