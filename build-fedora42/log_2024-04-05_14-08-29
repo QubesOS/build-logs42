@@ -1,0 +1,247 @@
+2024-04-05 14:08:29.698875 +0000 > starting log
+2024-04-05 14:08:29.699407 +0000 build-fedora42: > starting build with log
+2024-04-05 14:08:29.699424 +0000 build-fedora42: >> args:
+2024-04-05 14:08:29.699434 +0000 build-fedora42: >>   ()
+2024-04-05 14:08:29.699439 +0000 build-fedora42: >> component:
+2024-04-05 14:08:29.699446 +0000 build-fedora42: >>   linux-kernel
+2024-04-05 14:08:29.699456 +0000 build-fedora42: >>     commit-hash: 87ff2faccdf8f7aa37f04eac3192fd0cd3fefb0a
+2024-04-05 14:08:30.127822 +0000 build-fedora42: >>     source-hash: 871366e575561e0252fa97367e90be832d47f721b30c0ab05a371ba6f606d0fd1566cc76020303d42ec98e1c07cbfcdb4f9c5150730654d18dec9f7e9d2be6b1
+2024-04-05 14:08:30.127905 +0000 build-fedora42: >> distributions:
+2024-04-05 14:08:30.128142 +0000 build-fedora42: >>   [<QubesDistribution vm-fedora-37.x86_64>, <QubesDistribution vm-fedora-38.x86_64>, <QubesDistribution vm-fedora-39.x86_64>, <QubesDistribution vm-fedora-40.x86_64>]
+2024-04-05 14:08:30.150478 +0000 build-fedora42: linux-kernel: source already fetched. Updating.
+2024-04-05 14:08:42.267668 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp7297 qubesbuilder.FileCopyIn+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/linux-kernel
+2024-04-05 14:08:45.162160 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp7297 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Ffetch /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2024-04-05 14:08:45.406673 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm -- disp7297 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source.py https://github.com/QubesOS/qubes-linux-kernel.git /builder/linux-kernel /builder/keyring /builder/plugins/fetch/keys --git-branch stable-6.6 --minimum-distinct-maintainers 1 --maintainer 0064428F455451B3EBE78A7F063938BA42CFA724 --maintainer 274E12AB03F2FE293765FC06DA0434BC706E1FCF --fetch-versions-only''.
+2024-04-05 14:08:50.875181 +0000 build-fedora42: output: --> Verifying tags...
+2024-04-05 14:08:50.875225 +0000 build-fedora42: output: ---> Good tag 5809de2ef024d620e36ca5c1ea2247d47e77f2f9.
+2024-04-05 14:08:50.875377 +0000 build-fedora42: output: Enough distinct tag signatures. Found 1, mandatory minimum is 1.
+2024-04-05 14:08:50.875390 +0000 build-fedora42: output: --> Merging...
+2024-04-05 14:08:50.875398 +0000 build-fedora42: output: --> Updating submodules
+2024-04-05 14:08:50.958029 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7297 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/sources
+2024-04-05 14:09:06.207976 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp2163 qubesbuilder.FileCopyIn+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/linux-kernel
+2024-04-05 14:09:07.295781 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp2163 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Ffetch /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2024-04-05 14:09:07.517130 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm -- disp2163 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/linux-kernel --file-name linux-6.6.25.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign --uncompress''.
+2024-04-05 14:09:07.743206 +0000 build-fedora42: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2024-04-05 14:09:07.743311 +0000 build-fedora42: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/linux-kernel --file-name linux-6.6.25.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign --uncompress
+2024-04-05 14:09:07.746410 +0000 build-fedora42: output: + OPTS=' --output-dir '\''/builder/linux-kernel'\'' --file-name '\''linux-6.6.25.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign'\'' --uncompress --'
+2024-04-05 14:09:07.746487 +0000 build-fedora42: output: + eval set -- ' --output-dir '\''/builder/linux-kernel'\'' --file-name '\''linux-6.6.25.tar.xz'\'' --file-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz'\'' --signature-url '\''https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign'\'' --uncompress --'
+2024-04-05 14:09:07.746536 +0000 build-fedora42: output: ++ set -- --output-dir /builder/linux-kernel --file-name linux-6.6.25.tar.xz --file-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz --signature-url https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign --uncompress --
+2024-04-05 14:09:07.746556 +0000 build-fedora42: output: + [[ 10 -gt 0 ]]
+2024-04-05 14:09:07.746614 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:09:07.746633 +0000 build-fedora42: output: + OUTPUT_DIR=/builder/linux-kernel
+2024-04-05 14:09:07.746651 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.746668 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.746685 +0000 build-fedora42: output: + [[ 8 -gt 0 ]]
+2024-04-05 14:09:07.746701 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:09:07.746720 +0000 build-fedora42: output: + FILE_NAME=linux-6.6.25.tar.xz
+2024-04-05 14:09:07.746736 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.746752 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.746775 +0000 build-fedora42: output: + [[ 6 -gt 0 ]]
+2024-04-05 14:09:07.746792 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:09:07.746970 +0000 build-fedora42: output: + FILE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz
+2024-04-05 14:09:07.746990 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.746998 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.747006 +0000 build-fedora42: output: + [[ 4 -gt 0 ]]
+2024-04-05 14:09:07.747012 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:09:07.747020 +0000 build-fedora42: output: + SIGNATURE_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign
+2024-04-05 14:09:07.747027 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.747033 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.747039 +0000 build-fedora42: output: + [[ 2 -gt 0 ]]
+2024-04-05 14:09:07.747045 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:09:07.747051 +0000 build-fedora42: output: + UNCOMPRESS=1
+2024-04-05 14:09:07.747057 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.747063 +0000 build-fedora42: output: + shift
+2024-04-05 14:09:07.747069 +0000 build-fedora42: output: + [[ 0 -gt 0 ]]
+2024-04-05 14:09:07.747078 +0000 build-fedora42: output: + '[' -z https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz ']'
+2024-04-05 14:09:07.747087 +0000 build-fedora42: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2024-04-05 14:09:07.747094 +0000 build-fedora42: output: + '[' -z linux-6.6.25.tar.xz ']'
+2024-04-05 14:09:07.747102 +0000 build-fedora42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.6.25.tar.xz
+2024-04-05 14:09:07.747110 +0000 build-fedora42: output: + '[' -n /builder/linux-kernel ']'
+2024-04-05 14:09:07.747117 +0000 build-fedora42: output: + mkdir -p /builder/linux-kernel
+2024-04-05 14:09:07.747451 +0000 build-fedora42: output: + cd /builder/linux-kernel
+2024-04-05 14:09:07.747481 +0000 build-fedora42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.6.25.tar.xz -- https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.xz
+2024-04-05 14:32:30.771826 +0000 build-fedora42: output: + '[' 1 == 1 ']'
+2024-04-05 14:32:30.771924 +0000 build-fedora42: output: + '[' linux-6.6.25.tar.xz '!=' linux-6.6.25.tar.xz ']'
+2024-04-05 14:32:30.771952 +0000 build-fedora42: output: + '[' linux-6.6.25.tar '!=' linux-6.6.25.tar.xz ']'
+2024-04-05 14:32:30.771974 +0000 build-fedora42: output: + unxz untrusted_linux-6.6.25.tar.xz
+2024-04-05 14:32:39.686679 +0000 build-fedora42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.6.25.tar
+2024-04-05 14:32:39.686726 +0000 build-fedora42: output: + '[' -n https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:39.686737 +0000 build-fedora42: output: ++ basename https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign
+2024-04-05 14:32:39.687770 +0000 build-fedora42: output: + SIGNATURE_FILE_NAME=linux-6.6.25.tar.sign
+2024-04-05 14:32:39.687788 +0000 build-fedora42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.6.25.tar.sign
+2024-04-05 14:32:39.687799 +0000 build-fedora42: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_linux-6.6.25.tar.sign https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.25.tar.sign
+2024-04-05 14:32:40.674784 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2163 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Funtrusted_linux--6.6.25.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf
+2024-04-05 14:32:49.861807 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2163 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Funtrusted_linux--6.6.25.tar.sign /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf
+2024-04-05 14:32:53.347549 +0000 build-fedora42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf --untrusted-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar --untrusted-signature-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc'.
+2024-04-05 14:32:53.349298 +0000 build-fedora42: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2024-04-05 14:32:53.350035 +0000 build-fedora42: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/qubes-builderv2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf --untrusted-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar --untrusted-signature-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc
+2024-04-05 14:32:53.351736 +0000 build-fedora42: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf'\'' --untrusted-file '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc'\'' --'
+2024-04-05 14:32:53.351833 +0000 build-fedora42: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf'\'' --untrusted-file '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar'\'' --untrusted-signature-file '\''/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign'\'' --pubkey-file '\''/home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc'\'' --'
+2024-04-05 14:32:53.351880 +0000 build-fedora42: output: ++ set -- --output-dir /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf --untrusted-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar --untrusted-signature-file /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc --pubkey-file /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc --
+2024-04-05 14:32:53.351916 +0000 build-fedora42: output: + PUBKEY_FILE=()
+2024-04-05 14:32:53.351925 +0000 build-fedora42: output: + [[ 11 -gt 0 ]]
+2024-04-05 14:32:53.352030 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.352040 +0000 build-fedora42: output: + OUTPUT_DIR=/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf
+2024-04-05 14:32:53.352170 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352178 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352186 +0000 build-fedora42: output: + [[ 9 -gt 0 ]]
+2024-04-05 14:32:53.352193 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.352281 +0000 build-fedora42: output: + UNTRUSTED_FILE=/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar
+2024-04-05 14:32:53.352289 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352295 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352406 +0000 build-fedora42: output: + [[ 7 -gt 0 ]]
+2024-04-05 14:32:53.352419 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.352430 +0000 build-fedora42: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign
+2024-04-05 14:32:53.352527 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352536 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352543 +0000 build-fedora42: output: + [[ 5 -gt 0 ]]
+2024-04-05 14:32:53.352550 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.352556 +0000 build-fedora42: output: + PUBKEY_FILE+=("$2")
+2024-04-05 14:32:53.352737 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352745 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352846 +0000 build-fedora42: output: + [[ 3 -gt 0 ]]
+2024-04-05 14:32:53.352854 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.352861 +0000 build-fedora42: output: + PUBKEY_FILE+=("$2")
+2024-04-05 14:32:53.352988 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.352996 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.353005 +0000 build-fedora42: output: + [[ 1 -gt 0 ]]
+2024-04-05 14:32:53.353012 +0000 build-fedora42: output: + case "$1" in
+2024-04-05 14:32:53.353108 +0000 build-fedora42: output: + shift
+2024-04-05 14:32:53.353117 +0000 build-fedora42: output: + [[ 0 -gt 0 ]]
+2024-04-05 14:32:53.353125 +0000 build-fedora42: output: + '[' -z /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar ']'
+2024-04-05 14:32:53.353217 +0000 build-fedora42: output: + '[' -n /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf ']'
+2024-04-05 14:32:53.353226 +0000 build-fedora42: output: + mkdir -p /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf
+2024-04-05 14:32:53.354613 +0000 build-fedora42: output: ++ basename /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar
+2024-04-05 14:32:53.356081 +0000 build-fedora42: output: + UNTRUSTED_FILE_NAME=untrusted_linux-6.6.25.tar
+2024-04-05 14:32:53.356106 +0000 build-fedora42: output: + FILE_NAME=linux-6.6.25.tar
+2024-04-05 14:32:53.356124 +0000 build-fedora42: output: + '[' -z '' ']'
+2024-04-05 14:32:53.356161 +0000 build-fedora42: output: + '[' -z /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:53.356179 +0000 build-fedora42: output: + '[' -n '' ']'
+2024-04-05 14:32:53.356203 +0000 build-fedora42: output: + '[' -n /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:53.356225 +0000 build-fedora42: output: + '[' -z /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc ']'
+2024-04-05 14:32:53.356250 +0000 build-fedora42: output: + '[' -z /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:53.356273 +0000 build-fedora42: output: + '[' -n /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:53.356295 +0000 build-fedora42: output: + '[' '!' -e /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc ']'
+2024-04-05 14:32:53.356312 +0000 build-fedora42: output: + '[' -n '' ']'
+2024-04-05 14:32:53.356334 +0000 build-fedora42: output: + '[' -n /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign ']'
+2024-04-05 14:32:53.356356 +0000 build-fedora42: output: + '[' -n /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc ']'
+2024-04-05 14:32:53.356378 +0000 build-fedora42: output: ++ basename /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign
+2024-04-05 14:32:53.356512 +0000 build-fedora42: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_linux-6.6.25.tar.sign
+2024-04-05 14:32:53.356544 +0000 build-fedora42: output: + SIGNATURE_FILE_NAME=linux-6.6.25.tar.sign
+2024-04-05 14:32:53.356678 +0000 build-fedora42: output: ++ mktemp -u
+2024-04-05 14:32:53.357427 +0000 build-fedora42: output: + keyring=/tmp/tmp.R9nTXqPjcD
+2024-04-05 14:32:53.357453 +0000 build-fedora42: output: + sq keyring merge --output /tmp/tmp.R9nTXqPjcD /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-2-key.asc /home/user/builder-r4.2-fedora/sources/linux-kernel/kernel.org-1-key.asc
+2024-04-05 14:32:53.363353 +0000 build-fedora42: output: + sqv --keyring /tmp/tmp.R9nTXqPjcD /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar
+2024-04-05 14:32:54.327277 +0000 build-fedora42: output: 647F28654894E3BD457199BE38DBBDC86092693E
+2024-04-05 14:32:54.327424 +0000 build-fedora42: output: + mv /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar.sign /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/linux-6.6.25.tar.sign
+2024-04-05 14:32:54.330728 +0000 build-fedora42: output: + rm -rf /tmp/tmp.R9nTXqPjcD
+2024-04-05 14:32:54.331332 +0000 build-fedora42: output: + mv /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/untrusted_linux-6.6.25.tar /home/user/builder-r4.2-fedora/tmp/tmpsqvlhymf/linux-6.6.25.tar
+2024-04-05 14:33:03.045672 +0000 build-fedora42: ['rm -f -- /builder/linux-kernel/hash /builder/linux-kernel/vtags', 'cd -- /builder', "git -C /builder/linux-kernel rev-parse 'HEAD^{}' >> /builder/linux-kernel/hash", "git -C /builder/linux-kernel tag --points-at HEAD --list 'v*' >> /builder/linux-kernel/vtags"]
+2024-04-05 14:33:15.823431 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9101 qubesbuilder.FileCopyIn+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/linux-kernel
+2024-04-05 14:33:17.790233 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm -- disp9101 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'rm -f -- /builder/linux-kernel/hash /builder/linux-kernel/vtags && cd -- /builder && git -C /builder/linux-kernel rev-parse '"'"'HEAD^{}'"'"' >> /builder/linux-kernel/hash && git -C /builder/linux-kernel tag --points-at HEAD --list '"'"'v*'"'"' >> /builder/linux-kernel/vtags''.
+2024-04-05 14:33:18.017533 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9101 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fhash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmphl7nmitf
+2024-04-05 14:33:18.405994 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9101 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fvtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmphl7nmitf
+2024-04-05 14:33:32.553689 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp7958 qubesbuilder.FileCopyIn+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/linux-kernel
+2024-04-05 14:33:33.582863 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm -- disp7958 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'rm -f -- /builder/linux-kernel/modules && cd -- /builder/linux-kernel && git -C /builder/linux-kernel/linux-utils rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-psu rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/dummy-backlight rev-parse HEAD >> /builder/linux-kernel/modules && git -C /builder/linux-kernel/v4l2loopback rev-parse HEAD >> /builder/linux-kernel/modules''.
+2024-04-05 14:33:33.809435 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7958 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fmodules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/tmp/tmphl7nmitf
+2024-04-05 14:33:47.809947 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp3855 qubesbuilder.FileCopyIn+-2Fbuilder-2Flinux--kernel /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-fedora/sources/linux-kernel
+2024-04-05 14:33:48.922095 +0000 build-fedora42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp3855 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Ffetch /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/fetch
+2024-04-05 14:33:49.283470 +0000 build-fedora42: Executing '/usr/bin/qvm-run-vm -- disp3855 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c '/builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/linux-utils linux-utils-97271bab41f588b0.tar.gz linux-utils/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-psu dummy-psu-49475d88d94e079b.tar.gz dummy-psu/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/dummy-backlight dummy-backlight-33420931ad20f1e3.tar.gz dummy-backlight/ && /builder/plugins/fetch/scripts/create-archive /builder/linux-kernel/v4l2loopback v4l2loopback-1ecf810f0d687b64.tar.gz v4l2loopback/''.
+2024-04-05 14:33:49.440600 +0000 build-fedora42: output: ++ head -1
+2024-04-05 14:33:49.440652 +0000 build-fedora42: output: ++ awk '{print $4}'
+2024-04-05 14:33:49.440686 +0000 build-fedora42: output: ++ tar --version
+2024-04-05 14:33:49.457241 +0000 build-fedora42: output: + TAR_VERSION=1.35
+2024-04-05 14:33:49.457668 +0000 build-fedora42: output: ++ readlink -f /builder/linux-kernel/linux-utils
+2024-04-05 14:33:49.459110 +0000 build-fedora42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/linux-utils
+2024-04-05 14:33:49.459437 +0000 build-fedora42: output: + GIT_ARCHIVE_TYPE=gz
+2024-04-05 14:33:49.459615 +0000 build-fedora42: output: + GIT_TARBALL_NAME=linux-utils-97271bab41f588b0.tar
+2024-04-05 14:33:49.459821 +0000 build-fedora42: output: + '[' xlinux-utils/ '!=' x ']'
+2024-04-05 14:33:49.460127 +0000 build-fedora42: output: + GIT_ARCHIVE_PREFIX=linux-utils/
+2024-04-05 14:33:49.460184 +0000 build-fedora42: output: + pushd /builder/linux-kernel/linux-utils
+2024-04-05 14:33:49.460446 +0000 build-fedora42: output: /builder/linux-kernel/linux-utils ~
+2024-04-05 14:33:49.460917 +0000 build-fedora42: output: ++ git log -1 --format=%ct
+2024-04-05 14:33:49.508298 +0000 build-fedora42: output: + SOURCE_DATE_EPOCH=1603593639
+2024-04-05 14:33:49.508928 +0000 build-fedora42: output: ++ head -n1
+2024-04-05 14:33:49.509774 +0000 build-fedora42: output: ++ sort -V
+2024-04-05 14:33:49.509813 +0000 build-fedora42: output: ++ printf '%s\n' 1.35 1.28
+2024-04-05 14:33:49.511676 +0000 build-fedora42: output: + '[' 1.28 == 1.28 ']'
+2024-04-05 14:33:49.511790 +0000 build-fedora42: output: + tar --sort=name --mtime=@1603593639 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%linux-utils/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude linux-utils-97271bab41f588b0.tar -cf linux-utils-97271bab41f588b0.tar .
+2024-04-05 14:33:49.514613 +0000 build-fedora42: output: + case "$GIT_ARCHIVE_TYPE" in
+2024-04-05 14:33:49.514635 +0000 build-fedora42: output: + gzip -fn linux-utils-97271bab41f588b0.tar
+2024-04-05 14:33:49.524474 +0000 build-fedora42: output: ~
+2024-04-05 14:33:49.524509 +0000 build-fedora42: output: + popd
+2024-04-05 14:33:49.527842 +0000 build-fedora42: output: ++ awk '{print $4}'
+2024-04-05 14:33:49.528093 +0000 build-fedora42: output: ++ tar --version
+2024-04-05 14:33:49.529974 +0000 build-fedora42: output: ++ head -1
+2024-04-05 14:33:49.532343 +0000 build-fedora42: output: + TAR_VERSION=1.35
+2024-04-05 14:33:49.532740 +0000 build-fedora42: output: ++ readlink -f /builder/linux-kernel/dummy-psu
+2024-04-05 14:33:49.533746 +0000 build-fedora42: output: /builder/linux-kernel/dummy-psu ~
+2024-04-05 14:33:49.533778 +0000 build-fedora42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-psu
+2024-04-05 14:33:49.533932 +0000 build-fedora42: output: + GIT_ARCHIVE_TYPE=gz
+2024-04-05 14:33:49.533953 +0000 build-fedora42: output: + GIT_TARBALL_NAME=dummy-psu-49475d88d94e079b.tar
+2024-04-05 14:33:49.533965 +0000 build-fedora42: output: + '[' xdummy-psu/ '!=' x ']'
+2024-04-05 14:33:49.533975 +0000 build-fedora42: output: + GIT_ARCHIVE_PREFIX=dummy-psu/
+2024-04-05 14:33:49.533986 +0000 build-fedora42: output: + pushd /builder/linux-kernel/dummy-psu
+2024-04-05 14:33:49.534890 +0000 build-fedora42: output: ++ git log -1 --format=%ct
+2024-04-05 14:33:49.537108 +0000 build-fedora42: output: + SOURCE_DATE_EPOCH=1602292420
+2024-04-05 14:33:49.538711 +0000 build-fedora42: output: ++ head -n1
+2024-04-05 14:33:49.539059 +0000 build-fedora42: output: ++ sort -V
+2024-04-05 14:33:49.541028 +0000 build-fedora42: output: ++ printf '%s\n' 1.35 1.28
+2024-04-05 14:33:49.543394 +0000 build-fedora42: output: + '[' 1.28 == 1.28 ']'
+2024-04-05 14:33:49.543460 +0000 build-fedora42: output: + tar --sort=name --mtime=@1602292420 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-psu/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-psu-49475d88d94e079b.tar -cf dummy-psu-49475d88d94e079b.tar .
+2024-04-05 14:33:49.545934 +0000 build-fedora42: output: + case "$GIT_ARCHIVE_TYPE" in
+2024-04-05 14:33:49.545964 +0000 build-fedora42: output: + gzip -fn dummy-psu-49475d88d94e079b.tar
+2024-04-05 14:33:49.554661 +0000 build-fedora42: output: + popd
+2024-04-05 14:33:49.554694 +0000 build-fedora42: output: ~
+2024-04-05 14:33:49.557391 +0000 build-fedora42: output: ++ tar --version
+2024-04-05 14:33:49.559240 +0000 build-fedora42: output: ++ head -1
+2024-04-05 14:33:49.559827 +0000 build-fedora42: output: ++ awk '{print $4}'
+2024-04-05 14:33:49.563681 +0000 build-fedora42: output: + TAR_VERSION=1.35
+2024-04-05 14:33:49.564035 +0000 build-fedora42: output: ++ readlink -f /builder/linux-kernel/dummy-backlight
+2024-04-05 14:33:49.566520 +0000 build-fedora42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/dummy-backlight
+2024-04-05 14:33:49.566586 +0000 build-fedora42: output: + GIT_ARCHIVE_TYPE=gz
+2024-04-05 14:33:49.566821 +0000 build-fedora42: output: + GIT_TARBALL_NAME=dummy-backlight-33420931ad20f1e3.tar
+2024-04-05 14:33:49.566848 +0000 build-fedora42: output: /builder/linux-kernel/dummy-backlight ~
+2024-04-05 14:33:49.566862 +0000 build-fedora42: output: + '[' xdummy-backlight/ '!=' x ']'
+2024-04-05 14:33:49.566875 +0000 build-fedora42: output: + GIT_ARCHIVE_PREFIX=dummy-backlight/
+2024-04-05 14:33:49.566888 +0000 build-fedora42: output: + pushd /builder/linux-kernel/dummy-backlight
+2024-04-05 14:33:49.567955 +0000 build-fedora42: output: ++ git log -1 --format=%ct
+2024-04-05 14:33:49.570920 +0000 build-fedora42: output: + SOURCE_DATE_EPOCH=1600607528
+2024-04-05 14:33:49.571608 +0000 build-fedora42: output: ++ printf '%s\n' 1.35 1.28
+2024-04-05 14:33:49.572030 +0000 build-fedora42: output: ++ sort -V
+2024-04-05 14:33:49.572325 +0000 build-fedora42: output: ++ head -n1
+2024-04-05 14:33:49.574243 +0000 build-fedora42: output: + '[' 1.28 == 1.28 ']'
+2024-04-05 14:33:49.574299 +0000 build-fedora42: output: + tar --sort=name --mtime=@1600607528 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%dummy-backlight/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude dummy-backlight-33420931ad20f1e3.tar -cf dummy-backlight-33420931ad20f1e3.tar .
+2024-04-05 14:33:49.576141 +0000 build-fedora42: output: + case "$GIT_ARCHIVE_TYPE" in
+2024-04-05 14:33:49.576181 +0000 build-fedora42: output: + gzip -fn dummy-backlight-33420931ad20f1e3.tar
+2024-04-05 14:33:49.577445 +0000 build-fedora42: output: + popd
+2024-04-05 14:33:49.577483 +0000 build-fedora42: output: ~
+2024-04-05 14:33:49.580457 +0000 build-fedora42: output: ++ tar --version
+2024-04-05 14:33:49.580758 +0000 build-fedora42: output: ++ awk '{print $4}'
+2024-04-05 14:33:49.581594 +0000 build-fedora42: output: ++ head -1
+2024-04-05 14:33:49.582900 +0000 build-fedora42: output: + TAR_VERSION=1.35
+2024-04-05 14:33:49.582977 +0000 build-fedora42: output: ++ readlink -f /builder/linux-kernel/v4l2loopback
+2024-04-05 14:33:49.583678 +0000 build-fedora42: output: + GIT_ARCHIVE_SRC=/builder/linux-kernel/v4l2loopback
+2024-04-05 14:33:49.583708 +0000 build-fedora42: output: + GIT_ARCHIVE_TYPE=gz
+2024-04-05 14:33:49.583996 +0000 build-fedora42: output: + GIT_TARBALL_NAME=v4l2loopback-1ecf810f0d687b64.tar
+2024-04-05 14:33:49.584022 +0000 build-fedora42: output: + '[' xv4l2loopback/ '!=' x ']'
+2024-04-05 14:33:49.584037 +0000 build-fedora42: output: + GIT_ARCHIVE_PREFIX=v4l2loopback/
+2024-04-05 14:33:49.584052 +0000 build-fedora42: output: + pushd /builder/linux-kernel/v4l2loopback
+2024-04-05 14:33:49.584249 +0000 build-fedora42: output: /builder/linux-kernel/v4l2loopback ~
+2024-04-05 14:33:49.584815 +0000 build-fedora42: output: ++ git log -1 --format=%ct
+2024-04-05 14:33:49.587862 +0000 build-fedora42: output: + SOURCE_DATE_EPOCH=1659652207
+2024-04-05 14:33:49.588558 +0000 build-fedora42: output: ++ printf '%s\n' 1.35 1.28
+2024-04-05 14:33:49.588948 +0000 build-fedora42: output: ++ head -n1
+2024-04-05 14:33:49.589236 +0000 build-fedora42: output: ++ sort -V
+2024-04-05 14:33:49.592445 +0000 build-fedora42: output: + '[' 1.28 == 1.28 ']'
+2024-04-05 14:33:49.592558 +0000 build-fedora42: output: + tar --sort=name --mtime=@1659652207 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%v4l2loopback/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude v4l2loopback-1ecf810f0d687b64.tar -cf v4l2loopback-1ecf810f0d687b64.tar .
+2024-04-05 14:33:49.594060 +0000 build-fedora42: output: + case "$GIT_ARCHIVE_TYPE" in
+2024-04-05 14:33:49.594122 +0000 build-fedora42: output: + gzip -fn v4l2loopback-1ecf810f0d687b64.tar
+2024-04-05 14:33:49.604112 +0000 build-fedora42: output: + popd
+2024-04-05 14:33:49.604162 +0000 build-fedora42: output: ~
+2024-04-05 14:33:49.611132 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3855 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Flinux--utils-2Flinux--utils--97271bab41f588b0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/distfiles/linux-kernel
+2024-04-05 14:33:49.786197 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3855 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fdummy--psu-2Fdummy--psu--49475d88d94e079b.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/distfiles/linux-kernel
+2024-04-05 14:33:49.973991 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3855 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fdummy--backlight-2Fdummy--backlight--33420931ad20f1e3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/distfiles/linux-kernel
+2024-04-05 14:33:50.234111 +0000 build-fedora42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3855 qubesbuilder.FileCopyOut+-2Fbuilder-2Flinux--kernel-2Fv4l2loopback-2Fv4l2loopback--1ecf810f0d687b64.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-fedora/distfiles/linux-kernel
+2024-04-05 14:33:52.791307 +0000 build-fedora42: > done
+2024-04-05 14:33:52.791386 +0000 > closing log
