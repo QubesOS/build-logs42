@@ -1,0 +1,847 @@
+2024-05-08 01:06:23.107961 +0000 > starting log
+2024-05-08 01:06:23.110226 +0000 build-debian42: > starting build with log
+2024-05-08 01:06:23.110287 +0000 build-debian42: >> args:
+2024-05-08 01:06:23.110307 +0000 build-debian42: >>   ()
+2024-05-08 01:06:23.110326 +0000 build-debian42: >> component:
+2024-05-08 01:06:23.110342 +0000 build-debian42: >>   app-linux-split-gpg
+2024-05-08 01:06:23.110368 +0000 build-debian42: >>     commit-hash: ed6b94e4dab510a2328ece62a645f23600d72f1a
+2024-05-08 01:06:23.110388 +0000 build-debian42: >>     source-hash: b043dabe7988be0c8795c877ffad531bee6e7d3013d2d289b0042304561ab40c97efc3e849606bb6f40b4548d47f06a12e92cc4124c4319f9986b4f646df04dd
+2024-05-08 01:06:23.110395 +0000 build-debian42: >> distributions:
+2024-05-08 01:06:23.110403 +0000 build-debian42: >>   [<QubesDistribution vm-debian-12.amd64>, <QubesDistribution vm-debian-13.amd64>]
+2024-05-08 01:06:23.110412 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64: Source hash is the same than already prepared source. Skipping.
+2024-05-08 01:06:46.728808 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fpbuilder /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/chroot_deb/pbuilder
+2024-05-08 01:06:46.997446 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fqubes--gpg--split_2.0.71.orig.tar.gz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/prep/qubes-gpg-split_2.0.71.orig.tar.gz
+2024-05-08 01:06:47.388634 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fqubes--gpg--split_2.0.71--1-2Bdeb13u1.dsc /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/prep/qubes-gpg-split_2.0.71-1+deb13u1.dsc
+2024-05-08 01:06:47.793016 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fqubes--gpg--split_2.0.71--1-2Bdeb13u1.debian.tar.xz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/prep/qubes-gpg-split_2.0.71-1+deb13u1.debian.tar.xz
+2024-05-08 01:06:49.488409 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fpbuilder-2Fbase.tgz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/trixie/pbuilder/base.tgz
+2024-05-08 01:06:53.364546 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fbuild_deb /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2024-05-08 01:06:53.789138 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fchroot_deb /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/chroot_deb
+2024-05-08 01:06:54.183954 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fbuild /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2024-05-08 01:06:54.632969 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp9235 qubesbuilder.FileCopyIn+-2Fbuilder-2Frepository-2Fvm--trixie /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-trixie
+2024-05-08 01:06:58.021450 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm -- disp9235 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'mkdir -p /builder/cache/aptcache && /builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian trixie && sudo -E pbuilder update --distribution trixie --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb trixie main" && sudo -E pbuilder build --override-config --distribution trixie --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb trixie main" /builder/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc && /builder/plugins/build_deb/scripts/patch-changes /builder/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc /builder/pbuilder/results/qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo /builder/pbuilder/results/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes''.
+2024-05-08 01:06:58.330659 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2024-05-08 01:06:58.330706 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2024-05-08 01:06:58.330715 +0000 build-debian42: output: + DISTRIBUTION=debian
+2024-05-08 01:06:58.330721 +0000 build-debian42: output: + SUITE=trixie
+2024-05-08 01:06:58.330755 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2024-05-08 01:06:58.331409 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2024-05-08 01:06:58.332246 +0000 build-debian42: output: + cd /builder/repository
+2024-05-08 01:06:58.332663 +0000 build-debian42: output: ++ LC_ALL=C
+2024-05-08 01:06:58.332683 +0000 build-debian42: output: ++ reprepro --version
+2024-05-08 01:06:58.381991 +0000 build-debian42: output: + reprepro_version='reprepro: This is reprepro version 5.4.2'
+2024-05-08 01:06:58.382088 +0000 build-debian42: output: + reprepro_version=5.4.2
+2024-05-08 01:06:58.382111 +0000 build-debian42: output: + append_components=
+2024-05-08 01:06:58.383997 +0000 build-debian42: output: ++ printf '%s\n' 5.4.2 5.4.0
+2024-05-08 01:06:58.385527 +0000 build-debian42: output: ++ head -n1
+2024-05-08 01:06:58.385558 +0000 build-debian42: output: ++ sort -V
+2024-05-08 01:06:58.397556 +0000 build-debian42: output: + '[' 5.4.0 = 5.4.0 ']'
+2024-05-08 01:06:58.397622 +0000 build-debian42: output: + append_components='
+2024-05-08 01:06:58.397638 +0000 build-debian42: output: DDebComponents: main'
+2024-05-08 01:06:58.397646 +0000 build-debian42: output: + cat
+2024-05-08 01:06:58.398744 +0000 build-debian42: output: + mkdir -p dists/trixie/main/binary-amd64
+2024-05-08 01:06:58.400022 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2024-05-08 01:07:00.231228 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 96 entries to output Packages file.
+2024-05-08 01:07:00.233798 +0000 build-debian42: output: + gzip -9c dists/trixie/main/binary-amd64/Packages
+2024-05-08 01:07:00.242012 +0000 build-debian42: output: ++ LC_ALL=C
+2024-05-08 01:07:00.242058 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2024-05-08 01:07:00.242067 +0000 build-debian42: output: + DATE='Wed, 08 May 2024 01:07:00 UTC'
+2024-05-08 01:07:00.242075 +0000 build-debian42: output: + cat
+2024-05-08 01:07:00.242843 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2024-05-08 01:07:00.242878 +0000 build-debian42: output: + f=dists/trixie/main/binary-amd64/Packages
+2024-05-08 01:07:00.242887 +0000 build-debian42: output: + echo -n ' '
+2024-05-08 01:07:00.243306 +0000 build-debian42: output: ++ sha256sum dists/trixie/main/binary-amd64/Packages
+2024-05-08 01:07:00.243328 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2024-05-08 01:07:00.252426 +0000 build-debian42: output: + echo -n 232a70e7173ae67c1f3ec715df61e0c86a877c1e9c1158301ce411ca81401528 ''
+2024-05-08 01:07:00.252523 +0000 build-debian42: output: ++ stat -c %s dists/trixie/main/binary-amd64/Packages
+2024-05-08 01:07:00.266398 +0000 build-debian42: output: + echo -n 79111 ''
+2024-05-08 01:07:00.266446 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2024-05-08 01:07:00.266455 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2024-05-08 01:07:00.266484 +0000 build-debian42: output: + f=dists/trixie/main/binary-amd64/Packages.gz
+2024-05-08 01:07:00.266492 +0000 build-debian42: output: + echo -n ' '
+2024-05-08 01:07:00.267331 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2024-05-08 01:07:00.267362 +0000 build-debian42: output: ++ sha256sum dists/trixie/main/binary-amd64/Packages.gz
+2024-05-08 01:07:00.270021 +0000 build-debian42: output: + echo -n 09a0eb0cdd1930ef85a32dad8cfb8db8022b888d9a005eab2765b7d8f6d2d5f5 ''
+2024-05-08 01:07:00.270065 +0000 build-debian42: output: ++ stat -c %s dists/trixie/main/binary-amd64/Packages.gz
+2024-05-08 01:07:00.273313 +0000 build-debian42: output: + echo -n 22446 ''
+2024-05-08 01:07:00.273358 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2024-05-08 01:07:00.273366 +0000 build-debian42: output: + mapfile -d '' changes_files
+2024-05-08 01:07:00.273796 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2024-05-08 01:07:00.283516 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:00.283970 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/salt_3006.5/salt_3006.5-1+deb13u1_amd64.changes
+2024-05-08 01:07:01.444473 +0000 build-debian42: output: 'salt_3006.5-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:01.444524 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:02.158273 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.159658 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.159798 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/repo-templates_4.2.2/qubes-repo-templates_4.2.2-1+deb13u1_amd64.changes
+2024-05-08 01:07:02.305657 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.306649 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.306687 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/fwupd_1.8.14/fwupd-qubes_1.8.14-5+deb13u1_amd64.changes
+2024-05-08 01:07:02.438872 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.439334 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.439360 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/meta-packages_4.2.11/qubes-meta-packages_4.2.11-1+deb13u1_amd64.changes
+2024-05-08 01:07:02.588254 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.589221 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.589282 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-i3_4.21/i3-wm_4.21-1+deb13u1_amd64.changes
+2024-05-08 01:07:02.779112 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.779199 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/core-vchan-xen_4.2.3/libvchan-xen_4.2.3-1+deb13u1_amd64.changes
+2024-05-08 01:07:02.779224 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.919751 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:02.920430 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:02.920462 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-pdf-converter_2.1.19/qubes-pdf-converter_2.1.19-1+deb13u1_amd64.changes
+2024-05-08 01:07:03.027861 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.028718 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.028886 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-gpg-sign_1.0.0/qubes-gpg-sign_1.0.0-1+deb13u1_amd64.changes
+2024-05-08 01:07:03.167603 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.168280 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.168450 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-u2f_2.0.5/qubes-ctap_2.0.5+deb13u1_amd64.changes
+2024-05-08 01:07:03.181856 +0000 build-debian42: output: 'qubes-ctap_2.0.5+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:03.181935 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:03.296153 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.297709 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.297846 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-xfce4-xfwm4_4.16.1/xfwm4_4.16.1-4+deb13u1_amd64.changes
+2024-05-08 01:07:03.441194 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.441243 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.441259 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/mgmt-salt-base-topd_4.2.1/qubes-mgmt-salt-base-topd_4.2.1-1+deb13u1_amd64.changes
+2024-05-08 01:07:03.454074 +0000 build-debian42: output: 'qubes-mgmt-salt-base-topd_4.2.1-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:03.454121 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:03.636287 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.636334 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.636349 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-menu_1.2.0/qubes-desktop-linux-menu_1.2.0-1+deb13u1_amd64.changes
+2024-05-08 01:07:03.834722 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:03.835824 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:03.835867 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/core-admin-client_4.2.12/qubes-core-admin-client_4.2.12-1+deb13u1_amd64.changes
+2024-05-08 01:07:04.025583 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:04.026803 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:04.026863 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-input-proxy_1.0.36/qubes-input-proxy_1.0.36-1+deb13u1_amd64.changes
+2024-05-08 01:07:05.607592 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:05.609953 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:05.609993 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/disk-password-gui_1.0.0/disk-password-gui_1.0.0-1+deb13u1_amd64.changes
+2024-05-08 01:07:05.992176 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:05.992238 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:05.992265 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/artwork_4.2.1/qubes-artwork_4.2.1-1+deb13u1_amd64.changes
+2024-05-08 01:07:07.590267 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:07.591177 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:07.591208 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/mgmt-salt_4.2.2/qubes-mgmt-salt_4.2.2-1+deb13u1_amd64.changes
+2024-05-08 01:07:07.612487 +0000 build-debian42: output: 'qubes-mgmt-salt_4.2.2-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:07.612555 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:07.757641 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:07.758330 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:07.758401 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-i3-settings-qubes_1.10/i3-settings-qubes_1.10-1+deb13u1_amd64.changes
+2024-05-08 01:07:07.885958 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:07.887106 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:07.887137 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-manager_4.2.21/qubes-desktop-linux-manager_4.2.21-1+deb13u1_amd64.changes
+2024-05-08 01:07:08.062010 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.063001 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.063032 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-shutdown-idle_1.0.10/qubes-app-shutdown-idle_1.0.10-1+deb13u1_amd64.changes
+2024-05-08 01:07:08.168067 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.168619 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.168671 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/python-fido2_1.1.2/python-fido2_1.1.2-2+deb13u1_amd64.changes
+2024-05-08 01:07:08.183836 +0000 build-debian42: output: 'python-fido2_1.1.2-2+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:08.183891 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:08.293690 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.294759 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.294788 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/rpm-oxide_0.2.7/qubes-rpm-oxide_0.2.7-1+deb13u1_amd64.changes
+2024-05-08 01:07:08.312831 +0000 build-debian42: output: 'qubes-rpm-oxide_0.2.7-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:08.312879 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:08.464410 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.466363 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.466406 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-usb-proxy_1.2.1/qubes-usb-proxy_1.2.1+deb13u1_amd64.changes
+2024-05-08 01:07:08.670351 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.672417 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.672498 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/python-qasync_0.23.0/python-qasync_0.23.0-2+deb13u1_amd64.changes
+2024-05-08 01:07:08.688315 +0000 build-debian42: output: 'python-qasync_0.23.0-2+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:08.688364 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:08.841589 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:08.842480 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:08.842516 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/mgmt-salt-base_4.1.6/qubes-mgmt-salt-base_4.1.6-1+deb13u1_amd64.changes
+2024-05-08 01:07:08.888651 +0000 build-debian42: output: 'qubes-mgmt-salt-base_4.1.6-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:08.888699 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:09.176878 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:09.177445 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:09.177470 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/core-qrexec_4.2.18/qubes-core-qrexec_4.2.18-1+deb13u1_amd64.changes
+2024-05-08 01:07:09.961592 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:09.962434 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:09.962517 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-thunderbird_2.0.8/thunderbird-qubes_2.0.8-1+deb13u1_amd64.changes
+2024-05-08 01:07:10.130715 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:10.131492 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:10.131623 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/gui-common_4.2.4/qubes-gui-common_4.2.4+deb13u1_amd64.changes
+2024-05-08 01:07:10.372266 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:10.372814 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:10.372945 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/video-companion_1.0.7/qubes-video-companion_1.0.7-1+deb13u1_amd64.changes
+2024-05-08 01:07:10.390552 +0000 build-debian42: output: 'qubes-video-companion_1.0.7-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:10.390624 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:10.646602 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:10.647894 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:10.647993 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-split-gpg2_1.0.0/split-gpg2_1.0.0+deb13u1_amd64.changes
+2024-05-08 01:07:10.890074 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:10.891677 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:10.891718 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/python-looseversion_1.3.0/python-looseversion_1.3.0-1+deb13u1_amd64.changes
+2024-05-08 01:07:11.062719 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:11.063150 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:11.063179 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/linux-gbulb_0.6.3/python3-gbulb_0.6.3-2+deb13u1_amd64.changes
+2024-05-08 01:07:11.088977 +0000 build-debian42: output: 'python3-gbulb_0.6.3-2+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:11.089025 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:11.594391 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:11.594853 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:11.594883 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-snapd-helper_1.0.4/qubes-snapd-helper_1.0.4-1+deb13u1_amd64.changes
+2024-05-08 01:07:12.259551 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:12.259862 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:12.259974 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-xfce4_4.2.2/xfce4-settings-qubes_4.2.2-1+deb13u1_amd64.changes
+2024-05-08 01:07:12.550253 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:12.550691 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:12.550836 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/linux-utils_4.2.15/qubes-utils_4.2.15+deb13u1_amd64.changes
+2024-05-08 01:07:13.130959 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:13.131038 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:13.131072 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/core-qubesdb_4.2.5/qubesdb_4.2.5-1+deb13u1_amd64.changes
+2024-05-08 01:07:13.568085 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:13.568160 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:13.568192 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/manager_4.2.8/qubes-manager_4.2.8-1+deb13u1_amd64.changes
+2024-05-08 01:07:13.919228 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:13.920465 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:13.920502 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/desktop-linux-common_4.2.7/qubes-desktop-linux-common_4.2.7-1+deb13u1_amd64.changes
+2024-05-08 01:07:14.267671 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:14.268863 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:14.268930 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/notification-proxy_1.0.1/notification-proxy_1.0.1-1+deb13u1_amd64.changes
+2024-05-08 01:07:14.704798 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:14.705239 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:14.705265 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/mgmt-salt-base-config_4.1.2/qubes-mgmt-salt-base-config_4.1.2-1+deb13u1_amd64.changes
+2024-05-08 01:07:14.719430 +0000 build-debian42: output: 'qubes-mgmt-salt-base-config_4.1.2-1+deb13u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-08 01:07:14.719480 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-08 01:07:14.820002 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:14.820695 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:14.820722 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/app-linux-img-converter_1.2.16/qubes-img-converter_1.2.16-1+deb13u1_amd64.changes
+2024-05-08 01:07:14.925258 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:14.926028 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-08 01:07:14.926055 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include trixie /builder/repository/vm-trixie/vmm-xen-guest_5.0.0/xen-guest_5.0.0-1+deb13u1_amd64.changes
+2024-05-08 01:07:15.042670 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:07:15.068416 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2024-05-08 01:07:15.112429 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2024-05-08 01:07:15.123300 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2024-05-08 01:07:15.125119 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2024-05-08 01:07:15.128150 +0000 build-debian42: output: I: Current time: Wed May  8 01:07:15 GMT 2024
+2024-05-08 01:07:15.129102 +0000 build-debian42: output: I: pbuilder-time-stamp: 1715130435
+2024-05-08 01:07:15.129878 +0000 build-debian42: output: I: Building the build Environment
+2024-05-08 01:07:15.130811 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2024-05-08 01:07:23.083506 +0000 build-debian42: output: I: copying local configuration
+2024-05-08 01:07:23.199944 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2777/etc/hostname to be correct
+2024-05-08 01:07:23.199994 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2777/etc/mailname to be correct
+2024-05-08 01:07:23.237261 +0000 build-debian42: output: W: --override-config is not set; not updating apt.conf Read the manpage for details.
+2024-05-08 01:07:23.237412 +0000 build-debian42: output: I: mounting /proc filesystem
+2024-05-08 01:07:23.262543 +0000 build-debian42: output: I: mounting /sys filesystem
+2024-05-08 01:07:23.270105 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2024-05-08 01:07:23.283644 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2024-05-08 01:07:23.290433 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2024-05-08 01:07:23.301661 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2024-05-08 01:07:23.305073 +0000 build-debian42: output: I: policy-rc.d already exists
+2024-05-08 01:07:23.311609 +0000 build-debian42: output: I: Refreshing the base.tgz
+2024-05-08 01:07:23.311657 +0000 build-debian42: output: I: upgrading packages
+2024-05-08 01:07:33.406393 +0000 build-debian42: output: Hit:1 https://deb.debian.org/debian trixie InRelease
+2024-05-08 01:07:33.931781 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:07:33.950414 +0000 build-debian42: output: I: Obtaining the cached apt archive contents
+2024-05-08 01:07:33.963667 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:07:34.076084 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:07:34.076140 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:07:34.212372 +0000 build-debian42: output: Calculating upgrade...
+2024-05-08 01:07:34.329754 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2024-05-08 01:07:34.345858 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:07:34.536679 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:07:34.536751 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:07:34.740299 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2024-05-08 01:07:34.755249 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:07:34.891967 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:07:34.892033 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:07:35.071330 +0000 build-debian42: output: build-essential is already the newest version (12.10).
+2024-05-08 01:07:35.071382 +0000 build-debian42: output: dpkg-dev is already the newest version (1.22.6).
+2024-05-08 01:07:35.071391 +0000 build-debian42: output: aptitude is already the newest version (0.8.13-6).
+2024-05-08 01:07:35.071399 +0000 build-debian42: output: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2024-05-08 01:07:35.071916 +0000 build-debian42: output: I: Copying back the cached apt archive contents
+2024-05-08 01:07:35.074815 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2777/tmp/hooks/E30origin starting
+2024-05-08 01:07:35.083758 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2777/tmp/hooks/E30origin finished
+2024-05-08 01:07:35.084311 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2024-05-08 01:07:35.099071 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2024-05-08 01:07:35.103905 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2024-05-08 01:07:35.112171 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2024-05-08 01:07:35.119862 +0000 build-debian42: output: I: unmounting proc filesystem
+2024-05-08 01:07:35.126309 +0000 build-debian42: output: I: unmounting sys filesystem
+2024-05-08 01:07:35.156152 +0000 build-debian42: output: I: creating base tarball [/builder/pbuilder/base.tgz]
+2024-05-08 01:07:57.882969 +0000 build-debian42: output: I: cleaning the build env
+2024-05-08 01:07:57.883017 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/2777 and its subdirectories
+2024-05-08 01:07:58.384644 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2024-05-08 01:07:58.448007 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2024-05-08 01:07:58.454801 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2024-05-08 01:07:58.456342 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2024-05-08 01:07:58.497450 +0000 build-debian42: output: I: pbuilder: network access will be disabled during build
+2024-05-08 01:07:58.499071 +0000 build-debian42: output: I: Current time: Wed May  8 01:07:58 GMT 2024
+2024-05-08 01:07:58.500092 +0000 build-debian42: output: I: pbuilder-time-stamp: 1715130478
+2024-05-08 01:07:58.500863 +0000 build-debian42: output: I: Building the build Environment
+2024-05-08 01:07:58.504789 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2024-05-08 01:08:02.416577 +0000 build-debian42: output: I: copying local configuration
+2024-05-08 01:08:02.429724 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2996/etc/hostname to be correct
+2024-05-08 01:08:02.429836 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2996/etc/mailname to be correct
+2024-05-08 01:08:02.443422 +0000 build-debian42: output: I: Installing apt-lines
+2024-05-08 01:08:03.148852 +0000 build-debian42: output: I: mounting /proc filesystem
+2024-05-08 01:08:03.154149 +0000 build-debian42: output: I: mounting /sys filesystem
+2024-05-08 01:08:03.162677 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2024-05-08 01:08:03.167613 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2024-05-08 01:08:03.172657 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2024-05-08 01:08:03.192065 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2024-05-08 01:08:03.195322 +0000 build-debian42: output: I: policy-rc.d already exists
+2024-05-08 01:08:03.203161 +0000 build-debian42: output: I: created buildresult dir: /builder/pbuilder/results
+2024-05-08 01:08:03.203202 +0000 build-debian42: output: I: Obtaining the cached apt archive contents
+2024-05-08 01:08:03.225166 +0000 build-debian42: output: I: Copying source file
+2024-05-08 01:08:03.295468 +0000 build-debian42: output: I: copying [/builder/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc]
+2024-05-08 01:08:03.302560 +0000 build-debian42: output: I: copying [/builder/build/qubes-gpg-split_2.0.71.orig.tar.gz]
+2024-05-08 01:08:03.325399 +0000 build-debian42: output: I: copying [/builder/build/qubes-gpg-split_2.0.71-1+deb13u1.debian.tar.xz]
+2024-05-08 01:08:03.347976 +0000 build-debian42: output: I: Extracting source
+2024-05-08 01:08:03.452678 +0000 build-debian42: output: dpkg-source: warning: extracting unsigned source package (qubes-gpg-split_2.0.71-1+deb13u1.dsc)
+2024-05-08 01:08:03.455931 +0000 build-debian42: output: dpkg-source: info: extracting qubes-gpg-split in qubes-gpg-split-2.0.71
+2024-05-08 01:08:03.455972 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-gpg-split_2.0.71.orig.tar.gz
+2024-05-08 01:08:03.464077 +0000 build-debian42: output: dpkg-source: info: unpacking qubes-gpg-split_2.0.71-1+deb13u1.debian.tar.xz
+2024-05-08 01:08:03.483848 +0000 build-debian42: output: I: using fakeroot in build.
+2024-05-08 01:08:03.483897 +0000 build-debian42: output: I: Installing the build-deps
+2024-05-08 01:08:03.483907 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2996/tmp/hooks/D30update starting
+2024-05-08 01:08:03.511754 +0000 build-debian42: output: Get:1 file:/tmp/qubes-deb trixie InRelease
+2024-05-08 01:08:03.511806 +0000 build-debian42: output: Ign:1 file:/tmp/qubes-deb trixie InRelease
+2024-05-08 01:08:03.538507 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb trixie Release [3847 B]
+2024-05-08 01:08:03.544355 +0000 build-debian42: output: Get:2 file:/tmp/qubes-deb trixie Release [3847 B]
+2024-05-08 01:08:03.544856 +0000 build-debian42: output: Get:3 file:/tmp/qubes-deb trixie Release.gpg
+2024-05-08 01:08:03.544934 +0000 build-debian42: output: Ign:3 file:/tmp/qubes-deb trixie Release.gpg
+2024-05-08 01:08:03.561245 +0000 build-debian42: output: Get:4 file:/tmp/qubes-deb trixie/main amd64 Packages [30.4 kB]
+2024-05-08 01:08:06.753603 +0000 build-debian42: output: Hit:5 https://deb.debian.org/debian trixie InRelease
+2024-05-08 01:08:07.360476 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:08:07.371606 +0000 build-debian42: output: I: user script /builder/pbuilder/build/2996/tmp/hooks/D30update finished
+2024-05-08 01:08:07.457759 +0000 build-debian42: output:  -> Attempting to satisfy build-dependencies
+2024-05-08 01:08:07.531880 +0000 build-debian42: output:  -> Creating pbuilder-satisfydepends-dummy package
+2024-05-08 01:08:07.537349 +0000 build-debian42: output: Package: pbuilder-satisfydepends-dummy
+2024-05-08 01:08:07.537390 +0000 build-debian42: output: Version: 0.invalid.0
+2024-05-08 01:08:07.537398 +0000 build-debian42: output: Architecture: amd64
+2024-05-08 01:08:07.537407 +0000 build-debian42: output: Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+2024-05-08 01:08:07.537415 +0000 build-debian42: output: Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+2024-05-08 01:08:07.537423 +0000 build-debian42: output:  This package was created automatically by pbuilder to satisfy the
+2024-05-08 01:08:07.537450 +0000 build-debian42: output:  build-dependencies of the package being currently built.
+2024-05-08 01:08:07.537459 +0000 build-debian42: output: Depends: debhelper (>= 9~), pandoc, quilt
+2024-05-08 01:08:07.538551 +0000 build-debian42: output: dpkg-deb: building package 'pbuilder-satisfydepends-dummy' in '/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
+2024-05-08 01:08:08.050977 +0000 build-debian42: output: Selecting previously unselected package pbuilder-satisfydepends-dummy.
+2024-05-08 01:08:08.062894 +0000 build-debian42: output: (Reading database ... 12606 files and directories currently installed.)
+2024-05-08 01:08:08.063676 +0000 build-debian42: output: Preparing to unpack .../pbuilder-satisfydepends-dummy.deb ...
+2024-05-08 01:08:08.305051 +0000 build-debian42: output: Unpacking pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2024-05-08 01:08:09.635405 +0000 build-debian42: output: dpkg: pbuilder-satisfydepends-dummy: dependency problems, but configuring anyway as you requested:
+2024-05-08 01:08:09.635581 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on debhelper (>= 9~); however:
+2024-05-08 01:08:09.635619 +0000 build-debian42: output:   Package debhelper is not installed.
+2024-05-08 01:08:09.635642 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on pandoc; however:
+2024-05-08 01:08:09.635893 +0000 build-debian42: output:   Package pandoc is not installed.
+2024-05-08 01:08:09.636000 +0000 build-debian42: output:  pbuilder-satisfydepends-dummy depends on quilt; however:
+2024-05-08 01:08:09.636118 +0000 build-debian42: output:   Package quilt is not installed.
+2024-05-08 01:08:09.636214 +0000 build-debian42: output: 
+2024-05-08 01:08:09.636364 +0000 build-debian42: output: Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+2024-05-08 01:08:10.949566 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:08:11.086898 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:08:11.086949 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:08:11.124035 +0000 build-debian42: output: Initializing package states...
+2024-05-08 01:08:11.371618 +0000 build-debian42: output: Writing extended state information...
+2024-05-08 01:08:11.500473 +0000 build-debian42: output: Building tag database...
+2024-05-08 01:08:12.552362 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2024-05-08 01:08:12.552412 +0000 build-debian42: output: pbuilder-satisfydepends-dummy is already installed at the requested version (0.invalid.0)
+2024-05-08 01:08:12.552421 +0000 build-debian42: output: The following NEW packages will be installed:
+2024-05-08 01:08:12.552450 +0000 build-debian42: output:   autoconf{a} automake{a} autopoint{a} autotools-dev{a} bsdextrautils{a} debhelper{a} dh-autoreconf{a} dh-strip-nondeterminism{a} diffstat{a} dwz{a} ed{a} file{a} gettext{a} gettext-base{a} groff-base{a} intltool-debian{a} libarchive-zip-perl{a} libdebhelper-perl{a} libelf1t64{a} libfile-stripnondeterminism-perl{a} libicu72{a} liblua5.4-0{a} libmagic-mgc{a} libmagic1t64{a} libpipeline1{a} libsub-override-perl{a} libtool{a} libuchardet0{a} libxml2{a} libyaml-0-2{a} m4{a} man-db{a} pandoc{a} pandoc-data{a} po-debconf{a} quilt{a} sensible-utils{a}
+2024-05-08 01:08:12.552475 +0000 build-debian42: output: The following packages are RECOMMENDED but will NOT be installed:
+2024-05-08 01:08:12.552483 +0000 build-debian42: output:   curl less libarchive-cpio-perl libltdl-dev libmail-sendmail-perl lynx wget
+2024-05-08 01:08:12.552491 +0000 build-debian42: output: 0 packages upgraded, 37 newly installed, 0 to remove and 0 not upgraded.
+2024-05-08 01:08:12.552499 +0000 build-debian42: output: Need to get 44.5 MB of archives. After unpacking 275 MB will be used.
+2024-05-08 01:08:12.552505 +0000 build-debian42: output: Writing extended state information...
+2024-05-08 01:08:16.376454 +0000 build-debian42: output: Get: 1 https://deb.debian.org/debian trixie/main amd64 sensible-utils all 0.0.22 [22.4 kB]
+2024-05-08 01:08:17.204070 +0000 build-debian42: output: Get: 2 https://deb.debian.org/debian trixie/main amd64 libmagic-mgc amd64 1:5.45-3 [314 kB]
+2024-05-08 01:08:18.655429 +0000 build-debian42: output: Get: 3 https://deb.debian.org/debian trixie/main amd64 libmagic1t64 amd64 1:5.45-3 [105 kB]
+2024-05-08 01:08:19.014024 +0000 build-debian42: output: Get: 4 https://deb.debian.org/debian trixie/main amd64 file amd64 1:5.45-3 [42.9 kB]
+2024-05-08 01:08:19.212176 +0000 build-debian42: output: Get: 5 https://deb.debian.org/debian trixie/main amd64 gettext-base amd64 0.21-14+b1 [161 kB]
+2024-05-08 01:08:19.774716 +0000 build-debian42: output: Get: 6 https://deb.debian.org/debian trixie/main amd64 libuchardet0 amd64 0.0.8-1+b1 [68.8 kB]
+2024-05-08 01:08:19.953102 +0000 build-debian42: output: Get: 7 https://deb.debian.org/debian trixie/main amd64 groff-base amd64 1.23.0-4 [1180 kB]
+2024-05-08 01:08:23.906342 +0000 build-debian42: output: Get: 8 https://deb.debian.org/debian trixie/main amd64 bsdextrautils amd64 2.40-8 [92.8 kB]
+2024-05-08 01:08:24.061918 +0000 build-debian42: output: Get: 9 https://deb.debian.org/debian trixie/main amd64 libpipeline1 amd64 1.5.7-2 [38.0 kB]
+2024-05-08 01:08:24.183115 +0000 build-debian42: output: Get: 10 https://deb.debian.org/debian trixie/main amd64 man-db amd64 2.12.1-1 [1411 kB]
+2024-05-08 01:08:28.020471 +0000 build-debian42: output: Get: 11 https://deb.debian.org/debian trixie/main amd64 m4 amd64 1.4.19-4 [287 kB]
+2024-05-08 01:08:28.800627 +0000 build-debian42: output: Get: 12 https://deb.debian.org/debian trixie/main amd64 autoconf all 2.71-3 [332 kB]
+2024-05-08 01:08:29.669672 +0000 build-debian42: output: Get: 13 https://deb.debian.org/debian trixie/main amd64 autotools-dev all 20220109.1 [51.6 kB]
+2024-05-08 01:08:29.745645 +0000 build-debian42: output: Get: 14 https://deb.debian.org/debian trixie/main amd64 automake all 1:1.16.5-1.3 [823 kB]
+2024-05-08 01:08:31.793703 +0000 build-debian42: output: Get: 15 https://deb.debian.org/debian trixie/main amd64 autopoint all 0.21-14 [496 kB]
+2024-05-08 01:08:32.928315 +0000 build-debian42: output: Get: 16 https://deb.debian.org/debian trixie/main amd64 libdebhelper-perl all 13.15.3 [88.0 kB]
+2024-05-08 01:08:33.068006 +0000 build-debian42: output: Get: 17 https://deb.debian.org/debian trixie/main amd64 libtool all 2.4.7-7 [517 kB]
+2024-05-08 01:08:34.076597 +0000 build-debian42: output: Get: 18 https://deb.debian.org/debian trixie/main amd64 dh-autoreconf all 20 [17.1 kB]
+2024-05-08 01:08:34.097478 +0000 build-debian42: output: Get: 19 https://deb.debian.org/debian trixie/main amd64 libarchive-zip-perl all 1.68-1 [104 kB]
+2024-05-08 01:08:34.344571 +0000 build-debian42: output: Get: 20 https://deb.debian.org/debian trixie/main amd64 libsub-override-perl all 0.10-1 [10.6 kB]
+2024-05-08 01:08:34.357091 +0000 build-debian42: output: Get: 21 https://deb.debian.org/debian trixie/main amd64 libfile-stripnondeterminism-perl all 1.13.1-1 [19.4 kB]
+2024-05-08 01:08:34.370154 +0000 build-debian42: output: Get: 22 https://deb.debian.org/debian trixie/main amd64 dh-strip-nondeterminism all 1.13.1-1 [8620 B]
+2024-05-08 01:08:34.381652 +0000 build-debian42: output: Get: 23 https://deb.debian.org/debian trixie/main amd64 libelf1t64 amd64 0.191-1+b1 [189 kB]
+2024-05-08 01:08:34.733383 +0000 build-debian42: output: Get: 24 https://deb.debian.org/debian trixie/main amd64 dwz amd64 0.15-1+b1 [110 kB]
+2024-05-08 01:08:34.915041 +0000 build-debian42: output: Get: 25 https://deb.debian.org/debian trixie/main amd64 libicu72 amd64 72.1-4+b1 [9395 kB]
+2024-05-08 01:09:09.496875 +0000 build-debian42: output: Get: 26 https://deb.debian.org/debian trixie/main amd64 libxml2 amd64 2.9.14+dfsg-1.3+b3 [692 kB]
+2024-05-08 01:09:11.309696 +0000 build-debian42: output: Get: 27 https://deb.debian.org/debian trixie/main amd64 gettext amd64 0.21-14+b1 [1301 kB]
+2024-05-08 01:09:14.398080 +0000 build-debian42: output: Get: 28 https://deb.debian.org/debian trixie/main amd64 intltool-debian all 0.35.0+20060710.6 [22.9 kB]
+2024-05-08 01:09:14.420926 +0000 build-debian42: output: Get: 29 https://deb.debian.org/debian trixie/main amd64 po-debconf all 1.0.21+nmu1 [248 kB]
+2024-05-08 01:09:14.950326 +0000 build-debian42: output: Get: 30 https://deb.debian.org/debian trixie/main amd64 debhelper all 13.15.3 [901 kB]
+2024-05-08 01:09:17.307672 +0000 build-debian42: output: Get: 31 https://deb.debian.org/debian trixie/main amd64 diffstat amd64 1.66-1 [34.0 kB]
+2024-05-08 01:09:17.361005 +0000 build-debian42: output: Get: 32 https://deb.debian.org/debian trixie/main amd64 ed amd64 1.20.2-2 [60.8 kB]
+2024-05-08 01:09:17.440469 +0000 build-debian42: output: Get: 33 https://deb.debian.org/debian trixie/main amd64 liblua5.4-0 amd64 5.4.6-3+b1 [147 kB]
+2024-05-08 01:09:17.917737 +0000 build-debian42: output: Get: 34 https://deb.debian.org/debian trixie/main amd64 libyaml-0-2 amd64 0.2.5-1+b1 [52.6 kB]
+2024-05-08 01:09:18.000532 +0000 build-debian42: output: Get: 35 https://deb.debian.org/debian trixie/main amd64 pandoc-data all 3.1.3-2 [445 kB]
+2024-05-08 01:09:19.142757 +0000 build-debian42: output: Get: 36 https://deb.debian.org/debian trixie/main amd64 pandoc amd64 3.1.3+ds-3 [24.3 MB]
+2024-05-08 01:10:16.921362 +0000 build-debian42: output: Get: 37 https://deb.debian.org/debian trixie/main amd64 quilt all 0.68-1 [437 kB]
+2024-05-08 01:10:18.097490 +0000 build-debian42: output: Fetched 44.5 MB in 2min 5s (355 kB/s)
+2024-05-08 01:10:18.305459 +0000 build-debian42: output: debconf: delaying package configuration, since apt-utils is not installed
+2024-05-08 01:10:18.471405 +0000 build-debian42: output: Selecting previously unselected package sensible-utils..
+2024-05-08 01:10:18.482478 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 12606 files and directories currently installed.).
+2024-05-08 01:10:18.483269 +0000 build-debian42: output: Preparing to unpack .../00-sensible-utils_0.0.22_all.deb ....
+2024-05-08 01:10:18.502421 +0000 build-debian42: output: Unpacking sensible-utils (0.0.22) ....
+2024-05-08 01:10:18.708125 +0000 build-debian42: output: Selecting previously unselected package libmagic-mgc..
+2024-05-08 01:10:18.710271 +0000 build-debian42: output: Preparing to unpack .../01-libmagic-mgc_1%3a5.45-3_amd64.deb ....
+2024-05-08 01:10:18.728133 +0000 build-debian42: output: Unpacking libmagic-mgc (1:5.45-3) ....
+2024-05-08 01:10:19.201232 +0000 build-debian42: output: Selecting previously unselected package libmagic1t64:amd64..
+2024-05-08 01:10:19.203571 +0000 build-debian42: output: Preparing to unpack .../02-libmagic1t64_1%3a5.45-3_amd64.deb ....
+2024-05-08 01:10:19.302088 +0000 build-debian42: output: Unpacking libmagic1t64:amd64 (1:5.45-3) ....
+2024-05-08 01:10:19.577655 +0000 build-debian42: output: Selecting previously unselected package file..
+2024-05-08 01:10:19.580073 +0000 build-debian42: output: Preparing to unpack .../03-file_1%3a5.45-3_amd64.deb ....
+2024-05-08 01:10:19.606380 +0000 build-debian42: output: Unpacking file (1:5.45-3) ....
+2024-05-08 01:10:20.149476 +0000 build-debian42: output: Selecting previously unselected package gettext-base..
+2024-05-08 01:10:20.151051 +0000 build-debian42: output: Preparing to unpack .../04-gettext-base_0.21-14+b1_amd64.deb ....
+2024-05-08 01:10:20.182831 +0000 build-debian42: output: Unpacking gettext-base (0.21-14+b1) ....
+2024-05-08 01:10:21.013893 +0000 build-debian42: output: Selecting previously unselected package libuchardet0:amd64..
+2024-05-08 01:10:21.014565 +0000 build-debian42: output: Preparing to unpack .../05-libuchardet0_0.0.8-1+b1_amd64.deb ....
+2024-05-08 01:10:21.074852 +0000 build-debian42: output: Unpacking libuchardet0:amd64 (0.0.8-1+b1) ....
+2024-05-08 01:10:21.685554 +0000 build-debian42: output: Selecting previously unselected package groff-base..
+2024-05-08 01:10:21.687616 +0000 build-debian42: output: Preparing to unpack .../06-groff-base_1.23.0-4_amd64.deb ....
+2024-05-08 01:10:21.713185 +0000 build-debian42: output: Unpacking groff-base (1.23.0-4) ....
+2024-05-08 01:10:22.282786 +0000 build-debian42: output: Selecting previously unselected package bsdextrautils..
+2024-05-08 01:10:22.283559 +0000 build-debian42: output: Preparing to unpack .../07-bsdextrautils_2.40-8_amd64.deb ....
+2024-05-08 01:10:22.307918 +0000 build-debian42: output: Unpacking bsdextrautils (2.40-8) ....
+2024-05-08 01:10:22.591858 +0000 build-debian42: output: Selecting previously unselected package libpipeline1:amd64..
+2024-05-08 01:10:22.594378 +0000 build-debian42: output: Preparing to unpack .../08-libpipeline1_1.5.7-2_amd64.deb ....
+2024-05-08 01:10:22.613234 +0000 build-debian42: output: Unpacking libpipeline1:amd64 (1.5.7-2) ....
+2024-05-08 01:10:23.024015 +0000 build-debian42: output: Selecting previously unselected package man-db..
+2024-05-08 01:10:23.025402 +0000 build-debian42: output: Preparing to unpack .../09-man-db_2.12.1-1_amd64.deb ....
+2024-05-08 01:10:23.038398 +0000 build-debian42: output: Unpacking man-db (2.12.1-1) ....
+2024-05-08 01:10:26.138040 +0000 build-debian42: output: Selecting previously unselected package m4..
+2024-05-08 01:10:26.140188 +0000 build-debian42: output: Preparing to unpack .../10-m4_1.4.19-4_amd64.deb ....
+2024-05-08 01:10:26.173685 +0000 build-debian42: output: Unpacking m4 (1.4.19-4) ....
+2024-05-08 01:10:26.578486 +0000 build-debian42: output: Selecting previously unselected package autoconf..
+2024-05-08 01:10:26.579652 +0000 build-debian42: output: Preparing to unpack .../11-autoconf_2.71-3_all.deb ....
+2024-05-08 01:10:26.604615 +0000 build-debian42: output: Unpacking autoconf (2.71-3) ....
+2024-05-08 01:10:26.948893 +0000 build-debian42: output: Selecting previously unselected package autotools-dev..
+2024-05-08 01:10:26.950863 +0000 build-debian42: output: Preparing to unpack .../12-autotools-dev_20220109.1_all.deb ....
+2024-05-08 01:10:26.960692 +0000 build-debian42: output: Unpacking autotools-dev (20220109.1) ....
+2024-05-08 01:10:27.060485 +0000 build-debian42: output: Selecting previously unselected package automake..
+2024-05-08 01:10:27.061240 +0000 build-debian42: output: Preparing to unpack .../13-automake_1%3a1.16.5-1.3_all.deb ....
+2024-05-08 01:10:27.078444 +0000 build-debian42: output: Unpacking automake (1:1.16.5-1.3) ....
+2024-05-08 01:10:27.230476 +0000 build-debian42: output: Selecting previously unselected package autopoint..
+2024-05-08 01:10:27.231309 +0000 build-debian42: output: Preparing to unpack .../14-autopoint_0.21-14_all.deb ....
+2024-05-08 01:10:27.239688 +0000 build-debian42: output: Unpacking autopoint (0.21-14) ....
+2024-05-08 01:10:27.309526 +0000 build-debian42: output: Selecting previously unselected package libdebhelper-perl..
+2024-05-08 01:10:27.311154 +0000 build-debian42: output: Preparing to unpack .../15-libdebhelper-perl_13.15.3_all.deb ....
+2024-05-08 01:10:27.319649 +0000 build-debian42: output: Unpacking libdebhelper-perl (13.15.3) ....
+2024-05-08 01:10:27.432016 +0000 build-debian42: output: Selecting previously unselected package libtool..
+2024-05-08 01:10:27.433769 +0000 build-debian42: output: Preparing to unpack .../16-libtool_2.4.7-7_all.deb ....
+2024-05-08 01:10:27.445695 +0000 build-debian42: output: Unpacking libtool (2.4.7-7) ....
+2024-05-08 01:10:27.532015 +0000 build-debian42: output: Selecting previously unselected package dh-autoreconf..
+2024-05-08 01:10:27.534091 +0000 build-debian42: output: Preparing to unpack .../17-dh-autoreconf_20_all.deb ....
+2024-05-08 01:10:27.545091 +0000 build-debian42: output: Unpacking dh-autoreconf (20) ....
+2024-05-08 01:10:27.623408 +0000 build-debian42: output: Selecting previously unselected package libarchive-zip-perl..
+2024-05-08 01:10:27.624218 +0000 build-debian42: output: Preparing to unpack .../18-libarchive-zip-perl_1.68-1_all.deb ....
+2024-05-08 01:10:27.644177 +0000 build-debian42: output: Unpacking libarchive-zip-perl (1.68-1) ....
+2024-05-08 01:10:27.800982 +0000 build-debian42: output: Selecting previously unselected package libsub-override-perl..
+2024-05-08 01:10:27.801869 +0000 build-debian42: output: Preparing to unpack .../19-libsub-override-perl_0.10-1_all.deb ....
+2024-05-08 01:10:27.811909 +0000 build-debian42: output: Unpacking libsub-override-perl (0.10-1) ....
+2024-05-08 01:10:27.886450 +0000 build-debian42: output: Selecting previously unselected package libfile-stripnondeterminism-perl..
+2024-05-08 01:10:27.887392 +0000 build-debian42: output: Preparing to unpack .../20-libfile-stripnondeterminism-perl_1.13.1-1_all.deb ....
+2024-05-08 01:10:27.896506 +0000 build-debian42: output: Unpacking libfile-stripnondeterminism-perl (1.13.1-1) ....
+2024-05-08 01:10:27.969852 +0000 build-debian42: output: Selecting previously unselected package dh-strip-nondeterminism..
+2024-05-08 01:10:27.970684 +0000 build-debian42: output: Preparing to unpack .../21-dh-strip-nondeterminism_1.13.1-1_all.deb ....
+2024-05-08 01:10:27.980508 +0000 build-debian42: output: Unpacking dh-strip-nondeterminism (1.13.1-1) ....
+2024-05-08 01:10:28.055640 +0000 build-debian42: output: Selecting previously unselected package libelf1t64:amd64..
+2024-05-08 01:10:28.057170 +0000 build-debian42: output: Preparing to unpack .../22-libelf1t64_0.191-1+b1_amd64.deb ....
+2024-05-08 01:10:28.066213 +0000 build-debian42: output: Unpacking libelf1t64:amd64 (0.191-1+b1) ....
+2024-05-08 01:10:28.162266 +0000 build-debian42: output: Selecting previously unselected package dwz..
+2024-05-08 01:10:28.163101 +0000 build-debian42: output: Preparing to unpack .../23-dwz_0.15-1+b1_amd64.deb ....
+2024-05-08 01:10:28.179210 +0000 build-debian42: output: Unpacking dwz (0.15-1+b1) ....
+2024-05-08 01:10:28.286412 +0000 build-debian42: output: Selecting previously unselected package libicu72:amd64..
+2024-05-08 01:10:28.287927 +0000 build-debian42: output: Preparing to unpack .../24-libicu72_72.1-4+b1_amd64.deb ....
+2024-05-08 01:10:28.300761 +0000 build-debian42: output: Unpacking libicu72:amd64 (72.1-4+b1) ....
+2024-05-08 01:10:30.714537 +0000 build-debian42: output: Selecting previously unselected package libxml2:amd64..
+2024-05-08 01:10:30.714815 +0000 build-debian42: output: Preparing to unpack .../25-libxml2_2.9.14+dfsg-1.3+b3_amd64.deb ....
+2024-05-08 01:10:30.733317 +0000 build-debian42: output: Unpacking libxml2:amd64 (2.9.14+dfsg-1.3+b3) ....
+2024-05-08 01:10:31.007489 +0000 build-debian42: output: Selecting previously unselected package gettext..
+2024-05-08 01:10:31.007537 +0000 build-debian42: output: Preparing to unpack .../26-gettext_0.21-14+b1_amd64.deb ....
+2024-05-08 01:10:31.027476 +0000 build-debian42: output: Unpacking gettext (0.21-14+b1) ....
+2024-05-08 01:10:31.516821 +0000 build-debian42: output: Selecting previously unselected package intltool-debian..
+2024-05-08 01:10:31.516870 +0000 build-debian42: output: Preparing to unpack .../27-intltool-debian_0.35.0+20060710.6_all.deb ....
+2024-05-08 01:10:31.528748 +0000 build-debian42: output: Unpacking intltool-debian (0.35.0+20060710.6) ....
+2024-05-08 01:10:31.706658 +0000 build-debian42: output: Selecting previously unselected package po-debconf..
+2024-05-08 01:10:31.707657 +0000 build-debian42: output: Preparing to unpack .../28-po-debconf_1.0.21+nmu1_all.deb ....
+2024-05-08 01:10:31.715672 +0000 build-debian42: output: Unpacking po-debconf (1.0.21+nmu1) ....
+2024-05-08 01:10:31.826314 +0000 build-debian42: output: Selecting previously unselected package debhelper..
+2024-05-08 01:10:31.827512 +0000 build-debian42: output: Preparing to unpack .../29-debhelper_13.15.3_all.deb ....
+2024-05-08 01:10:31.837203 +0000 build-debian42: output: Unpacking debhelper (13.15.3) ....
+2024-05-08 01:10:32.093090 +0000 build-debian42: output: Selecting previously unselected package diffstat..
+2024-05-08 01:10:32.093135 +0000 build-debian42: output: Preparing to unpack .../30-diffstat_1.66-1_amd64.deb ....
+2024-05-08 01:10:32.101125 +0000 build-debian42: output: Unpacking diffstat (1.66-1) ....
+2024-05-08 01:10:32.173425 +0000 build-debian42: output: Selecting previously unselected package ed..
+2024-05-08 01:10:32.174817 +0000 build-debian42: output: Preparing to unpack .../31-ed_1.20.2-2_amd64.deb ....
+2024-05-08 01:10:32.184610 +0000 build-debian42: output: Unpacking ed (1.20.2-2) ....
+2024-05-08 01:10:32.338378 +0000 build-debian42: output: Selecting previously unselected package liblua5.4-0:amd64..
+2024-05-08 01:10:32.339016 +0000 build-debian42: output: Preparing to unpack .../32-liblua5.4-0_5.4.6-3+b1_amd64.deb ....
+2024-05-08 01:10:32.344887 +0000 build-debian42: output: Unpacking liblua5.4-0:amd64 (5.4.6-3+b1) ....
+2024-05-08 01:10:32.434822 +0000 build-debian42: output: Selecting previously unselected package libyaml-0-2:amd64..
+2024-05-08 01:10:32.435643 +0000 build-debian42: output: Preparing to unpack .../33-libyaml-0-2_0.2.5-1+b1_amd64.deb ....
+2024-05-08 01:10:32.443525 +0000 build-debian42: output: Unpacking libyaml-0-2:amd64 (0.2.5-1+b1) ....
+2024-05-08 01:10:32.510816 +0000 build-debian42: output: Selecting previously unselected package pandoc-data..
+2024-05-08 01:10:32.513874 +0000 build-debian42: output: Preparing to unpack .../34-pandoc-data_3.1.3-2_all.deb ....
+2024-05-08 01:10:32.523803 +0000 build-debian42: output: Unpacking pandoc-data (3.1.3-2) ....
+2024-05-08 01:10:32.682234 +0000 build-debian42: output: Selecting previously unselected package pandoc..
+2024-05-08 01:10:32.684136 +0000 build-debian42: output: Preparing to unpack .../35-pandoc_3.1.3+ds-3_amd64.deb ....
+2024-05-08 01:10:32.694578 +0000 build-debian42: output: Unpacking pandoc (3.1.3+ds-3) ....
+2024-05-08 01:10:34.913583 +0000 build-debian42: output: Selecting previously unselected package quilt..
+2024-05-08 01:10:34.915882 +0000 build-debian42: output: Preparing to unpack .../36-quilt_0.68-1_all.deb ....
+2024-05-08 01:10:34.938419 +0000 build-debian42: output: Unpacking quilt (0.68-1) ....
+2024-05-08 01:10:35.169364 +0000 build-debian42: output: Setting up libpipeline1:amd64 (1.5.7-2) ....
+2024-05-08 01:10:35.257195 +0000 build-debian42: output: Setting up libicu72:amd64 (72.1-4+b1) ....
+2024-05-08 01:10:35.315104 +0000 build-debian42: output: Setting up bsdextrautils (2.40-8) ....
+2024-05-08 01:10:35.392214 +0000 build-debian42: output: Setting up libmagic-mgc (1:5.45-3) ....
+2024-05-08 01:10:35.476472 +0000 build-debian42: output: Setting up libarchive-zip-perl (1.68-1) ....
+2024-05-08 01:10:35.550667 +0000 build-debian42: output: Setting up libyaml-0-2:amd64 (0.2.5-1+b1) ....
+2024-05-08 01:10:35.616611 +0000 build-debian42: output: Setting up libdebhelper-perl (13.15.3) ....
+2024-05-08 01:10:35.689798 +0000 build-debian42: output: Setting up libmagic1t64:amd64 (1:5.45-3) ....
+2024-05-08 01:10:35.805386 +0000 build-debian42: output: Setting up gettext-base (0.21-14+b1) ....
+2024-05-08 01:10:35.880822 +0000 build-debian42: output: Setting up m4 (1.4.19-4) ....
+2024-05-08 01:10:35.955799 +0000 build-debian42: output: Setting up file (1:5.45-3) ....
+2024-05-08 01:10:36.021157 +0000 build-debian42: output: Setting up libelf1t64:amd64 (0.191-1+b1) ....
+2024-05-08 01:10:36.097995 +0000 build-debian42: output: Setting up autotools-dev (20220109.1) ....
+2024-05-08 01:10:36.169525 +0000 build-debian42: output: Setting up ed (1.20.2-2) ....
+2024-05-08 01:10:36.297257 +0000 build-debian42: output: Setting up diffstat (1.66-1) ....
+2024-05-08 01:10:36.379041 +0000 build-debian42: output: Setting up autopoint (0.21-14) ....
+2024-05-08 01:10:36.466231 +0000 build-debian42: output: Setting up autoconf (2.71-3) ....
+2024-05-08 01:10:36.611205 +0000 build-debian42: output: Setting up dwz (0.15-1+b1) ....
+2024-05-08 01:10:36.689859 +0000 build-debian42: output: Setting up sensible-utils (0.0.22) ....
+2024-05-08 01:10:36.769337 +0000 build-debian42: output: Setting up libuchardet0:amd64 (0.0.8-1+b1) ....
+2024-05-08 01:10:36.855724 +0000 build-debian42: output: Setting up liblua5.4-0:amd64 (5.4.6-3+b1) ....
+2024-05-08 01:10:36.936706 +0000 build-debian42: output: Setting up libsub-override-perl (0.10-1) ....
+2024-05-08 01:10:37.023311 +0000 build-debian42: output: Setting up pandoc-data (3.1.3-2) ....
+2024-05-08 01:10:37.099092 +0000 build-debian42: output: Setting up libxml2:amd64 (2.9.14+dfsg-1.3+b3) ....
+2024-05-08 01:10:37.172861 +0000 build-debian42: output: Setting up automake (1:1.16.5-1.3) ....
+2024-05-08 01:10:37.237155 +0000 build-debian42: output: update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode.
+2024-05-08 01:10:37.280340 +0000 build-debian42: output: Setting up libfile-stripnondeterminism-perl (1.13.1-1) ....
+2024-05-08 01:10:37.389418 +0000 build-debian42: output: Setting up gettext (0.21-14+b1) ....
+2024-05-08 01:10:37.505443 +0000 build-debian42: output: Setting up libtool (2.4.7-7) ....
+2024-05-08 01:10:37.581353 +0000 build-debian42: output: Setting up quilt (0.68-1) ....
+2024-05-08 01:10:37.746335 +0000 build-debian42: output: Setting up intltool-debian (0.35.0+20060710.6) ....
+2024-05-08 01:10:37.831599 +0000 build-debian42: output: Setting up dh-autoreconf (20) ....
+2024-05-08 01:10:37.908031 +0000 build-debian42: output: Setting up pandoc (3.1.3+ds-3) ....
+2024-05-08 01:10:37.984265 +0000 build-debian42: output: Setting up dh-strip-nondeterminism (1.13.1-1) ....
+2024-05-08 01:10:38.065453 +0000 build-debian42: output: Setting up groff-base (1.23.0-4) ....
+2024-05-08 01:10:38.202174 +0000 build-debian42: output: Setting up po-debconf (1.0.21+nmu1) ....
+2024-05-08 01:10:38.277162 +0000 build-debian42: output: Setting up man-db (2.12.1-1) ....
+2024-05-08 01:10:38.539997 +0000 build-debian42: output: Not building database; man-db/auto-update is not 'true'..
+2024-05-08 01:10:38.797769 +0000 build-debian42: output: Setting up debhelper (13.15.3) ....
+2024-05-08 01:10:38.906976 +0000 build-debian42: output: Processing triggers for libc-bin (2.38-7) ....
+2024-05-08 01:10:39.315551 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:10:39.656210 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:10:39.656261 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:10:39.847647 +0000 build-debian42: output: Reading extended state information...
+2024-05-08 01:10:39.861042 +0000 build-debian42: output: Initializing package states...
+2024-05-08 01:10:39.997199 +0000 build-debian42: output: Writing extended state information...
+2024-05-08 01:10:40.104438 +0000 build-debian42: output: Building tag database...
+2024-05-08 01:10:40.162350 +0000 build-debian42: output:  -> Finished parsing the build-deps
+2024-05-08 01:10:40.210980 +0000 build-debian42: output: Reading package lists...
+2024-05-08 01:10:40.472847 +0000 build-debian42: output: Building dependency tree...
+2024-05-08 01:10:40.472895 +0000 build-debian42: output: Reading state information...
+2024-05-08 01:10:40.759880 +0000 build-debian42: output: The following additional packages will be installed:
+2024-05-08 01:10:40.760006 +0000 build-debian42: output:   libfakeroot
+2024-05-08 01:10:40.853850 +0000 build-debian42: output: The following NEW packages will be installed:
+2024-05-08 01:10:40.853900 +0000 build-debian42: output:   fakeroot libfakeroot
+2024-05-08 01:10:43.260840 +0000 build-debian42: output: 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+2024-05-08 01:10:43.260926 +0000 build-debian42: output: Need to get 103 kB of archives.
+2024-05-08 01:10:43.260954 +0000 build-debian42: output: After this operation, 385 kB of additional disk space will be used.
+2024-05-08 01:10:43.260978 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian trixie/main amd64 libfakeroot amd64 1.33-1 [28.7 kB]
+2024-05-08 01:10:44.162910 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian trixie/main amd64 fakeroot amd64 1.33-1 [74.0 kB]
+2024-05-08 01:10:44.714851 +0000 build-debian42: output: debconf: delaying package configuration, since apt-utils is not installed
+2024-05-08 01:10:44.732587 +0000 build-debian42: output: Fetched 103 kB in 4s (27.6 kB/s)
+2024-05-08 01:10:44.841667 +0000 build-debian42: output: Selecting previously unselected package libfakeroot:amd64..
+2024-05-08 01:10:44.865495 +0000 build-debian42: output: (Reading database ... .(Reading database ... 5%.(Reading database ... 10%.(Reading database ... 15%.(Reading database ... 20%.(Reading database ... 25%.(Reading database ... 30%.(Reading database ... 35%.(Reading database ... 40%.(Reading database ... 45%.(Reading database ... 50%.(Reading database ... 55%.(Reading database ... 60%.(Reading database ... 65%.(Reading database ... 70%.(Reading database ... 75%.(Reading database ... 80%.(Reading database ... 85%.(Reading database ... 90%.(Reading database ... 95%.(Reading database ... 100%.(Reading database ... 14886 files and directories currently installed.).
+2024-05-08 01:10:44.865704 +0000 build-debian42: output: Preparing to unpack .../libfakeroot_1.33-1_amd64.deb ....
+2024-05-08 01:10:44.951478 +0000 build-debian42: output: Unpacking libfakeroot:amd64 (1.33-1) ....
+2024-05-08 01:10:45.174128 +0000 build-debian42: output: Selecting previously unselected package fakeroot..
+2024-05-08 01:10:45.174269 +0000 build-debian42: output: Preparing to unpack .../fakeroot_1.33-1_amd64.deb ....
+2024-05-08 01:10:45.201888 +0000 build-debian42: output: Unpacking fakeroot (1.33-1) ....
+2024-05-08 01:10:45.784907 +0000 build-debian42: output: Setting up libfakeroot:amd64 (1.33-1) ....
+2024-05-08 01:10:45.901750 +0000 build-debian42: output: Setting up fakeroot (1.33-1) ....
+2024-05-08 01:10:45.950742 +0000 build-debian42: output: update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode.
+2024-05-08 01:10:46.083898 +0000 build-debian42: output: Processing triggers for man-db (2.12.1-1) ....
+2024-05-08 01:10:46.115820 +0000 build-debian42: output: Not building database; man-db/auto-update is not 'true'..
+2024-05-08 01:10:46.143156 +0000 build-debian42: output: Processing triggers for libc-bin (2.38-7) ....
+2024-05-08 01:10:46.459540 +0000 build-debian42: output: I: Copying back the cached apt archive contents
+2024-05-08 01:10:46.474724 +0000 build-debian42: output: I: new cache content 'intltool-debian_0.35.0+20060710.6_all.deb' added
+2024-05-08 01:10:46.483645 +0000 build-debian42: output: I: new cache content 'gettext-base_0.21-14+b1_amd64.deb' added
+2024-05-08 01:10:46.507993 +0000 build-debian42: output: I: new cache content 'libdebhelper-perl_13.15.3_all.deb' added
+2024-05-08 01:10:46.524000 +0000 build-debian42: output: I: new cache content 'groff-base_1.23.0-4_amd64.deb' added
+2024-05-08 01:10:46.528005 +0000 build-debian42: output: I: new cache content 'libtool_2.4.7-7_all.deb' added
+2024-05-08 01:10:46.532554 +0000 build-debian42: output: I: new cache content 'po-debconf_1.0.21+nmu1_all.deb' added
+2024-05-08 01:10:46.536841 +0000 build-debian42: output: I: new cache content 'libfile-stripnondeterminism-perl_1.13.1-1_all.deb' added
+2024-05-08 01:10:46.541208 +0000 build-debian42: output: I: new cache content 'gettext_0.21-14+b1_amd64.deb' added
+2024-05-08 01:10:46.544802 +0000 build-debian42: output: I: new cache content 'bsdextrautils_2.40-8_amd64.deb' added
+2024-05-08 01:10:46.547401 +0000 build-debian42: output: I: new cache content 'debhelper_13.15.3_all.deb' added
+2024-05-08 01:10:46.550082 +0000 build-debian42: output: I: new cache content 'man-db_2.12.1-1_amd64.deb' added
+2024-05-08 01:10:46.552286 +0000 build-debian42: output: I: new cache content 'libmagic1t64_1%3a5.45-3_amd64.deb' added
+2024-05-08 01:10:46.554687 +0000 build-debian42: output: I: new cache content 'automake_1%3a1.16.5-1.3_all.deb' added
+2024-05-08 01:10:46.556959 +0000 build-debian42: output: I: new cache content 'libyaml-0-2_0.2.5-1+b1_amd64.deb' added
+2024-05-08 01:10:46.559240 +0000 build-debian42: output: I: new cache content 'sensible-utils_0.0.22_all.deb' added
+2024-05-08 01:10:46.561419 +0000 build-debian42: output: I: new cache content 'dh-autoreconf_20_all.deb' added
+2024-05-08 01:10:46.563579 +0000 build-debian42: output: I: new cache content 'libsub-override-perl_0.10-1_all.deb' added
+2024-05-08 01:10:46.566143 +0000 build-debian42: output: I: new cache content 'diffstat_1.66-1_amd64.deb' added
+2024-05-08 01:10:46.568580 +0000 build-debian42: output: I: new cache content 'libfakeroot_1.33-1_amd64.deb' added
+2024-05-08 01:10:46.570852 +0000 build-debian42: output: I: new cache content 'm4_1.4.19-4_amd64.deb' added
+2024-05-08 01:10:46.573144 +0000 build-debian42: output: I: new cache content 'quilt_0.68-1_all.deb' added
+2024-05-08 01:10:46.575404 +0000 build-debian42: output: I: new cache content 'autotools-dev_20220109.1_all.deb' added
+2024-05-08 01:10:46.577409 +0000 build-debian42: output: I: new cache content 'autoconf_2.71-3_all.deb' added
+2024-05-08 01:10:46.579609 +0000 build-debian42: output: I: new cache content 'libicu72_72.1-4+b1_amd64.deb' added
+2024-05-08 01:10:46.581723 +0000 build-debian42: output: I: new cache content 'libelf1t64_0.191-1+b1_amd64.deb' added
+2024-05-08 01:10:46.583844 +0000 build-debian42: output: I: new cache content 'liblua5.4-0_5.4.6-3+b1_amd64.deb' added
+2024-05-08 01:10:46.586246 +0000 build-debian42: output: I: new cache content 'libmagic-mgc_1%3a5.45-3_amd64.deb' added
+2024-05-08 01:10:46.588553 +0000 build-debian42: output: I: new cache content 'fakeroot_1.33-1_amd64.deb' added
+2024-05-08 01:10:46.590645 +0000 build-debian42: output: I: new cache content 'ed_1.20.2-2_amd64.deb' added
+2024-05-08 01:10:46.592853 +0000 build-debian42: output: I: new cache content 'dh-strip-nondeterminism_1.13.1-1_all.deb' added
+2024-05-08 01:10:46.621196 +0000 build-debian42: output: I: new cache content 'libxml2_2.9.14+dfsg-1.3+b3_amd64.deb' added
+2024-05-08 01:10:46.627891 +0000 build-debian42: output: I: new cache content 'file_1%3a5.45-3_amd64.deb' added
+2024-05-08 01:10:46.635813 +0000 build-debian42: output: I: new cache content 'dwz_0.15-1+b1_amd64.deb' added
+2024-05-08 01:10:46.643915 +0000 build-debian42: output: I: new cache content 'libarchive-zip-perl_1.68-1_all.deb' added
+2024-05-08 01:10:46.648019 +0000 build-debian42: output: I: new cache content 'autopoint_0.21-14_all.deb' added
+2024-05-08 01:10:46.651047 +0000 build-debian42: output: I: new cache content 'libpipeline1_1.5.7-2_amd64.deb' added
+2024-05-08 01:10:46.656407 +0000 build-debian42: output: I: new cache content 'libuchardet0_0.0.8-1+b1_amd64.deb' added
+2024-05-08 01:10:46.659111 +0000 build-debian42: output: I: new cache content 'pandoc-data_3.1.3-2_all.deb' added
+2024-05-08 01:10:46.662090 +0000 build-debian42: output: I: new cache content 'pandoc_3.1.3+ds-3_amd64.deb' added
+2024-05-08 01:10:46.709430 +0000 build-debian42: output: I: Building the package
+2024-05-08 01:10:46.746018 +0000 build-debian42: output: I: Running cd /build/qubes-gpg-split-2.0.71/ && env PATH="/usr/sbin:/usr/bin:/sbin:/bin" HOME="/nonexistent" dpkg-buildpackage -us -uc -sa
+2024-05-08 01:10:47.042078 +0000 build-debian42: output: dpkg-buildpackage: info: source package qubes-gpg-split
+2024-05-08 01:10:47.042160 +0000 build-debian42: output: dpkg-buildpackage: info: source version 2.0.71-1+deb13u1
+2024-05-08 01:10:47.042184 +0000 build-debian42: output: dpkg-buildpackage: info: source distribution trixie
+2024-05-08 01:10:47.042205 +0000 build-debian42: output: dpkg-buildpackage: info: source changed by Builder <user@localhost>
+2024-05-08 01:10:47.150877 +0000 build-debian42: output:  dpkg-source --before-build .
+2024-05-08 01:10:47.150953 +0000 build-debian42: output: dpkg-buildpackage: info: host architecture amd64
+2024-05-08 01:10:47.254399 +0000 build-debian42: output: dpkg-source: info: using options from qubes-gpg-split-2.0.71/debian/source/options: --extend-diff-ignore=(^|/)(.git/.*)$ --extend-diff-ignore=(^|/)(deb/.*)$ --extend-diff-ignore=(^|/)(pkgs/.*)$ --extend-diff-ignore=(^|/)(rpm/.*)$
+2024-05-08 01:10:47.299180 +0000 build-debian42: output:  fakeroot debian/rules clean
+2024-05-08 01:10:47.455796 +0000 build-debian42: output: dh clean
+2024-05-08 01:10:48.011112 +0000 build-debian42: output: dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:48.156356 +0000 build-debian42: output:    dh_auto_clean
+2024-05-08 01:10:48.184586 +0000 build-debian42: output: dh_auto_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:48.327827 +0000 build-debian42: output: .make -j1 clean
+2024-05-08 01:10:48.336370 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:48.336426 +0000 build-debian42: output: make -C src clean
+2024-05-08 01:10:48.342950 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-gpg-split-2.0.71/src'
+2024-05-08 01:10:48.342996 +0000 build-debian42: output: rm -f ./*.o gpg-client gpg-server
+2024-05-08 01:10:48.348707 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-gpg-split-2.0.71/src'
+2024-05-08 01:10:48.350945 +0000 build-debian42: output: make -C doc clean
+2024-05-08 01:10:48.355931 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:48.356005 +0000 build-debian42: output: rm -f qubes-gpg-client-wrapper.1.gz qubes-gpg-client.1.gz qubes-gpg-import-key.1.gz
+2024-05-08 01:10:48.356021 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:48.358897 +0000 build-debian42: output: rm -rf debian/changelog.*
+2024-05-08 01:10:48.366628 +0000 build-debian42: output: rm -rf pkgs
+2024-05-08 01:10:48.369350 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:48.371901 +0000 build-debian42: output:    dh_clean
+2024-05-08 01:10:48.426121 +0000 build-debian42: output: dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:48.442889 +0000 build-debian42: output:  dpkg-source -b .
+2024-05-08 01:10:48.579661 +0000 build-debian42: output: dpkg-source: info: using options from qubes-gpg-split-2.0.71/debian/source/options: --extend-diff-ignore=(^|/)(.git/.*)$ --extend-diff-ignore=(^|/)(deb/.*)$ --extend-diff-ignore=(^|/)(pkgs/.*)$ --extend-diff-ignore=(^|/)(rpm/.*)$
+2024-05-08 01:10:48.579715 +0000 build-debian42: output: dpkg-source: info: using source format '3.0 (quilt)'
+2024-05-08 01:10:48.579748 +0000 build-debian42: output: dpkg-source: info: building qubes-gpg-split using existing ./qubes-gpg-split_2.0.71.orig.tar.gz
+2024-05-08 01:10:48.651006 +0000 build-debian42: output: dpkg-source: info: building qubes-gpg-split in qubes-gpg-split_2.0.71-1+deb13u1.debian.tar.xz
+2024-05-08 01:10:48.677782 +0000 build-debian42: output: dpkg-source: info: building qubes-gpg-split in qubes-gpg-split_2.0.71-1+deb13u1.dsc
+2024-05-08 01:10:48.682868 +0000 build-debian42: output:  debian/rules build
+2024-05-08 01:10:48.763882 +0000 build-debian42: output: dh build
+2024-05-08 01:10:49.312977 +0000 build-debian42: output: dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:49.392853 +0000 build-debian42: output:    dh_update_autotools_config
+2024-05-08 01:10:49.431895 +0000 build-debian42: output:    dh_auto_configure
+2024-05-08 01:10:49.457962 +0000 build-debian42: output: dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:49.464189 +0000 build-debian42: output:    debian/rules override_dh_auto_build
+2024-05-08 01:10:49.465810 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:49.539921 +0000 build-debian42: output: dh_clean --keep
+2024-05-08 01:10:50.217179 +0000 build-debian42: output: dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:50.217237 +0000 build-debian42: output: dh_clean: warning: dh_clean -k is deprecated; use dh_prep instead
+2024-05-08 01:10:50.217296 +0000 build-debian42: output: dh_clean: warning: This feature will be removed in compat 12.
+2024-05-08 01:10:50.226870 +0000 build-debian42: output: make build
+2024-05-08 01:10:50.227614 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:50.227639 +0000 build-debian42: output: make -C src
+2024-05-08 01:10:50.229022 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-gpg-split-2.0.71/src'
+2024-05-08 01:10:50.229200 +0000 build-debian42: output: cc -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/build/qubes-gpg-split-2.0.71=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wall -Wextra -Werror -O -g -fPIC -D_FORTIFY_SOURCE=2 -pthread -Wdate-time -D_FORTIFY_SOURCE=2  -c -o gpg-client.o gpg-client.c
+2024-05-08 01:10:50.671217 +0000 build-debian42: output: cc -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/build/qubes-gpg-split-2.0.71=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wall -Wextra -Werror -O -g -fPIC -D_FORTIFY_SOURCE=2 -pthread -Wdate-time -D_FORTIFY_SOURCE=2  -c -o multiplex.o multiplex.c
+2024-05-08 01:10:50.808126 +0000 build-debian42: output: cc -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/build/qubes-gpg-split-2.0.71=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wall -Wextra -Werror -O -g -fPIC -D_FORTIFY_SOURCE=2 -pthread -Wdate-time -D_FORTIFY_SOURCE=2  -c -o gpg-common.o gpg-common.c
+2024-05-08 01:10:50.973311 +0000 build-debian42: output: cc -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/build/qubes-gpg-split-2.0.71=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wall -Wextra -Werror -O -g -fPIC -D_FORTIFY_SOURCE=2 -pthread -Wdate-time -D_FORTIFY_SOURCE=2  -c -o gpg-list-options.o gpg-list-options.c
+2024-05-08 01:10:51.025672 +0000 build-debian42: output: cc -Wl,-z,relro -Wl,-z,now  gpg-client.o multiplex.o gpg-common.o gpg-list-options.o  -pthread -fPIC -D_FORTIFY_SOURCE=2 -o gpg-client
+2024-05-08 01:10:51.062316 +0000 build-debian42: output: cc -g -O2 -Werror=implicit-function-declaration -ffile-prefix-map=/build/qubes-gpg-split-2.0.71=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wall -Wextra -Werror -O -g -fPIC -D_FORTIFY_SOURCE=2 -pthread -Wdate-time -D_FORTIFY_SOURCE=2  -c -o gpg-server.o gpg-server.c
+2024-05-08 01:10:51.118225 +0000 build-debian42: output: cc -Wl,-z,relro -Wl,-z,now  gpg-server.o multiplex.o gpg-common.o gpg-list-options.o  -pthread -fPIC -D_FORTIFY_SOURCE=2 -o gpg-server
+2024-05-08 01:10:51.142000 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-gpg-split-2.0.71/src'
+2024-05-08 01:10:51.142074 +0000 build-debian42: output: make -C doc manpages
+2024-05-08 01:10:51.144181 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:51.144248 +0000 build-debian42: output: pandoc -s -f rst -t man qubes-gpg-client-wrapper.rst > qubes-gpg-client-wrapper.1
+2024-05-08 01:10:51.178291 +0000 build-debian42: output: gzip -f qubes-gpg-client-wrapper.1
+2024-05-08 01:10:51.179916 +0000 build-debian42: output: pandoc -s -f rst -t man qubes-gpg-client.rst > qubes-gpg-client.1
+2024-05-08 01:10:51.249864 +0000 build-debian42: output: gzip -f qubes-gpg-client.1
+2024-05-08 01:10:51.250929 +0000 build-debian42: output: pandoc -s -f rst -t man qubes-gpg-import-key.rst > qubes-gpg-import-key.1
+2024-05-08 01:10:51.264078 +0000 build-debian42: output: gzip -f qubes-gpg-import-key.1
+2024-05-08 01:10:51.264685 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:51.264876 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:51.264962 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:51.266293 +0000 build-debian42: output:    dh_auto_test
+2024-05-08 01:10:51.300863 +0000 build-debian42: output: dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:51.317664 +0000 build-debian42: output:  fakeroot debian/rules binary
+2024-05-08 01:10:51.407761 +0000 build-debian42: output: dh binary
+2024-05-08 01:10:52.009675 +0000 build-debian42: output: dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:52.134149 +0000 build-debian42: output:    dh_testroot
+2024-05-08 01:10:52.157010 +0000 build-debian42: output:    dh_prep
+2024-05-08 01:10:52.209436 +0000 build-debian42: output:    dh_installdirs
+2024-05-08 01:10:52.244701 +0000 build-debian42: output: dh_installdirs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:52.256764 +0000 build-debian42: output:    debian/rules override_dh_auto_install
+2024-05-08 01:10:52.257803 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:52.329518 +0000 build-debian42: output: make install-vm-deb
+2024-05-08 01:10:52.996686 +0000 build-debian42: output: make[2]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:52.996759 +0000 build-debian42: output: install -d /build/qubes-gpg-split-2.0.71/debian/tmp/usr/lib/qubes-gpg-split
+2024-05-08 01:10:52.999496 +0000 build-debian42: output: install -t /build/qubes-gpg-split-2.0.71/debian/tmp/usr/lib/qubes-gpg-split src/gpg-server
+2024-05-08 01:10:53.000475 +0000 build-debian42: output: install -D src/gpg-client /build/qubes-gpg-split-2.0.71/debian/tmp/usr/bin/qubes-gpg-client
+2024-05-08 01:10:53.002384 +0000 build-debian42: output: install -D gpg-client-wrapper /build/qubes-gpg-split-2.0.71/debian/tmp/usr/bin/qubes-gpg-client-wrapper
+2024-05-08 01:10:53.003625 +0000 build-debian42: output: install -D gpg-import-key /build/qubes-gpg-split-2.0.71/debian/tmp/usr/bin/qubes-gpg-import-key
+2024-05-08 01:10:53.004610 +0000 build-debian42: output: install -D qubes.Gpg.service /build/qubes-gpg-split-2.0.71/debian/tmp/etc/qubes-rpc/qubes.Gpg
+2024-05-08 01:10:53.005496 +0000 build-debian42: output: install -D qubes.GpgImportKey.service /build/qubes-gpg-split-2.0.71/debian/tmp/etc/qubes-rpc/qubes.GpgImportKey
+2024-05-08 01:10:53.006368 +0000 build-debian42: output: install -m 0644 -D qubes-gpg.sh /build/qubes-gpg-split-2.0.71/debian/tmp/etc/profile.d/qubes-gpg.sh
+2024-05-08 01:10:53.007554 +0000 build-debian42: output: install -D qubes-gpg-split.tmpfiles /build/qubes-gpg-split-2.0.71/debian/tmp/usr/lib/tmpfiles.d/qubes-gpg-split.conf
+2024-05-08 01:10:53.008479 +0000 build-debian42: output: make -C tests install-vm
+2024-05-08 01:10:53.009732 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-gpg-split-2.0.71/tests'
+2024-05-08 01:10:53.009758 +0000 build-debian42: output: install -d /build/qubes-gpg-split-2.0.71/debian/tmp/usr/lib/qubes-gpg-split
+2024-05-08 01:10:53.011157 +0000 build-debian42: output: install test_*.py /build/qubes-gpg-split-2.0.71/debian/tmp/usr/lib/qubes-gpg-split/
+2024-05-08 01:10:53.013343 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-gpg-split-2.0.71/tests'
+2024-05-08 01:10:53.013367 +0000 build-debian42: output: make -C doc install
+2024-05-08 01:10:53.014963 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:53.014982 +0000 build-debian42: output: install -d /build/qubes-gpg-split-2.0.71/debian/tmp/usr/share/man/man1
+2024-05-08 01:10:53.015863 +0000 build-debian42: output: install -m 0644 -D qubes-gpg-client-wrapper.1.gz qubes-gpg-client.1.gz qubes-gpg-import-key.1.gz /build/qubes-gpg-split-2.0.71/debian/tmp/usr/share/man/man1/
+2024-05-08 01:10:53.016830 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-gpg-split-2.0.71/doc'
+2024-05-08 01:10:53.017066 +0000 build-debian42: output: make -C tests install-vm-deb
+2024-05-08 01:10:53.018211 +0000 build-debian42: output: make[3]: Entering directory '/build/qubes-gpg-split-2.0.71/tests'
+2024-05-08 01:10:53.018232 +0000 build-debian42: output: install -d /build/qubes-gpg-split-2.0.71/debian/tmp/lib/systemd/system/bootclockrandomization.service.d/
+2024-05-08 01:10:53.019012 +0000 build-debian42: output: install whonix-clock-override.conf /build/qubes-gpg-split-2.0.71/debian/tmp/lib/systemd/system/bootclockrandomization.service.d/override.conf
+2024-05-08 01:10:53.019915 +0000 build-debian42: output: make[3]: Leaving directory '/build/qubes-gpg-split-2.0.71/tests'
+2024-05-08 01:10:53.020161 +0000 build-debian42: output: make[2]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:53.020182 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:53.021297 +0000 build-debian42: output:    debian/rules override_dh_install
+2024-05-08 01:10:53.022300 +0000 build-debian42: output: make[1]: Entering directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:53.131224 +0000 build-debian42: output: dh_install --fail-missing
+2024-05-08 01:10:53.684896 +0000 build-debian42: output: dh_install: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:53.684948 +0000 build-debian42: output: dh_install: warning: Please use dh_missing --list-missing/--fail-missing instead
+2024-05-08 01:10:53.684959 +0000 build-debian42: output: dh_install: warning: This feature will be removed in compat 12.
+2024-05-08 01:10:53.750352 +0000 build-debian42: output: make[1]: Leaving directory '/build/qubes-gpg-split-2.0.71'
+2024-05-08 01:10:53.751219 +0000 build-debian42: output:    dh_installdocs
+2024-05-08 01:10:53.777871 +0000 build-debian42: output: dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:53.790724 +0000 build-debian42: output:    dh_installchangelogs
+2024-05-08 01:10:53.869621 +0000 build-debian42: output: dh_installchangelogs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:53.897908 +0000 build-debian42: output:    dh_installman
+2024-05-08 01:10:53.930969 +0000 build-debian42: output: dh_installman: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:53.989216 +0000 build-debian42: output:    dh_installinit
+2024-05-08 01:10:54.020631 +0000 build-debian42: output: dh_installinit: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.041506 +0000 build-debian42: output:    dh_perl
+2024-05-08 01:10:54.097025 +0000 build-debian42: output:    dh_link
+2024-05-08 01:10:54.126796 +0000 build-debian42: output: dh_link: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.133906 +0000 build-debian42: output:    dh_strip_nondeterminism
+2024-05-08 01:10:54.432534 +0000 build-debian42: output:    dh_compress
+2024-05-08 01:10:54.474213 +0000 build-debian42: output: dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.474961 +0000 build-debian42: output: dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.494320 +0000 build-debian42: output:    dh_fixperms
+2024-05-08 01:10:54.574851 +0000 build-debian42: output:    dh_missing
+2024-05-08 01:10:54.598410 +0000 build-debian42: output: dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.599531 +0000 build-debian42: output:    dh_strip
+2024-05-08 01:10:54.632517 +0000 build-debian42: output: dh_strip: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.633203 +0000 build-debian42: output: dh_strip: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.725283 +0000 build-debian42: output:    dh_makeshlibs
+2024-05-08 01:10:54.750381 +0000 build-debian42: output: dh_makeshlibs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.785081 +0000 build-debian42: output:    dh_shlibdeps
+2024-05-08 01:10:54.817965 +0000 build-debian42: output: dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:54.818020 +0000 build-debian42: output: dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:55.205646 +0000 build-debian42: output:    dh_installdeb
+2024-05-08 01:10:55.237018 +0000 build-debian42: output: dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:55.260701 +0000 build-debian42: output:    dh_gencontrol
+2024-05-08 01:10:55.284342 +0000 build-debian42: output: dh_gencontrol: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+2024-05-08 01:10:55.465665 +0000 build-debian42: output:    dh_md5sums
+2024-05-08 01:10:55.522602 +0000 build-debian42: output:    dh_builddeb
+2024-05-08 01:10:55.552569 +0000 build-debian42: output: dpkg-deb: building package 'qubes-gpg-split' in '../qubes-gpg-split_2.0.71-1+deb13u1_amd64.deb'.
+2024-05-08 01:10:55.552632 +0000 build-debian42: output: dpkg-deb: building package 'qubes-gpg-split-tests' in '../qubes-gpg-split-tests_2.0.71-1+deb13u1_amd64.deb'.
+2024-05-08 01:10:55.657825 +0000 build-debian42: output: dpkg-deb: building package 'qubes-gpg-split-dbgsym' in '../qubes-gpg-split-dbgsym_2.0.71-1+deb13u1_amd64.deb'.
+2024-05-08 01:10:55.762920 +0000 build-debian42: output:  dpkg-genbuildinfo -O../qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo
+2024-05-08 01:10:55.879242 +0000 build-debian42: output:  dpkg-genchanges -sa -O../qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes
+2024-05-08 01:10:55.933284 +0000 build-debian42: output: dpkg-genchanges: info: including full source code in upload
+2024-05-08 01:10:55.936787 +0000 build-debian42: output:  dpkg-source --after-build .
+2024-05-08 01:10:56.014647 +0000 build-debian42: output: dpkg-source: info: using options from qubes-gpg-split-2.0.71/debian/source/options: --extend-diff-ignore=(^|/)(.git/.*)$ --extend-diff-ignore=(^|/)(deb/.*)$ --extend-diff-ignore=(^|/)(pkgs/.*)$ --extend-diff-ignore=(^|/)(rpm/.*)$
+2024-05-08 01:10:56.018330 +0000 build-debian42: output: dpkg-buildpackage: info: full upload (original source is included)
+2024-05-08 01:10:56.022068 +0000 build-debian42: output: I: copying local configuration
+2024-05-08 01:10:56.062119 +0000 build-debian42: output: I: Copying back the cached apt archive contents
+2024-05-08 01:10:56.104846 +0000 build-debian42: output: I: unmounting /tmp/qubes-deb filesystem
+2024-05-08 01:10:56.115350 +0000 build-debian42: output: I: unmounting dev/ptmx filesystem
+2024-05-08 01:10:56.119163 +0000 build-debian42: output: I: unmounting dev/pts filesystem
+2024-05-08 01:10:56.123205 +0000 build-debian42: output: I: unmounting dev/shm filesystem
+2024-05-08 01:10:56.127902 +0000 build-debian42: output: I: unmounting proc filesystem
+2024-05-08 01:10:56.132288 +0000 build-debian42: output: I: unmounting sys filesystem
+2024-05-08 01:10:56.138536 +0000 build-debian42: output: I: cleaning the build env
+2024-05-08 01:10:56.138596 +0000 build-debian42: output: I: removing directory /builder/pbuilder/build/2996 and its subdirectories
+2024-05-08 01:10:56.605098 +0000 build-debian42: output: I: Current time: Wed May  8 01:10:57 GMT 2024
+2024-05-08 01:10:56.606811 +0000 build-debian42: output: I: pbuilder-time-stamp: 1715130657
+2024-05-08 01:10:57.741893 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split_2.0.71--1-2Bdeb13u1_amd64.changes /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:10:59.923956 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split--tests--dbgsym_2.0.71--1-2Bdeb13u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:00.153488 +0000 build-debian42: File not found inside container: /builder/pbuilder/results/qubes-gpg-split-tests-dbgsym_2.0.71-1+deb13u1_amd64.deb.
+2024-05-08 01:11:00.153548 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split_2.0.71--1-2Bdeb13u1_amd64.buildinfo /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:00.381395 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split--dbgsym_2.0.71--1-2Bdeb13u1_amd64.ddeb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:00.590292 +0000 build-debian42: File not found inside container: /builder/pbuilder/results/qubes-gpg-split-dbgsym_2.0.71-1+deb13u1_amd64.ddeb.
+2024-05-08 01:11:00.590350 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split--tests--dbgsym_2.0.71--1-2Bdeb13u1_amd64.ddeb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:01.348811 +0000 build-debian42: File not found inside container: /builder/pbuilder/results/qubes-gpg-split-tests-dbgsym_2.0.71-1+deb13u1_amd64.ddeb.
+2024-05-08 01:11:01.348916 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split_2.0.71--1-2Bdeb13u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:01.668451 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split--dbgsym_2.0.71--1-2Bdeb13u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:01.885853 +0000 build-debian42: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9235 qubesbuilder.FileCopyOut+-2Fbuilder-2Fpbuilder-2Fresults-2Fqubes--gpg--split--tests_2.0.71--1-2Bdeb13u1_amd64.deb /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build
+2024-05-08 01:11:06.326475 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64:debian: Provisioning local repository '/home/user/builder-r4.2-debian/repository/vm-trixie'.
+2024-05-08 01:11:06.341405 +0000 build-debian42: Executing 'bash -c qubes-gpg-client-wrapper --armor --export 0EBE5463493CC30421DA8AC45BB71C441BCB10FE > /tmp/tmpmmg8_rf_/0EBE5463493CC30421DA8AC45BB71C441BCB10FE.asc&&gpg2 --homedir /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring --import /tmp/tmpmmg8_rf_/0EBE5463493CC30421DA8AC45BB71C441BCB10FE.asc'.
+2024-05-08 01:11:07.445929 +0000 build-debian42: output: gpg: keybox '/home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring/pubring.kbx' created
+2024-05-08 01:11:07.445980 +0000 build-debian42: output: gpg: /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring/trustdb.gpg: trustdb created
+2024-05-08 01:11:07.445991 +0000 build-debian42: output: gpg: key 5BB71C441BCB10FE: public key "Qubes OS 4.2 Debian Packages Signing Key" imported
+2024-05-08 01:11:07.452594 +0000 build-debian42: output: gpg: Total number processed: 1
+2024-05-08 01:11:07.452638 +0000 build-debian42: output: gpg:               imported: 1
+2024-05-08 01:11:07.466753 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64:debian: Signing from 'qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes' info.
+2024-05-08 01:11:07.466805 +0000 build-debian42: Executing 'bash -c debsign -k0EBE5463493CC30421DA8AC45BB71C441BCB10FE -pqubes-gpg-client-wrapper --no-re-sign /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes'.
+2024-05-08 01:11:07.501785 +0000 build-debian42: output:  signfile dsc /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:08.225283 +0000 build-debian42: output: 
+2024-05-08 01:11:08.240130 +0000 build-debian42: output:  fixup_buildinfo /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo
+2024-05-08 01:11:08.240201 +0000 build-debian42: output:  signfile buildinfo /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:08.645222 +0000 build-debian42: output: 
+2024-05-08 01:11:08.659940 +0000 build-debian42: output:  fixup_changes dsc /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes
+2024-05-08 01:11:08.675249 +0000 build-debian42: output:  fixup_changes buildinfo /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes
+2024-05-08 01:11:08.679209 +0000 build-debian42: output:  signfile changes /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:08.955368 +0000 build-debian42: output: 
+2024-05-08 01:11:08.957387 +0000 build-debian42: output: Successfully signed dsc, buildinfo, changes files
+2024-05-08 01:11:08.973959 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64:debian: Provisioning local repository '/home/user/builder-r4.2-debian/repository/vm-trixie'.
+2024-05-08 01:11:08.980937 +0000 build-debian42: Executing 'bash -c /home/user/qubes-builderv2/qubesbuilder/plugins/publish_deb/scripts/create-skeleton r4.2 debian /home/user/builder-r4.2-debian/repository-publish/deb'.
+2024-05-08 01:11:09.020308 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64:debian: Publishing packages.
+2024-05-08 01:11:09.020379 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64:debian: Verifying signatures.
+2024-05-08 01:11:09.020473 +0000 build-debian42: Executing 'bash -c gpg2 -q --homedir /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring --verify /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1.dsc&&gpg2 -q --homedir /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring --verify /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes&&gpg2 -q --homedir /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/sign/keyring --verify /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.buildinfo'.
+2024-05-08 01:11:09.023955 +0000 build-debian42: output: gpg: Signature made Wed May  8 01:11:09 2024 GMT
+2024-05-08 01:11:09.023998 +0000 build-debian42: output: gpg:                using RSA key 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:09.024035 +0000 build-debian42: output: gpg: Good signature from "Qubes OS 4.2 Debian Packages Signing Key" [unknown]
+2024-05-08 01:11:09.024044 +0000 build-debian42: output: gpg: WARNING: This key is not certified with a trusted signature!
+2024-05-08 01:11:09.024057 +0000 build-debian42: output: gpg:          There is no indication that the signature belongs to the owner.
+2024-05-08 01:11:09.024081 +0000 build-debian42: output: Primary key fingerprint: 0EBE 5463 493C C304 21DA  8AC4 5BB7 1C44 1BCB 10FE
+2024-05-08 01:11:09.026676 +0000 build-debian42: output: gpg: Signature made Wed May  8 01:11:09 2024 GMT
+2024-05-08 01:11:09.026763 +0000 build-debian42: output: gpg:                using RSA key 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:09.026960 +0000 build-debian42: output: gpg: Good signature from "Qubes OS 4.2 Debian Packages Signing Key" [unknown]
+2024-05-08 01:11:09.027011 +0000 build-debian42: output: gpg: WARNING: This key is not certified with a trusted signature!
+2024-05-08 01:11:09.027063 +0000 build-debian42: output: gpg:          There is no indication that the signature belongs to the owner.
+2024-05-08 01:11:09.027124 +0000 build-debian42: output: Primary key fingerprint: 0EBE 5463 493C C304 21DA  8AC4 5BB7 1C44 1BCB 10FE
+2024-05-08 01:11:09.030559 +0000 build-debian42: output: gpg: Signature made Wed May  8 01:11:09 2024 GMT
+2024-05-08 01:11:09.030599 +0000 build-debian42: output: gpg:                using RSA key 0EBE5463493CC30421DA8AC45BB71C441BCB10FE
+2024-05-08 01:11:09.030609 +0000 build-debian42: output: gpg: Good signature from "Qubes OS 4.2 Debian Packages Signing Key" [unknown]
+2024-05-08 01:11:09.030631 +0000 build-debian42: output: gpg: WARNING: This key is not certified with a trusted signature!
+2024-05-08 01:11:09.030640 +0000 build-debian42: output: gpg:          There is no indication that the signature belongs to the owner.
+2024-05-08 01:11:09.030647 +0000 build-debian42: output: Primary key fingerprint: 0EBE 5463 493C C304 21DA  8AC4 5BB7 1C44 1BCB 10FE
+2024-05-08 01:11:09.045184 +0000 build-debian42: Executing 'bash -c reprepro --ignore=surprisingbinary --ignore=surprisingarch --keepunreferencedfiles -b /home/user/builder-r4.2-debian/repository-publish/deb/r4.2/vm include trixie-testing /home/user/builder-r4.2-debian/components/app-linux-split-gpg/2.0.71-1/vm-trixie/build/qubes-gpg-split_2.0.71-1+deb13u1_amd64.changes'.
+2024-05-08 01:11:09.204156 +0000 build-debian42: output: Exporting indices...
+2024-05-08 01:11:09.220855 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64: Signing metadata (Release.gpg).
+2024-05-08 01:11:09.220941 +0000 build-debian42: Executing 'bash -c qubes-gpg-client-wrapper --detach-sign --armor --local-user 0EBE5463493CC30421DA8AC45BB71C441BCB10FE --batch --no-tty --output /home/user/builder-r4.2-debian/repository-publish/deb/r4.2/vm/dists/trixie-testing/Release.gpg /home/user/builder-r4.2-debian/repository-publish/deb/r4.2/vm/dists/trixie-testing/Release'.
+2024-05-08 01:11:13.328578 +0000 build-debian42: app-linux-split-gpg:vm-debian-13.amd64: Signing metadata (InRelease).
+2024-05-08 01:11:13.328673 +0000 build-debian42: Executing 'bash -c qubes-gpg-client-wrapper --clearsign --armor --local-user 0EBE5463493CC30421DA8AC45BB71C441BCB10FE --batch --no-tty --output /home/user/builder-r4.2-debian/repository-publish/deb/r4.2/vm/dists/trixie-testing/InRelease /home/user/builder-r4.2-debian/repository-publish/deb/r4.2/vm/dists/trixie-testing/Release'.
+2024-05-08 01:11:13.548691 +0000 build-debian42: > done
+2024-05-08 01:11:13.548772 +0000 > closing log
