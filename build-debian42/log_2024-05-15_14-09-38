@@ -1,0 +1,310 @@
+2024-05-15 14:09:38.863387 +0000 > starting log
+2024-05-15 14:09:38.863601 +0000 build-debian42: > starting build with log
+2024-05-15 14:09:38.863617 +0000 build-debian42: >> args:
+2024-05-15 14:09:38.863625 +0000 build-debian42: >>   ()
+2024-05-15 14:09:38.863631 +0000 build-debian42: >> component:
+2024-05-15 14:09:38.863637 +0000 build-debian42: >>   desktop-linux-i3
+2024-05-15 14:09:38.863645 +0000 build-debian42: >>     commit-hash: ee0b3e03850300bda939e705ece044665c9b7983
+2024-05-15 14:09:38.863656 +0000 build-debian42: >>     source-hash: 3f4982edcb19d947f8e7e0a276a63f2791486c39352351c6e3c2bc4aebc78ab467978fe829daf494fed17cd47d268d9207f6870cb8740b1bc68afe223828990e
+2024-05-15 14:09:38.863662 +0000 build-debian42: >> distributions:
+2024-05-15 14:09:38.863669 +0000 build-debian42: >>   [<QubesDistribution vm-debian-12.amd64>, <QubesDistribution vm-debian-13.amd64>]
+2024-05-15 14:09:38.863677 +0000 build-debian42: desktop-linux-i3:vm-debian-12.amd64: Source hash is the same than already prepared source. Skipping.
+2024-05-15 14:09:46.447103 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fpbuilder /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/chroot_deb/pbuilder
+2024-05-15 14:09:46.762814 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fi3--wm_4.23--1-2Bdeb12u1.dsc /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/desktop-linux-i3/4.23-1/vm-bookworm/prep/i3-wm_4.23-1+deb12u1.dsc
+2024-05-15 14:09:46.949939 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fi3--wm_4.23--1-2Bdeb12u1.debian.tar.xz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/desktop-linux-i3/4.23-1/vm-bookworm/prep/i3-wm_4.23-1+deb12u1.debian.tar.xz
+2024-05-15 14:09:47.234315 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fbuild-2Fi3--wm_4.23.orig.tar.xz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/components/desktop-linux-i3/4.23-1/vm-bookworm/prep/i3-wm_4.23.orig.tar.xz
+2024-05-15 14:09:47.443944 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fpbuilder-2Fbase.tgz /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/cache/chroot/bookworm/pbuilder/base.tgz
+2024-05-15 14:09:49.869432 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fchroot_deb /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/chroot_deb
+2024-05-15 14:09:50.018448 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fbuild /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build
+2024-05-15 14:09:50.164009 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Fplugins-2Fbuild_deb /usr/lib/qubes/qfile-agent /home/user/qubes-builderv2/qubesbuilder/plugins/build_deb
+2024-05-15 14:09:50.352919 +0000 build-debian42: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm -- disp1675 qubesbuilder.FileCopyIn+-2Fbuilder-2Frepository-2Fvm--bookworm /usr/lib/qubes/qfile-agent /home/user/builder-r4.2-debian/repository/vm-bookworm
+2024-05-15 14:09:51.666924 +0000 build-debian42: Executing '/usr/bin/qvm-run-vm -- disp1675 env -- VERBOSE=1 DEBUG=1 BACKEND_VMM=xen bash -c 'mkdir -p /builder/cache/aptcache && /builder/plugins/build_deb/scripts/create-local-repo /builder/repository debian bookworm && sudo -E pbuilder update --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" && sudo -E pbuilder build --override-config --distribution bookworm --configfile /builder/pbuilder/pbuilderrc --othermirror "deb [trusted=yes] file:///tmp/qubes-deb bookworm main" /builder/build/i3-wm_4.23-1+deb12u1.dsc && /builder/plugins/build_deb/scripts/patch-changes /builder/build/i3-wm_4.23-1+deb12u1.dsc /builder/pbuilder/results/i3-wm_4.23-1+deb12u1_amd64.buildinfo /builder/pbuilder/results/i3-wm_4.23-1+deb12u1_amd64.changes''.
+2024-05-15 14:09:51.748626 +0000 build-debian42: output: + '[' 3 -lt 2 ']'
+2024-05-15 14:09:51.748670 +0000 build-debian42: output: + REPO_DIR=/builder/repository
+2024-05-15 14:09:51.748678 +0000 build-debian42: output: + DISTRIBUTION=debian
+2024-05-15 14:09:51.748685 +0000 build-debian42: output: + SUITE=bookworm
+2024-05-15 14:09:51.748691 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2024-05-15 14:09:51.751508 +0000 build-debian42: output: + mkdir -p /builder/repository/conf
+2024-05-15 14:09:51.752613 +0000 build-debian42: output: + cd /builder/repository
+2024-05-15 14:09:51.752652 +0000 build-debian42: output: ++ LC_ALL=C
+2024-05-15 14:09:51.752664 +0000 build-debian42: output: ++ reprepro --version
+2024-05-15 14:09:51.761739 +0000 build-debian42: output: + reprepro_version='reprepro: This is reprepro version 5.4.2'
+2024-05-15 14:09:51.761785 +0000 build-debian42: output: + reprepro_version=5.4.2
+2024-05-15 14:09:51.761793 +0000 build-debian42: output: + append_components=
+2024-05-15 14:09:51.762610 +0000 build-debian42: output: ++ sort -V
+2024-05-15 14:09:51.762630 +0000 build-debian42: output: ++ printf '%s\n' 5.4.2 5.4.0
+2024-05-15 14:09:51.762637 +0000 build-debian42: output: ++ head -n1
+2024-05-15 14:09:51.765815 +0000 build-debian42: output: + '[' 5.4.0 = 5.4.0 ']'
+2024-05-15 14:09:51.765853 +0000 build-debian42: output: + append_components='
+2024-05-15 14:09:51.765860 +0000 build-debian42: output: DDebComponents: main'
+2024-05-15 14:09:51.765887 +0000 build-debian42: output: + cat
+2024-05-15 14:09:51.767172 +0000 build-debian42: output: + mkdir -p dists/bookworm/main/binary-amd64
+2024-05-15 14:09:51.768486 +0000 build-debian42: output: + dpkg-scanpackages --multiversion .
+2024-05-15 14:09:53.128702 +0000 build-debian42: output: dpkg-scanpackages: info: Wrote 122 entries to output Packages file.
+2024-05-15 14:09:53.129755 +0000 build-debian42: output: + gzip -9c dists/bookworm/main/binary-amd64/Packages
+2024-05-15 14:09:53.132979 +0000 build-debian42: output: ++ LC_ALL=C
+2024-05-15 14:09:53.133015 +0000 build-debian42: output: ++ date -u '+%a, %d %b %Y %H:%M:%S %Z'
+2024-05-15 14:09:53.136019 +0000 build-debian42: output: + DATE='Wed, 15 May 2024 14:09:52 UTC'
+2024-05-15 14:09:53.136060 +0000 build-debian42: output: + cat
+2024-05-15 14:09:53.136746 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages
+2024-05-15 14:09:53.136775 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages
+2024-05-15 14:09:53.136783 +0000 build-debian42: output: + echo -n ' '
+2024-05-15 14:09:53.137671 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages
+2024-05-15 14:09:53.137693 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2024-05-15 14:09:53.139197 +0000 build-debian42: output: + echo -n 2314cd1b5cf5b55f1169075e7634a14c3606ffe2688f40803bc7d4077f061ec8 ''
+2024-05-15 14:09:53.139509 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages
+2024-05-15 14:09:53.140352 +0000 build-debian42: output: + echo -n 99796 ''
+2024-05-15 14:09:53.140369 +0000 build-debian42: output: + echo main/binary-amd64/Packages
+2024-05-15 14:09:53.140376 +0000 build-debian42: output: + calc_sha1 main/binary-amd64/Packages.gz
+2024-05-15 14:09:53.140400 +0000 build-debian42: output: + f=dists/bookworm/main/binary-amd64/Packages.gz
+2024-05-15 14:09:53.140407 +0000 build-debian42: output: + echo -n ' '
+2024-05-15 14:09:53.141656 +0000 build-debian42: output: ++ sha256sum dists/bookworm/main/binary-amd64/Packages.gz
+2024-05-15 14:09:53.141680 +0000 build-debian42: output: ++ cut '-d ' -f 1
+2024-05-15 14:09:53.142139 +0000 build-debian42: output: + echo -n fea395508a676e900b81da2100dd568a54c6034e0d78c2bd74fabd72e283c4cf ''
+2024-05-15 14:09:53.142954 +0000 build-debian42: output: ++ stat -c %s dists/bookworm/main/binary-amd64/Packages.gz
+2024-05-15 14:09:53.143962 +0000 build-debian42: output: + echo -n 27333 ''
+2024-05-15 14:09:53.143989 +0000 build-debian42: output: + echo main/binary-amd64/Packages.gz
+2024-05-15 14:09:53.143996 +0000 build-debian42: output: + mapfile -d '' changes_files
+2024-05-15 14:09:53.144006 +0000 build-debian42: output: ++ find /builder/repository -name '*.changes' -not -path /builder/repository/dists -not -path /builder/repository/pool -print0
+2024-05-15 14:09:53.148413 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:53.148455 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/salt_3006.5/salt_3006.5-1+deb12u1_amd64.changes
+2024-05-15 14:09:55.155179 +0000 build-debian42: output: 'salt_3006.5-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:55.155223 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:56.113776 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.113846 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.113861 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/repo-templates_4.2.2/qubes-repo-templates_4.2.2-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.172550 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.174105 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.174144 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/fwupd_1.8.14/fwupd-qubes_1.8.14-5+deb12u1_amd64.changes
+2024-05-15 14:09:56.295125 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.295176 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/meta-packages_4.2.11/qubes-meta-packages_4.2.11-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.295185 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.399518 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.399592 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.399608 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-split-gpg_2.0.71/qubes-gpg-split_2.0.71-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.538353 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.538429 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.538445 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-vchan-xen_4.2.3/libvchan-xen_4.2.3-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.705694 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.705745 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.705777 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-pdf-converter_2.1.19/qubes-pdf-converter_2.1.19-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.770798 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.770898 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.770913 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-gpg-sign_1.0.0/qubes-gpg-sign_1.0.0-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.852198 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.852247 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.852261 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-qrexec_4.2.19/qubes-core-qrexec_4.2.19-1+deb12u1_amd64.changes
+2024-05-15 14:09:56.971163 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:56.971344 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:56.971365 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-u2f_2.0.5/qubes-ctap_2.0.5+deb12u1_amd64.changes
+2024-05-15 14:09:56.982328 +0000 build-debian42: output: 'qubes-ctap_2.0.5+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:56.982373 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:57.016001 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.016052 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.016066 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-xfce4-xfwm4_4.16.1/xfwm4_4.16.1-4+deb12u1_amd64.changes
+2024-05-15 14:09:57.084268 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.084314 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.084330 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-menu_1.2.0/qubes-desktop-linux-menu_1.2.0-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.152775 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.152846 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.152863 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-manager_4.2.22/qubes-desktop-linux-manager_4.2.22-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.240076 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.240739 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.240775 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-admin-client_4.2.12/qubes-core-admin-client_4.2.12-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.307910 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.308110 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.308136 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-input-proxy_1.0.36/qubes-input-proxy_1.0.36-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.361060 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.361111 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/disk-password-gui_1.0.0/disk-password-gui_1.0.0-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.361120 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.400936 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:57.401374 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.401399 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-daemon_4.2.7/qubes-gui-daemon_4.2.7-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.476372 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:57.476422 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/artwork_4.2.1/qubes-artwork_4.2.1-1+deb12u1_amd64.changes
+2024-05-15 14:09:57.476431 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:58.746996 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:58.749487 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:58.749537 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt_4.2.2/qubes-mgmt-salt_4.2.2-1+deb12u1_amd64.changes
+2024-05-15 14:09:58.759303 +0000 build-debian42: output: 'qubes-mgmt-salt_4.2.2-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:58.759350 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.022626 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.024271 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.024312 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-i3-settings-qubes_1.10/i3-settings-qubes_1.10-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.073129 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.073674 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.073712 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-shutdown-idle_1.0.10/qubes-app-shutdown-idle_1.0.10-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.152971 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.154575 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.154619 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/python-fido2_1.1.2/python-fido2_1.1.2-2+deb12u1_amd64.changes
+2024-05-15 14:09:59.166690 +0000 build-debian42: output: 'python-fido2_1.1.2-2+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:59.166735 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.218533 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.220112 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.220153 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/rpm-oxide_0.2.7/qubes-rpm-oxide_0.2.7-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.232372 +0000 build-debian42: output: 'qubes-rpm-oxide_0.2.7-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:59.232416 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.314546 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.316112 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.316153 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-usb-proxy_1.2.1/qubes-usb-proxy_1.2.1+deb12u1_amd64.changes
+2024-05-15 14:09:59.371536 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.371979 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.372022 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/python-qasync_0.23.0/python-qasync_0.23.0-2+deb12u1_amd64.changes
+2024-05-15 14:09:59.387714 +0000 build-debian42: output: 'python-qasync_0.23.0-2+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:59.387762 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.486017 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.486541 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.486579 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base_4.1.6/qubes-mgmt-salt-base_4.1.6-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.498680 +0000 build-debian42: output: 'qubes-mgmt-salt-base_4.1.6-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:59.498730 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.554886 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.554935 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.554949 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-agent-linux_4.2.14/qubes-gui-agent_4.2.14-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.725288 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.725737 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.725772 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-agent-linux_4.2.33/qubes-core-agent_4.2.33-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.825982 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.826758 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.826796 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-thunderbird_2.0.8/thunderbird-qubes_2.0.8-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.872417 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.873457 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.873501 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/gui-common_4.2.4/qubes-gui-common_4.2.4+deb12u1_amd64.changes
+2024-05-15 14:09:59.918384 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.918751 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.918782 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/video-companion_1.0.7/qubes-video-companion_1.0.7-1+deb12u1_amd64.changes
+2024-05-15 14:09:59.929552 +0000 build-debian42: output: 'qubes-video-companion_1.0.7-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:09:59.929594 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:09:59.975455 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:09:59.975500 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:09:59.975514 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-split-gpg2_1.0.0/split-gpg2_1.0.0+deb12u1_amd64.changes
+2024-05-15 14:10:00.072007 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.072083 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.072099 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/python-looseversion_1.3.0/python-looseversion_1.3.0-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.147405 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.148040 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.148076 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-gbulb_0.6.3/python3-gbulb_0.6.3-2+deb12u1_amd64.changes
+2024-05-15 14:10:00.158903 +0000 build-debian42: output: 'python3-gbulb_0.6.3-2+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:10:00.158949 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:10:00.194013 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.194057 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.194072 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-snapd-helper_1.0.4/qubes-snapd-helper_1.0.4-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.238666 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.238981 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.239043 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-xfce4_4.2.2/xfce4-settings-qubes_4.2.2-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.328709 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.329228 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.329261 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/linux-utils_4.2.15/qubes-utils_4.2.15+deb12u1_amd64.changes
+2024-05-15 14:10:00.409025 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.409485 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.409520 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/core-qubesdb_4.2.5/qubesdb_4.2.5-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.487853 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.489269 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.489292 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/manager_4.2.8/qubes-manager_4.2.8-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.555961 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.556564 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.556601 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/desktop-linux-common_4.2.7/qubes-desktop-linux-common_4.2.7-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.629208 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.629737 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.629774 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base-config_4.1.2/qubes-mgmt-salt-base-config_4.1.2-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.642067 +0000 build-debian42: output: 'qubes-mgmt-salt-base-config_4.1.2-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:10:00.642114 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:10:00.690311 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.690909 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.690942 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/app-linux-img-converter_1.2.16/qubes-img-converter_1.2.16-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.733255 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.733701 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.733728 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/vmm-xen-guest_5.0.0/xen-guest_5.0.0-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.847969 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.848125 +0000 build-debian42: output: + for changes in "${changes_files[@]}"
+2024-05-15 14:10:00.848146 +0000 build-debian42: output: + reprepro -b /builder/repository --ignore=surprisingbinary --ignore=surprisingarch include bookworm /builder/repository/vm-bookworm/mgmt-salt-base-topd_4.2.0/qubes-mgmt-salt-base-topd_4.2.0-1+deb12u1_amd64.changes
+2024-05-15 14:10:00.859584 +0000 build-debian42: output: 'qubes-mgmt-salt-base-topd_4.2.0-1+deb12u1_amd64.buildinfo' looks like architecture 'amd64', but this is not listed in the Architecture-Header!
+2024-05-15 14:10:00.859634 +0000 build-debian42: output: Ignoring as --ignore=surprisingarch given.
+2024-05-15 14:10:00.903500 +0000 build-debian42: output: Exporting indices...
+2024-05-15 14:10:00.924446 +0000 build-debian42: output: W: /root/.pbuilderrc does not exist
+2024-05-15 14:10:00.959351 +0000 build-debian42: output: W: libeatmydata is not installed on the host, not using it.
+2024-05-15 14:10:00.966103 +0000 build-debian42: output: dpkg-query: no packages found matching systemd
+2024-05-15 14:10:00.966864 +0000 build-debian42: output: W: cgroups are not available on the host, not using them.
+2024-05-15 14:10:00.969696 +0000 build-debian42: output: I: Current time: Wed May 15 14:10:00 GMT 2024
+2024-05-15 14:10:00.970772 +0000 build-debian42: output: I: pbuilder-time-stamp: 1715782200
+2024-05-15 14:10:00.971275 +0000 build-debian42: output: I: Building the build Environment
+2024-05-15 14:10:00.972098 +0000 build-debian42: output: I: extracting base tarball [/builder/pbuilder/base.tgz]
+2024-05-15 14:10:06.126431 +0000 build-debian42: output: I: copying local configuration
+2024-05-15 14:10:06.139514 +0000 build-debian42: output: W: No local /etc/hostname to copy, relying on /builder/pbuilder/build/2937/etc/hostname to be correct
+2024-05-15 14:10:06.139563 +0000 build-debian42: output: W: No local /etc/mailname to copy, relying on /builder/pbuilder/build/2937/etc/mailname to be correct
+2024-05-15 14:10:06.147331 +0000 build-debian42: output: W: --override-config is not set; not updating apt.conf Read the manpage for details.
+2024-05-15 14:10:06.147375 +0000 build-debian42: output: I: mounting /proc filesystem
+2024-05-15 14:10:06.156671 +0000 build-debian42: output: I: mounting /sys filesystem
+2024-05-15 14:10:06.156715 +0000 build-debian42: output: I: creating /{dev,run}/shm
+2024-05-15 14:10:06.164858 +0000 build-debian42: output: I: mounting /dev/pts filesystem
+2024-05-15 14:10:06.170629 +0000 build-debian42: output: I: redirecting /dev/ptmx to /dev/pts/ptmx
+2024-05-15 14:10:06.178608 +0000 build-debian42: output: I: Mounting /builder/repository to /tmp/qubes-deb
+2024-05-15 14:10:06.181564 +0000 build-debian42: output: I: policy-rc.d already exists
+2024-05-15 14:10:06.193726 +0000 build-debian42: output: I: Refreshing the base.tgz
+2024-05-15 14:10:06.193770 +0000 build-debian42: output: I: upgrading packages
+2024-05-15 14:10:32.021947 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
+2024-05-15 14:10:39.165735 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
+2024-05-15 14:19:34.579231 +0000 build-debian42: output: Fetched 8937 kB in 9min 28s (15.7 kB/s)
+2024-05-15 14:19:34.998306 +0000 build-debian42: output: Reading package lists...
+2024-05-15 14:19:35.023981 +0000 build-debian42: output: I: Obtaining the cached apt archive contents
+2024-05-15 14:19:35.039860 +0000 build-debian42: output: Reading package lists...
+2024-05-15 14:19:35.182697 +0000 build-debian42: output: Building dependency tree...
+2024-05-15 14:19:35.182746 +0000 build-debian42: output: Reading state information...
+2024-05-15 14:19:35.290755 +0000 build-debian42: output: Calculating upgrade...
+2024-05-15 14:19:35.429369 +0000 build-debian42: output: The following NEW packages will be installed:
+2024-05-15 14:19:35.429415 +0000 build-debian42: output:   adduser
+2024-05-15 14:19:35.429424 +0000 build-debian42: output: The following packages will be upgraded:
+2024-05-15 14:19:35.429433 +0000 build-debian42: output:   apt base-files bash binutils binutils-common binutils-x86-64-linux-gnu
+2024-05-15 14:19:35.429441 +0000 build-debian42: output:   bsdutils ca-certificates cpp cpp-12 dash debconf debian-archive-keyring
+2024-05-15 14:19:35.429662 +0000 build-debian42: output:   debianutils diffutils dpkg dpkg-dev e2fsprogs findutils g++ g++-12 gcc
+2024-05-15 14:19:35.429763 +0000 build-debian42: output:   gcc-12 gcc-12-base gpgv grep hostname libacl1 libapt-pkg6.0 libasan8
+2024-05-15 14:19:35.429777 +0000 build-debian42: output:   libatomic1 libattr1 libaudit-common libaudit1 libbinutils libblkid1
+2024-05-15 14:19:35.429859 +0000 build-debian42: output:   libboost-iostreams1.74.0 libc-bin libc-dev-bin libc6 libc6-dev libcap-ng0
+2024-05-15 14:19:35.429872 +0000 build-debian42: output:   libcap2 libcc1-0 libcom-err2 libcrypt-dev libcrypt1 libctf-nobfd0 libctf0
+2024-05-15 14:19:35.430624 +0000 build-debian42: output:   libdb5.3 libdebconfclient0 libdpkg-perl libext2fs2 libgcc-12-dev libgcc-s1
+2024-05-15 14:19:35.430659 +0000 build-debian42: output:   libgnutls30 libgomp1 libgprofng0 libgssapi-krb5-2 libisl23 libitm1
+2024-05-15 14:19:35.430669 +0000 build-debian42: output:   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblsan0 liblzma5
+2024-05-15 14:19:35.430694 +0000 build-debian42: output:   libmount1 libmpc3 libmpfr6 libncursesw6 libp11-kit0 libpam-modules
+2024-05-15 14:19:35.430768 +0000 build-debian42: output:   libpam-modules-bin libpam-runtime libpam0g libpcre2-8-0 libperl5.36
+2024-05-15 14:19:35.430777 +0000 build-debian42: output:   libquadmath0 libseccomp2 libselinux1 libsemanage2 libsepol2
+2024-05-15 14:19:35.430785 +0000 build-debian42: output:   libsigc++-2.0-0v5 libsmartcols1 libsqlite3-0 libss2 libssl3 libstdc++-12-dev
+2024-05-15 14:19:35.430792 +0000 build-debian42: output:   libstdc++6 libsystemd0 libtinfo6 libtsan2 libubsan1 libudev1 libuuid1
+2024-05-15 14:19:35.430799 +0000 build-debian42: output:   libxapian30 libzstd1 linux-libc-dev login logsave mount ncurses-base
+2024-05-15 14:19:35.430806 +0000 build-debian42: output:   ncurses-bin openssl passwd perl perl-base perl-modules-5.36 sed
+2024-05-15 14:19:35.430813 +0000 build-debian42: output:   sysvinit-utils tar tzdata usr-is-merged usrmerge util-linux util-linux-extra
+2024-05-15 14:19:35.430841 +0000 build-debian42: output:   xz-utils
+2024-05-15 14:19:43.211162 +0000 build-debian42: output: 118 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+2024-05-15 14:19:43.211210 +0000 build-debian42: output: Need to get 105 MB of archives.
+2024-05-15 14:19:43.211220 +0000 build-debian42: output: After this operation, 2833 kB disk space will be freed.
+2024-05-15 14:19:43.211230 +0000 build-debian42: output: Get:1 https://deb.debian.org/debian bookworm/main amd64 base-files amd64 12.4+deb12u5 [70.8 kB]
+2024-05-15 14:19:46.947702 +0000 build-debian42: output: Get:2 https://deb.debian.org/debian bookworm/main amd64 debianutils amd64 5.7-0.5~deb12u1 [103 kB]
+2024-05-15 14:19:49.705279 +0000 build-debian42: output: Get:3 https://deb.debian.org/debian bookworm/main amd64 bash amd64 5.2.15-2+b2 [1491 kB]
+2024-05-15 14:21:37.729370 +0000 build-debian42: output: Get:4 https://deb.debian.org/debian bookworm/main amd64 bsdutils amd64 1:2.38.1-5+b1 [94.4 kB]
+2024-05-15 14:21:46.275664 +0000 build-debian42: output: Get:5 https://deb.debian.org/debian bookworm/main amd64 libcrypt-dev amd64 1:4.4.33-2 [118 kB]
+2024-05-15 14:21:58.620085 +0000 build-debian42: output: Get:6 https://deb.debian.org/debian bookworm/main amd64 libc6-dev amd64 2.36-9+deb12u4 [1897 kB]
+2024-05-15 14:24:42.315939 +0000 build-debian42: output: Get:7 https://deb.debian.org/debian bookworm/main amd64 libc-dev-bin amd64 2.36-9+deb12u4 [45.4 kB]
+2024-05-15 14:24:48.394918 +0000 build-debian42: output: Get:8 https://deb.debian.org/debian bookworm/main amd64 libcrypt1 amd64 1:4.4.33-2 [89.5 kB]
+2024-05-15 14:24:55.669128 +0000 build-debian42: output: Get:9 https://deb.debian.org/debian bookworm/main amd64 linux-libc-dev amd64 6.1.76-1 [1930 kB]
+2024-05-15 14:26:38.572811 +0000 build-debian42: output: Get:10 https://deb.debian.org/debian bookworm/main amd64 libubsan1 amd64 12.2.0-14 [883 kB]
+2024-05-15 14:27:28.689184 +0000 build-debian42: output: Get:11 https://deb.debian.org/debian bookworm/main amd64 gcc-12-base amd64 12.2.0-14 [37.5 kB]
+2024-05-15 14:27:31.151462 +0000 build-debian42: output: Get:12 https://deb.debian.org/debian bookworm/main amd64 libgcc-s1 amd64 12.2.0-14 [49.9 kB]
+2024-05-15 14:27:34.434938 +0000 build-debian42: output: Get:13 https://deb.debian.org/debian bookworm/main amd64 libgomp1 amd64 12.2.0-14 [116 kB]
+2024-05-15 14:27:44.799049 +0000 build-debian42: output: Get:14 https://deb.debian.org/debian bookworm/main amd64 libitm1 amd64 12.2.0-14 [26.1 kB]
+2024-05-15 14:27:47.028486 +0000 build-debian42: output: Get:15 https://deb.debian.org/debian bookworm/main amd64 libatomic1 amd64 12.2.0-14 [9328 B]
+2024-05-15 14:27:48.251060 +0000 build-debian42: output: Get:16 https://deb.debian.org/debian bookworm/main amd64 libasan8 amd64 12.2.0-14 [2195 kB]
+2024-05-15 14:30:12.461452 +0000 build-debian42: output: Get:17 https://deb.debian.org/debian bookworm/main amd64 liblsan0 amd64 12.2.0-14 [969 kB]
+2024-05-15 14:31:07.561092 +0000 build-debian42: output: Get:18 https://deb.debian.org/debian bookworm/main amd64 libquadmath0 amd64 12.2.0-14 [144 kB]
+2024-05-15 14:31:12.543041 +0000 build-debian42: output: Get:19 https://deb.debian.org/debian bookworm/main amd64 cpp-12 amd64 12.2.0-14 [9764 kB]
+2024-05-15 14:40:50.469566 +0000 build-debian42: output: Get:20 https://deb.debian.org/debian bookworm/main amd64 libcc1-0 amd64 12.2.0-14 [41.7 kB]
+2024-05-15 14:40:51.828633 +0000 build-debian42: output: Get:21 https://deb.debian.org/debian bookworm/main amd64 libgprofng0 amd64 2.40-2 [812 kB]
+2024-05-15 14:41:43.688489 +0000 build-debian42: output: Get:22 https://deb.debian.org/debian bookworm/main amd64 libctf0 amd64 2.40-2 [89.8 kB]
+2024-05-15 14:41:47.818777 +0000 build-debian42: output: Get:23 https://deb.debian.org/debian bookworm/main amd64 libctf-nobfd0 amd64 2.40-2 [153 kB]
+2024-05-15 14:41:54.008130 +0000 build-debian42: output: Get:24 https://deb.debian.org/debian bookworm/main amd64 binutils-x86-64-linux-gnu amd64 2.40-2 [2246 kB]
+2024-05-15 14:44:13.989313 +0000 build-debian42: output: Get:25 https://deb.debian.org/debian bookworm/main amd64 libbinutils amd64 2.40-2 [572 kB]
+2024-05-15 14:44:46.505681 +0000 build-debian42: output: Get:26 https://deb.debian.org/debian bookworm/main amd64 binutils-common amd64 2.40-2 [2487 kB]
+2024-05-15 14:45:19.745790 +0000 build-debian42: output: Get:27 https://deb.debian.org/debian bookworm/main amd64 binutils amd64 2.40-2 [65.0 kB]
+2024-05-15 14:45:21.305747 +0000 build-debian42: output: Get:28 https://deb.debian.org/debian bookworm/main amd64 gcc-12 amd64 12.2.0-14 [19.3 MB]
+2024-05-15 14:55:42.089277 +0000 build-debian42: output: Get:29 https://deb.debian.org/debian bookworm/main amd64 g++-12 amd64 12.2.0-14 [10.7 MB]
+2024-05-15 15:04:26.377933 +0000 build-debian42: output: Get:30 https://deb.debian.org/debian bookworm/main amd64 libstdc++-12-dev amd64 12.2.0-14 [2046 kB]
+2024-05-15 15:05:39.235046 +0000 build-debian42: output: Get:31 https://deb.debian.org/debian bookworm/main amd64 libgcc-12-dev amd64 12.2.0-14 [2437 kB]
+2024-05-15 15:08:40.627304 +0000 build-debian42: output: Get:32 https://deb.debian.org/debian bookworm/main amd64 libtsan2 amd64 12.2.0-14 [2196 kB]
+2024-05-15 15:09:23.369895 +0000 > closing log
